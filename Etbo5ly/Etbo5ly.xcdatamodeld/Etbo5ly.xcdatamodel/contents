@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Category" syncable="YES">
+        <attribute name="category_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category_menu_items" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="categories" inverseEntity="Menu_items" syncable="YES"/>
+    </entity>
+    <entity name="Cook" syncable="YES">
+        <attribute name="end_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="start_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="cook" inverseEntity="Menu_items" syncable="YES"/>
+    </entity>
+    <entity name="Menu_items" syncable="YES">
+        <attribute name="description_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_URL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="item_rate" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="category_menu_items" inverseEntity="Category" syncable="YES"/>
+        <relationship name="cook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cook" inverseName="menu_items" inverseEntity="Cook" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cook" positionX="-243" positionY="-81" width="128" height="103"/>
+        <element name="Menu_items" positionX="-225" positionY="180" width="128" height="163"/>
+        <element name="Category" positionX="-36" positionY="63" width="128" height="88"/>
+    </elements>
 </model>
