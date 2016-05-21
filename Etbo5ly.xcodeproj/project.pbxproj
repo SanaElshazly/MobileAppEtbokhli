@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08A91CF10162000609E3 /* SWRevealViewController.m */; };
+		4A0A08AF1CF10413000609E3 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08AE1CF10413000609E3 /* SlideMenuTableViewController.m */; };
+		4A0A08B21CF10950000609E3 /* homePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08B11CF10950000609E3 /* homePageViewController.m */; };
 		4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */; };
 		4AC6197A1CEF2340002D66EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619791CEF2340002D66EB /* main.m */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
@@ -24,7 +27,6 @@
 		B43B3CB31CF0B96C0086761F /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB21CF0B96C0086761F /* OrderDetails.m */; };
 		B43B3CB61CF0B9B60086761F /* MenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB51CF0B9B60086761F /* MenuItems.m */; };
 		B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */; };
-		B43B3CBB1CF0BAA10086761F /* pojo in Resources */ = {isa = PBXBuildFile; fileRef = B43B3CBA1CF0BAA10086761F /* pojo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0A08A81CF10162000609E3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4A0A08A91CF10162000609E3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		4A0A08AD1CF10413000609E3 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuTableViewController.h; sourceTree = "<group>"; };
+		4A0A08AE1CF10413000609E3 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
+		4A0A08B01CF10950000609E3 /* homePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homePageViewController.h; sourceTree = "<group>"; };
+		4A0A08B11CF10950000609E3 /* homePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homePageViewController.m; sourceTree = "<group>"; };
 		4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4AC619741CEF2340002D66EB /* Etbo5ly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etbo5ly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC619781CEF2340002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +76,6 @@
 		B43B3CB51CF0B9B60086761F /* MenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItems.m; sourceTree = "<group>"; };
 		B43B3CB71CF0BA7B0086761F /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDTO.h; sourceTree = "<group>"; };
 		B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDTO.m; sourceTree = "<group>"; };
-		B43B3CBA1CF0BAA10086761F /* pojo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pojo; path = "../../../Desktop/Mobile Demos/pojo"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +97,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0A08A61CF0FA2E000609E3 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				4A0A08A71CF10162000609E3 /* SlideOutMenuFiles */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		4A0A08A71CF10162000609E3 /* SlideOutMenuFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4A0A08A81CF10162000609E3 /* SWRevealViewController.h */,
+				4A0A08A91CF10162000609E3 /* SWRevealViewController.m */,
+			);
+			path = SlideOutMenuFiles;
+			sourceTree = "<group>";
+		};
+		4A0A08AB1CF103D9000609E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A0A08AC1CF103E5000609E3 /* SlideMenu */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4A0A08AC1CF103E5000609E3 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4A0A08AD1CF10413000609E3 /* SlideMenuTableViewController.h */,
+				4A0A08AE1CF10413000609E3 /* SlideMenuTableViewController.m */,
+			);
+			name = SlideMenu;
+			sourceTree = "<group>";
+		};
 		4AC6196B1CEF233F002D66EB = {
 			isa = PBXGroup;
 			children = (
+				4A0A08A61CF0FA2E000609E3 /* Libs */,
 				4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */,
 				4AC619761CEF2340002D66EB /* Etbo5ly */,
 				4AC619931CEF2341002D66EB /* Etbo5lyTests */,
@@ -112,12 +154,14 @@
 		4AC619761CEF2340002D66EB /* Etbo5ly */ = {
 			isa = PBXGroup;
 			children = (
-				B43B3CBA1CF0BAA10086761F /* pojo */,
+				4A0A08AB1CF103D9000609E3 /* Views */,
 				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
 				4AC6197B1CEF2340002D66EB /* AppDelegate.h */,
 				4AC6197C1CEF2340002D66EB /* AppDelegate.m */,
 				4AC619811CEF2340002D66EB /* ViewController.h */,
+				4A0A08B01CF10950000609E3 /* homePageViewController.h */,
+				4A0A08B11CF10950000609E3 /* homePageViewController.m */,
 				4AC619821CEF2340002D66EB /* ViewController.m */,
 				4AC619841CEF2340002D66EB /* Main.storyboard */,
 				4AC619871CEF2340002D66EB /* Images.xcassets */,
@@ -171,8 +215,8 @@
 				B43B3CA91CF0B8750086761F /* Catering.m */,
 				B43B3CAB1CF0B92E0086761F /* Cook.h */,
 				B43B3CAC1CF0B92E0086761F /* Cook.m */,
-				B43B3CAE1CF0B9490086761F /* Order.h */,
 				B43B3CAF1CF0B9490086761F /* Order.m */,
+				B43B3CAE1CF0B9490086761F /* Order.h */,
 				B43B3CB11CF0B96C0086761F /* OrderDetails.h */,
 				B43B3CB21CF0B96C0086761F /* OrderDetails.m */,
 				B43B3CB41CF0B9B60086761F /* MenuItems.h */,
@@ -264,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC619861CEF2340002D66EB /* Main.storyboard in Resources */,
-				B43B3CBB1CF0BAA10086761F /* pojo in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
@@ -290,12 +333,15 @@
 				B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
 				B43B3CA71CF0B8600086761F /* User.m in Sources */,
+				4A0A08AF1CF10413000609E3 /* SlideMenuTableViewController.m in Sources */,
+				4A0A08B21CF10950000609E3 /* homePageViewController.m in Sources */,
 				4AC619831CEF2340002D66EB /* ViewController.m in Sources */,
 				B43B3CAD1CF0B92E0086761F /* Cook.m in Sources */,
 				4AC6197A1CEF2340002D66EB /* main.m in Sources */,
 				B43B3CAA1CF0B8750086761F /* Catering.m in Sources */,
 				B43B3CB61CF0B9B60086761F /* MenuItems.m in Sources */,
 				B43B3CB31CF0B96C0086761F /* OrderDetails.m in Sources */,
+				4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

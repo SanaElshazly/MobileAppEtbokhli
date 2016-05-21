@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface Cook : NSObject
-
+#import "User.h"
+@interface Cook : User
+@property NSDate *startWorkingHours;
+@property NSDate * endWorkingHours;
+-(id)initWithInfo;
+-(id) initWithInfo:(int)userId :(id)setUserName :(NSString *)name :(id)setEmail :(NSString *)email :(id)setPassword :(NSString *)password :(id)setRegisterationDate :(NSDate *)registerationDate :(id)setPhone :(NSString *)phone :(id)setAddress :(NSString *)address :(id)setLongitude :(double)longitude :(id)setLatitude :(double)latitude : setStartWorkingHours : (NSDate *) startWorkingHours : setEndWorkingHours : (NSDate *) endWorkingHours;
 @end

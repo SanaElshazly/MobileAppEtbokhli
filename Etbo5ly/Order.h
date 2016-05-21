@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Order : NSObject
-
+@property int orderID;
+@property NSString *location;
+@property int duration;
+@property NSString * orderComment;
+@property int cookRating;
+@property NSString * cookComment;
+@property NSString * type;
+@property double longitude;
+@property double latitude;
 @end
