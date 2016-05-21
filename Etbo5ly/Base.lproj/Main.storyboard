@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="E7F-gi-fyL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4Mm-EA-mNe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="212" y="333"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="OUA-Wr-hPf">
+            <objects>
+                <viewController id="oyV-WB-aVn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RYm-KE-Jdf"/>
+                        <viewControllerLayoutGuide type="bottom" id="09M-S6-Hx5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vAt-9q-uTA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="OHz-Ly-3Pg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jd-4y-V2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="45"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="qcD-AS-Uqj">
+            <objects>
+                <viewController id="Aj5-uG-yEv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3pp-cf-HTx"/>
+                        <viewControllerLayoutGuide type="bottom" id="15E-Uo-qrb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UPE-AW-PIu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="pHn-Nn-oX2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqt-6m-DIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-617"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="92i-Sb-xru">
+            <objects>
+                <viewController id="y2J-vV-PAA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QP2-wp-XSk"/>
+                        <viewControllerLayoutGuide type="bottom" id="S4Q-Th-rrm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jX5-Ja-U5N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="LMR-dw-s7x"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0f8-H0-naa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="-873"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DxP-eb-Cl8">
+            <objects>
+                <tabBarController id="E7F-gi-fyL" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="e1F-Cn-vxd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Aj5-uG-yEv" kind="relationship" relationship="viewControllers" id="kOD-jG-rKS"/>
+                        <segue destination="oyV-WB-aVn" kind="relationship" relationship="viewControllers" id="kAW-k6-gpy"/>
+                        <segue destination="y2J-vV-PAA" kind="relationship" relationship="viewControllers" id="pyo-hm-sZR"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="jaU-LD-x1l"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbV-zF-Z0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="-223"/>
         </scene>
     </scenes>
 </document>
