@@ -3,6 +3,7 @@
     <entity name="Category" syncable="YES">
         <attribute name="category_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category_catering" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Catering" inverseName="catering_category" inverseEntity="Catering" syncable="YES"/>
         <relationship name="category_menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="categories" inverseEntity="Menu_items" syncable="YES"/>
     </entity>
     <entity name="Catering" syncable="YES">
@@ -12,6 +13,7 @@
         <attribute name="catering_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="delivery_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="open_time" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="catering_category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="category_catering" inverseEntity="Category" syncable="YES"/>
     </entity>
     <entity name="Cook" syncable="YES">
         <attribute name="end_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
@@ -28,6 +30,7 @@
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="category_menu_items" inverseEntity="Category" syncable="YES"/>
         <relationship name="cook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cook" inverseName="menu_items" inverseEntity="Cook" syncable="YES"/>
+        <relationship name="menuItem_OrderDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order_Details" inverseName="orderDetails_menuItem" inverseEntity="Order_Details" syncable="YES"/>
     </entity>
     <entity name="Order" syncable="YES">
         <attribute name="address_details" optional="YES" attributeType="String" syncable="YES"/>
@@ -47,6 +50,7 @@
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="orderDetails_menuItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="menuItem_OrderDetails" inverseEntity="Menu_items" syncable="YES"/>
         <relationship name="orderDetails_Order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="order_orderDetails" inverseEntity="Order" syncable="YES"/>
     </entity>
     <entity name="User" syncable="YES">
@@ -62,12 +66,12 @@
         <relationship name="user_order" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="order_user" inverseEntity="Order" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Catering" positionX="-2" positionY="270" width="128" height="135"/>
-        <element name="Order" positionX="-128" positionY="-37" width="128" height="208"/>
-        <element name="Order_Details" positionX="70" positionY="81" width="128" height="118"/>
-        <element name="User" positionX="-387" positionY="-99" width="128" height="195"/>
-        <element name="Category" positionX="-333" positionY="189" width="128" height="90"/>
+        <element name="Category" positionX="-333" positionY="189" width="128" height="103"/>
+        <element name="Catering" positionX="34" positionY="279" width="128" height="148"/>
         <element name="Cook" positionX="-254" positionY="-234" width="128" height="103"/>
-        <element name="Menu_items" positionX="88" positionY="-225" width="128" height="165"/>
+        <element name="Menu_items" positionX="88" positionY="-225" width="128" height="180"/>
+        <element name="Order" positionX="-128" positionY="-37" width="128" height="208"/>
+        <element name="Order_Details" positionX="70" positionY="81" width="128" height="135"/>
+        <element name="User" positionX="-387" positionY="-99" width="128" height="195"/>
     </elements>
 </model>
