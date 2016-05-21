@@ -17,6 +17,14 @@
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
+		B43B3CA71CF0B8600086761F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CA61CF0B8600086761F /* User.m */; };
+		B43B3CAA1CF0B8750086761F /* Catering.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CA91CF0B8750086761F /* Catering.m */; };
+		B43B3CAD1CF0B92E0086761F /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CAC1CF0B92E0086761F /* Cook.m */; };
+		B43B3CB01CF0B9490086761F /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CAF1CF0B9490086761F /* Order.m */; };
+		B43B3CB31CF0B96C0086761F /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB21CF0B96C0086761F /* OrderDetails.m */; };
+		B43B3CB61CF0B9B60086761F /* MenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB51CF0B9B60086761F /* MenuItems.m */; };
+		B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */; };
+		B43B3CBB1CF0BAA10086761F /* pojo in Resources */ = {isa = PBXBuildFile; fileRef = B43B3CBA1CF0BAA10086761F /* pojo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,21 @@
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
+		B43B3CA51CF0B8600086761F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B43B3CA61CF0B8600086761F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B43B3CA81CF0B8750086761F /* Catering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catering.h; sourceTree = "<group>"; };
+		B43B3CA91CF0B8750086761F /* Catering.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catering.m; sourceTree = "<group>"; };
+		B43B3CAB1CF0B92E0086761F /* Cook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cook.h; sourceTree = "<group>"; };
+		B43B3CAC1CF0B92E0086761F /* Cook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cook.m; sourceTree = "<group>"; };
+		B43B3CAE1CF0B9490086761F /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		B43B3CAF1CF0B9490086761F /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		B43B3CB11CF0B96C0086761F /* OrderDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetails.h; sourceTree = "<group>"; };
+		B43B3CB21CF0B96C0086761F /* OrderDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetails.m; sourceTree = "<group>"; };
+		B43B3CB41CF0B9B60086761F /* MenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItems.h; sourceTree = "<group>"; };
+		B43B3CB51CF0B9B60086761F /* MenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItems.m; sourceTree = "<group>"; };
+		B43B3CB71CF0BA7B0086761F /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDTO.h; sourceTree = "<group>"; };
+		B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDTO.m; sourceTree = "<group>"; };
+		B43B3CBA1CF0BAA10086761F /* pojo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pojo; path = "../../../Desktop/Mobile Demos/pojo"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +112,8 @@
 		4AC619761CEF2340002D66EB /* Etbo5ly */ = {
 			isa = PBXGroup;
 			children = (
+				B43B3CBA1CF0BAA10086761F /* pojo */,
+				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
 				4AC6197B1CEF2340002D66EB /* AppDelegate.h */,
 				4AC6197C1CEF2340002D66EB /* AppDelegate.m */,
@@ -127,6 +152,35 @@
 				4AC619951CEF2341002D66EB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B43B3C981CF0A8E20086761F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B43B3C991CF0A8EA0086761F /* pojos */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B43B3C991CF0A8EA0086761F /* pojos */ = {
+			isa = PBXGroup;
+			children = (
+				B43B3CA51CF0B8600086761F /* User.h */,
+				B43B3CA61CF0B8600086761F /* User.m */,
+				B43B3CA81CF0B8750086761F /* Catering.h */,
+				B43B3CA91CF0B8750086761F /* Catering.m */,
+				B43B3CAB1CF0B92E0086761F /* Cook.h */,
+				B43B3CAC1CF0B92E0086761F /* Cook.m */,
+				B43B3CAE1CF0B9490086761F /* Order.h */,
+				B43B3CAF1CF0B9490086761F /* Order.m */,
+				B43B3CB11CF0B96C0086761F /* OrderDetails.h */,
+				B43B3CB21CF0B96C0086761F /* OrderDetails.m */,
+				B43B3CB41CF0B9B60086761F /* MenuItems.h */,
+				B43B3CB51CF0B9B60086761F /* MenuItems.m */,
+				B43B3CB71CF0BA7B0086761F /* CategoryDTO.h */,
+				B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */,
+			);
+			name = pojos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC619861CEF2340002D66EB /* Main.storyboard in Resources */,
+				B43B3CBB1CF0BAA10086761F /* pojo in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
@@ -230,10 +285,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43B3CB01CF0B9490086761F /* Order.m in Sources */,
 				4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */,
+				B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
+				B43B3CA71CF0B8600086761F /* User.m in Sources */,
 				4AC619831CEF2340002D66EB /* ViewController.m in Sources */,
+				B43B3CAD1CF0B92E0086761F /* Cook.m in Sources */,
 				4AC6197A1CEF2340002D66EB /* main.m in Sources */,
+				B43B3CAA1CF0B8750086761F /* Catering.m in Sources */,
+				B43B3CB61CF0B9B60086761F /* MenuItems.m in Sources */,
+				B43B3CB31CF0B96C0086761F /* OrderDetails.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,10 +418,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -367,10 +432,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
 			};
 			name = Release;
 		};
