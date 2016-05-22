@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Etbo5lyNetworkDelegate.h"
 
+static id<Etbo5lyNetworkDelegate> networkDelegate;
 @interface Etbo5lyNetworkManager : NSObject
 
 
 @property NSMutableData *myData;
 
 
-@property id<Etbo5lyNetworkDelegate> networkDelegate;
+//@property id<Etbo5lyNetworkDelegate> networkDelegate;
 
 
 +(void) connect:(NSString*) url : (NSString*) serviceName :(Etbo5lyNetworkManager*) networkManager;

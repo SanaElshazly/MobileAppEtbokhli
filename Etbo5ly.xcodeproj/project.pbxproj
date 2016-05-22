@@ -14,7 +14,6 @@
 		4AC6197A1CEF2340002D66EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619791CEF2340002D66EB /* main.m */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
 		4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */; };
-		4AC619831CEF2340002D66EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619821CEF2340002D66EB /* ViewController.m */; };
 		4AC619861CEF2340002D66EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619841CEF2340002D66EB /* Main.storyboard */; };
 		4AC619881CEF2340002D66EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619871CEF2340002D66EB /* Images.xcassets */; };
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
@@ -61,8 +60,6 @@
 		4AC6197B1CEF2340002D66EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AC6197C1CEF2340002D66EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AC6197F1CEF2340002D66EB /* Etbo5ly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Etbo5ly.xcdatamodel; sourceTree = "<group>"; };
-		4AC619811CEF2340002D66EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4AC619821CEF2340002D66EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4AC619851CEF2340002D66EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AC619871CEF2340002D66EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4AC6198A1CEF2340002D66EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -187,10 +184,8 @@
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
 				4AC6197B1CEF2340002D66EB /* AppDelegate.h */,
 				4AC6197C1CEF2340002D66EB /* AppDelegate.m */,
-				4AC619811CEF2340002D66EB /* ViewController.h */,
 				4A0A08B01CF10950000609E3 /* homePageViewController.h */,
 				4A0A08B11CF10950000609E3 /* homePageViewController.m */,
-				4AC619821CEF2340002D66EB /* ViewController.m */,
 				4AC619841CEF2340002D66EB /* Main.storyboard */,
 				4AC619871CEF2340002D66EB /* Images.xcassets */,
 				4AC619891CEF2340002D66EB /* LaunchScreen.xib */,
@@ -399,7 +394,6 @@
 				CF15659B1CF14B2000628C89 /* AFHTTPSessionManager.m in Sources */,
 				CF1565A31CF14C2D00628C89 /* Etbo5lyNetworkManager.m in Sources */,
 				4A0A08B21CF10950000609E3 /* homePageViewController.m in Sources */,
-				4AC619831CEF2340002D66EB /* ViewController.m in Sources */,
 				CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */,
 				B43B3CAD1CF0B92E0086761F /* Cook.m in Sources */,
 				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,

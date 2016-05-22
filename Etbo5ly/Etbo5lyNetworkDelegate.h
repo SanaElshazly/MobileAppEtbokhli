@@ -10,6 +10,6 @@
 
 @protocol Etbo5lyNetworkDelegate <NSObject>
 
--(void) handle:(NSData*) dataRetreived :(NSString*) serviceName;
+-(void) handle:(id) dataRetreived :(NSString*) serviceName;
 
 @end

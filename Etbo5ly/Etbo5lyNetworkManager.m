@@ -16,6 +16,7 @@ static NSString *myServiceName;
 +(void)connect:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager*) networkManager{
     
     myServiceName = serviceName;
+    networkDelegate = networkManager;
     
     NSDictionary *parameters = @{@"format": @"json"};
     
@@ -27,11 +28,11 @@ static NSString *myServiceName;
         NSLog(@"JSON: %@", responseObject);
         
         //_myData = [NSMutableData new]
-        //[_networkDelegate handle: _myData :myServiceName];
+        [networkDelegate handle: responseObject :myServiceName];
         
         NSLog(@"*******************************");
         
-        
+        //handle callback
         //self.movies=[[NSMutableArray alloc]initWithArray:responseObject];
         
         
@@ -42,21 +43,9 @@ static NSString *myServiceName;
         //NSLog(@"Error: %@", error);
         NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
         //[_networkDelegate handle:nil :myServiceName];
+        //handle with failure
     }];
-    
-    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    //NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:networkManager];
-    
-    
-    //[connection start];
-    
-    
-    
-    
-
-    
-    
+  
 }
 
 @end
