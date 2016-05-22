@@ -17,6 +17,7 @@
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
 		B43D5F0C1CF1FBE7008F3F63 /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */; };
+		B43D5F0F1CF1FCC0008F3F63 /* homePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */; };
 		B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */; };
 		B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CE1CF1E80200BE850C /* Catering.m */; };
 		B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D01CF1E80200BE850C /* Cook.m */; };
@@ -25,7 +26,6 @@
 		B4CCD7DE1CF1E80200BE850C /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D61CF1E80200BE850C /* OrderDetails.m */; };
 		B4CCD7DF1CF1E80200BE850C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D81CF1E80200BE850C /* User.m */; };
 		B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E11CF1E8A100BE850C /* SlideMenuTableViewController.m */; };
-		B4CCD7E51CF1E8D900BE850C /* homePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E41CF1E8D900BE850C /* homePageViewController.m */; };
 		B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */; };
 		B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7EA1CF1E97000BE850C /* URLS.m */; };
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
@@ -64,6 +64,8 @@
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
 		B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ERD.jpeg; path = Views/ERD.jpeg; sourceTree = "<group>"; };
+		B43D5F0D1CF1FCC0008F3F63 /* homePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = homePageViewController.h; path = Views/ViewControllers/homePageViewController.h; sourceTree = "<group>"; };
+		B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = homePageViewController.m; path = Views/ViewControllers/homePageViewController.m; sourceTree = "<group>"; };
 		B4CCD7CB1CF1E80200BE850C /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDTO.h; path = Model/pojo/CategoryDTO.h; sourceTree = "<group>"; };
 		B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDTO.m; path = Model/pojo/CategoryDTO.m; sourceTree = "<group>"; };
 		B4CCD7CD1CF1E80200BE850C /* Catering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catering.h; path = Model/pojo/Catering.h; sourceTree = "<group>"; };
@@ -80,8 +82,6 @@
 		B4CCD7D81CF1E80200BE850C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/pojo/User.m; sourceTree = "<group>"; };
 		B4CCD7E01CF1E8A100BE850C /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuTableViewController.h; path = Views/SlideMenu/SlideMenuTableViewController.h; sourceTree = "<group>"; };
 		B4CCD7E11CF1E8A100BE850C /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideMenuTableViewController.m; path = Views/SlideMenu/SlideMenuTableViewController.m; sourceTree = "<group>"; };
-		B4CCD7E31CF1E8D900BE850C /* homePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = homePageViewController.h; path = Views/homePageViewController.h; sourceTree = "<group>"; };
-		B4CCD7E41CF1E8D900BE850C /* homePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = homePageViewController.m; path = Views/homePageViewController.m; sourceTree = "<group>"; };
 		B4CCD7E61CF1E97000BE850C /* Etbo5lyNetworkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyNetworkDelegate.h; path = Model/NetworkManager/Etbo5lyNetworkDelegate.h; sourceTree = "<group>"; };
 		B4CCD7E71CF1E97000BE850C /* Etbo5lyNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyNetworkManager.h; path = Model/NetworkManager/Etbo5lyNetworkManager.h; sourceTree = "<group>"; };
 		B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Etbo5lyNetworkManager.m; path = Model/NetworkManager/Etbo5lyNetworkManager.m; sourceTree = "<group>"; };
@@ -143,9 +143,8 @@
 		4A0A08AB1CF103D9000609E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B43D5F101CF1FCC7008F3F63 /* ViewControllers */,
 				B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */,
-				B4CCD7E31CF1E8D900BE850C /* homePageViewController.h */,
-				B4CCD7E41CF1E8D900BE850C /* homePageViewController.m */,
 				4A0A08AC1CF103E5000609E3 /* SlideMenu */,
 			);
 			name = Views;
@@ -251,6 +250,15 @@
 				B4CCD7D81CF1E80200BE850C /* User.m */,
 			);
 			name = pojo;
+			sourceTree = "<group>";
+		};
+		B43D5F101CF1FCC7008F3F63 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B43D5F0D1CF1FCC0008F3F63 /* homePageViewController.h */,
+				B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CF1565821CF1411A00628C89 /* NetworkManager */ = {
@@ -399,8 +407,8 @@
 				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,
 				CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */,
 				B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */,
-				B4CCD7E51CF1E8D900BE850C /* homePageViewController.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
+				B43D5F0F1CF1FCC0008F3F63 /* homePageViewController.m in Sources */,
 				B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */,
 				CF15659F1CF14B2000628C89 /* AFURLResponseSerialization.m in Sources */,
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,
