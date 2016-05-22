@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface homePageViewController : UITabBarController
+@interface TabBarViewController : UITabBarController
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *viewSlideMenuButtonItem;
 
 @end

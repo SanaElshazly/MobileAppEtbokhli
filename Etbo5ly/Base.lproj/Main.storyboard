@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="-146" y="-829"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="S1I-ta-hHo">
             <objects>
-                <viewController id="nKw-vd-mUf" sceneMemberID="viewController">
+                <viewController id="nKw-vd-mUf" customClass="HomePageTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ri4-qd-D8P"/>
                         <viewControllerLayoutGuide type="bottom" id="3WL-bS-2WW"/>
@@ -138,9 +138,47 @@
                     <view key="view" contentMode="scaleToFill" id="kDV-w0-EW2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k18-kF-LeY">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3Ql-L0-F2b">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ql-L0-F2b" id="ihY-rv-3n4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nKw-vd-mUf" id="hcL-er-GO4"/>
+                                    <outlet property="delegate" destination="nKw-vd-mUf" id="jx8-Gc-q5I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="HBB-yp-Tax"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="HBB-yp-Tax"/>
+                    <navigationItem key="navigationItem" id="TsB-A8-4ru">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="vLR-XL-EVQ">
+                            <rect key="frame" x="75" y="7" width="170" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Cooks"/>
+                                <segment title="Meals"/>
+                            </segments>
+                            <connections>
+                                <action selector="changeMenuOption:" destination="nKw-vd-mUf" eventType="valueChanged" id="eD7-2z-Zuy"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dataTableView" destination="k18-kF-LeY" id="vTb-FW-swU"/>
+                        <outlet property="menuOptions" destination="vLR-XL-EVQ" id="OQY-mI-3h5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1d-Gw-jwL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="1408" y="-172"/>
         </scene>
-        <!--Item-->
+        <!--item-->
         <scene sceneID="gez-v7-34a">
             <objects>
                 <viewController id="cLB-b3-l51" sceneMemberID="viewController">
@@ -197,7 +235,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ycn-ot-rXk"/>
+                    <tabBarItem key="tabBarItem" title="item" id="ycn-ot-rXk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AU8-LW-y8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="-700" y="-78"/>
         </scene>
-        <!--Home Page View Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="P2L-pT-BgB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CJa-Uq-1dJ" customClass="homePageViewController" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="CJa-Uq-1dJ" customClass="TabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="v31-m5-PiS">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="fNi-qv-GMI"/>

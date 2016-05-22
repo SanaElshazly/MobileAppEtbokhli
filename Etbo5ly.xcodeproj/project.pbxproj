@@ -16,8 +16,8 @@
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
-		B43D5F0C1CF1FBE7008F3F63 /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */; };
-		B43D5F0F1CF1FCC0008F3F63 /* homePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */; };
+		B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */; };
+		B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */; };
 		B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */; };
 		B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CE1CF1E80200BE850C /* Catering.m */; };
 		B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D01CF1E80200BE850C /* Cook.m */; };
@@ -63,9 +63,10 @@
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
-		B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ERD.jpeg; path = Views/ERD.jpeg; sourceTree = "<group>"; };
-		B43D5F0D1CF1FCC0008F3F63 /* homePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = homePageViewController.h; path = Views/ViewControllers/homePageViewController.h; sourceTree = "<group>"; };
-		B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = homePageViewController.m; path = Views/ViewControllers/homePageViewController.m; sourceTree = "<group>"; };
+		B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = Views/ViewControllers/TabBarViewController.h; sourceTree = "<group>"; };
+		B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Views/ViewControllers/TabBarViewController.m; sourceTree = "<group>"; };
+		B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewController.h; path = Views/ViewControllers/HomePageTableViewController.h; sourceTree = "<group>"; };
+		B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageTableViewController.m; path = Views/ViewControllers/HomePageTableViewController.m; sourceTree = "<group>"; };
 		B4CCD7CB1CF1E80200BE850C /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDTO.h; path = Model/pojo/CategoryDTO.h; sourceTree = "<group>"; };
 		B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDTO.m; path = Model/pojo/CategoryDTO.m; sourceTree = "<group>"; };
 		B4CCD7CD1CF1E80200BE850C /* Catering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catering.h; path = Model/pojo/Catering.h; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				B43D5F101CF1FCC7008F3F63 /* ViewControllers */,
-				B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */,
 				4A0A08AC1CF103E5000609E3 /* SlideMenu */,
 			);
 			name = Views;
@@ -255,8 +255,10 @@
 		B43D5F101CF1FCC7008F3F63 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B43D5F0D1CF1FCC0008F3F63 /* homePageViewController.h */,
-				B43D5F0E1CF1FCC0008F3F63 /* homePageViewController.m */,
+				B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */,
+				B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */,
+				B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */,
+				B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -374,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC619861CEF2340002D66EB /* Main.storyboard in Resources */,
-				B43D5F0C1CF1FBE7008F3F63 /* ERD.jpeg in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
@@ -402,13 +403,14 @@
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
 				CF15659B1CF14B2000628C89 /* AFHTTPSessionManager.m in Sources */,
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
+				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
 				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
 				CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */,
 				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,
 				CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */,
 				B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
-				B43D5F0F1CF1FCC0008F3F63 /* homePageViewController.m in Sources */,
+				B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */,
 				B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */,
 				CF15659F1CF14B2000628C89 /* AFURLResponseSerialization.m in Sources */,
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,

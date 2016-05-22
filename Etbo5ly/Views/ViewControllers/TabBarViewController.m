@@ -6,13 +6,13 @@
 //  Copyright (c) 2016 JETS. All rights reserved.
 //
 
-#import "homePageViewController.h"
+#import "TabBarViewController.h"
 #import "SWRevealViewController.h"
-@interface homePageViewController ()
+@interface TabBarViewController ()
 
 @end
 
-@implementation homePageViewController
+@implementation TabBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,6 +20,7 @@
     _viewSlideMenuButtonItem.target=self.revealViewController;
     _viewSlideMenuButtonItem.action=@selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
 
 }
 
