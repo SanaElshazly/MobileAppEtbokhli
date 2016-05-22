@@ -16,6 +16,7 @@
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
+		B43D5F0C1CF1FBE7008F3F63 /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */; };
 		B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */; };
 		B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CE1CF1E80200BE850C /* Catering.m */; };
 		B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D01CF1E80200BE850C /* Cook.m */; };
@@ -62,6 +63,7 @@
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
+		B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ERD.jpeg; path = Views/ERD.jpeg; sourceTree = "<group>"; };
 		B4CCD7CB1CF1E80200BE850C /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDTO.h; path = Model/pojo/CategoryDTO.h; sourceTree = "<group>"; };
 		B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDTO.m; path = Model/pojo/CategoryDTO.m; sourceTree = "<group>"; };
 		B4CCD7CD1CF1E80200BE850C /* Catering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catering.h; path = Model/pojo/Catering.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		4A0A08AB1CF103D9000609E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B43D5F0B1CF1FBE7008F3F63 /* ERD.jpeg */,
 				B4CCD7E31CF1E8D900BE850C /* homePageViewController.h */,
 				B4CCD7E41CF1E8D900BE850C /* homePageViewController.m */,
 				4A0A08AC1CF103E5000609E3 /* SlideMenu */,
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC619861CEF2340002D66EB /* Main.storyboard in Resources */,
+				B43D5F0C1CF1FBE7008F3F63 /* ERD.jpeg in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
