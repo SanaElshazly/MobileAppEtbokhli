@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
+//    [Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
     [self getCooksListDataService ];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,20 +38,22 @@
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     //[spinner startAnimating];
-    
+    NSLog(@"d5l fun get cooks");
     
     NSString *serviceName=@"allCooks";
     NSString *serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:1]];
+    NSLog(serviceURL);
     
     homePageNetworkManager = [Etbo5lyNetworkManager new];
     
-    homePageNetworkManager = networkDelegate.self;
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL :serviceName :homePageNetworkManager];
+    //homePageNetworkManager = networkDelegate.self;
+    [Etbo5lyNetworkManager connectGET:serviceURL :serviceName :networkDelegate.self];
+    NSLog(@"geh fe akhr");
 }
 
 -(void)handle:(id)dataRetreived :(NSString *)serviceName{
 
+    NSLog(@"handle function");
     cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
 }
 
@@ -68,6 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
+    NSLog(@"numberOfRowsInSection function");
     NSInteger arrayLength=0;
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
@@ -87,6 +90,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"cellForRowAtIndexPath function");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     
     if(!cell)
@@ -98,7 +103,7 @@
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             //cell.textLabel.text=cooks[indexPath.row];
-            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"cookName"];
+            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
             break;
             
         case 1:
