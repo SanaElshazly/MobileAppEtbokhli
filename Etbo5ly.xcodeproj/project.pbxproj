@@ -246,11 +246,11 @@
 				B43B3CAF1CF0B9490086761F /* Order.m */,
 				B43B3CAE1CF0B9490086761F /* Order.h */,
 				B43B3CB11CF0B96C0086761F /* OrderDetails.h */,
+				B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */,
 				B43B3CB21CF0B96C0086761F /* OrderDetails.m */,
 				B43B3CB41CF0B9B60086761F /* MenuItems.h */,
 				B43B3CB51CF0B9B60086761F /* MenuItems.m */,
 				B43B3CB71CF0BA7B0086761F /* CategoryDTO.h */,
-				B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */,
 			);
 			name = pojos;
 			sourceTree = "<group>";

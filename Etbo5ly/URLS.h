@@ -18,7 +18,7 @@ static NSString *urlPath;
 +(NSString *)allMeals : (int) pagenum;
 +(NSString *)allCooks : (int) pagenum;
 +(NSString *)regionBasedCooks : (int) regionID;
-+(NSString *)locationBasedCooks : (long) longitude : (long) latitude;
++(NSString *)locationBasedCooks : (double) longitude : (double) latitude;
 +(NSString *)countriesWithRegions;
 
 @end

@@ -21,7 +21,6 @@ static NSString *myServiceName;
     
     
     NSURL *requestURL = [NSURL URLWithString:url];
-    
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
     
     [manager GET:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {

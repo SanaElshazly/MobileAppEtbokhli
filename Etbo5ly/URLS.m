@@ -38,13 +38,12 @@
     return urlPath;
 }
 
-+(NSString *)locationBasedCooks : (long) longitude : (long) latitude {
++(NSString *)locationBasedCooks : (double) longitude : (double) latitude {
     
     //Etbo5ly-Web/rest/cook/nearbyCooks2?long=30.975534&latit=30.059376
     
-    urlPath = [NSString stringWithFormat:@" %s %ld %ld", "http://www.mobiledeveloperweekend.net/service/getSessions?page=", longitude, latitude ];
+    urlPath = [NSString stringWithFormat:@" %s %f %f ", "http://www.mobiledeveloperweekend.net/service/getSessions?page=", longitude, latitude ];
     return urlPath;
-    return @"http://www.mobiledeveloperweekend.net/service/attendAttendee?";
 }
 
 +(NSString *)regionBasedCooks : (int) regionID {
@@ -53,7 +52,6 @@
     
     urlPath = [NSString stringWithFormat:@" %s %d", "http://www.mobiledeveloperweekend.net/service/getSessions?region=", regionID ];
     return urlPath;
-    return @"http://www.mobiledeveloperweekend.net/service/attendAttendee?";
 }
 
 +(NSString *)countriesWithRegions{
