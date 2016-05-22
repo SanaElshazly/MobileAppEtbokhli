@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface OrderDetails : NSObject
-
+@property int quantity;
+@property float price;
+@property int rating;
+@property NSString * comment;
 @end

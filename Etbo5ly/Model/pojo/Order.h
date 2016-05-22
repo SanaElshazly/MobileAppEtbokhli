@@ -18,4 +18,6 @@
 @property NSString * type;
 @property double longitude;
 @property double latitude;
+-(id) initWithInfo;
+-(id) initWithInfo : (int) orderID setLocation : (NSString*) location setDuration : (int) duration setOrderComment : (NSString * ) orderComment setCookRating : (int) cookRating setCookComment : (NSString*) cookComment setType : (NSString *)type setLongitude : (double) longitude setLatitude : (double) latitude;
 @end

@@ -2,8 +2,8 @@
 //  main.m
 //  Etbo5ly
 //
-//  Created by ITI on 5/20/16.
-//  Copyright (c) 2016 JETS. All rights reserved.
+//  Created by MDW Event on 5/22/16.
+//  Copyright © 2016 JETS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

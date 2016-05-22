@@ -7,7 +7,7 @@
 //
 
 #import "SlideMenuTableViewController.h"
-
+#import "SWRevealViewController.h"
 @interface SlideMenuTableViewController ()
 
 @end
@@ -42,7 +42,20 @@
     
     return cell;
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue isKindOfClass:[SWRevealViewControllerSegue class]])
+    {
+        SWRevealViewControllerSegue *swSegue=(SWRevealViewControllerSegue*) segue;
+        swSegue.performBlock=^(SWRevealViewControllerSegue * rvc_segue,UIViewController* svc,UIViewController* dvc)
+        {
+            UINavigationController *nevController=(UINavigationController*)self.revealViewController.frontViewController;
+            [nevController setViewControllers:@[dvc] animated:NO];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated:YES];
+        };
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

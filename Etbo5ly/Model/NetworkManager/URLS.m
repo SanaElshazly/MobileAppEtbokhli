@@ -26,15 +26,15 @@
     
     //Etbo5ly-Web/rest/meal/page?page=1
     
-    urlPath = [NSString stringWithFormat:@"%@%d", @"http://www.mobiledeveloperweekend.net/service/getSessions?page=", pagenum ];
+    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"meal/page?page=", pagenum ];
     return urlPath;
 }
 
 +(NSString *) allCooks : (int) pagenum{
     
-    //Etbo5ly-Web/rest/cook/page?page=1
+    //http://localhost:8084/Etbo5ly-Web/rest/cook/page?page=1
     
-    urlPath = [NSString stringWithFormat:@"%@%d", @"http://www.mobiledeveloperweekend.net/service/getSessions?page=", pagenum ];
+    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS, @"cook/page?page=", pagenum ];
     return urlPath;
 }
 
@@ -42,7 +42,7 @@
     
     //Etbo5ly-Web/rest/cook/nearbyCooks2?long=30.975534&latit=30.059376
     
-    urlPath = [NSString stringWithFormat:@"%@%f%f", @"http://www.mobiledeveloperweekend.net/service/getSessions?page=", longitude, latitude ];
+    urlPath = [NSString stringWithFormat:@"%@%@%f%f", IP_ADDRESS ,@"cook/nearbyCooks2?long=30.975534&latit=30.059376", longitude, latitude ];
     return urlPath;
 }
 
@@ -50,7 +50,7 @@
     
     //Etbo5ly-Web/rest/cook/byRegion?region=7
     
-    urlPath = [NSString stringWithFormat:@"%@%d", @"http://www.mobiledeveloperweekend.net/service/getSessions?region=", regionID ];
+    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"cook/byRegion?region=", regionID ];
     return urlPath;
 }
 
@@ -58,7 +58,8 @@
     
     //Etbo5ly-Web/rest/region/countries
     
-    return @"http://www.mobiledeveloperweekend.net/service/getAttendeeAgenda?";
+    urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"region/countries" ];
+    return urlPath;
 }
 
 

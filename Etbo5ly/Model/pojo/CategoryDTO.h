@@ -16,5 +16,5 @@
     @property NSString * nameEn;
 
 -(id) initWithInfo;
--(id) initWithInfo : (int) categoryId setCategoryName: (NSString*) nameEn;
+-(id) initWithInfo : (int) categoryId setCategoryName :(NSString*) nameEn;
 @end

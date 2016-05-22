@@ -14,7 +14,7 @@
     self = [super init];
     return self;
 }
--(id)initWithInfo:(int)userId :(id)setUserName :(NSString *)name :(id)setEmail :(NSString *)email :(id)setPassword :(NSString *)password :(id)setRegisterationDate :(NSDate *)registerationDate :(id)setPhone :(NSString *)phone :(id)setAddress :(NSString *)address :(id)setLongitude :(double)longitude :(id)setLatitude :(double)latitude
+-(id)initWithInfo:(int)userId setUserName:(NSString *)name setEmail:(NSString *)email setPassword:(NSString *)password setRegisterationDate:(NSDate *)registerationDate setPhone:(NSString *)phone setAddress:(NSString *)address setLongitude:(double)longitude setLatitude:(double)latitude
 {
     self = [super init];
     if (self) {
