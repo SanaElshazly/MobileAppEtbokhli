@@ -27,6 +27,7 @@
 		B43B3CB31CF0B96C0086761F /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB21CF0B96C0086761F /* OrderDetails.m */; };
 		B43B3CB61CF0B9B60086761F /* MenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB51CF0B9B60086761F /* MenuItems.m */; };
 		B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */; };
+		CF1565861CF141A300628C89 /* URLS.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565851CF141A300628C89 /* URLS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		B43B3CB51CF0B9B60086761F /* MenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItems.m; sourceTree = "<group>"; };
 		B43B3CB71CF0BA7B0086761F /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDTO.h; sourceTree = "<group>"; };
 		B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDTO.m; sourceTree = "<group>"; };
+		CF1565841CF141A300628C89 /* URLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLS.h; sourceTree = "<group>"; };
+		CF1565851CF141A300628C89 /* URLS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 		4AC619761CEF2340002D66EB /* Etbo5ly */ = {
 			isa = PBXGroup;
 			children = (
+				CF1565821CF1411A00628C89 /* NetworkManager */,
 				4A0A08AB1CF103D9000609E3 /* Views */,
 				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
@@ -225,6 +229,15 @@
 				B43B3CB81CF0BA7B0086761F /* CategoryDTO.m */,
 			);
 			name = pojos;
+			sourceTree = "<group>";
+		};
+		CF1565821CF1411A00628C89 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF1565841CF141A300628C89 /* URLS.h */,
+				CF1565851CF141A300628C89 /* URLS.m */,
+			);
+			name = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +346,7 @@
 				B43B3CB91CF0BA7B0086761F /* CategoryDTO.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
 				B43B3CA71CF0B8600086761F /* User.m in Sources */,
+				CF1565861CF141A300628C89 /* URLS.m in Sources */,
 				4A0A08AF1CF10413000609E3 /* SlideMenuTableViewController.m in Sources */,
 				4A0A08B21CF10950000609E3 /* homePageViewController.m in Sources */,
 				4AC619831CEF2340002D66EB /* ViewController.m in Sources */,
