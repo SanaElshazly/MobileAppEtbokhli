@@ -8,16 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *urlPath;
+static NSString *urlPath;
 
 @interface URLS : NSObject
 
 +(NSString *)login;
-+(NSString *)allMeals : (int) pagenum;
-+(NSString *)allCooks;
-+(NSString *)profile;
 +(NSString *)registeration;
-+(NSString *)regionBasedCooks;
-+(NSString *)locationBasedCooks;
++(NSString *)profile;
++(NSString *)allMeals : (int) pagenum;
++(NSString *)allCooks : (int) pagenum;
++(NSString *)regionBasedCooks : (int) regionID;
++(NSString *)locationBasedCooks : (long) longitude : (long) latitude;
++(NSString *)countriesWithRegions;
 
 @end

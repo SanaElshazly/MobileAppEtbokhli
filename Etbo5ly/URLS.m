@@ -11,25 +11,55 @@
 @implementation URLS
 
 +(NSString *)login{
-    return @"http://www.mobiledeveloperweekend.net/service/login?";
+    return @"url";
 }
+
++(NSString *)registeration{
+    return @"url";
+}
+
++(NSString *)profile{
+    return @"url";
+}
+
 +(NSString *) allMeals : (int) pagenum{
+    
+    //Etbo5ly-Web/rest/meal/page?page=1
+    
     urlPath = [NSString stringWithFormat:@" %s %d", "http://www.mobiledeveloperweekend.net/service/getSessions?page=", pagenum ];
     return urlPath;
 }
-+(NSString *)allCooks{
-    return @"http://www.mobiledeveloperweekend.net/service/getSpeakers?";
+
++(NSString *) allCooks : (int) pagenum{
+    
+    //Etbo5ly-Web/rest/cook/page?page=1
+    
+    urlPath = [NSString stringWithFormat:@" %s %d", "http://www.mobiledeveloperweekend.net/service/getSessions?page=", pagenum ];
+    return urlPath;
 }
-+(NSString *)profile{
-    return @"http://www.mobiledeveloperweekend.net/service/getAttendeeProfile?";
-}
-+(NSString *)registeration{
-    return @"http://www.mobiledeveloperweekend.net/service/profileImage?";
-}
-+(NSString *)locationBasedCooks{
+
++(NSString *)locationBasedCooks : (long) longitude : (long) latitude {
+    
+    //Etbo5ly-Web/rest/cook/nearbyCooks2?long=30.975534&latit=30.059376
+    
+    urlPath = [NSString stringWithFormat:@" %s %ld %ld", "http://www.mobiledeveloperweekend.net/service/getSessions?page=", longitude, latitude ];
+    return urlPath;
     return @"http://www.mobiledeveloperweekend.net/service/attendAttendee?";
 }
-+(NSString *)regionBasedCooks{
+
++(NSString *)regionBasedCooks : (int) regionID {
+    
+    //Etbo5ly-Web/rest/cook/byRegion?region=7
+    
+    urlPath = [NSString stringWithFormat:@" %s %d", "http://www.mobiledeveloperweekend.net/service/getSessions?region=", regionID ];
+    return urlPath;
+    return @"http://www.mobiledeveloperweekend.net/service/attendAttendee?";
+}
+
++(NSString *)countriesWithRegions{
+    
+    //Etbo5ly-Web/rest/region/countries
+    
     return @"http://www.mobiledeveloperweekend.net/service/getAttendeeAgenda?";
 }
 
