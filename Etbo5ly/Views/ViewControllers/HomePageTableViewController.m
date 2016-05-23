@@ -17,22 +17,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self getCooksListDataService ];
+
+    // Setting Up Table View
+    self.dataTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    self.dataTableView.dataSource = self;
+    self.dataTableView.delegate = self;
+    self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //self.dataTableView.hidden = YES;
+    [self.view addSubview:self.dataTableView];
+    
+    
     //[Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
-    switch (self.menuOptions.selectedSegmentIndex) {
-        case 0:
-            [self getCooksListDataService ];
-            break;
-        case 1 :
-            break;
-        default:
-            break;
-    }
+//    switch (self.menuOptions.selectedSegmentIndex) {
+//        case 0:
+//            [self getCooksListDataService ];
+//            break;
+//        case 1 :
+//            break;
+//        default:
+//            break;
+//    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.dataTableView reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +80,8 @@
 
     NSLog(@"handle function");
     cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
+    NSLog(@"cooks data %@", cooks );
+    [_dataTableView reloadData];
 }
 
 -(void)handleWithFailure:(NSError *)error{
@@ -73,18 +90,22 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"numberOfSectionsInTableView function");
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"numberOfRowsInSection function");
     NSInteger arrayLength=0;
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             arrayLength = [cooks count];
+            NSLog(@"arrayLength of cooks %d", arrayLength);
             break;
             
         case 1:
             arrayLength = [meals count];
+            NSLog(@"arrayLength of meals %d", arrayLength);
             break;
             
         default:
@@ -98,27 +119,34 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"cellForRowAtIndexPath function");
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+    
+    static NSString *cellID = @"CellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
     
     if(!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CellIdentifier" ];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     // Configure the cell...
     
-    switch (self.menuOptions.selectedSegmentIndex) {
-        case 0:
-            //cell.textLabel.text=cooks[indexPath.row];
-            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
-            break;
-            
-        case 1:
-            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"cookName"];
-            break;
-            
-        default:
-            break;
-    }
+    cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+
+//    switch (self.menuOptions.selectedSegmentIndex) {
+//        case 0:
+//            //cell.textLabel.text=cooks[indexPath.row];
+//            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+//            break;
+//            
+//        case 1:
+//            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"cookName"];
+//            break;
+//            
+//        default:
+//            break;
+//    }
     
     return cell;
 }
