@@ -12,7 +12,8 @@
 
 @implementation Etbo5lyNetworkManager
 
-+(void)connectGET:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager*) networkManager{
++(void)connectGET:(NSString *)url setServiceName:(NSString *)serviceName setServiceNetworkManager:(Etbo5lyNetworkManager *)networkManager
+{
     
     myServiceName = serviceName;
     networkDelegate = networkManager;

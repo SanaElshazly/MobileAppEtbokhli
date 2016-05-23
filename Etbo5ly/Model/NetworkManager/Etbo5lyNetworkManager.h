@@ -18,7 +18,7 @@ static NSString *myServiceName;
 //@property id<Etbo5lyNetworkDelegate> networkDelegate;
 
 
-+(void) connectGET:(NSString*) url : (NSString*) serviceName :(Etbo5lyNetworkManager*) networkManager;
++(void) connectGET:(NSString*) url setServiceName: (NSString*) serviceName setServiceNetworkManager:(Etbo5lyNetworkManager*) networkManager;
 
 +(void) connectPOST:(NSString*) url : (NSString*) serviceName :(Etbo5lyNetworkManager*) networkManager;
 

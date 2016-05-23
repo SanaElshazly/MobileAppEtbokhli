@@ -17,8 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
-    [self getCooksListDataService ];
+    //[Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
+    switch (self.menuOptions.selectedSegmentIndex) {
+        case 0:
+            [self getCooksListDataService ];
+            break;
+        case 1 :
+            break;
+        default:
+            break;
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,11 +52,12 @@
     NSString *serviceName=@"allCooks";
     NSString *serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:1]];
     
-    homePageNetworkManager = [Etbo5lyNetworkManager new];
+//    homePageNetworkManager = [Etbo5lyNetworkManager new];
+//    
+//    homePageNetworkManager = networkDelegate.self;
+    networkDelegate=self;
     
-    homePageNetworkManager = networkDelegate.self;
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL :serviceName :homePageNetworkManager];
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
 }
 
 -(void)handle:(id)dataRetreived :(NSString *)serviceName{
@@ -59,15 +69,12 @@
     NSLog(@"ERRORRRRR");
 }
 
-//#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
     NSInteger arrayLength=0;
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
