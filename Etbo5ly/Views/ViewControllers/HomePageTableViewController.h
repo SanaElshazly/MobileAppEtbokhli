@@ -11,12 +11,13 @@
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
 
-@interface HomePageTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, Etbo5lyNetworkDelegate>
+@interface HomePageTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
-    Etbo5lyNetworkManager *homePageNetworkManager;
     NSMutableArray *meals;
     NSMutableArray *cooks;
 }
+@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
+- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
 
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;

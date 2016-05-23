@@ -17,19 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 435)];
+    scroll.contentSize = CGSizeMake(320, 700);
+    scroll.showsHorizontalScrollIndicator = YES;
+    
+    NSArray *itemArray = [NSArray arrayWithObjects: @"Cooks", @"Meals", nil];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
+    segmentedControl.frame = CGRectMake(100, 5, 100, 30);
+ 
+    segmentedControl.selectedSegmentIndex = 1;
+    [scroll addSubview:segmentedControl];
+    [self.view addSubview:scroll];
     
     [self getCooksListDataService ];
-
-    // Setting Up Table View
-    self.dataTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
-    self.dataTableView.dataSource = self;
-    self.dataTableView.delegate = self;
-    self.dataTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    //self.dataTableView.hidden = YES;
-    [self.view addSubview:self.dataTableView];
-    
-    
-    //[Etbo5lyNetworkManager connectGET:@"meal/page?page=1" :@"meals" :self];
 //    switch (self.menuOptions.selectedSegmentIndex) {
 //        case 0:
 //            [self getCooksListDataService ];
@@ -39,15 +39,6 @@
 //        default:
 //            break;
 //    }
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self.dataTableView reloadData];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,8 +50,8 @@
 -(void) getCooksListDataService {
     
     
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     //[spinner startAnimating];
     NSLog(@"d5l fun get cooks");
     
@@ -97,20 +88,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection function");
     NSInteger arrayLength=0;
-    switch (self.menuOptions.selectedSegmentIndex) {
-        case 0:
-            arrayLength = [cooks count];
-            NSLog(@"arrayLength of cooks %d", arrayLength);
-            break;
-            
-        case 1:
-            arrayLength = [meals count];
-            NSLog(@"arrayLength of meals %d", arrayLength);
-            break;
-            
-        default:
-            break;
-    }
+    arrayLength = [cooks count];
+//    switch (self.menuOptions.selectedSegmentIndex) {
+//        case 0:
+//            arrayLength = [cooks count];
+//            NSLog(@"arrayLength of cooks %d", arrayLength);
+//            break;
+//            
+//        case 1:
+//            arrayLength = [meals count];
+//            NSLog(@"arrayLength of meals %d", arrayLength);
+//            break;
+//            
+//        default:
+//            break;
+//    }
     return arrayLength;
 }
 
@@ -121,7 +113,7 @@
     NSLog(@"cellForRowAtIndexPath function");
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     
-    static NSString *cellID = @"CellIdentifier";
+    static NSString *cellID = @"";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
@@ -131,8 +123,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     // Configure the cell...
-    
-    cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSString * str=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+    NSLog(@"%@",str);
+    cell.textLabel.text=str;
 
 //    switch (self.menuOptions.selectedSegmentIndex) {
 //        case 0:
@@ -198,6 +191,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 @end
