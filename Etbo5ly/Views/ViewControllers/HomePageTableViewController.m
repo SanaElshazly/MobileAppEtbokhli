@@ -47,10 +47,11 @@
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     //[spinner startAnimating];
-    
+    NSLog(@"d5l fun get cooks");
     
     NSString *serviceName=@"allCooks";
     NSString *serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:1]];
+    NSLog(serviceURL);
     
 //    homePageNetworkManager = [Etbo5lyNetworkManager new];
 //    
@@ -62,6 +63,7 @@
 
 -(void)handle:(id)dataRetreived :(NSString *)serviceName{
 
+    NSLog(@"handle function");
     cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
 }
 
@@ -94,6 +96,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"cellForRowAtIndexPath function");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     
     if(!cell)
@@ -105,7 +109,7 @@
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             //cell.textLabel.text=cooks[indexPath.row];
-            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"cookName"];
+            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
             break;
             
         case 1:
