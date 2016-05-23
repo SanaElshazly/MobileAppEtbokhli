@@ -16,8 +16,8 @@
     NSMutableArray *meals;
     NSMutableArray *cooks;
 }
-@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
-- (IBAction)refresh:(id)sender;
+//@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
+//- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
 
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;
