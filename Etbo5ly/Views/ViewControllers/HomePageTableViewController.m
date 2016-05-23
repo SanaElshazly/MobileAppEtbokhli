@@ -17,18 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 435)];
-    scroll.contentSize = CGSizeMake(320, 700);
-    scroll.showsHorizontalScrollIndicator = YES;
-    
-    NSArray *itemArray = [NSArray arrayWithObjects: @"Cooks", @"Meals", nil];
-    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
-    segmentedControl.frame = CGRectMake(100, 5, 100, 30);
- 
-    segmentedControl.selectedSegmentIndex = 1;
-    [scroll addSubview:segmentedControl];
-    [self.view addSubview:scroll];
-    
+      
     [self getCooksListDataService ];
 //    switch (self.menuOptions.selectedSegmentIndex) {
 //        case 0:

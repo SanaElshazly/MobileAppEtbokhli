@@ -11,7 +11,7 @@
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
 
-@interface HomePageTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
+@interface HomePageTableViewController : UIViewController <Etbo5lyNetworkDelegate , UITableViewDataSource ,UITableViewDelegate>
 {
     NSMutableArray *meals;
     NSMutableArray *cooks;

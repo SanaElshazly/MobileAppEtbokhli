@@ -14,7 +14,6 @@
 
 +(void)connectGET:(NSString *)url setServiceName:(NSString *)serviceName setServiceNetworkManager:(Etbo5lyNetworkManager *)networkManager
 {
-    
     myServiceName = serviceName;
     networkDelegate = networkManager;
     

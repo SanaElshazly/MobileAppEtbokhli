@@ -29,6 +29,7 @@
 		B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */; };
 		B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7EA1CF1E97000BE850C /* URLS.m */; };
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
+		B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */; };
 		CF15659B1CF14B2000628C89 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF15658F1CF14B2000628C89 /* AFHTTPSessionManager.m */; };
 		CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565921CF14B2000628C89 /* AFNetworkReachabilityManager.m */; };
 		CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565941CF14B2000628C89 /* AFSecurityPolicy.m */; };
@@ -89,6 +90,8 @@
 		B4CCD7E91CF1E97000BE850C /* URLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLS.h; path = Model/NetworkManager/URLS.h; sourceTree = "<group>"; };
 		B4CCD7EA1CF1E97000BE850C /* URLS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLS.m; path = Model/NetworkManager/URLS.m; sourceTree = "<group>"; };
 		B4CCD7ED1CF1EA6800BE850C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPageViewController.h; path = Views/ViewControllers/LocationPageViewController.h; sourceTree = "<group>"; };
+		B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPageViewController.m; path = Views/ViewControllers/LocationPageViewController.m; sourceTree = "<group>"; };
 		CF15658E1CF14B2000628C89 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		CF15658F1CF14B2000628C89 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		CF1565901CF14B2000628C89 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */,
 				B4CCD7E91CF1E97000BE850C /* URLS.h */,
 				B4CCD7EA1CF1E97000BE850C /* URLS.m */,
+				B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */,
+				B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */,
 			);
 			name = NetworkManager;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
 				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
 				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
+				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
 				CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */,
 				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,
 				CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */,
