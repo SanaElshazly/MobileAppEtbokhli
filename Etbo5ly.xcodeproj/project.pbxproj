@@ -258,6 +258,8 @@
 		B43D5F101CF1FCC7008F3F63 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */,
+				B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */,
 				B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */,
 				B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */,
 				B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */,
@@ -274,8 +276,6 @@
 				B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */,
 				B4CCD7E91CF1E97000BE850C /* URLS.h */,
 				B4CCD7EA1CF1E97000BE850C /* URLS.m */,
-				B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */,
-				B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */,
 			);
 			name = NetworkManager;
 			sourceTree = "<group>";

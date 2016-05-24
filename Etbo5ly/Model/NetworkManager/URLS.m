@@ -26,7 +26,7 @@
     
     //Etbo5ly-Web/rest/meal/page?page=1
     
-    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"meal/page?page=", pagenum ];
+    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"page?page=", pagenum ];
     return urlPath;
 }
 
