@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "Etbo5lyNetworkDelegate.h"
+#import "AFNetworking.h"
+
 
 static id<Etbo5lyNetworkDelegate> networkDelegate;
 static NSString *myServiceName;
+static AFHTTPSessionManager *manager;
+static NSURL *requestURL ;
+static NSDictionary *parameters;
 
 @interface Etbo5lyNetworkManager : NSObject
 
 //@property NSMutableData *myData;
 //@property id<Etbo5lyNetworkDelegate> networkDelegate;
+
 
 
 +(void) connectGET:(NSString*) url setServiceName: (NSString*) serviceName setServiceNetworkManager:(Etbo5lyNetworkManager*) networkManager;

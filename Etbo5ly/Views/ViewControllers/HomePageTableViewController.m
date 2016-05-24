@@ -17,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    networkDelegate=self;
+    //networkDelegate=self;
+    mealsRequestedService = [[MealsServices alloc] init];
+    
+    
     [self changeValueOfSegmentedController:self];
 }
 
@@ -27,44 +30,45 @@
 }
 
 
--(void) getCooksListDataService {
-    
-    
-//    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    //[spinner startAnimating];
-    NSLog(@"d5l fun get cooks");
-    serviceName=@"allCooks";
-    serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:-1]];
-    NSLog(serviceURL);
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-}
--(void) getMealsListDataService{
-    serviceName=@"allMeals";
-    serviceURL = [NSString stringWithFormat:@"%@",[URLS allMeals:-1]];
-    NSLog(serviceURL);
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-}
+//-(void) getCooksListDataService {
+//    
+//    
+////    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+////    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//    //[spinner startAnimating];
+//    NSLog(@"d5l fun get cooks");
+//    serviceName=@"allCooks";
+//    serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:-1]];
+//    NSLog(serviceURL);
+//    
+//    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
+//}
+
+//-(void) getMealsListDataService{
+//    serviceName=@"allMeals";
+//    serviceURL = [NSString stringWithFormat:@"%@",[URLS allMeals:-1]];
+//    NSLog(serviceURL);
+//    
+//    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
+//}
 
 
--(void)handle:(id)dataRetreived :(NSString *)serviceName{
-
-    NSLog(@"handle function");
-    if ([serviceName isEqualToString:@"allCooks"]) {
-        cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    }
-    else
-        meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    
-    NSLog(@"cooks data %@", cooks );
-    [self refreshDataInTableView];
-}
-
--(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
-}
+//-(void)handle:(id)dataRetreived :(NSString *)serviceName{
+//
+//    NSLog(@"handle function");
+//    if ([serviceName isEqualToString:@"allCooks"]) {
+//        cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
+//    }
+//    else
+//        meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
+//    
+//    NSLog(@"cooks data %@", cooks );
+//    [self refreshDataInTableView];
+//}
+//
+//-(void)handleWithFailure:(NSError *)error{
+//    NSLog(@"ERRORRRRR");
+//}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -127,10 +131,13 @@
 - (IBAction)changeValueOfSegmentedController:(id)sender {
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            [self getCooksListDataService ];
+            //[self getCooksListDataService ];
             break;
         case 1 :
-            [self getMealsListDataService];
+            //[self getMealsListDataService];
+            meals= [mealsRequestedService getMealsListDataService];
+            NSLog(@"%@",meals);
+            //[self refreshDataInTableView];
             break;
         default:
             break;

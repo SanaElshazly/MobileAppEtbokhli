@@ -10,14 +10,20 @@
 #import "Etbo5lyNetworkDelegate.h"
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
+#import "MealsServices.h"
 
-@interface HomePageTableViewController : UIViewController <Etbo5lyNetworkDelegate , UITableViewDataSource ,UITableViewDelegate>
+@interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate>
 {
-    NSMutableArray *meals;
-    NSMutableArray *cooks;
-    NSString * serviceName;
-    NSString * serviceURL;
+    NSArray *meals;
+    NSArray *cooks;
+    MealsServices *mealsRequestedService;
 }
+//{
+//    NSMutableArray *meals;
+//    NSMutableArray *cooks;
+//    NSString * serviceName;
+//    NSString * serviceURL;
+//}
 //@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
 //- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;

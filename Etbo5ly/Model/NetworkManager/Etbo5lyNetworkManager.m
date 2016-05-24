@@ -7,7 +7,6 @@
 //
 
 #import "Etbo5lyNetworkManager.h"
-#import "AFNetworking.h"
 
 
 @implementation Etbo5lyNetworkManager
@@ -17,11 +16,11 @@
     myServiceName = serviceName;
     networkDelegate = networkManager;
     
-    NSDictionary *parameters = @{@"format": @"json"};
+    parameters = @{@"format": @"json"};
     
     
-    NSURL *requestURL = [NSURL URLWithString:url];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
+    requestURL = [NSURL URLWithString:url];
+    manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
     
     [manager GET:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -53,11 +52,11 @@
     myServiceName = serviceName;
     networkDelegate = networkManager;
     
-    NSDictionary *parameters = @{@"format": @"json"};
+    parameters = @{@"format": @"json"};
     
     
-    NSURL *requestURL = [NSURL URLWithString:url];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
+    requestURL = [NSURL URLWithString:url];
+    manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
     [manager POST:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
