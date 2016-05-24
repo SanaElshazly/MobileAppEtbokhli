@@ -24,7 +24,7 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
     
     [manager GET:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+      //  NSLog(@"JSON: %@", responseObject);
         
         //_myData = [NSMutableData new]
         [networkDelegate handle : responseObject : myServiceName];

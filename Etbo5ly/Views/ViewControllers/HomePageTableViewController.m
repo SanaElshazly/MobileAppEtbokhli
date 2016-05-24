@@ -17,55 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    networkDelegate=self;
-    [self changeValueOfSegmentedController:self];
+    
+    cooksRequestedServices=[[CookServices alloc]init];
+    cooks=[cooksRequestedServices getCooksListDataService];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
--(void) getCooksListDataService {
-    
-    
-//    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    //[spinner startAnimating];
-    NSLog(@"d5l fun get cooks");
-    serviceName=@"allCooks";
-    serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:-1]];
-    NSLog(serviceURL);
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-}
--(void) getMealsListDataService{
-    serviceName=@"allMeals";
-    serviceURL = [NSString stringWithFormat:@"%@",[URLS allMeals:-1]];
-    NSLog(serviceURL);
-    
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-}
-
-
--(void)handle:(id)dataRetreived :(NSString *)serviceName{
-
-    NSLog(@"handle function");
-    if ([serviceName isEqualToString:@"allCooks"]) {
-        cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    }
-    else
-        meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    
-    NSLog(@"cooks data %@", cooks );
-    [self refreshDataInTableView];
-}
-
--(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
-}
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSLog(@"numberOfSectionsInTableView function");
@@ -81,10 +41,10 @@
             NSLog(@"arrayLength of cooks %d", arrayLength);
             break;
             
-        case 1:
-            arrayLength = [meals count];
-            NSLog(@"arrayLength of meals %d", arrayLength);
-            break;
+//        case 1:
+//            arrayLength = [meals count];
+//            NSLog(@"arrayLength of meals %d", arrayLength);
+//            break;
             
         default:
             break;
@@ -110,9 +70,9 @@
             cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
             break;
             
-        case 1:
-            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
-            break;
+//        case 1:
+//            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
+//            break;
         default:
             break;
     }
@@ -125,13 +85,14 @@
     [self.dataTableView reloadData];
 }
 - (IBAction)changeValueOfSegmentedController:(id)sender {
+    NSLog(@"3mlt aho");
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            [self getCooksListDataService ];
+            cooks=[cooksRequestedServices getCooksListDataService];
             break;
-        case 1 :
-            [self getMealsListDataService];
-            break;
+//        case 1 :
+//            [self getMealsListDataService];
+//            break;
         default:
             break;
     }

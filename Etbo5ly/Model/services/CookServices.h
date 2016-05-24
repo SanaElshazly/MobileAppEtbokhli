@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface CookServices : NSObject
-
+#import "Etbo5lyNetworkDelegate.h"
+#import "Etbo5lyNetworkManager.h"
+#import "URLS.h"
+@interface CookServices : NSObject <Etbo5lyNetworkDelegate>
+{
+    NSString * serviceName;
+    NSString * serviceURL;
+    NSMutableArray *cooks;
+}
+-(NSArray*) getCooksListDataService;
 @end
