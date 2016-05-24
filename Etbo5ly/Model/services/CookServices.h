@@ -10,11 +10,13 @@
 #import "Etbo5lyNetworkDelegate.h"
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
+#import "HomePageTableViewDataReloader.h"
 @interface CookServices : NSObject <Etbo5lyNetworkDelegate>
 {
     NSString * serviceName;
     NSString * serviceURL;
     NSMutableArray *cooks;
 }
+@property  HomePage* tableReloaderDelegate;
 -(NSArray*) getCooksListDataService;
 @end

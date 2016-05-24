@@ -114,6 +114,7 @@
 		CF1565981CF14B2000628C89 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		CF1565991CF14B2000628C89 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		CF15659A1CF14B2000628C89 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		CF19B48A1CF48AA4000214FC /* HomePageTableViewDataReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewDataReloader.h; path = Model/services/HomePageTableViewDataReloader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +288,7 @@
 				B4AEB74E1CF46ED800E12842 /* MealsServices.m */,
 				B4AEB7501CF46EF000E12842 /* UserServices.h */,
 				B4AEB7511CF46EF000E12842 /* UserServices.m */,
+				CF19B48A1CF48AA4000214FC /* HomePageTableViewDataReloader.h */,
 			);
 			name = services;
 			sourceTree = "<group>";

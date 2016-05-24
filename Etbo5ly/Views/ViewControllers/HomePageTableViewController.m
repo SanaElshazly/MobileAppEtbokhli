@@ -19,7 +19,7 @@
     [super viewDidLoad];
     //networkDelegate=self;
     mealsRequestedService = [[MealsServices alloc] init];
-    
+    cooksRequestedMeals=[[CookServices alloc]init];
     
     [self changeValueOfSegmentedController:self];
 }
@@ -124,7 +124,8 @@
     return cell;
 }
 
--(void) refreshDataInTableView
+
+-(void)refreshDataInTableView
 {
     [self.dataTableView reloadData];
 }

@@ -11,12 +11,14 @@
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
 #import "MealsServices.h"
-
-@interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate>
+#import "CookServices.h"
+#import "HomePageTableViewDataReloader.h"
+@interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , HomePageTableViewDataReloader>
 {
     NSArray *meals;
     NSArray *cooks;
     MealsServices *mealsRequestedService;
+    CookServices *cooksRequestedMeals;
 }
 //{
 //    NSMutableArray *meals;
