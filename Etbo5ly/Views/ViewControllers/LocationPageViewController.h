@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate>
-
+{
+    NSArray * countries;
+    NSArray *cities;
+}
 @end

@@ -18,6 +18,9 @@
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
 		B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */; };
 		B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */; };
+		B4AEB74C1CF46EB100E12842 /* CookServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AEB74B1CF46EB100E12842 /* CookServices.m */; };
+		B4AEB74F1CF46ED800E12842 /* MealsServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AEB74E1CF46ED800E12842 /* MealsServices.m */; };
+		B4AEB7521CF46EF000E12842 /* UserServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AEB7511CF46EF000E12842 /* UserServices.m */; };
 		B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */; };
 		B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7CE1CF1E80200BE850C /* Catering.m */; };
 		B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D01CF1E80200BE850C /* Cook.m */; };
@@ -68,6 +71,12 @@
 		B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Views/ViewControllers/TabBarViewController.m; sourceTree = "<group>"; };
 		B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewController.h; path = Views/ViewControllers/HomePageTableViewController.h; sourceTree = "<group>"; };
 		B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageTableViewController.m; path = Views/ViewControllers/HomePageTableViewController.m; sourceTree = "<group>"; };
+		B4AEB74A1CF46EB100E12842 /* CookServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CookServices.h; path = Model/services/CookServices.h; sourceTree = "<group>"; };
+		B4AEB74B1CF46EB100E12842 /* CookServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookServices.m; path = Model/services/CookServices.m; sourceTree = "<group>"; };
+		B4AEB74D1CF46ED800E12842 /* MealsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealsServices.h; path = Model/services/MealsServices.h; sourceTree = "<group>"; };
+		B4AEB74E1CF46ED800E12842 /* MealsServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealsServices.m; path = Model/services/MealsServices.m; sourceTree = "<group>"; };
+		B4AEB7501CF46EF000E12842 /* UserServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserServices.h; path = Model/services/UserServices.h; sourceTree = "<group>"; };
+		B4AEB7511CF46EF000E12842 /* UserServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserServices.m; path = Model/services/UserServices.m; sourceTree = "<group>"; };
 		B4CCD7CB1CF1E80200BE850C /* CategoryDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDTO.h; path = Model/pojo/CategoryDTO.h; sourceTree = "<group>"; };
 		B4CCD7CC1CF1E80200BE850C /* CategoryDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDTO.m; path = Model/pojo/CategoryDTO.m; sourceTree = "<group>"; };
 		B4CCD7CD1CF1E80200BE850C /* Catering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catering.h; path = Model/pojo/Catering.h; sourceTree = "<group>"; };
@@ -229,6 +238,7 @@
 		B43B3C981CF0A8E20086761F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B4AEB7491CF46E8600E12842 /* services */,
 				B43B3C991CF0A8EA0086761F /* pojo */,
 			);
 			name = Model;
@@ -266,6 +276,19 @@
 				B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4AEB7491CF46E8600E12842 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				B4AEB74A1CF46EB100E12842 /* CookServices.h */,
+				B4AEB74B1CF46EB100E12842 /* CookServices.m */,
+				B4AEB74D1CF46ED800E12842 /* MealsServices.h */,
+				B4AEB74E1CF46ED800E12842 /* MealsServices.m */,
+				B4AEB7501CF46EF000E12842 /* UserServices.h */,
+				B4AEB7511CF46EF000E12842 /* UserServices.m */,
+			);
+			name = services;
 			sourceTree = "<group>";
 		};
 		CF1565821CF1411A00628C89 /* NetworkManager */ = {
@@ -410,6 +433,7 @@
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
 				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
 				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
+				B4AEB74C1CF46EB100E12842 /* CookServices.m in Sources */,
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
 				CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */,
 				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,
@@ -418,11 +442,13 @@
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
 				B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */,
 				B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */,
+				B4AEB74F1CF46ED800E12842 /* MealsServices.m in Sources */,
 				CF15659F1CF14B2000628C89 /* AFURLResponseSerialization.m in Sources */,
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,
 				B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */,
 				4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */,
 				B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */,
+				B4AEB7521CF46EF000E12842 /* UserServices.m in Sources */,
 				B4CCD7DE1CF1E80200BE850C /* OrderDetails.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

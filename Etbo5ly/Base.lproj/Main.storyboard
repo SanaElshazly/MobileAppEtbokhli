@@ -204,7 +204,7 @@
         <!--item-->
         <scene sceneID="gez-v7-34a">
             <objects>
-                <viewController id="cLB-b3-l51" sceneMemberID="viewController">
+                <viewController id="cLB-b3-l51" customClass="LocationPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AJx-x0-Gqe"/>
                         <viewControllerLayoutGuide type="bottom" id="aip-4h-T3M"/>
