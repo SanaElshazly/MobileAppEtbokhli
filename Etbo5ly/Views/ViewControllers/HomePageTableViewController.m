@@ -85,10 +85,10 @@
             NSLog(@"arrayLength of cooks %d", arrayLength);
             break;
             
-        case 1:
-            arrayLength = [meals count];
-            NSLog(@"arrayLength of meals %d", arrayLength);
-            break;
+//        case 1:
+//            arrayLength = [meals count];
+//            NSLog(@"arrayLength of meals %d", arrayLength);
+//            break;
             
         default:
             break;
@@ -114,9 +114,9 @@
             cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
             break;
             
-        case 1:
-            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
-            break;
+//        case 1:
+//            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
+//            break;
         default:
             break;
     }
@@ -129,6 +129,7 @@
     [self.dataTableView reloadData];
 }
 - (IBAction)changeValueOfSegmentedController:(id)sender {
+    NSLog(@"3mlt aho");
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             //[self getCooksListDataService ];
@@ -139,6 +140,9 @@
             NSLog(@"%@",meals);
             //[self refreshDataInTableView];
             break;
+//        case 1 :
+//            [self getMealsListDataService];
+//            break;
         default:
             break;
     }
