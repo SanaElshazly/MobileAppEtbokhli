@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate>
+#import "locationServices.h"
+#import "Etbo5lyNetworkManager.h"
+#import <CoreLocation/CoreLocation.h>
+@interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate,CLLocationManagerDelegate,Etbo5lyNetworkDelegate>
 {
-    NSArray * countries;
-    NSArray *cities;
+    NSArray * allRegions;
+    NSArray *allCities;
+    NSArray *allCountries;
+    locationServices * locationRequestedServices;
 }
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerViewData;
+- (IBAction)detectUserLocation:(id)sender;
+
 @end

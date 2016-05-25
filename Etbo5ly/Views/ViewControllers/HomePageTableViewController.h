@@ -12,7 +12,6 @@
 #import "URLS.h"
 #import "MealsServices.h"
 #import "CookServices.h"
-#import "HomePageTableViewDataReloader.h"
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
     NSArray *meals;
@@ -20,14 +19,7 @@
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;
 }
-//{
-//    NSMutableArray *meals;
-//    NSMutableArray *cooks;
-//    NSString * serviceName;
-//    NSString * serviceURL;
-//}
-//@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
-//- (IBAction)refresh:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;
 - (IBAction)changeValueOfSegmentedController:(id)sender;
