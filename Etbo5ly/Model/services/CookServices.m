@@ -9,29 +9,16 @@
 #import "CookServices.h"
 #import "HomePageTableViewController.h"
 @implementation CookServices
--(instancetype)init
+-(id)initWithNetworkDelegate:(Etbo5lyNetworkManager*)networkManagerObj
 {
-    NSLog(@"get f constr");
     self=[super init];
-    
-    networkDelegate=self;
+    networkDelegateObj=networkManagerObj;
     return self;
 }
--(NSArray*) getCooksListDataService {
+-(void) getCooksListDataService {
     NSLog(@"d5l fun get cooks");
     serviceName=@"allCooks";
     serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:-1]];
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-    return cooks;
-}
--(void)handle:(id)dataRetreived :(NSString *)serviceName{
-    NSLog(@"handle object");
-    if ([serviceName isEqualToString:@"allCooks"]) {
-        cooks = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    }
-}
-
--(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
 }
 @end

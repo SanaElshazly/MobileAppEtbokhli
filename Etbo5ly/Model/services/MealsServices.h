@@ -11,16 +11,14 @@
 #import "Etbo5lyNetworkManager.h"
 #import "URLS.h"
 
-@interface MealsServices : NSObject <Etbo5lyNetworkDelegate>
+@interface MealsServices : NSObject
 {
     NSString * serviceName;
     NSString * serviceURL;
-    NSArray *meals;
+    Etbo5lyNetworkManager *networkDelegateObj;
 
 }
 
--(NSArray *) getMealsListDataService;
--(void)handle:(id)dataRetreived :(NSString *)serviceName;
--(void)handleWithFailure:(NSError *)error;
-
+-(void) getMealsListDataService;
+-(id) initWithNetWorkDelegate : (Etbo5lyNetworkManager *) networkObj;
 @end

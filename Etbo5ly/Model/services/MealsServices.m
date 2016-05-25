@@ -10,38 +10,36 @@
 
 @implementation MealsServices 
 
--(instancetype)init{
+-(id)initWithNetWorkDelegate:(Etbo5lyNetworkManager *)networkObj
+{
     self=[super init];
-    networkDelegate = self;
+    networkDelegateObj=networkObj;
     return self;
 }
-
--(NSArray*) getMealsListDataService{
+-(void) getMealsListDataService{
     serviceName=@"allMeals";
     serviceURL = [NSString stringWithFormat:@"%@",[URLS allMeals:-1]];
     NSLog(@"%@",serviceURL);
     
-    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
-    return meals;
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
 }
 
-
--(void)handle:(id)dataRetreived :(NSString *)serviceName{
-    
-    NSLog(@"handle function");
-    if ([serviceName isEqualToString:@"allMeals"]) {
-        meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
-    }
-    
-    NSLog(@"meals data %@", meals );
-    
-    //[self refreshDataInTableView];
-    
-}
-
--(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
-}
+//-(void)handle:(id)dataRetreived :(NSString *)serviceName{
+//    
+//    NSLog(@"handle function");
+//    if ([serviceName isEqualToString:@"allMeals"]) {
+//        meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
+//    }
+//    
+//    NSLog(@"meals data %@", meals );
+//    
+//    //[self refreshDataInTableView];
+//    
+//}
+//
+//-(void)handleWithFailure:(NSError *)error{
+//    NSLog(@"ERRORRRRR");
+//}
 
 
 @end

@@ -13,7 +13,7 @@
 #import "MealsServices.h"
 #import "CookServices.h"
 #import "HomePageTableViewDataReloader.h"
-@interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , HomePageTableViewDataReloader>
+@interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
     NSArray *meals;
     NSArray *cooks;
@@ -29,7 +29,6 @@
 //@property (strong, nonatomic) IBOutlet UINavigationItem *navigationControllerItem;
 //- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
-
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;
 - (IBAction)changeValueOfSegmentedController:(id)sender;
 
