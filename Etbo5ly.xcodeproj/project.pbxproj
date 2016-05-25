@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4321BA0164D5CDB4691D3D89 /* Pods_Etbo5ly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0B2869B42E3527F68D64C8 /* Pods_Etbo5ly.framework */; };
+		464A9714418E36C610CF1501 /* Pods_Etbo5lyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB475AFDDD40CC80AA18D6F /* Pods_Etbo5lyTests.framework */; };
 		4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08A91CF10162000609E3 /* SWRevealViewController.m */; };
 		4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
@@ -66,6 +68,9 @@
 		4AC619901CEF2340002D66EB /* Etbo5lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Etbo5lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
+		7BB475AFDDD40CC80AA18D6F /* Pods_Etbo5lyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Etbo5lyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAB920DC70B3D30B5349178 /* Pods-Etbo5lyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0D516EA1FA6ED889BCD3573 /* Pods-Etbo5ly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5ly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly.release.xcconfig"; sourceTree = "<group>"; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
 		B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = Views/ViewControllers/TabBarViewController.h; sourceTree = "<group>"; };
 		B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Views/ViewControllers/TabBarViewController.m; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 		CF1565991CF14B2000628C89 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		CF15659A1CF14B2000628C89 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		CF19B48A1CF48AA4000214FC /* HomePageTableViewDataReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewDataReloader.h; path = Model/services/HomePageTableViewDataReloader.h; sourceTree = "<group>"; };
+		E971FE7C666C26004EDC0C17 /* Pods-Etbo5lyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8BBA1E4EC8CF1034B718CD2 /* Pods-Etbo5ly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5ly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly.debug.xcconfig"; sourceTree = "<group>"; };
+		FF0B2869B42E3527F68D64C8 /* Pods_Etbo5ly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Etbo5ly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */,
+				4321BA0164D5CDB4691D3D89 /* Pods_Etbo5ly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +139,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464A9714418E36C610CF1501 /* Pods_Etbo5lyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C38EC16400AA430111FCB31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8BBA1E4EC8CF1034B718CD2 /* Pods-Etbo5ly.debug.xcconfig */,
+				B0D516EA1FA6ED889BCD3573 /* Pods-Etbo5ly.release.xcconfig */,
+				9DAB920DC70B3D30B5349178 /* Pods-Etbo5lyTests.debug.xcconfig */,
+				E971FE7C666C26004EDC0C17 /* Pods-Etbo5lyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A0A08A61CF0FA2E000609E3 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +201,8 @@
 				4AC619761CEF2340002D66EB /* Etbo5ly */,
 				4AC619931CEF2341002D66EB /* Etbo5lyTests */,
 				4AC619751CEF2340002D66EB /* Products */,
+				0C38EC16400AA430111FCB31 /* Pods */,
+				F013FA906747E6E7365803EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,6 +348,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		F013FA906747E6E7365803EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF0B2869B42E3527F68D64C8 /* Pods_Etbo5ly.framework */,
+				7BB475AFDDD40CC80AA18D6F /* Pods_Etbo5lyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,9 +364,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AC6199A1CEF2341002D66EB /* Build configuration list for PBXNativeTarget "Etbo5ly" */;
 			buildPhases = (
+				0572572C96A3E2DA1B790735 /* 📦 Check Pods Manifest.lock */,
 				4AC619701CEF233F002D66EB /* Sources */,
 				4AC619711CEF233F002D66EB /* Frameworks */,
 				4AC619721CEF233F002D66EB /* Resources */,
+				E65AD3D84856EAE32B0BC4FE /* 📦 Embed Pods Frameworks */,
+				170DAC708F9639437CD66BF0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,9 +384,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AC6199D1CEF2341002D66EB /* Build configuration list for PBXNativeTarget "Etbo5lyTests" */;
 			buildPhases = (
+				2D83FEDA61ABDA537713BDCC /* 📦 Check Pods Manifest.lock */,
 				4AC6198C1CEF2340002D66EB /* Sources */,
 				4AC6198D1CEF2340002D66EB /* Frameworks */,
 				4AC6198E1CEF2340002D66EB /* Resources */,
+				8C5377C7BFC44DEABCF34078 /* 📦 Embed Pods Frameworks */,
+				B2CC41479E6EBC7211A8815F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -420,6 +458,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0572572C96A3E2DA1B790735 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		170DAC708F9639437CD66BF0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D83FEDA61ABDA537713BDCC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C5377C7BFC44DEABCF34078 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2CC41479E6EBC7211A8815F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E65AD3D84856EAE32B0BC4FE /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4AC619701CEF233F002D66EB /* Sources */ = {
@@ -572,6 +703,7 @@
 		};
 		4AC6199B1CEF2341002D66EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8BBA1E4EC8CF1034B718CD2 /* Pods-Etbo5ly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -586,6 +718,7 @@
 		};
 		4AC6199C1CEF2341002D66EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0D516EA1FA6ED889BCD3573 /* Pods-Etbo5ly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -599,6 +732,7 @@
 		};
 		4AC6199E1CEF2341002D66EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAB920DC70B3D30B5349178 /* Pods-Etbo5lyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -619,6 +753,7 @@
 		};
 		4AC6199F1CEF2341002D66EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E971FE7C666C26004EDC0C17 /* Pods-Etbo5lyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
