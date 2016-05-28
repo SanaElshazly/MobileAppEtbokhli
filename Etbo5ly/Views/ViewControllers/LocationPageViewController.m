@@ -16,12 +16,16 @@
 {
     CLLocationManager *locationManager;
     CLLocation *crnLoc;
+    NSString *selectedRegionName;
     int regionID;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     networkDelegate=self;
+    _regionTxtField.delegate=self;
+    _pickerViewHeaderLabel.hidden=YES;
+    _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
     locationManager = [[CLLocationManager alloc]init];
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
@@ -59,8 +63,9 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     regionID=[[[allRegions objectAtIndex:row] objectForKey:@"regionId"] integerValue];
+    selectedRegionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
     NSLog(@"%d",regionID);
-    ;}
+}
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableViewController;
@@ -138,11 +143,21 @@
     [cooksRequestedServices getCooksByRegion:regionID];
 }
 
-- (IBAction)getRegion:(id)sender {
-    NSLog(@"hna");
-    _pickerViewData.hidden=NO;
-}
 
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField.tag == 1) {
+        NSLog(@"hgf");
+        _pickerViewHeaderLabel.hidden=NO;
+        _pickerViewHeaderBtn.hidden=NO;
+        _pickerViewData.hidden=NO;
+        
+        return NO;
+    }
+    
+    return YES;
+    
+}
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 //{
@@ -153,4 +168,10 @@
 //        [cooksBasedOnLocationTableViewController setCooksOnLocation:cooksBasedLocation];
 //    }
 //}
+- (IBAction)hidePickerViewBtn:(id)sender {
+    _regionTxtField.text=selectedRegionName;
+    _pickerViewHeaderLabel.hidden=YES;
+    _pickerViewHeaderBtn.hidden=YES;
+    _pickerViewData.hidden=YES;
+}
 @end

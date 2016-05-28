@@ -7,6 +7,7 @@
 //
 
 #import "HomePageTableViewController.h"
+#import "UIImageView+WebCache.h" 
 
 @interface HomePageTableViewController ()
 
@@ -80,8 +81,8 @@
     static NSString *cellID = @"CellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    
-    
+//    
+//    NSURL *imgURL=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]];
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
@@ -89,10 +90,13 @@
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+            NSLog(@"g%@",[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]);
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;
             
         case 1:
             cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;
         default:
             break;

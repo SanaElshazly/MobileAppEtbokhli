@@ -38,6 +38,7 @@
 		B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E81CF1E97000BE850C /* Etbo5lyNetworkManager.m */; };
 		B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7EA1CF1E97000BE850C /* URLS.m */; };
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
+		B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */; };
 		B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */; };
 		CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */; };
 		CF479C881CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */; };
@@ -120,6 +121,7 @@
 		B4CCD7E91CF1E97000BE850C /* URLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLS.h; path = Model/NetworkManager/URLS.h; sourceTree = "<group>"; };
 		B4CCD7EA1CF1E97000BE850C /* URLS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLS.m; path = Model/NetworkManager/URLS.m; sourceTree = "<group>"; };
 		B4CCD7ED1CF1EA6800BE850C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = etbokhliLogo.png; path = Images.xcassets/AppIcon.appiconset/etbokhliLogo.png; sourceTree = "<group>"; };
 		B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPageViewController.h; path = Views/ViewControllers/LocationPageViewController.h; sourceTree = "<group>"; };
 		B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPageViewController.m; path = Views/ViewControllers/LocationPageViewController.m; sourceTree = "<group>"; };
 		BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4A0A08AB1CF103D9000609E3 /* Views */,
 				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
+				B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */,
 				CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */,
 				CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */,
 				CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */,
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF479C881CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png in Resources */,
+				B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */,
 				CF479C8A1CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png in Resources */,
 				CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */,
 				CF479C891CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png in Resources */,
