@@ -13,7 +13,7 @@
 
 static id<Etbo5lyNetworkDelegate> networkDelegate;
 static NSString *myServiceName;
-static AFHTTPSessionManager *manager;
+static AFHTTPRequestOperationManager *manager;
 static NSURL *requestURL ;
 static NSDictionary *parameters;
 

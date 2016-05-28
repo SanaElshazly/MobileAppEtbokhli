@@ -8,16 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "locationServices.h"
+#import "CookServices.h"
 #import "Etbo5lyNetworkManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import "CooksBasedOnLocationTableViewController.h"
 @interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate,CLLocationManagerDelegate,Etbo5lyNetworkDelegate>
 {
     NSArray * allRegions;
     NSArray *allCities;
     NSArray *allCountries;
     locationServices * locationRequestedServices;
+    CookServices * cooksRequestedServices;
+    double userLatitude;
+    double userLongitude;
+    NSArray * cooksBasedLocation;
+    
 }
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewData;
+@property BOOL didGetLocation;
 - (IBAction)detectUserLocation:(id)sender;
+- (IBAction)getAllCooksByRegion:(id)sender;
 
 @end

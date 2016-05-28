@@ -32,8 +32,6 @@
 
 +(NSString *) allCooks : (int) pagenum{
     
-    //http://localhost:8084/Etbo5ly-Web/rest/cook/page?page=1
-    
     urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS, @"cook/page?page=", pagenum ];
     return urlPath;
 }
@@ -42,7 +40,7 @@
     
     //Etbo5ly-Web/rest/cook/nearbyCooks2?long=30.975534&latit=30.059376
     
-    urlPath = [NSString stringWithFormat:@"%@%@%f%f", IP_ADDRESS ,@"cook/nearbyCooks2?long=30.975534&latit=30.059376", longitude, latitude ];
+    urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS ,[NSString stringWithFormat:@"cook/nearbyCooks2?long=%f&&latit=%f" ,longitude,latitude]];
     return urlPath;
 }
 

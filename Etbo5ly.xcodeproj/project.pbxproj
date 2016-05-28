@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36F4C2FC335B09C480062475 /* Pods_Etbo5lyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607724E839EE3DA940A01975 /* Pods_Etbo5lyTests.framework */; };
 		4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08A91CF10162000609E3 /* SWRevealViewController.m */; };
+		4A2229081CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */; };
+		4A45EB1C1CF7DD270085E566 /* ProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45EB1B1CF7DD270085E566 /* ProfilePageViewController.m */; };
 		4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
 		4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */; };
@@ -15,6 +18,7 @@
 		4AC619881CEF2340002D66EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619871CEF2340002D66EB /* Images.xcassets */; };
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
+		A96F803FDAEE201983DEC5D2 /* Pods_Etbo5ly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF45FC831563EF8B3B7AE814 /* Pods_Etbo5ly.framework */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
 		B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */; };
 		B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */; };
@@ -35,12 +39,6 @@
 		B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7EA1CF1E97000BE850C /* URLS.m */; };
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
 		B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */; };
-		CF15659B1CF14B2000628C89 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF15658F1CF14B2000628C89 /* AFHTTPSessionManager.m */; };
-		CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565921CF14B2000628C89 /* AFNetworkReachabilityManager.m */; };
-		CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565941CF14B2000628C89 /* AFSecurityPolicy.m */; };
-		CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565961CF14B2000628C89 /* AFURLRequestSerialization.m */; };
-		CF15659F1CF14B2000628C89 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1565981CF14B2000628C89 /* AFURLResponseSerialization.m */; };
-		CF1565A01CF14B2000628C89 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF15659A1CF14B2000628C89 /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +54,13 @@
 /* Begin PBXFileReference section */
 		4A0A08A81CF10162000609E3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4A0A08A91CF10162000609E3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CooksBasedOnLocationTableViewController.h; path = Views/ViewControllers/CooksBasedOnLocationTableViewController.h; sourceTree = "<group>"; };
+		4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CooksBasedOnLocationTableViewController.m; path = Views/ViewControllers/CooksBasedOnLocationTableViewController.m; sourceTree = "<group>"; };
+		4A45EB1A1CF7DD270085E566 /* ProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfilePageViewController.h; path = Views/ViewControllers/ProfilePageViewController.h; sourceTree = "<group>"; };
+		4A45EB1B1CF7DD270085E566 /* ProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfilePageViewController.m; path = Views/ViewControllers/ProfilePageViewController.m; sourceTree = "<group>"; };
+		4A9779591CF745D00050CBB1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4A97795B1CF745DA0050CBB1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4A97795D1CF746DA0050CBB1 /* libsystem_coreservices.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsystem_coreservices.dylib; path = usr/lib/system/libsystem_coreservices.dylib; sourceTree = SDKROOT; };
 		4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4AC619741CEF2340002D66EB /* Etbo5ly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etbo5ly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC619781CEF2340002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +73,11 @@
 		4AC619901CEF2340002D66EB /* Etbo5lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Etbo5lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
+		607724E839EE3DA940A01975 /* Pods_Etbo5lyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Etbo5lyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7394E99A5DB78DA413697830 /* Pods-Etbo5lyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F9F26513C72EC12BA77CAAB /* Pods-Etbo5ly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5ly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly.release.xcconfig"; sourceTree = "<group>"; };
+		92903F14661AE7A95E2E5B0D /* Pods-Etbo5ly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5ly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly.debug.xcconfig"; sourceTree = "<group>"; };
+		AF45FC831563EF8B3B7AE814 /* Pods_Etbo5ly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Etbo5ly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43B3C931CF09FCB0086761F /* ERD.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ERD.jpeg; sourceTree = "<group>"; };
 		B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = Views/ViewControllers/TabBarViewController.h; sourceTree = "<group>"; };
 		B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Views/ViewControllers/TabBarViewController.m; sourceTree = "<group>"; };
@@ -106,19 +116,7 @@
 		B4CCD7ED1CF1EA6800BE850C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPageViewController.h; path = Views/ViewControllers/LocationPageViewController.h; sourceTree = "<group>"; };
 		B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPageViewController.m; path = Views/ViewControllers/LocationPageViewController.m; sourceTree = "<group>"; };
-		CF15658E1CF14B2000628C89 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		CF15658F1CF14B2000628C89 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		CF1565901CF14B2000628C89 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		CF1565911CF14B2000628C89 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		CF1565921CF14B2000628C89 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		CF1565931CF14B2000628C89 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		CF1565941CF14B2000628C89 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		CF1565951CF14B2000628C89 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		CF1565961CF14B2000628C89 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		CF1565971CF14B2000628C89 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		CF1565981CF14B2000628C89 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		CF1565991CF14B2000628C89 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		CF15659A1CF14B2000628C89 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +126,7 @@
 			files = (
 				B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */,
 				4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */,
+				A96F803FDAEE201983DEC5D2 /* Pods_Etbo5ly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F4C2FC335B09C480062475 /* Pods_Etbo5lyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +144,6 @@
 		4A0A08A61CF0FA2E000609E3 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				CF15658D1CF14B2000628C89 /* AFNetworking */,
 				4A0A08A71CF10162000609E3 /* SlideOutMenuFiles */,
 			);
 			name = Libs;
@@ -186,6 +185,7 @@
 				4AC619931CEF2341002D66EB /* Etbo5lyTests */,
 				4AC619751CEF2340002D66EB /* Products */,
 				F013FA906747E6E7365803EE /* Frameworks */,
+				503EAF2ED5439CA028F5E838 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,6 +242,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		503EAF2ED5439CA028F5E838 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92903F14661AE7A95E2E5B0D /* Pods-Etbo5ly.debug.xcconfig */,
+				8F9F26513C72EC12BA77CAAB /* Pods-Etbo5ly.release.xcconfig */,
+				BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */,
+				7394E99A5DB78DA413697830 /* Pods-Etbo5lyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B43B3C981CF0A8E20086761F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +292,10 @@
 				B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */,
 				B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */,
 				B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */,
+				4A45EB1A1CF7DD270085E566 /* ProfilePageViewController.h */,
+				4A45EB1B1CF7DD270085E566 /* ProfilePageViewController.m */,
+				4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */,
+				4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -312,30 +327,15 @@
 			name = NetworkManager;
 			sourceTree = "<group>";
 		};
-		CF15658D1CF14B2000628C89 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				CF15658E1CF14B2000628C89 /* AFHTTPSessionManager.h */,
-				CF15658F1CF14B2000628C89 /* AFHTTPSessionManager.m */,
-				CF1565901CF14B2000628C89 /* AFNetworking.h */,
-				CF1565911CF14B2000628C89 /* AFNetworkReachabilityManager.h */,
-				CF1565921CF14B2000628C89 /* AFNetworkReachabilityManager.m */,
-				CF1565931CF14B2000628C89 /* AFSecurityPolicy.h */,
-				CF1565941CF14B2000628C89 /* AFSecurityPolicy.m */,
-				CF1565951CF14B2000628C89 /* AFURLRequestSerialization.h */,
-				CF1565961CF14B2000628C89 /* AFURLRequestSerialization.m */,
-				CF1565971CF14B2000628C89 /* AFURLResponseSerialization.h */,
-				CF1565981CF14B2000628C89 /* AFURLResponseSerialization.m */,
-				CF1565991CF14B2000628C89 /* AFURLSessionManager.h */,
-				CF15659A1CF14B2000628C89 /* AFURLSessionManager.m */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
 		F013FA906747E6E7365803EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A97795D1CF746DA0050CBB1 /* libsystem_coreservices.dylib */,
+				4A97795B1CF745DA0050CBB1 /* SystemConfiguration.framework */,
+				4A9779591CF745D00050CBB1 /* MobileCoreServices.framework */,
 				B4A124DF1CF60E0500779BAF /* CoreLocation.framework */,
+				AF45FC831563EF8B3B7AE814 /* Pods_Etbo5ly.framework */,
+				607724E839EE3DA940A01975 /* Pods_Etbo5lyTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -347,9 +347,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AC6199A1CEF2341002D66EB /* Build configuration list for PBXNativeTarget "Etbo5ly" */;
 			buildPhases = (
+				4445759B047687FC9E80CDAE /* 📦 Check Pods Manifest.lock */,
 				4AC619701CEF233F002D66EB /* Sources */,
 				4AC619711CEF233F002D66EB /* Frameworks */,
 				4AC619721CEF233F002D66EB /* Resources */,
+				F5FCB6CFF711CAD9459021BD /* 📦 Embed Pods Frameworks */,
+				A7E1AAF034303CB5C684D560 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -455,6 +458,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		4445759B047687FC9E80CDAE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8C5377C7BFC44DEABCF34078 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,6 +486,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7E1AAF034303CB5C684D560 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B2CC41479E6EBC7211A8815F /* 📦 Copy Pods Resources */ = {
@@ -485,6 +518,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F5FCB6CFF711CAD9459021BD /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -492,27 +540,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2229081CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m in Sources */,
 				B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */,
 				4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */,
 				B4A124DE1CF5F4CE00779BAF /* locationServices.m in Sources */,
-				CF1565A01CF14B2000628C89 /* AFURLSessionManager.m in Sources */,
+				4A45EB1C1CF7DD270085E566 /* ProfilePageViewController.m in Sources */,
 				B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
-				CF15659B1CF14B2000628C89 /* AFHTTPSessionManager.m in Sources */,
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
 				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
 				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
 				B4AEB74C1CF46EB100E12842 /* CookServices.m in Sources */,
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
-				CF15659D1CF14B2000628C89 /* AFSecurityPolicy.m in Sources */,
-				CF15659E1CF14B2000628C89 /* AFURLRequestSerialization.m in Sources */,
-				CF15659C1CF14B2000628C89 /* AFNetworkReachabilityManager.m in Sources */,
 				B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
 				B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */,
 				B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */,
 				B4AEB74F1CF46ED800E12842 /* MealsServices.m in Sources */,
-				CF15659F1CF14B2000628C89 /* AFURLResponseSerialization.m in Sources */,
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,
 				B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */,
 				4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */,
@@ -639,11 +683,16 @@
 		};
 		4AC6199B1CEF2341002D66EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92903F14661AE7A95E2E5B0D /* Pods-Etbo5ly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
@@ -653,11 +702,16 @@
 		};
 		4AC6199C1CEF2341002D66EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F9F26513C72EC12BA77CAAB /* Pods-Etbo5ly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
@@ -666,6 +720,7 @@
 		};
 		4AC6199E1CEF2341002D66EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -686,6 +741,7 @@
 		};
 		4AC6199F1CEF2341002D66EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7394E99A5DB78DA413697830 /* Pods-Etbo5lyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

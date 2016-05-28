@@ -19,6 +19,22 @@
     NSLog(@"d5l fun get cooks");
     serviceName=@"allCooks";
     serviceURL = [NSString stringWithFormat:@"%@",[URLS allCooks:-1]];
+    
+    NSLog(@"serviceee %@",serviceURL);
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
+}
+-(void)getCooksBasedOnLocation:(double)latitude setLongitude:(double)longitude
+{
+    serviceName=@"allCooksBasedOnLocation";
+    serviceURL =[NSString stringWithFormat:@"%@",[URLS locationBasedCooks: longitude:latitude]];
+    
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
+}
+-(void)getCooksByRegion:(int)regionID
+{
+    serviceName=@"cooksByRegion";
+    serviceURL =[NSString stringWithFormat:@"%@",[URLS regionBasedCooks:regionID]];
+    
     [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
 }
 @end
