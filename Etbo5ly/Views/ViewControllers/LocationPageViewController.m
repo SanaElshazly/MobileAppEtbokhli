@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     networkDelegate=self;
+    _pickerViewData.hidden=YES;
     locationManager = [[CLLocationManager alloc]init];
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
@@ -135,6 +136,11 @@
 - (IBAction)getAllCooksByRegion:(id)sender {
     NSLog(@"dost");
     [cooksRequestedServices getCooksByRegion:regionID];
+}
+
+- (IBAction)getRegion:(id)sender {
+    NSLog(@"hna");
+    _pickerViewData.hidden=NO;
 }
 
 

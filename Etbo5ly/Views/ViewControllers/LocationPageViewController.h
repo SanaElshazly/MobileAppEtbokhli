@@ -28,5 +28,5 @@
 @property BOOL didGetLocation;
 - (IBAction)detectUserLocation:(id)sender;
 - (IBAction)getAllCooksByRegion:(id)sender;
-
+- (IBAction)getRegion:(id)sender;
 @end
