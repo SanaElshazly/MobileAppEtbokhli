@@ -96,7 +96,8 @@
             
         case 1:
             cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+             NSLog(@"g=h%@",[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]);
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;
         default:
             break;

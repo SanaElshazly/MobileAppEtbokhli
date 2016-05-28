@@ -24,6 +24,7 @@
     [super viewDidLoad];
     networkDelegate=self;
     _regionTxtField.delegate=self;
+    _regionTxtField.placeholder=@"Select region ... ";
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
