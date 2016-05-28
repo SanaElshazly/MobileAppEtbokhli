@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tlw-B4-bqT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tlw-B4-bqT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -205,7 +206,7 @@
             </objects>
             <point key="canvasLocation" x="1141" y="-799"/>
         </scene>
-        <!--Item-->
+        <!--Basket-->
         <scene sceneID="lvP-Xu-cK0">
             <objects>
                 <viewController id="98h-ul-6jK" sceneMemberID="viewController">
@@ -218,13 +219,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cfH-5N-kbC"/>
+                    <tabBarItem key="tabBarItem" title="Basket" image="iconsArtboard_basketTabBarIcon.png" id="cfH-5N-kbC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuM-gb-SwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2472" y="-172"/>
         </scene>
-        <!--item-->
+        <!--Nearby-->
         <scene sceneID="gez-v7-34a">
             <objects>
                 <viewController id="cLB-b3-l51" customClass="LocationPageViewController" sceneMemberID="viewController">
@@ -274,7 +275,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="item" id="ycn-ot-rXk"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="iconsArtboard_nearbyTabBarIcon.png" id="ycn-ot-rXk"/>
                     <connections>
                         <outlet property="pickerViewData" destination="Vsh-aB-fcp" id="46l-PI-qnz"/>
                     </connections>
@@ -293,8 +294,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="Q9g-Bh-nt1">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q9g-Bh-nt1" id="NY4-yf-tqI">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -333,7 +336,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="v31-m5-PiS">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="fNi-qv-GMI"/>
+                        <barButtonItem key="leftBarButtonItem" image="iconsArtboard_slideMenuNavBarIcon.png" id="fNi-qv-GMI">
+                            <color key="tintColor" red="1" green="0.489135457" blue="0.028962172769999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="EdM-5p-C7T">
@@ -343,9 +348,10 @@
                     <connections>
                         <outlet property="viewSlideMenuButtonItem" destination="fNi-qv-GMI" id="yMy-8n-IIQ"/>
                         <segue destination="IT6-rM-Fgc" kind="relationship" relationship="viewControllers" id="NGv-kF-7r5"/>
-                        <segue destination="98h-ul-6jK" kind="relationship" relationship="viewControllers" id="A5z-dE-QXu"/>
                         <segue destination="cLB-b3-l51" kind="relationship" relationship="viewControllers" id="af8-0X-ubc"/>
+                        <segue destination="98h-ul-6jK" kind="relationship" relationship="viewControllers" id="A5z-dE-QXu"/>
                         <segue destination="lCn-DB-x3M" kind="relationship" relationship="viewControllers" id="YMZ-sM-jUn"/>
+                        <segue destination="NJ7-wy-aFc" kind="relationship" relationship="viewControllers" id="t3v-A8-es4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mB-C1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -385,7 +391,7 @@
         <scene sceneID="sU8-n1-jXA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IT6-rM-Fgc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="HBB-yp-Tax"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="iconsArtboard_homeTabBarIcon.png" id="HBB-yp-Tax"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iq3-ip-faO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -400,11 +406,30 @@
             </objects>
             <point key="canvasLocation" x="669" y="-815"/>
         </scene>
-        <!--Segmented Controller-->
+        <!--Notifications-->
+        <scene sceneID="y7l-5O-hCn">
+            <objects>
+                <viewController id="NJ7-wy-aFc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uPH-Cn-FiD"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Eh-MT-9Hb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gzc-xy-g64">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="iconsArtboard_notificationTabBarIcon.png" id="au2-qP-Ppt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="af0-O1-3wV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="547"/>
+        </scene>
+        <!--Orders-->
         <scene sceneID="t9S-sc-7Vh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lCn-DB-x3M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Segmented Controller" id="xHt-8G-Ihn"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="iconsArtboard_ordersTabBarIcon.png" id="xHt-8G-Ihn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kG6-dd-NyX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -420,9 +445,12 @@
             <point key="canvasLocation" x="745" y="237"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="iconsArtboard_basketTabBarIcon.png" width="30" height="30"/>
+        <image name="iconsArtboard_homeTabBarIcon.png" width="30" height="30"/>
+        <image name="iconsArtboard_nearbyTabBarIcon.png" width="31" height="31"/>
+        <image name="iconsArtboard_notificationTabBarIcon.png" width="30" height="30"/>
+        <image name="iconsArtboard_ordersTabBarIcon.png" width="30" height="30"/>
+        <image name="iconsArtboard_slideMenuNavBarIcon.png" width="22" height="18"/>
+    </resources>
 </document>
