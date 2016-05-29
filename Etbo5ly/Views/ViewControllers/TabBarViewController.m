@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _viewSlideMenuButtonItem.target=self.revealViewController;
-    _viewSlideMenuButtonItem.action=@selector(revealToggle:);
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
 
 }
