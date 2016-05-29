@@ -15,14 +15,15 @@
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
     NSArray *meals;
-    NSArray *cooks;
+   // NSArray *cooks;
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;
 }
-
+@property (strong,nonatomic) NSArray * cooks;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;
 - (IBAction)changeValueOfSegmentedController:(id)sender;
+@property BOOL getCooksBasedOnLocation;
 
 
 @end

@@ -13,7 +13,6 @@
 		4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
 		4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */; };
-		4AC619861CEF2340002D66EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619841CEF2340002D66EB /* Main.storyboard */; };
 		4AC619881CEF2340002D66EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619871CEF2340002D66EB /* Images.xcassets */; };
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
@@ -21,6 +20,7 @@
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
 		B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */; };
 		B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */; };
+		B4781D421CFB446B007C1419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4781D411CFB446B007C1419 /* Main.storyboard */; };
 		B4A124DE1CF5F4CE00779BAF /* locationServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A124DD1CF5F4CE00779BAF /* locationServices.m */; };
 		B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A124DF1CF60E0500779BAF /* CoreLocation.framework */; };
 		B4AEB74C1CF46EB100E12842 /* CookServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AEB74B1CF46EB100E12842 /* CookServices.m */; };
@@ -71,7 +71,6 @@
 		4AC6197B1CEF2340002D66EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AC6197C1CEF2340002D66EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AC6197F1CEF2340002D66EB /* Etbo5ly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Etbo5ly.xcdatamodel; sourceTree = "<group>"; };
-		4AC619851CEF2340002D66EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AC619871CEF2340002D66EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4AC6198A1CEF2340002D66EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4AC619901CEF2340002D66EB /* Etbo5lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Etbo5lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +86,7 @@
 		B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Views/ViewControllers/TabBarViewController.m; sourceTree = "<group>"; };
 		B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePageTableViewController.h; path = Views/ViewControllers/HomePageTableViewController.h; sourceTree = "<group>"; };
 		B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePageTableViewController.m; path = Views/ViewControllers/HomePageTableViewController.m; sourceTree = "<group>"; };
+		B4781D411CFB446B007C1419 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B4A124DC1CF5F4CE00779BAF /* locationServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = locationServices.h; path = Model/services/locationServices.h; sourceTree = "<group>"; };
 		B4A124DD1CF5F4CE00779BAF /* locationServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = locationServices.m; path = Model/services/locationServices.m; sourceTree = "<group>"; };
 		B4A124DF1CF60E0500779BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -217,16 +217,16 @@
 				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
 				B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */,
-				CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */,
 				CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */,
 				CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */,
 				CF479C841CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png */,
+				CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */,
 				CF479C851CF9BFCB004B1252 /* iconsArtboard_ordersTabBarIcon.png */,
 				CF479C861CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png */,
 				4AC6197B1CEF2340002D66EB /* AppDelegate.h */,
 				4AC6197C1CEF2340002D66EB /* AppDelegate.m */,
-				4AC619841CEF2340002D66EB /* Main.storyboard */,
 				4AC619871CEF2340002D66EB /* Images.xcassets */,
+				B4781D411CFB446B007C1419 /* Main.storyboard */,
 				4AC619891CEF2340002D66EB /* LaunchScreen.xib */,
 				4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */,
 				4AC619781CEF2340002D66EB /* Info.plist */,
@@ -447,7 +447,7 @@
 				CF479C8A1CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png in Resources */,
 				CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */,
 				CF479C891CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png in Resources */,
-				4AC619861CEF2340002D66EB /* Main.storyboard in Resources */,
+				B4781D421CFB446B007C1419 /* Main.storyboard in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				CF479C8C1CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png in Resources */,
@@ -607,14 +607,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4AC619841CEF2340002D66EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4AC619851CEF2340002D66EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4AC619891CEF2340002D66EB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
