@@ -23,13 +23,13 @@
     double userLatitude;
     double userLongitude;
     NSArray * cooksBasedLocation;
+    BOOL isCitiesTxtFieldSelected;
     
 }
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewData;
 @property BOOL didGetLocation;
 - (IBAction)detectUserLocation:(id)sender;
 - (IBAction)getAllCooksByRegion:(id)sender;
-- (IBAction)getRegionAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *regionTxtField;
 @property (strong, nonatomic) IBOutlet UITextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UILabel *pickerViewHeaderLabel;

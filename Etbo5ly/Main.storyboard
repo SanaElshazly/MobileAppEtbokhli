@@ -126,12 +126,6 @@
                                     <action selector="hidePickerViewBtn:" destination="cLB-b3-l51" eventType="touchUpInside" id="Nw2-38-f4k"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-UL-SF7">
-                                <rect key="frame" x="-5" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Nearby" id="Nfx-s2-Lkf"/>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-MS-Gfs">
                                 <rect key="frame" x="13" y="64" width="295" height="173"/>
                                 <subviews>
@@ -141,7 +135,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-Ak-t6O">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-Ak-t6O">
                                         <rect key="frame" x="41" y="41" width="212" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -161,15 +155,11 @@
                                             <action selector="detectUserLocation:" destination="cLB-b3-l51" eventType="touchUpInside" id="igx-Kt-o2R"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ift-XZ-2nC">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ift-XZ-2nC">
                                         <rect key="frame" x="41" y="124" width="212" height="30"/>
                                         <color key="tintColor" red="1" green="0.56793100770000005" blue="0.030670078060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="getRegion:" destination="cLB-b3-l51" eventType="editingDidEnd" id="xfA-5N-ZGr"/>
-                                            <action selector="getRegionAction:" destination="cLB-b3-l51" eventType="touchUpInside" id="j8e-UC-F8W"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.79090110085384757" blue="0.46497332149214332" alpha="0.20595366379310345" colorSpace="calibratedRGB"/>

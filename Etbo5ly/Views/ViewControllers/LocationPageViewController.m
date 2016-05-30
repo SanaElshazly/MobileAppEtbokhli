@@ -71,7 +71,13 @@
 {
     int arrCount=0;
     if (component==0) {
-        arrCount=allRegions.count;
+        if (isCitiesTxtFieldSelected==YES) {
+            arrCount=allCities.count;
+        }
+        else
+        {
+            arrCount=allRegions.count;
+        }
     }
     
     return arrCount;
@@ -79,16 +85,28 @@
 -(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString * regionName=@"Select Region";
-    if (component==0) {
+        if (isCitiesTxtFieldSelected==YES) {
+            regionName=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
+        }
+    else
+    {
         regionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
     }
+    
     return regionName;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    if (isCitiesTxtFieldSelected==YES)
+    {
+        
+    }
+    else
+    {
     regionID=[[[allRegions objectAtIndex:row] objectForKey:@"regionId"] integerValue];
     selectedRegionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
     NSLog(@"%d",regionID);
+    }
 }
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
@@ -100,7 +118,7 @@
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);
         NSLog(@"region %@",allRegions);
-        [[self pickerViewData ]reloadAllComponents];
+        
     }
     else if ([serviceName isEqualToString:@"allCooksBasedOnLocation"])
     {
@@ -164,7 +182,18 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField.tag == 1) {
-        NSLog(@"hgf");
+        isCitiesTxtFieldSelected=YES;
+        [[self pickerViewData ]reloadAllComponents];
+        _pickerViewHeaderLabel.hidden=NO;
+        _pickerViewHeaderBtn.hidden=NO;
+        _pickerViewData.hidden=NO;
+        
+        return NO;
+    }
+    else if (textField.tag == 2)
+    {
+        isCitiesTxtFieldSelected=NO;
+        [[self pickerViewData ]reloadAllComponents];
         _pickerViewHeaderLabel.hidden=NO;
         _pickerViewHeaderBtn.hidden=NO;
         _pickerViewData.hidden=NO;
@@ -184,8 +213,8 @@
 }
 -(UIBarButtonItem *) creatBackBotton
 {
-//    UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iconsArtboard_nearbyTabBarIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];
     UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
     return myBackButton;
 }
+
 @end
