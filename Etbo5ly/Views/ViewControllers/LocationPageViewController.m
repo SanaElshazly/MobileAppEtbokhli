@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.regionTxtField setBorderStyle:UITextBorderStyleRoundedRect];
     
     self.regionTxtField.layer.borderWidth= 2;
     self.regionTxtField.layer.cornerRadius = 5;
@@ -54,7 +53,6 @@
     cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
     self.navigationItem.backBarButtonItem = [self creatBackBotton];
    
-//    allRegions=@[@{@"regionName":@"shoubra"},@{@"regionName":@"El Haram"},@{@"regionName":@"El Maadi"},@{@"regionName":@"Nasr City"}];
     [locationRequestedServices getAllRegions];
     
 }
@@ -80,20 +78,29 @@
         }
     }
     
-    return arrCount;
+    return arrCount+1;
 }
 -(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSString * regionName=@"Select Region";
+    NSString * dataInPickerView;
+    if (row==0) {
         if (isCitiesTxtFieldSelected==YES) {
-            regionName=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
+            dataInPickerView=@"Select City....";
         }
+        else
+            dataInPickerView=@"Select Region...";
+    }
     else
     {
-        regionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
+        if (isCitiesTxtFieldSelected==YES) {
+            dataInPickerView=[[allCities objectAtIndex:row-1] objectForKey:@"cityName"];
+        }
+        else
+        {
+            dataInPickerView=[[allRegions objectAtIndex:row-1] objectForKey:@"regionName"];
+        }
     }
-    
-    return regionName;
+    return dataInPickerView;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -111,9 +118,9 @@
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     if ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
-        allCountries=[[NSArray alloc] initWithArray:dataRetreived ];
+        allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
-        allCities=[[NSArray alloc] initWithArray:allCountries];
+        allCities=[[NSMutableArray alloc] initWithArray:allCountries];
         allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);

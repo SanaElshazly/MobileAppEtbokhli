@@ -79,7 +79,7 @@
     static NSString *cellID = @"CellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-//    
+//
 //    NSURL *imgURL=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]];
     if(!cell)
     {
