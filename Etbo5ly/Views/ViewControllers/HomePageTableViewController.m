@@ -18,11 +18,9 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    networkDelegate=self;
-    mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
-    cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
-    
-    [self changeValueOfSegmentedController:self];
+    _getCooksBasedOnLocation=NO;
+    NSLog(@"mgashh");
+
 }
 
 -(void)didReceiveMemoryWarning {
@@ -38,7 +36,7 @@
     }
     else if ([serviceName isEqualToString:@"allCooks"])
     {
-        cooks=[[NSArray alloc] initWithArray:dataRetreived];
+        _cooks=[[NSArray alloc] initWithArray:dataRetreived];
     }
     [self refreshDataInTableView];
     NSLog(@"meals data %@", meals );
@@ -59,7 +57,7 @@
     NSInteger arrayLength=0;
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            arrayLength = [cooks count];
+            arrayLength = [_cooks count];
             NSLog(@"arrayLength of cooks %d", arrayLength);
             break;
             
@@ -89,9 +87,9 @@
     }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            cell.textLabel.text=[[cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
-            NSLog(@"g%@",[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]);
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            cell.textLabel.text=[[_cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+            NSLog(@"g%@",[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]);
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;
             
         case 1:
@@ -111,12 +109,25 @@
 {
     [self.dataTableView reloadData];
 }
-
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"geeeh");
+    networkDelegate=self;
+    mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
+    cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
+    [self changeValueOfSegmentedController:self];
+}
 -(IBAction)changeValueOfSegmentedController:(id)sender {
     NSLog(@"3mlt aho");
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            [cooksRequestedMeals getCooksListDataService];
+            if (_getCooksBasedOnLocation==NO) {
+                [cooksRequestedMeals getCooksListDataService];
+            }
+            else
+            {
+                
+            }
             break;
         case 1 :
             //[self getMealsListDataService];
@@ -128,6 +139,4 @@
             break;
     }
 }
-
-
 @end

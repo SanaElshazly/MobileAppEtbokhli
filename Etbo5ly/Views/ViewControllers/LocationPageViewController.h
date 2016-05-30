@@ -11,7 +11,7 @@
 #import "CookServices.h"
 #import "Etbo5lyNetworkManager.h"
 #import <CoreLocation/CoreLocation.h>
-#import "CooksBasedOnLocationTableViewController.h"
+#import "HomePageTableViewController.h"
 @interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate,CLLocationManagerDelegate,Etbo5lyNetworkDelegate>
 {
     NSArray * allRegions;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CJa-Uq-1dJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CJa-Uq-1dJ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Home Page Table View Controller-->
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAN-g9-x0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1141" y="-799"/>
+            <point key="canvasLocation" x="1144" y="-851"/>
         </scene>
         <!--Basket-->
         <scene sceneID="lvP-Xu-cK0">
@@ -78,9 +78,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuM-gb-SwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="-172"/>
+            <point key="canvasLocation" x="3004" y="-172"/>
         </scene>
-        <!--Nearby-->
+        <!--Location Page View Controller-->
         <scene sceneID="gez-v7-34a">
             <objects>
                 <viewController id="cLB-b3-l51" customClass="LocationPageViewController" sceneMemberID="viewController">
@@ -177,7 +177,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nearby" image="iconsArtboard_nearbyTabBarIcon.png" id="ycn-ot-rXk"/>
+                    <navigationItem key="navigationItem" id="Sdv-a6-diO"/>
                     <connections>
                         <outlet property="cityTxtField" destination="L1L-Ak-t6O" id="heM-3J-hjS"/>
                         <outlet property="pickerViewData" destination="Vsh-aB-fcp" id="46l-PI-qnz"/>
@@ -208,16 +208,16 @@
                     </tabBar>
                     <connections>
                         <segue destination="IT6-rM-Fgc" kind="relationship" relationship="viewControllers" id="NGv-kF-7r5"/>
-                        <segue destination="cLB-b3-l51" kind="relationship" relationship="viewControllers" id="af8-0X-ubc"/>
+                        <segue destination="gYz-Ig-9fc" kind="relationship" relationship="viewControllers" id="af8-0X-ubc"/>
                         <segue destination="98h-ul-6jK" kind="relationship" relationship="viewControllers" id="A5z-dE-QXu"/>
-                        <segue destination="NJ7-wy-aFc" kind="relationship" relationship="viewControllers" id="t3v-A8-es4"/>
+                        <segue destination="oy8-aN-07a" kind="relationship" relationship="viewControllers" id="t3v-A8-es4"/>
                         <segue destination="48p-Lf-Nn4" kind="relationship" relationship="viewControllers" id="Gsc-r2-j5d"/>
                         <segue destination="sMZ-rq-qEw" kind="relationship" relationship="viewControllers" id="PVo-Te-jbb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mB-C1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-408" y="-146"/>
+            <point key="canvasLocation" x="-442" y="-180"/>
         </scene>
         <!--Home-->
         <scene sceneID="sU8-n1-jXA">
@@ -236,9 +236,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPg-PE-En7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="-815"/>
+            <point key="canvasLocation" x="275" y="-669"/>
         </scene>
-        <!--Notifications-->
+        <!--View Controller-->
         <scene sceneID="y7l-5O-hCn">
             <objects>
                 <viewController id="NJ7-wy-aFc" sceneMemberID="viewController">
@@ -251,7 +251,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="iconsArtboard_notificationTabBarIcon.png" id="au2-qP-Ppt"/>
+                    <navigationItem key="navigationItem" id="a6H-xJ-zHs">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="mU1-lB-cZV"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af0-O1-3wV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,6 +18,7 @@
     CLLocation *crnLoc;
     NSString *selectedRegionName;
     int regionID;
+    int pickerCount;
 }
 
 - (void)viewDidLoad {
@@ -38,6 +39,7 @@
 
     
     networkDelegate=self;
+    pickerCount=0;
     _regionTxtField.delegate=self;
     _regionTxtField.placeholder=@"Select region ... ";
     
@@ -50,7 +52,7 @@
     locationManager = [[CLLocationManager alloc]init];
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
-    allRegions=@[@{@"regionName":@"shoubra"},@{@"regionName":@"El Haram"},@{@"regionName":@"El Maadi"},@{@"regionName":@"Nasr City"}];
+//    allRegions=@[@{@"regionName":@"shoubra"},@{@"regionName":@"El Haram"},@{@"regionName":@"El Maadi"},@{@"regionName":@"Nasr City"}];
     [locationRequestedServices getAllRegions];
     
 }
@@ -74,7 +76,7 @@
 }
 -(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSString * regionName;
+    NSString * regionName=@"Select Region";
     if (component==0) {
         regionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
     }
@@ -88,7 +90,7 @@
 }
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
-    CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableViewController;
+    HomePageTableViewController *homePageTableViewController;
     if ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
         allCountries=[[NSArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
@@ -102,16 +104,27 @@
     else if ([serviceName isEqualToString:@"allCooksBasedOnLocation"])
     {
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
-        cooksBasedOnLocationTableViewController=[CooksBasedOnLocationTableViewController new];
-        [cooksBasedOnLocationTableViewController setCooksOnLocation:cooksBasedLocation];
-        [[self navigationController] pushViewController:cooksBasedOnLocationTableViewController animated:YES];
+       // homePageTableViewController=[self.tabBarController.viewControllers objectAtIndex:0];
+        homePageTableViewController=[HomePageTableViewController new];
+        [homePageTableViewController setCooks:cooksBasedLocation];
+        [homePageTableViewController setGetCooksBasedOnLocation:YES];
+        [[self tabBarController] setSelectedIndex:0];
+    
+//        [(HomePageTableViewController*)[self.tabBarController.viewControllers objectAtIndex:0];
+//        homePageTableViewController=[HomePageTableViewController new];
+//        [homePageTableViewController setGetCooksBasedOnLocation:YES];
+//        [homePageTableViewController setCooks:cooksBasedLocation];
+//        [[self navigationController] pushViewController:homePageTableViewController animated:YES];
+     //   [[self tabBarController] setSelectedIndex:0 ];
+//        self.tabBarController.selectedViewController=homePageTableViewController;
     }
     else if ([serviceName isEqualToString:@"cooksByRegion"])
     {
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
-        cooksBasedOnLocationTableViewController=[CooksBasedOnLocationTableViewController new];
-        [cooksBasedOnLocationTableViewController setCooksOnLocation:cooksBasedLocation];
-        [[self navigationController] pushViewController:cooksBasedOnLocationTableViewController animated:YES];
+        homePageTableViewController=[HomePageTableViewController new];
+        [homePageTableViewController setGetCooksBasedOnLocation:YES];
+        [homePageTableViewController setCooks:cooksBasedLocation];
+        [[self navigationController] pushViewController:homePageTableViewController animated:YES];
     }
 
 }
@@ -179,15 +192,7 @@
     
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if([segue.identifier isEqualToString:@"locationBasedCooks"])
-//    {
-//        [cooksRequestedServices getCooksBasedOnLocation:userLatitude setLongitude:userLongitude];
-//        CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableViewController=[segue destinationViewController];
-//        [cooksBasedOnLocationTableViewController setCooksOnLocation:cooksBasedLocation];
-//    }
-//}
+
 - (IBAction)hidePickerViewBtn:(id)sender {
     _regionTxtField.text=selectedRegionName;
     _pickerViewHeaderLabel.hidden=YES;
