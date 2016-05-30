@@ -39,12 +39,17 @@
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
 		B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */; };
 		B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */; };
+		CF17075D1CFB59900062748A /* aboutEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1707591CFB59900062748A /* aboutEtbo5ly.png */; };
+		CF17075E1CFB59900062748A /* ordersEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = CF17075A1CFB59900062748A /* ordersEtbo5ly.png */; };
+		CF17075F1CFB59900062748A /* profileEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = CF17075B1CFB59900062748A /* profileEtbo5ly.png */; };
+		CF1707621CFB5A750062748A /* shareEtbo5ly-23.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1707611CFB5A750062748A /* shareEtbo5ly-23.png */; };
 		CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */; };
 		CF479C881CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */; };
 		CF479C891CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */; };
 		CF479C8A1CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C841CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png */; };
 		CF479C8B1CF9BFCB004B1252 /* iconsArtboard_ordersTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C851CF9BFCB004B1252 /* iconsArtboard_ordersTabBarIcon.png */; };
 		CF479C8C1CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C861CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png */; };
+		CF6B1FA11CFC80510028BE17 /* detectlocation_detectLocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF6B1FA01CFC80500028BE17 /* detectlocation_detectLocationIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,12 +127,17 @@
 		B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPageViewController.h; path = Views/ViewControllers/LocationPageViewController.h; sourceTree = "<group>"; };
 		B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPageViewController.m; path = Views/ViewControllers/LocationPageViewController.m; sourceTree = "<group>"; };
 		BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1707591CFB59900062748A /* aboutEtbo5ly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutEtbo5ly.png; sourceTree = "<group>"; };
+		CF17075A1CFB59900062748A /* ordersEtbo5ly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ordersEtbo5ly.png; sourceTree = "<group>"; };
+		CF17075B1CFB59900062748A /* profileEtbo5ly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileEtbo5ly.png; sourceTree = "<group>"; };
+		CF1707611CFB5A750062748A /* shareEtbo5ly-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shareEtbo5ly-23.png"; sourceTree = "<group>"; };
 		CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_basketTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_homeTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_nearbyTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C841CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_notificationTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C851CF9BFCB004B1252 /* iconsArtboard_ordersTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_ordersTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C861CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_slideMenuNavBarIcon.png; sourceTree = "<group>"; };
+		CF6B1FA01CFC80500028BE17 /* detectlocation_detectLocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detectlocation_detectLocationIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,11 @@
 				4A0A08AB1CF103D9000609E3 /* Views */,
 				B43B3C981CF0A8E20086761F /* Model */,
 				B43B3C931CF09FCB0086761F /* ERD.jpeg */,
+				CF6B1FA01CFC80500028BE17 /* detectlocation_detectLocationIcon.png */,
+				CF1707611CFB5A750062748A /* shareEtbo5ly-23.png */,
+				CF1707591CFB59900062748A /* aboutEtbo5ly.png */,
+				CF17075A1CFB59900062748A /* ordersEtbo5ly.png */,
+				CF17075B1CFB59900062748A /* profileEtbo5ly.png */,
 				B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */,
 				CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */,
 				CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */,
@@ -446,13 +461,17 @@
 				B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */,
 				CF479C8A1CF9BFCB004B1252 /* iconsArtboard_notificationTabBarIcon.png in Resources */,
 				CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */,
+				CF6B1FA11CFC80510028BE17 /* detectlocation_detectLocationIcon.png in Resources */,
 				CF479C891CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png in Resources */,
 				B4C13CF31CFC432F00B512B2 /* Main.storyboard in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
+				CF17075F1CFB59900062748A /* profileEtbo5ly.png in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				CF479C8C1CF9BFCB004B1252 /* iconsArtboard_slideMenuNavBarIcon.png in Resources */,
 				CF479C8B1CF9BFCB004B1252 /* iconsArtboard_ordersTabBarIcon.png in Resources */,
+				CF17075D1CFB59900062748A /* aboutEtbo5ly.png in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
+				CF1707621CFB5A750062748A /* shareEtbo5ly-23.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
