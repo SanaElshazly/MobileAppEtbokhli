@@ -17,7 +17,9 @@
     CLLocationManager *locationManager;
     CLLocation *crnLoc;
     NSString *selectedRegionName;
+    NSString *selectedCityName;
     int regionID;
+    int cityID;
     int pickerCount;
 }
 
@@ -34,9 +36,6 @@
     self.cityTxtField.layer.cornerRadius = 5;
     self.cityTxtField.clipsToBounds = YES;
     self.cityTxtField.layer.borderColor= [[UIColor orangeColor]CGColor];
-
-
-    
     networkDelegate=self;
     pickerCount=0;
     _regionTxtField.delegate=self;
@@ -78,40 +77,43 @@
         }
     }
     
-    return arrCount+1;
+    return arrCount;
 }
 -(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString * dataInPickerView;
-    if (row==0) {
+//    if (row==0) {
+//        if (isCitiesTxtFieldSelected==YES) {
+//            dataInPickerView=@"Select City....";
+//        }
+//        else
+//            dataInPickerView=@"Select Region...";
+//    }
+//    else
+//    {
         if (isCitiesTxtFieldSelected==YES) {
-            dataInPickerView=@"Select City....";
-        }
-        else
-            dataInPickerView=@"Select Region...";
-    }
-    else
-    {
-        if (isCitiesTxtFieldSelected==YES) {
-            dataInPickerView=[[allCities objectAtIndex:row-1] objectForKey:@"cityName"];
+            dataInPickerView=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
         }
         else
         {
-            dataInPickerView=[[allRegions objectAtIndex:row-1] objectForKey:@"regionName"];
+            dataInPickerView=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
         }
-    }
+    //}
     return dataInPickerView;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (isCitiesTxtFieldSelected==YES)
     {
-        
+       NSLog(@"city %@",[[allCities objectAtIndex:row] objectForKey:@"cityName"]);
+        selectedCityName=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
+        cityID=[[[allCities objectAtIndex:row] objectForKey:@"cityId"] integerValue];
     }
     else
     {
     regionID=[[[allRegions objectAtIndex:row] objectForKey:@"regionId"] integerValue];
     selectedRegionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
+        
     NSLog(@"%d",regionID);
     }
 }
@@ -121,10 +123,10 @@
         allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
         allCities=[[NSMutableArray alloc] initWithArray:allCountries];
-        allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
+  //      allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);
-        NSLog(@"region %@",allRegions);
+      //  NSLog(@"region %@",allRegions);
         
     }
     else if ([serviceName isEqualToString:@"allCooksBasedOnLocation"])
@@ -163,7 +165,6 @@
          [cooksRequestedServices getCooksBasedOnLocation:userLatitude setLongitude:userLongitude];
     }
 
-   // NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
 }
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -213,7 +214,32 @@
 }
 
 - (IBAction)hidePickerViewBtn:(id)sender {
-    _regionTxtField.text=selectedRegionName;
+    if (isCitiesTxtFieldSelected==YES)
+    {
+         _cityTxtField.text=selectedCityName;
+        if ([_cityTxtField.text  isEqualToString:@""]) {
+            _cityTxtField.text=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
+            selectedCityName=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
+            cityID=[[[allCities objectAtIndex:0] objectForKey:@"cityId"] integerValue];
+        }
+        
+        for (int i=1; i<allCities.count; i++) {
+            if ([[[allCities objectAtIndex:i] objectForKey:@"cityId"] integerValue]==cityID) {
+                [[allRegions objectAtIndex:i] objectForKey:@"regions"];
+                NSLog(@"%@",allRegions);
+                break;
+            }
+        }
+        
+    }
+    else
+    {
+        _regionTxtField.text=selectedRegionName;
+        if ([_regionTxtField.text  isEqualToString:@""]) {
+            _regionTxtField.text=[[allRegions objectAtIndex:0] objectForKey:@"regionName"];
+        }
+        NSLog(@"hnaa");
+    }
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;

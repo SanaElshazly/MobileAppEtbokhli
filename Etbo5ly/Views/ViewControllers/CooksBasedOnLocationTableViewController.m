@@ -14,7 +14,7 @@
 
 @implementation CooksBasedOnLocationTableViewController
 {
-    BOOL calculateScrollTabel;
+    BOOL calculateScrollPosition;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,12 +81,12 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    calculateScrollTabel=YES;
+    calculateScrollPosition=YES;
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSLog(@"scrollingggg");
-    if (calculateScrollTabel==YES) {
+    if (calculateScrollPosition==YES) {
         NSLog(@"ha %f",scrollView.contentOffset.y);
         if (scrollView.contentOffset.y<0) {
             [self.navigationController setNavigationBarHidden:NO];
@@ -137,14 +137,5 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
