@@ -30,6 +30,7 @@
 - (IBAction)getAllCooksByRegion:(id)sender;
 - (IBAction)getRegionAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *regionTxtField;
+@property (strong, nonatomic) IBOutlet UITextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UILabel *pickerViewHeaderLabel;
 @property (strong, nonatomic) IBOutlet UIButton *pickerViewHeaderBtn;
 - (IBAction)hidePickerViewBtn:(id)sender;

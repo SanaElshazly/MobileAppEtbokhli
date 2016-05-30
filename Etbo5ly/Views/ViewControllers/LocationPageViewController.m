@@ -22,9 +22,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self.regionTxtField setBorderStyle:UITextBorderStyleRoundedRect];
+    
+    self.regionTxtField.layer.borderWidth= 2;
+    self.regionTxtField.layer.cornerRadius = 5;
+    self.regionTxtField.clipsToBounds = YES;
+    self.regionTxtField.layer.borderColor= [[UIColor orangeColor]CGColor];
+    
+    
+    self.cityTxtField.layer.borderWidth= 2;
+    self.cityTxtField.layer.cornerRadius = 5;
+    self.cityTxtField.clipsToBounds = YES;
+    self.cityTxtField.layer.borderColor= [[UIColor orangeColor]CGColor];
+
+
+    
     networkDelegate=self;
     _regionTxtField.delegate=self;
     _regionTxtField.placeholder=@"Select region ... ";
+    
+    _cityTxtField.delegate=self;
+    _cityTxtField.placeholder=@"Select city ... ";
+    
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
