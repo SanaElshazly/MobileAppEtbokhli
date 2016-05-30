@@ -13,9 +13,13 @@
 @end
 
 @implementation CooksBasedOnLocationTableViewController
-
+{
+    BOOL calculateScrollTabel;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,11 +64,45 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.textLabel.text=[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"name"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     return cell;
 }
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"beginn");
+    //[self.navigationController setNavigationBarHidden:NO];
+    NSLog(@"bginn scrolling %f",scrollView.contentOffset.y);
+    
+}
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+     NSLog(@"enddd scrolling %f",scrollView.contentOffset.y);
+  //  [self.navigationController setNavigationBarHidden:YES];
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    calculateScrollTabel=YES;
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollingggg");
+    if (calculateScrollTabel==YES) {
+        NSLog(@"ha %f",scrollView.contentOffset.y);
+        if (scrollView.contentOffset.y<0) {
+            [self.navigationController setNavigationBarHidden:NO];
+        }
+        else
+        {
+            [self.navigationController setNavigationBarHidden:YES];
+        }
+    }
+}
 
-
-
+//-(BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+//{
+//    NSLog(@"topp");
+//    return YES;
+//}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

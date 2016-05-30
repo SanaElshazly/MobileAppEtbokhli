@@ -33,6 +33,8 @@
     locationManager = [[CLLocationManager alloc]init];
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
+    self.navigationItem.backBarButtonItem = [self creatBackBotton];
+   
 //    allRegions=@[@{@"regionName":@"shoubra"},@{@"regionName":@"El Haram"},@{@"regionName":@"El Maadi"},@{@"regionName":@"Nasr City"}];
     [locationRequestedServices getAllRegions];
     
@@ -71,7 +73,6 @@
 }
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
-    HomePageTableViewController *homePageTableViewController;
     if ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
         allCountries=[[NSArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
@@ -85,27 +86,19 @@
     else if ([serviceName isEqualToString:@"allCooksBasedOnLocation"])
     {
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
-       // homePageTableViewController=[self.tabBarController.viewControllers objectAtIndex:0];
-        homePageTableViewController=[HomePageTableViewController new];
-        [homePageTableViewController setCooks:cooksBasedLocation];
-        [homePageTableViewController setGetCooksBasedOnLocation:YES];
-        [[self tabBarController] setSelectedIndex:0];
-    
-//        [(HomePageTableViewController*)[self.tabBarController.viewControllers objectAtIndex:0];
-//        homePageTableViewController=[HomePageTableViewController new];
-//        [homePageTableViewController setGetCooksBasedOnLocation:YES];
-//        [homePageTableViewController setCooks:cooksBasedLocation];
-//        [[self navigationController] pushViewController:homePageTableViewController animated:YES];
-     //   [[self tabBarController] setSelectedIndex:0 ];
-//        self.tabBarController.selectedViewController=homePageTableViewController;
+        CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableView=[CooksBasedOnLocationTableViewController new];
+        [cooksBasedOnLocationTableView setCooksOnLocation:cooksBasedLocation];
+        
+        [self.navigationController pushViewController:cooksBasedOnLocationTableView animated:YES];
+
     }
     else if ([serviceName isEqualToString:@"cooksByRegion"])
     {
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
-        homePageTableViewController=[HomePageTableViewController new];
-        [homePageTableViewController setGetCooksBasedOnLocation:YES];
-        [homePageTableViewController setCooks:cooksBasedLocation];
-        [[self navigationController] pushViewController:homePageTableViewController animated:YES];
+        CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableView=[CooksBasedOnLocationTableViewController new];
+        [cooksBasedOnLocationTableView setCooksOnLocation:cooksBasedLocation];
+        
+        [self.navigationController pushViewController:cooksBasedOnLocationTableView animated:YES];
     }
 
 }
@@ -128,13 +121,6 @@
 
    // NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
 }
-//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
-//{
-//    crnLoc = [CLLocation alloc];
-//    crnLoc = [locations lastObject];
-//   NSLog(@"latitude %@",[NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude]);
-//   [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
-//}
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"Error: %@",error.description);
@@ -146,8 +132,6 @@
     [locationManager requestAlwaysAuthorization];
     locationManager.delegate =self; 
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    [locationManager startUpdatingLocation];
-//    [cooksRequestedServices getCooksBasedOnLocation:userLatitude setLongitude:userLongitude];
     [locationManager startUpdatingLocation];
    
 }
@@ -173,11 +157,16 @@
     
 }
 
-
 - (IBAction)hidePickerViewBtn:(id)sender {
     _regionTxtField.text=selectedRegionName;
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
+}
+-(UIBarButtonItem *) creatBackBotton
+{
+//    UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iconsArtboard_nearbyTabBarIcon"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];
+    UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
+    return myBackButton;
 }
 @end

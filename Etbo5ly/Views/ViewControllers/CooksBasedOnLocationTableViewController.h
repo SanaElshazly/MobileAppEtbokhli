@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UIImageView+WebCache.h" 
 @interface CooksBasedOnLocationTableViewController : UITableViewController
 -(id) initWithCooksArray : (NSArray *) cooksBasdedOnLocation;
 @property (strong,nonatomic) NSArray * cooksOnLocation;
