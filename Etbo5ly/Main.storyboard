@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuM-gb-SwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="-172"/>
+            <point key="canvasLocation" x="3536" y="-172"/>
         </scene>
         <!--Location Page View Controller-->
         <scene sceneID="gez-v7-34a">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AU8-LW-y8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="-824"/>
+            <point key="canvasLocation" x="1370" y="-172"/>
         </scene>
         <!--kk-->
         <scene sceneID="TJb-T6-hec">
@@ -242,16 +242,15 @@
                     </tabBar>
                     <connections>
                         <segue destination="IT6-rM-Fgc" kind="relationship" relationship="viewControllers" id="NGv-kF-7r5"/>
-                        <segue destination="gYz-Ig-9fc" kind="relationship" relationship="viewControllers" id="af8-0X-ubc"/>
                         <segue destination="98h-ul-6jK" kind="relationship" relationship="viewControllers" id="A5z-dE-QXu"/>
-                        <segue destination="oy8-aN-07a" kind="relationship" relationship="viewControllers" id="t3v-A8-es4"/>
+                        <segue destination="S0o-R1-tWu" kind="relationship" relationship="viewControllers" id="6be-kC-TfH"/>
                         <segue destination="48p-Lf-Nn4" kind="relationship" relationship="viewControllers" id="Gsc-r2-j5d"/>
                         <segue destination="sMZ-rq-qEw" kind="relationship" relationship="viewControllers" id="PVo-Te-jbb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mB-C1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="-180"/>
+            <point key="canvasLocation" x="-326" y="-196"/>
         </scene>
         <!--Home-->
         <scene sceneID="sU8-n1-jXA">
@@ -412,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSO-0e-y6X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="1003"/>
+            <point key="canvasLocation" x="108" y="949"/>
         </scene>
         <!--More-->
         <scene sceneID="bx3-3T-cbX">
@@ -626,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eso-qL-USo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="190"/>
+            <point key="canvasLocation" x="1726" y="190"/>
         </scene>
         <!--Cooks Based On Location Table View Controller-->
         <scene sceneID="c0S-fs-u7K">
@@ -654,7 +653,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TR-WY-jXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538" y="-746"/>
+            <point key="canvasLocation" x="2074" y="-764"/>
+        </scene>
+        <!--Nearby-->
+        <scene sceneID="ZeS-FO-Qwf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S0o-R1-tWu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Nearby" image="iconsArtboard_nearbyTabBarIcon.png" id="eYC-x4-DW4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hR0-c3-7Vk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cLB-b3-l51" kind="relationship" relationship="rootViewController" id="o36-Bo-fKw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rV1-G7-wxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="-124"/>
         </scene>
     </scenes>
     <resources>
@@ -663,7 +681,6 @@
         <image name="iconsArtboard_basketTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_homeTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_nearbyTabBarIcon.png" width="31" height="31"/>
-        <image name="iconsArtboard_notificationTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_slideMenuNavBarIcon.png" width="22" height="18"/>
         <image name="ordersEtbo5ly.png" width="31" height="31"/>
         <image name="profileEtbo5ly.png" width="31" height="31"/>
