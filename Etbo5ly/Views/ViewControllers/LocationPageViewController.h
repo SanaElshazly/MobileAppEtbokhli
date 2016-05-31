@@ -15,8 +15,8 @@
 #import "CooksBasedOnLocationTableViewController.h"
 @interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate,CLLocationManagerDelegate,Etbo5lyNetworkDelegate>
 {
-    NSArray * allRegions;
-    NSArray *allCities;
+    NSMutableArray * allRegions;
+    NSMutableArray *allCities;
     NSArray *allCountries;
     locationServices * locationRequestedServices;
     CookServices * cooksRequestedServices;

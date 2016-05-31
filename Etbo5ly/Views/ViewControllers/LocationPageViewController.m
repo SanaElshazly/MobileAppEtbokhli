@@ -17,7 +17,9 @@
     CLLocationManager *locationManager;
     CLLocation *crnLoc;
     NSString *selectedRegionName;
+    NSString *selectedCityName;
     int regionID;
+    int cityID;
     int pickerCount;
 }
 
@@ -43,7 +45,6 @@
     cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
     self.navigationItem.backBarButtonItem = [self creatBackBotton];
    
-//    allRegions=@[@{@"regionName":@"shoubra"},@{@"regionName":@"El Haram"},@{@"regionName":@"El Maadi"},@{@"regionName":@"Nasr City"}];
     [locationRequestedServices getAllRegions];
     
 }
@@ -73,40 +74,52 @@
 }
 -(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSString * regionName=@"Select Region";
+    NSString * dataInPickerView;
+//    if (row==0) {
+//        if (isCitiesTxtFieldSelected==YES) {
+//            dataInPickerView=@"Select City....";
+//        }
+//        else
+//            dataInPickerView=@"Select Region...";
+//    }
+//    else
+//    {
         if (isCitiesTxtFieldSelected==YES) {
-            regionName=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
+            dataInPickerView=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
         }
-    else
-    {
-        regionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
-    }
-    
-    return regionName;
+        else
+        {
+            dataInPickerView=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
+        }
+    //}
+    return dataInPickerView;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (isCitiesTxtFieldSelected==YES)
     {
-        
+       NSLog(@"city %@",[[allCities objectAtIndex:row] objectForKey:@"cityName"]);
+        selectedCityName=[[allCities objectAtIndex:row] objectForKey:@"cityName"];
+        cityID=[[[allCities objectAtIndex:row] objectForKey:@"cityId"] integerValue];
     }
     else
     {
     regionID=[[[allRegions objectAtIndex:row] objectForKey:@"regionId"] integerValue];
     selectedRegionName=[[allRegions objectAtIndex:row] objectForKey:@"regionName"];
+        
     NSLog(@"%d",regionID);
     }
 }
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     if ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
-        allCountries=[[NSArray alloc] initWithArray:dataRetreived ];
+        allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
-        allCities=[[NSArray alloc] initWithArray:allCountries];
-        allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
+        allCities=[[NSMutableArray alloc] initWithArray:allCountries];
+  //      allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);
-        NSLog(@"region %@",allRegions);
+      //  NSLog(@"region %@",allRegions);
         
     }
     else if ([serviceName isEqualToString:@"allCooksBasedOnLocation"])
@@ -145,7 +158,6 @@
          [cooksRequestedServices getCooksBasedOnLocation:userLatitude setLongitude:userLongitude];
     }
 
-   // NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
 }
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -195,7 +207,32 @@
 }
 
 - (IBAction)hidePickerViewBtn:(id)sender {
-    _regionTxtField.text=selectedRegionName;
+    if (isCitiesTxtFieldSelected==YES)
+    {
+         _cityTxtField.text=selectedCityName;
+        if ([_cityTxtField.text  isEqualToString:@""]) {
+            _cityTxtField.text=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
+            selectedCityName=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
+            cityID=[[[allCities objectAtIndex:0] objectForKey:@"cityId"] integerValue];
+        }
+        
+        for (int i=1; i<allCities.count; i++) {
+            if ([[[allCities objectAtIndex:i] objectForKey:@"cityId"] integerValue]==cityID) {
+                [[allRegions objectAtIndex:i] objectForKey:@"regions"];
+                NSLog(@"%@",allRegions);
+                break;
+            }
+        }
+        
+    }
+    else
+    {
+        _regionTxtField.text=selectedRegionName;
+        if ([_regionTxtField.text  isEqualToString:@""]) {
+            _regionTxtField.text=[[allRegions objectAtIndex:0] objectForKey:@"regionName"];
+        }
+        NSLog(@"hnaa");
+    }
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
