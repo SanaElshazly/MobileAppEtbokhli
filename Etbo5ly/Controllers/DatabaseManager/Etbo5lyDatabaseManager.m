@@ -9,5 +9,10 @@
 #import "Etbo5lyDatabaseManager.h"
 
 @implementation Etbo5lyDatabaseManager
-
++ (NSManagedObjectContext *)getManagedObjectContext {
+    context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    context = [delegate managedObjectContext];
+    return context;
+}
 @end

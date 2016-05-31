@@ -13,12 +13,14 @@
 #import "MealsServices.h"
 #import "CookServices.h"
 #import "UIImageView+WebCache.h" 
+#import "CookDAO.h"
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
     NSArray *meals;
    // NSArray *cooks;
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;
+    CookDAO *cookRequestedDBFunctions;
 }
 @property (strong,nonatomic) NSArray * cooks;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;

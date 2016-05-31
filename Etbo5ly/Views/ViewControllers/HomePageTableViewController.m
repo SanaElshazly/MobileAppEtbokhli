@@ -20,7 +20,12 @@
     [super viewDidLoad];
     _getCooksBasedOnLocation=NO;
     NSLog(@"mgashh");
-
+    if ([[AFNetworkReachabilityManager sharedManager]isReachable]) {
+        NSLog(@"onllleen");
+    }
+    else
+        NSLog(@"oofllinee");
+    
 }
 
 -(void)didReceiveMemoryWarning {
@@ -37,6 +42,9 @@
     else if ([serviceName isEqualToString:@"allCooks"])
     {
         _cooks=[[NSArray alloc] initWithArray:dataRetreived];
+        [cookRequestedDBFunctions insertCooks:_cooks];
+        NSMutableArray *ab=[cookRequestedDBFunctions fetchAndGetAllCooks];
+        NSLog(@"pppooo %@",ab);
     }
     [self refreshDataInTableView];
     NSLog(@"meals data %@", meals );
@@ -115,6 +123,7 @@
     networkDelegate=self;
     mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
     cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
+    cookRequestedDBFunctions=[[CookDAO alloc] initWithManagedObject];
     [self changeValueOfSegmentedController:self];
 }
 -(IBAction)changeValueOfSegmentedController:(id)sender {

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+static NSManagedObjectContext *context;
 @interface Etbo5lyDatabaseManager : NSObject
 
++ (NSManagedObjectContext *)getManagedObjectContext;
 @end

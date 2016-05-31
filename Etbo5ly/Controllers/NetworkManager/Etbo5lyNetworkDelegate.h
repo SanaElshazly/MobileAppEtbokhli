@@ -11,7 +11,7 @@
 @protocol Etbo5lyNetworkDelegate <NSObject>
 
 -(void) handle:(id) dataRetreived :(NSString*) serviceName;
--(void) handleWithFailure:(NSError*) error ;//:(NSString*) serviceName;
+-(void) handleWithFailure:(NSError*) error ;
 
 
 @end
