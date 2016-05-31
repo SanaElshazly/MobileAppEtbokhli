@@ -35,6 +35,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *pickerViewHeaderLabel;
 @property (strong, nonatomic) IBOutlet UIButton *pickerViewHeaderBtn;
 - (IBAction)hidePickerViewBtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *showCooksBtn;
 
 
 @end

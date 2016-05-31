@@ -188,7 +188,7 @@
         _pickerViewHeaderLabel.hidden=NO;
         _pickerViewHeaderBtn.hidden=NO;
         _pickerViewData.hidden=NO;
-        
+        _showCooksBtn.hidden=YES;
         return NO;
     }
     else if (textField.tag == 2)
@@ -198,7 +198,7 @@
         _pickerViewHeaderLabel.hidden=NO;
         _pickerViewHeaderBtn.hidden=NO;
         _pickerViewData.hidden=NO;
-        
+        _showCooksBtn.hidden=YES;
         return NO;
     }
     
@@ -238,6 +238,7 @@
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
+    _showCooksBtn.hidden=NO;
 }
 -(UIBarButtonItem *) creatBackBotton
 {

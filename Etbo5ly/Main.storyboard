@@ -116,32 +116,6 @@
                                     <action selector="hidePickerViewBtn:" destination="cLB-b3-l51" eventType="touchUpInside" id="Nw2-38-f4k"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-MS-Gfs">
-                                <rect key="frame" x="0.0" y="99" width="320" height="176"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-po-bDW">
-                                        <rect key="frame" x="269" y="41" width="31" height="30"/>
-                                        <state key="normal" image="orngDetectLoc-25.png">
-                                            <color key="titleColor" red="1" green="0.489135457" blue="0.028962172769999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="detectUserLocation:" destination="cLB-b3-l51" eventType="touchUpInside" id="igx-Kt-o2R"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-Ak-t6O">
-                                        <rect key="frame" x="54" y="41" width="212" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ift-XZ-2nC">
-                                        <rect key="frame" x="54" y="101" width="212" height="30"/>
-                                        <color key="tintColor" red="1" green="0.56793100770000005" blue="0.030670078060000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.79090110085384757" blue="0.46497332149214332" alpha="0.20595366379310345" colorSpace="calibratedRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxN-P6-4xk">
                                 <rect key="frame" x="65" y="408" width="191" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.489135457" blue="0.028962172769999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -157,6 +131,35 @@
                                     <action selector="getAllCooksByRegion:" destination="cLB-b3-l51" eventType="touchUpInside" id="Fzx-eK-weO"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIg-MS-Gfs">
+                                <rect key="frame" x="5" y="100" width="310" height="175"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-po-bDW">
+                                        <rect key="frame" x="264" y="40" width="31" height="30"/>
+                                        <state key="normal" image="orngDetectLoc-25.png">
+                                            <color key="titleColor" red="1" green="0.489135457" blue="0.028962172769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="detectUserLocation:" destination="cLB-b3-l51" eventType="touchUpInside" id="igx-Kt-o2R"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-Ak-t6O">
+                                        <rect key="frame" x="49" y="40" width="212" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ift-XZ-2nC">
+                                        <rect key="frame" x="49" y="100" width="212" height="30"/>
+                                        <color key="tintColor" red="1" green="0.56793100770000005" blue="0.030670078060000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.79090110085384757" blue="0.46497332149214332" alpha="0.20595366379310345" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -167,6 +170,7 @@
                         <outlet property="pickerViewHeaderBtn" destination="Zv3-Bi-3cm" id="Aym-c8-ABA"/>
                         <outlet property="pickerViewHeaderLabel" destination="u6y-9o-W3m" id="Abc-ov-Tp3"/>
                         <outlet property="regionTxtField" destination="Ift-XZ-2nC" id="ca1-R7-n0L"/>
+                        <outlet property="showCooksBtn" destination="pxN-P6-4xk" id="iGM-WX-M8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AU8-LW-y8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
