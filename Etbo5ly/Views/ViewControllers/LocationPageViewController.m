@@ -216,17 +216,19 @@
 - (IBAction)hidePickerViewBtn:(id)sender {
     if (isCitiesTxtFieldSelected==YES)
     {
-         _cityTxtField.text=selectedCityName;
+        _cityTxtField.text=selectedCityName;
         if ([_cityTxtField.text  isEqualToString:@""]) {
             _cityTxtField.text=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
             selectedCityName=[[allCities objectAtIndex:0] objectForKey:@"cityName"];
             cityID=[[[allCities objectAtIndex:0] objectForKey:@"cityId"] integerValue];
         }
         
-        for (int i=1; i<allCities.count; i++) {
+        for (int i=0; i<=allCities.count; i++) {
+            NSLog(@"int %d",[[[allCities objectAtIndex:i] objectForKey:@"cityId"] integerValue]);
             if ([[[allCities objectAtIndex:i] objectForKey:@"cityId"] integerValue]==cityID) {
-                [[allRegions objectAtIndex:i] objectForKey:@"regions"];
-                NSLog(@"%@",allRegions);
+                allRegions=[[allCities objectAtIndex:i] objectForKey:@"regions"];
+                //  [[allRegions objectAtIndex:i] objectForKey:@"regions"];
+                NSLog(@"hobaa%@",allRegions);
                 break;
             }
         }
