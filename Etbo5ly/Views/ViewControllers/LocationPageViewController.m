@@ -23,28 +23,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.regionTxtField setBorderStyle:UITextBorderStyleRoundedRect];
-    
-    self.regionTxtField.layer.borderWidth= 2;
-    self.regionTxtField.layer.cornerRadius = 5;
-    self.regionTxtField.clipsToBounds = YES;
-    self.regionTxtField.layer.borderColor= [[UIColor orangeColor]CGColor];
-    
-    
-    self.cityTxtField.layer.borderWidth= 2;
-    self.cityTxtField.layer.cornerRadius = 5;
-    self.cityTxtField.clipsToBounds = YES;
-    self.cityTxtField.layer.borderColor= [[UIColor orangeColor]CGColor];
 
+    [self addTextFieldBorderStyle:self.regionTxtField];
+    [self addTextFieldBorderStyle:self.cityTxtField];
 
-    
     networkDelegate=self;
     pickerCount=0;
     _regionTxtField.delegate=self;
-    _regionTxtField.placeholder=@"Select region ... ";
+    _regionTxtField.placeholder=@"Region";
     
     _cityTxtField.delegate=self;
-    _cityTxtField.placeholder=@"Select city ... ";
+    _cityTxtField.placeholder=@"City";
     
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
@@ -215,6 +204,19 @@
 {
     UIBarButtonItem *myBackButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
     return myBackButton;
+}
+
+
+-(void) addTextFieldBorderStyle: (UITextField*) txtField{
+    
+    CALayer *bottomBorder = [CALayer layer];
+    CGFloat borderWidth = 2;
+    bottomBorder.borderWidth = borderWidth;
+    bottomBorder.borderColor = [[UIColor orangeColor]CGColor];
+    
+    bottomBorder.frame = CGRectMake(0.0f, txtField.frame.size.height - borderWidth, txtField.frame.size.width,txtField.frame.size.height);
+    bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    [txtField.layer addSublayer:bottomBorder];
 }
 
 @end
