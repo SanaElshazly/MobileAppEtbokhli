@@ -43,6 +43,7 @@
 		CF17075F1CFB59900062748A /* profileEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = CF17075B1CFB59900062748A /* profileEtbo5ly.png */; };
 		CF1707621CFB5A750062748A /* shareEtbo5ly-23.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1707611CFB5A750062748A /* shareEtbo5ly-23.png */; };
 		CF20FC9F1CFCAF6700C32B38 /* orngDetectLoc-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CF20FC9E1CFCAF6700C32B38 /* orngDetectLoc-25.png */; };
+		CF20FCA31CFD994700C32B38 /* Etbo5lyDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF20FCA21CFD994700C32B38 /* Etbo5lyDatabaseManager.m */; };
 		CF479C871CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */; };
 		CF479C881CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */; };
 		CF479C891CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */; };
@@ -132,6 +133,8 @@
 		CF17075B1CFB59900062748A /* profileEtbo5ly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileEtbo5ly.png; sourceTree = "<group>"; };
 		CF1707611CFB5A750062748A /* shareEtbo5ly-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shareEtbo5ly-23.png"; sourceTree = "<group>"; };
 		CF20FC9E1CFCAF6700C32B38 /* orngDetectLoc-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orngDetectLoc-25.png"; sourceTree = "<group>"; };
+		CF20FCA11CFD994700C32B38 /* Etbo5lyDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyDatabaseManager.h; path = Model/DatabaseManager/Etbo5lyDatabaseManager.h; sourceTree = "<group>"; };
+		CF20FCA21CFD994700C32B38 /* Etbo5lyDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Etbo5lyDatabaseManager.m; path = Model/DatabaseManager/Etbo5lyDatabaseManager.m; sourceTree = "<group>"; };
 		CF479C811CF9BFCB004B1252 /* iconsArtboard_basketTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_basketTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C821CF9BFCB004B1252 /* iconsArtboard_homeTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_homeTabBarIcon.png; sourceTree = "<group>"; };
 		CF479C831CF9BFCB004B1252 /* iconsArtboard_nearbyTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconsArtboard_nearbyTabBarIcon.png; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 		4AC619761CEF2340002D66EB /* Etbo5ly */ = {
 			isa = PBXGroup;
 			children = (
+				CF20FCA01CFD989300C32B38 /* DatabaseManager */,
 				CF1565821CF1411A00628C89 /* NetworkManager */,
 				4A0A08AB1CF103D9000609E3 /* Views */,
 				B43B3C981CF0A8E20086761F /* Model */,
@@ -360,6 +364,15 @@
 			name = NetworkManager;
 			sourceTree = "<group>";
 		};
+		CF20FCA01CFD989300C32B38 /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				CF20FCA11CFD994700C32B38 /* Etbo5lyDatabaseManager.h */,
+				CF20FCA21CFD994700C32B38 /* Etbo5lyDatabaseManager.m */,
+			);
+			name = DatabaseManager;
+			sourceTree = "<group>";
+		};
 		F013FA906747E6E7365803EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +441,7 @@
 				TargetAttributes = {
 					4AC619731CEF233F002D66EB = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 76VDA98VQ3;
 					};
 					4AC6198F1CEF2340002D66EB = {
 						CreatedOnToolsVersion = 6.2;
@@ -597,6 +611,7 @@
 				B4AEB74C1CF46EB100E12842 /* CookServices.m in Sources */,
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
 				B4CCD7EB1CF1E97000BE850C /* Etbo5lyNetworkManager.m in Sources */,
+				CF20FCA31CFD994700C32B38 /* Etbo5lyDatabaseManager.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
 				B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */,
 				B4CCD7EC1CF1E97000BE850C /* URLS.m in Sources */,
@@ -724,6 +739,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -732,6 +749,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -744,6 +762,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Etbo5ly/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -752,6 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Etbo5ly/Etbo5ly-Bridging-Header.h";
 			};
 			name = Release;
