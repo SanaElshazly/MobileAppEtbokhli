@@ -18,6 +18,7 @@
 @property NSString * address;
 @property double longitude;
 @property double latitude;
+@property NSString * imageURL;
 -(id) initWithInfo;
 -(id) initWithInfo : (int) userId  setUserName : (NSString *) name  setEmail : (NSString * ) email setPassword : (NSString *) password setRegisterationDate : (NSDate *) registerationDate setPhone : (NSString *) phone  setAddress : (NSString *) address  setLongitude : (double) longitude  setLatitude : (double) latitude;
 

@@ -38,6 +38,7 @@
         fetchedCook.endWorkingHours=[managedObjectCook valueForKey:@"end_working_hours"];
         fetchedCook.startWorkingHours=[managedObjectCook valueForKey:@"start_working_hours"];
         fetchedCook.registerationDate=[managedObjectCook valueForKey:@"registeration_date"];
+        fetchedCook.imageURL=[NSString stringWithFormat:@"%@%@",[managedObjectContext valueForKey:@"resourcesURL"],[managedObjectContext valueForKey:@"imageURL"]];
         [_selectedCooks addObject:fetchedCook];
     }
     return _selectedCooks;
@@ -62,7 +63,7 @@
         [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"registerationDate"] longLongValue]/1000.0)] forKey:@"registeration_date"];
         [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"endWorkingHours"] longLongValue]/1000.0)] forKey:@"end_working_hours"];
         [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"startWorkingHours"] longLongValue]/1000.0)] forKey:@"start_working_hours"];
-        
+        [newCook setValue: forKey:<#(nonnull NSString *)#>];
         
     }
 //    if (![managedObjectContext inser:&error]) {

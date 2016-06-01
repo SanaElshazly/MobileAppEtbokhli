@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Automatic">
-    <entity name="Category" representedClassName="Category" syncable="YES">
+    <entity name="Category" representedClassName="" syncable="YES">
         <attribute name="category_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category_catering" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Catering" inverseName="catering_category" inverseEntity="Catering" syncable="YES"/>
         <relationship name="category_menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="categories" inverseEntity="Menu_items" syncable="YES"/>
     </entity>
-    <entity name="Catering" representedClassName="Catering" syncable="YES">
+    <entity name="Catering" representedClassName="" syncable="YES">
         <attribute name="attribute" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="budget" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="catering_description" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +20,7 @@
         <attribute name="start_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="cook" inverseEntity="Menu_items" syncable="YES"/>
     </entity>
-    <entity name="Menu_items" representedClassName="Menu_items" syncable="YES">
+    <entity name="Menu_items" representedClassName="" syncable="YES">
         <attribute name="description_en" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image_URL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="item_id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -31,7 +31,7 @@
         <relationship name="cook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cook" inverseName="menu_items" inverseEntity="Cook" syncable="YES"/>
         <relationship name="menuItem_OrderDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order_Details" inverseName="orderDetails_menuItem" inverseEntity="Order_Details" syncable="YES"/>
     </entity>
-    <entity name="Order" representedClassName="Order" syncable="YES">
+    <entity name="Order" representedClassName="" syncable="YES">
         <attribute name="address_details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cook_comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customer_rating" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -44,7 +44,7 @@
         <relationship name="order_orderDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order_Details" inverseName="orderDetails_Order" inverseEntity="Order_Details" syncable="YES"/>
         <relationship name="order_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="user_order" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Order_Details" representedClassName="Order_Details" syncable="YES">
+    <entity name="Order_Details" representedClassName="" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -56,6 +56,7 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="image_URL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -67,10 +68,10 @@
     <elements>
         <element name="Category" positionX="-333" positionY="189" width="128" height="103"/>
         <element name="Catering" positionX="34" positionY="279" width="128" height="148"/>
-        <element name="Cook" positionX="-288" positionY="-495" width="128" height="90"/>
+        <element name="Cook" positionX="-288" positionY="-495" width="128" height="88"/>
         <element name="Menu_items" positionX="88" positionY="-225" width="128" height="178"/>
         <element name="Order" positionX="-128" positionY="-37" width="128" height="208"/>
         <element name="Order_Details" positionX="70" positionY="81" width="128" height="133"/>
-        <element name="User" positionX="-468" positionY="-153" width="128" height="195"/>
+        <element name="User" positionX="-468" positionY="-153" width="128" height="208"/>
     </elements>
 </model>

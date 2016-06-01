@@ -19,12 +19,17 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     _getCooksBasedOnLocation=NO;
-    NSLog(@"mgashh");
-    if ([[AFNetworkReachabilityManager sharedManager]isReachable]) {
+//    [AFNetworkReachabilityManager sharedManager];
+//    NSLog(@"mgashh");
+   // [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    NSLog(@"%hhd",afmanager.reachable);
+    if (afmanager.reachableViaWiFi) {
         NSLog(@"onllleen");
     }
     else
         NSLog(@"oofllinee");
+
+    
     
 }
 
@@ -41,10 +46,10 @@
     }
     else if ([serviceName isEqualToString:@"allCooks"])
     {
-        _cooks=[[NSArray alloc] initWithArray:dataRetreived];
+        _cooks=[[NSMutableArray alloc] initWithArray:dataRetreived];
         [cookRequestedDBFunctions insertCooks:_cooks];
-        NSMutableArray *ab=[cookRequestedDBFunctions fetchAndGetAllCooks];
-        NSLog(@"pppooo %@",ab);
+        _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
+        NSLog(@"pppooo %@",_cooks);
     }
     [self refreshDataInTableView];
     NSLog(@"meals data %@", meals );
@@ -95,7 +100,7 @@
     }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            cell.textLabel.text=[[_cooks objectAtIndex:indexPath.row] objectForKey:@"name"];
+            cell.textLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
             NSLog(@"g%@",[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]);
             [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;

@@ -16,6 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   // [AFNetwork sharedManager].enabled = YES;
+    afmanager=[AFNetworkReachabilityManager sharedManager];
+    [afmanager startMonitoring];
     // Override point for customization after application launch.
     return YES;
 }

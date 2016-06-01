@@ -14,6 +14,7 @@
 #import "CookServices.h"
 #import "UIImageView+WebCache.h" 
 #import "CookDAO.h"
+
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
     NSArray *meals;
@@ -22,7 +23,7 @@
     CookServices *cooksRequestedMeals;
     CookDAO *cookRequestedDBFunctions;
 }
-@property (strong,nonatomic) NSArray * cooks;
+@property (strong,nonatomic) NSMutableArray * cooks;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *menuOptions;
 @property (strong, nonatomic) IBOutlet UITableView *dataTableView;
 - (IBAction)changeValueOfSegmentedController:(id)sender;
