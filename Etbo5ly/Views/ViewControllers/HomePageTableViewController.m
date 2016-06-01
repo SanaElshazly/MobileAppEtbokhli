@@ -20,7 +20,7 @@
     [super viewDidLoad];
     _getCooksBasedOnLocation=NO;
     NSLog(@"mgashh");
-    if ([[AFNetworkReachabilityManager sharedManager]isReachable]) {
+    if (AFNetworkManagerObj.reachable) {
         NSLog(@"onllleen");
     }
     else
