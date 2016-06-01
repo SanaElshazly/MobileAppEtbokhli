@@ -23,5 +23,6 @@
 -(void) getMenuItemsManagedObject ;
 -(NSMutableArray *)fetchAndGetAllMenuItems;
 -(void) insertMenuItems:(NSArray *)menuItemsArray;
+-(void)deleteAllMeals;
 
 @end

@@ -18,18 +18,7 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _getCooksBasedOnLocation=NO;
-//    [AFNetworkReachabilityManager sharedManager];
-//    NSLog(@"mgashh");
-   // [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    NSLog(@"%hhd",afmanager.reachable);
-    if (afmanager.reachableViaWiFi) {
-        NSLog(@"onllleen");
-    }
-    else
-        NSLog(@"oofllinee");
-
-    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
 }
 
@@ -41,8 +30,10 @@
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     if ([serviceName isEqualToString:@"allMeals"]) {
-        meals = [[NSArray alloc] initWithArray:dataRetreived];
-        
+        _meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
+        [mealsRequestedDBFunctions insertMenuItems:_meals];
+        _meals=[mealsRequestedDBFunctions fetchAndGetAllMenuItems];
+         NSLog(@"meals data %@", _meals );
     }
     else if ([serviceName isEqualToString:@"allCooks"])
     {
@@ -52,7 +43,7 @@
         NSLog(@"pppooo %@",_cooks);
     }
     [self refreshDataInTableView];
-    NSLog(@"meals data %@", meals );
+   
 }
 
 -(void)handleWithFailure:(NSError *)error{
@@ -75,7 +66,7 @@
             break;
             
         case 1:
-            arrayLength = [meals count];
+            arrayLength = [_meals count];
             NSLog(@"arrayLength of meals %d", arrayLength);
             break;
             
@@ -92,23 +83,27 @@
     static NSString *cellID = @"CellIdentifier";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-//
-//    NSURL *imgURL=[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]];
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
+    UIImageView *listItemImage=(UIImageView *)[cell viewWithTag:1];
+    UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
+    UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            cell.textLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
-            NSLog(@"g%@",[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]);
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooks objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooks objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            listItemHeader.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
+            listItemSubHeader.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] address] ;
+            NSLog(@"urlll%@",[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]);
+            [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
             break;
             
         case 1:
-            cell.textLabel.text=[[meals objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
-             NSLog(@"g=h%@",[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]);
-            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[meals objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[meals objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            listItemHeader.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn];
+            listItemSubHeader.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+            NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
+            [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            
             break;
         default:
             break;
@@ -127,30 +122,58 @@
     NSLog(@"geeeh");
     networkDelegate=self;
     mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
+    
     cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
     cookRequestedDBFunctions=[[CookDAO alloc] initWithManagedObject];
-    [self changeValueOfSegmentedController:self];
+    mealsRequestedDBFunctions=[[MenuItemDAO alloc] initWithManagedObject];
+    [self checkConnectivity];
+    
 }
 -(IBAction)changeValueOfSegmentedController:(id)sender {
     NSLog(@"3mlt aho");
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-            if (_getCooksBasedOnLocation==NO) {
-                [cooksRequestedMeals getCooksListDataService];
-            }
+            if (_isUserReachable) {
+                    [cooksRequestedMeals getCooksListDataService];
+                }
             else
             {
-                
+                _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
+                [self refreshDataInTableView];
             }
             break;
         case 1 :
-            //[self getMealsListDataService];
-            [mealsRequestedService getMealsListDataService];
-            NSLog(@"%@",meals);
-            //[self refreshDataInTableView];
+            if (_isUserReachable) {
+                [mealsRequestedService getMealsListDataService];
+            }
+            else
+            {
+                _meals=[mealsRequestedDBFunctions fetchAndGetAllMenuItems];
+                [self refreshDataInTableView];
+            }
             break;
         default:
             break;
     }
+}
+-(void)checkConnectivity
+{
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if ([AFStringFromNetworkReachabilityStatus(status) isEqualToString:@"Not Reachable"]) {
+            _isUserReachable=NO;
+            [self changeValueOfSegmentedController:self];
+        }
+        else
+        {
+            _isUserReachable=YES;
+            [self changeValueOfSegmentedController:self];
+        }
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+        _isUserReachable=YES;
+    }
+    else
+        _isUserReachable=NO;
 }
 @end

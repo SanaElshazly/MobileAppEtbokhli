@@ -20,5 +20,6 @@
 -(id) initWithManagedObject;
 -(void) getCooksManagedObject ;
 -(NSMutableArray *)fetchAndGetAllCooks;
+-(void) deleteAllCooks;
 -(void) insertCooks:(NSArray *)cooksArray;
 @end

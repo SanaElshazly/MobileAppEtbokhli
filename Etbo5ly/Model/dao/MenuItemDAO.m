@@ -23,6 +23,16 @@
     fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Menu_items"];
     _menuItemsManagedObject = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 }
+-(void)deleteAllMeals
+{
+    if (_menuItemsManagedObject == nil) {
+        // handle error
+        //mt3mlsh haga lw l table fadi
+    } else {
+        for (NSManagedObject *object in _menuItemsManagedObject) {
+            [managedObjectContext deleteObject:object];
+        }
+}}
 -(NSMutableArray *)fetchAndGetAllMenuItems
 {
     [self getMenuItemsManagedObject];
@@ -44,15 +54,15 @@
 -(void)insertMenuItems:(NSArray *)menuItemsArray
 {
     NSError *error = nil;
-    
+    [self deleteAllMeals];
     for (int i=0; i<menuItemsArray.count; i++) {
         NSManagedObject *newMenuItem=[NSEntityDescription insertNewObjectForEntityForName:@"Menu_items" inManagedObjectContext:managedObjectContext];
-        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] valueForKey:@"name_en"] forKey:@"name_en"];
-        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"item_id"] forKey:@"item-id"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] valueForKey:@"nameEn"] forKey:@"name_en"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"itemId"] forKey:@"item_id"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"price"] forKey:@"price"];
-        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"item_rate"] forKey:@"item_rate"];
-        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"image_URL"] forKey:@"image_URL"];
-        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"description_en"] forKey:@"description_en"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"itemRate"] forKey:@"item_rate"];
+        [newMenuItem setValue:[NSString stringWithFormat:@"%@%@",[[menuItemsArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[menuItemsArray objectAtIndex:i] objectForKey:@"imageUrl"]] forKey:@"image_URL"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"descriptionEn"] forKey:@"description_en"];
     }
     //    if (![managedObjectContext inser:&error]) {
     //        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);

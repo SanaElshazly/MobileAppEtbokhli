@@ -20,6 +20,16 @@
     fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Cook"];
     _cooksManagedObject = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 }
+-(void)deleteAllCooks
+{
+    if (_cooksManagedObject == nil) {
+        // handle error
+        //mt3mlsh haga lw l table fadi
+    } else {
+        for (NSManagedObject *object in _cooksManagedObject) {
+            [managedObjectContext deleteObject:object];
+        }
+}}
 -(NSMutableArray *)fetchAndGetAllCooks
 {
     [self getCooksManagedObject];
@@ -32,19 +42,21 @@
         fetchedCook.email=[managedObjectCook valueForKey:@"email"];
         fetchedCook.password=[managedObjectCook valueForKey:@"password"];
         fetchedCook.address=[managedObjectCook valueForKey:@"address"];
+        fetchedCook.imageURL=[managedObjectCook valueForKey:@"imageURL"];
         fetchedCook.phone=[managedObjectCook valueForKey:@"phone"];
         fetchedCook.latitude=[[managedObjectCook valueForKey:@"latitude"] doubleValue];
         fetchedCook.longitude=[[managedObjectCook valueForKey:@"longitude"] doubleValue];
         fetchedCook.endWorkingHours=[managedObjectCook valueForKey:@"end_working_hours"];
         fetchedCook.startWorkingHours=[managedObjectCook valueForKey:@"start_working_hours"];
         fetchedCook.registerationDate=[managedObjectCook valueForKey:@"registeration_date"];
-        fetchedCook.imageURL=[NSString stringWithFormat:@"%@%@",[managedObjectContext valueForKey:@"resourcesURL"],[managedObjectContext valueForKey:@"imageURL"]];
+
         [_selectedCooks addObject:fetchedCook];
     }
     return _selectedCooks;
 }
 -(void)insertCooks:(NSArray *)cooksArray
 {
+    [self deleteAllCooks];
     NSError *error = nil;
     for (int i=0; i<cooksArray.count; i++) {
         NSManagedObject *newCook=[NSEntityDescription insertNewObjectForEntityForName:@"Cook" inManagedObjectContext:managedObjectContext];
@@ -60,10 +72,11 @@
         
         NSLog(@"%@",[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i ] objectForKey:@"registerationDate"] longLongValue]/1000.0)]);
         
-        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"registerationDate"] longLongValue]/1000.0)] forKey:@"registeration_date"];
-        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"endWorkingHours"] longLongValue]/1000.0)] forKey:@"end_working_hours"];
-        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"startWorkingHours"] longLongValue]/1000.0)] forKey:@"start_working_hours"];
-        [newCook setValue: forKey:<#(nonnull NSString *)#>];
+        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"registerationDate"] longLongValue]/1000)] forKey:@"registeration_date"];
+        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"endWorkingHours"] longLongValue]/1000)] forKey:@"end_working_hours"];
+        [newCook setValue:[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i] objectForKey:@"startWorkingHours"] longLongValue]/1000)] forKey:@"start_working_hours"];
+        NSLog(@"%@",[NSString stringWithFormat:@"%@%@",[[cooksArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[cooksArray objectAtIndex:i] objectForKey:@"imageURL"]]);
+        [newCook setValue:[NSString stringWithFormat:@"%@%@",[[cooksArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[cooksArray objectAtIndex:i] objectForKey:@"imageURL"]] forKey:@"imageURL"];
         
     }
 //    if (![managedObjectContext inser:&error]) {
