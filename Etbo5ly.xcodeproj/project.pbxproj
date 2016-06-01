@@ -32,6 +32,7 @@
 		B4690C121CFF4C160002B315 /* orngDetectLoc-25.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C061CFF4C160002B315 /* orngDetectLoc-25.png */; };
 		B4690C131CFF4C160002B315 /* profileEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C071CFF4C160002B315 /* profileEtbo5ly.png */; };
 		B4690C141CFF4C160002B315 /* shareEtbo5ly-23.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */; };
+		B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4690C161CFF4F940002B315 /* MealDetailedViewController.m */; };
 		B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A124DF1CF60E0500779BAF /* CoreLocation.framework */; };
 		B4C13CF31CFC432F00B512B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C13CF21CFC432F00B512B2 /* Main.storyboard */; };
 		B4C886641CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C886631CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m */; };
@@ -112,6 +113,8 @@
 		B4690C061CFF4C160002B315 /* orngDetectLoc-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "orngDetectLoc-25.png"; path = "Images/orngDetectLoc-25.png"; sourceTree = "<group>"; };
 		B4690C071CFF4C160002B315 /* profileEtbo5ly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profileEtbo5ly.png; path = Images/profileEtbo5ly.png; sourceTree = "<group>"; };
 		B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shareEtbo5ly-23.png"; path = "Images/shareEtbo5ly-23.png"; sourceTree = "<group>"; };
+		B4690C151CFF4F940002B315 /* MealDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealDetailedViewController.h; path = Views/ViewControllers/MealDetailedViewController.h; sourceTree = "<group>"; };
+		B4690C161CFF4F940002B315 /* MealDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealDetailedViewController.m; path = Views/ViewControllers/MealDetailedViewController.m; sourceTree = "<group>"; };
 		B4A124DF1CF60E0500779BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B4C13CF21CFC432F00B512B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B4C886621CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyDatabaseManager.h; path = Controllers/DatabaseManager/Etbo5lyDatabaseManager.h; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 				B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */,
 				4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */,
 				4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */,
+				B4690C151CFF4F940002B315 /* MealDetailedViewController.h */,
+				B4690C161CFF4F940002B315 /* MealDetailedViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -676,6 +681,7 @@
 				B4C886761CFDB79E001DFEA6 /* Etbo5lyNetworkManager.m in Sources */,
 				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
 				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
+				B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */,
 				B4C886971CFDBB25001DFEA6 /* CategoryDAO.m in Sources */,
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
 				B4C8869A1CFDBB25001DFEA6 /* MenuItemDAO.m in Sources */,
