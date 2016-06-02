@@ -16,7 +16,7 @@
 #import "CookDAO.h"
 #import "AFNetworking.h"
 #import "MenuItemDAO.h"
-
+#import "MealDetailedViewController.h"
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate , Etbo5lyNetworkDelegate>
 {
    // NSArray *cooks;

@@ -112,7 +112,17 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSLog(@"%@",[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn]);
+    UIStoryboard *storyboard=self.navigationController.storyboard;
+    MealDetailedViewController *mealDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedMealViewController"];
+    [mealDetailedViewController setDetailedMeal:(MenuItems *)[_meals objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:mealDetailedViewController animated:YES];
 
+    
+}
 -(void)refreshDataInTableView
 {
     [self.dataTableView reloadData];
@@ -176,4 +186,5 @@
     else
         _isUserReachable=NO;
 }
+
 @end

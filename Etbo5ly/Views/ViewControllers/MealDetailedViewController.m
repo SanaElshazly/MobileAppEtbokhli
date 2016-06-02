@@ -16,22 +16,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    quantity=1;
 
+    self.navigationController.navigationItem.title=@"hna";
+    NSLog(@"hna");
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    _detailedMealName.text=[_detailedMeal nameEn];
+    [_detailedMealImage sd_setImageWithURL:[NSURL URLWithString:[_detailedMeal imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    [_detailedMealDescription setText:[_detailedMeal descriptionEn]];
+    _detailedMealPrice.text=[NSString stringWithFormat:@"%f",[_detailedMeal price] ];
+    _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
+    _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+    NSLog(@"%@",[_detailedMeal nameEn]);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)addMealQuantity:(id)sender {
+    quantity++;
+    _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
+    _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
 }
-*/
 
+- (IBAction)subtractMealQuantity:(id)sender {
+    if (quantity<=1) {
+        quantity=1;
+        _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
+        _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+    }
+    else
+    {
+        quantity--;
+        _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
+        _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+    }
+}
 @end

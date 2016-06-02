@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuItems.h"
+#import "UIImageView+WebCache.h" 
 @interface MealDetailedViewController : UIViewController
-@property (strong,nonatomic) MenuItems *detailedMenuItem;
+{
+    int quantity;
+}
+@property (strong,nonatomic) MenuItems *detailedMeal;
+@property (strong, nonatomic) IBOutlet UIImageView *detailedMealImage;
+@property (strong, nonatomic) IBOutlet UILabel *detailedMealName;
+@property (strong, nonatomic) IBOutlet UILabel *detailedMealDescription;
+@property (strong, nonatomic) IBOutlet UILabel *detailedMealPrice;
+- (IBAction)addMealQuantity:(id)sender;
+- (IBAction)subtractMealQuantity:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *MealQuantity;
+@property (strong, nonatomic) IBOutlet UILabel *totalItemPrice;
+
 @end
