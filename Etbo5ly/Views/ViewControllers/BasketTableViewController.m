@@ -32,26 +32,64 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
- 
-    return 0;
+    return 1;
+    
 }
 +(void)addMealToBasket:(MenuItems *)newMeal
 {
-    [allBasketMeals addObject:newMeal];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIndentifier" forIndexPath:indexPath];
+    static NSString *cellID1 = @"CellIdentifier1";
+    static NSString *cellID2=@"CellIdentifier2";
+    if (indexPath.section==0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID1];
+        if(!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID1];
+        }
+        cell.textLabel.text=@"Nohnoh";
+         return cell;
+    }
+    else
+    {
+        UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:cellID2];
+        if(!cell2)
+        {
+            cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID2];
+        }
+        cell2.textLabel.text=@"Monmon";
+        return cell2;
+    }
     
-    
-    return cell;
+   
 }
 
++(void)addCookToBasket:(int)CookID
+{
+    for (NSNumber *num in allCookIDInBasket) {
+        if ([allCookIDInBasket containsObject:num]) {
+            numberOfCooksInBasket++;
+        }
+    }
+}
+-(void)addCookMealstoBasket:(NSString *)cookName setCookMealsOrder:(MenuItems *)newMeal
+{
+    if (![_allBasketMeals valueForKey:cookName]) {
+        NSMutableArray * newCookMeals=[[NSMutableArray alloc] init];
+        [newCookMeals addObject:newMeal];
+        [_allBasketMeals addObject:newCookMeals];
+    }
+    else
+    {
+        [[_allBasketMeals valueForKey:cookName] addObject:newMeal];
+    }
 
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

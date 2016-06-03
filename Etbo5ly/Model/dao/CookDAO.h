@@ -22,4 +22,5 @@
 -(NSMutableArray *)fetchAndGetAllCooks;
 -(void) deleteAllCooks;
 -(void) insertCooks:(NSArray *)cooksArray;
+-(Cook *) selectCookBasedOnID : (int) CookID;
 @end

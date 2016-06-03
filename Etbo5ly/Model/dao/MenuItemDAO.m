@@ -46,7 +46,7 @@
         fetchedMenuItem.itemRate = [[managedObjectMenuItem valueForKey:@"item_rate"] integerValue];
         fetchedMenuItem.imageURL = [managedObjectMenuItem valueForKey:@"image_URL"];
         fetchedMenuItem.descriptionEn = [managedObjectMenuItem valueForKey:@"description_en"];
-
+        fetchedMenuItem.cookName= [managedObjectMenuItem valueForKey:@"cookName"];
         [_selectedMenuItems addObject:fetchedMenuItem];
     }
     return _selectedMenuItems;
@@ -57,12 +57,15 @@
     [self deleteAllMeals];
     for (int i=0; i<menuItemsArray.count; i++) {
         NSManagedObject *newMenuItem=[NSEntityDescription insertNewObjectForEntityForName:@"Menu_items" inManagedObjectContext:managedObjectContext];
+        Cook *mealCook=[[Cook alloc] initWithInfo];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] valueForKey:@"nameEn"] forKey:@"name_en"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"itemId"] forKey:@"item_id"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"price"] forKey:@"price"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"itemRate"] forKey:@"item_rate"];
         [newMenuItem setValue:[NSString stringWithFormat:@"%@%@",[[menuItemsArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[menuItemsArray objectAtIndex:i] objectForKey:@"imageUrl"]] forKey:@"image_URL"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"descriptionEn"] forKey:@"description_en"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"cookName"] forKey:@"cookName"];
+      //  [newMenuItem setValue:"cook_id" forKey:];
     }
     //    if (![managedObjectContext inser:&error]) {
     //        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuItems.h"
-static NSMutableArray * allBasketMeals;
+
+static NSMutableArray *allCookIDInBasket;
+static int numberOfCooksInBasket;
 @interface BasketTableViewController : UITableViewController
-
+@property NSMutableArray * allBasketMeals;
 +(void) addMealToBasket : (MenuItems *) newMeal;
-
++(void) addCookToBasket : (int) CookID;
+-(void ) addCookMealstoBasket : (NSString*) cookName setCookMealsOrder : (MenuItems *) newMeal;
 @end

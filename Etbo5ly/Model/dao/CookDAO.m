@@ -83,4 +83,15 @@
 //        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
 //    }
 }
+-(Cook *)selectCookBasedOnID:(int)CookID
+{
+    Cook *cookBasedOnId=[[Cook alloc] initWithInfo];
+    NSFetchRequest *req=[[NSFetchRequest alloc] initWithEntityName:@"Cook"];
+    req.predicate=[NSPredicate predicateWithFormat:@"id == %d",CookID];
+    NSArray *cooksBasedOnId=[managedObjectContext executeFetchRequest:req error:nil];
+    for (Cook * newCook in cooksBasedOnId) {
+        cookBasedOnId=newCook;
+    }
+    return cookBasedOnId;
+}
 @end

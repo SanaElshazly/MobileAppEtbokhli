@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuItems.h"
 #import "UIImageView+WebCache.h" 
+#import "BasketTableViewController.h"
 @interface MealDetailedViewController : UIViewController
 {
     int quantity;
@@ -22,5 +23,6 @@
 - (IBAction)subtractMealQuantity:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *MealQuantity;
 @property (strong, nonatomic) IBOutlet UILabel *totalItemPrice;
+- (IBAction)addMealToBasket:(id)sender;
 
 @end
