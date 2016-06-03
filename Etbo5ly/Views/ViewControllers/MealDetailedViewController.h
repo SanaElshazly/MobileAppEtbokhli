@@ -23,6 +23,6 @@
 - (IBAction)subtractMealQuantity:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *MealQuantity;
 @property (strong, nonatomic) IBOutlet UILabel *totalItemPrice;
-- (IBAction)addMealToBasket:(id)sender;
+- (IBAction)addMealToItem:(id)sender;
 
 @end

@@ -56,7 +56,9 @@
         _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
     }
 }
-- (IBAction)addMealToBasket:(id)sender {
+
+- (IBAction)addMealToItem:(id)sender {
     [BasketTableViewController addCookMealstoBasket:[_detailedMeal cookName] setCookMealsOrder:_detailedMeal];
+    [self .navigationController popToRootViewControllerAnimated:YES];
 }
 @end

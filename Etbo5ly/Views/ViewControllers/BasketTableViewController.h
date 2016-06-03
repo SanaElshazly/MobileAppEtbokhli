@@ -10,10 +10,11 @@
 #import "MenuItems.h"
 
 static NSMutableArray *allCookIDInBasket;
+static NSMutableDictionary * allBasketMeals;;
 static int numberOfCooksInBasket;
 @interface BasketTableViewController : UITableViewController
-@property NSMutableArray * allBasketMeals;
 +(void) addMealToBasket : (MenuItems *) newMeal;
 +(void) addCookToBasket : (int) CookID;
--(void ) addCookMealstoBasket : (NSString*) cookName setCookMealsOrder : (MenuItems *) newMeal;
++(void ) addCookMealstoBasket : (NSString*) cookName setCookMealsOrder : (MenuItems *) newMeal;
+@property (strong, nonatomic) IBOutlet UITableView *tableViewData;
 @end
