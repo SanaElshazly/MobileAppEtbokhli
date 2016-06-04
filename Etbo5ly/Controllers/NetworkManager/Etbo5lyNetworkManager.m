@@ -15,7 +15,7 @@
 {
     myServiceName = serviceName;
     networkDelegate = networkManager;
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+   
     parameters = @{@"format": @"json"};
     
     
@@ -60,38 +60,26 @@
 }
 
 
-//+(void)connectPOST:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager*) networkManager{
-//    
-//    myServiceName = serviceName;
-//    networkDelegate = networkManager;
-//    
-//    parameters = @{@"format": @"json"};
-//    
-//    
-//    requestURL = [NSURL URLWithString:url];
-//    manager = [[AFHTTPSessionManager alloc] initWithBaseURL:requestURL];
-//    [manager POST:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-//        
-//        //_myData = [NSMutableData new]
-//        [networkDelegate handle: responseObject :myServiceName];
-//        
-//        NSLog(@"*******************************");
-//        
-//        //handle callback
-//        //self.movies=[[NSMutableArray alloc]initWithArray:responseObject];
-//        
-//        
-//        NSLog(@"NSMutableArray JSON");
-//        
-//        
-//    } failure:^(NSURLSessionTask *operation, NSError *error) {
-//        //NSLog(@"Error: %@", error);
-//        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-//        //handle with failure
-//        [networkDelegate handleWithFailure : error];
-//    }];
-//    
-//}
-
++(void)connectPOST:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager *)networkManager setParameters:(NSDictionary *)methodParameters
+{
+    
+    myServiceName = serviceName;
+    networkDelegate = networkManager;
+    
+    parameters = methodParameters;
+    NSLog(@"%@",parameters);
+    
+    requestURL = [NSURL URLWithString:url];
+    manager=[AFHTTPRequestOperationManager manager] ;
+    [manager POST:requestURL.absoluteString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        [networkDelegate handle : responseObject : myServiceName];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"Error: %@", error);
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+        //handle with failure
+        [networkDelegate handleWithFailure : error];
+        NSLog(@"Error: %@", error);
+    }];
+}
 @end
