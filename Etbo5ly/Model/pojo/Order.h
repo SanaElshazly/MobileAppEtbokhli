@@ -18,6 +18,11 @@
 @property NSString * type;
 @property double longitude;
 @property double latitude;
+@property NSString * addressDetails;
+@property int regionId;
+@property NSString *cookName;
+@property float orderTotalPrice;
 -(id) initWithInfo;
 -(id) initWithInfo : (int) orderID setLocation : (NSString*) location setDuration : (int) duration setOrderComment : (NSString * ) orderComment setCookRating : (int) cookRating setCookComment : (NSString*) cookComment setType : (NSString *)type setLongitude : (double) longitude setLatitude : (double) latitude;
++(NSMutableDictionary *) convertOrderToJSON : (Order *) orderObject;
 @end

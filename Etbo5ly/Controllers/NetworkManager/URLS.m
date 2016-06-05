@@ -59,6 +59,10 @@
     urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"region/countries" ];
     return urlPath;
 }
-
++(NSString *)createOrder
+{
+    urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"createOrder" ];
+    return urlPath;
+}
 
 @end

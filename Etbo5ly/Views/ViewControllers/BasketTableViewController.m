@@ -33,10 +33,8 @@
 {
    
     NSLog(@"%@",[allBasketMeals allValues]);
-//    if(allMeals==nil)
-//    {
-//        allMeals=[]
-//    }
+    networkDelegate=self;
+    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     allMeals=[allBasketMeals allValues];
      NSLog(@"meaaals%@",allMeals);
     if (_orderJSONParameters==nil) {
@@ -70,9 +68,10 @@
     UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
     UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
    listItemHeader.text=[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] nameEn];
-//    listItemHeader.text=[(MenuItems *)[allMeals objectAtIndex:indexPath.row] ] ;
-//    listItemSubHeader.text=[(MenuItems *)[_cooks objectAtIndex:indexPath.row] address] ;
-//    [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+   listItemSubHeader.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
+    
+    [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    
     
     return cell;
     
@@ -81,6 +80,21 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
    return [(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, tableView.frame.size.width, 18)];
+    UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(50, 5, tableView.frame.size.width, 18)];
+    [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:12]];
+    NSString *sectionTotalPrice =[NSString stringWithFormat:@"%f",[orderDetails orderTotalPrice] ];
+    NSString * sectionTitle=[(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
+    [sectionTitleLabel setText:sectionTitle];
+    [totalPricePerCook setText:sectionTotalPrice];
+    [view addSubview:sectionTitleLabel];
+    [view addSubview:totalPricePerCook];
+    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background color...
+    return view;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -129,11 +143,26 @@
 }
 -(void) checkOut : (UIButton*) sender
 {
+    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
+    NSString *allOrderDetails;
+    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
+    orderDetails=[[Order alloc] initWithInfo];
+    for (MenuItems *ittem in cookOrder) {
+        orderDetails.orderTotalPrice=[ittem price]+[orderDetails orderTotalPrice];
+        NSLog(@"%f",[orderDetails orderTotalPrice]);
+        [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
+    }_orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@2,@"cookName":@"menna",@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
+    NSLog(@"%@",_orderJSONParameters);
+    allOrderDetails=[self convertParametersToJSON:_orderJSONParameters];
+    NSLog(@"%@",allOrderDetails);
+    [userRequestedServices createOrder:_orderJSONParameters];
+
+}
+-(NSString *)convertParametersToJSON:(NSDictionary *)cookOrder
+{
     NSData *json;
     NSError *error = nil;
-    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
-    NSLog(@"hnaaaa%@",cookOrder);
-    _orderJSONParameters=@{@"userByCustomerId":@"1",@"customerName":@"AlJazayeerly",@"userByCookId":@"Menna",@"location":@"ITI",@"duration":@"45",@"customerRating":@"",@"orderComment":@"",@"type":@"",@"longitude":@"",@"latitude":@"",@"addressDetails":@""};
+    NSString *jsonString;
     if ([NSJSONSerialization isValidJSONObject:_orderJSONParameters])
     {
         // Serialize the dictionary
@@ -142,15 +171,20 @@
         // If no errors, let's view the JSON
         if (json != nil && error == nil)
         {
-            NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+            jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
             
             NSLog(@"JSON: %@", jsonString);
         }
     }
-    NSLog(@"%@",_orderJSONParameters);
-    NSLog(@"buttonn%d",sender.tag);
-    NSLog(@"%@",[allMeals objectAtIndex:sender.tag]);
-    
+    return jsonString;
 }
-
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
+{
+    NSLog(@"SUCESSSS");
+  //  [_orderJSONParameters delete:];
+}
+-(void)handleWithFailure:(NSError *)error
+{
+    NSLog(@"ERRRROOR");
+}
 @end

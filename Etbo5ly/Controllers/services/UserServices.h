@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Etbo5lyNetworkDelegate.h"
+#import "Etbo5lyNetworkManager.h"
+#import "URLS.h"
 @interface UserServices : NSObject
-
+{
+    NSString * serviceName;
+    NSString * serviceURL;
+    Etbo5lyNetworkManager *networkDelegateObj;
+}
+-(void) createOrder : (NSDictionary *) jsonParameters;
+-(id) initWithNetworkDelegate : (Etbo5lyNetworkManager*) networkManagerObj;
 @end

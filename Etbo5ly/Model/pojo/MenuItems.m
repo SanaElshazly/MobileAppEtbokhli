@@ -26,12 +26,25 @@
     }
     return self;
 }
--(NSMutableDictionary *)convertObjectToJSON:(MenuItems *)mealObject
++(NSMutableDictionary *)convertObjectToJSON:(MenuItems *)mealObject
 {
     NSMutableDictionary *mealJSONObject=[[NSMutableDictionary alloc] init];
-    [mealJSONObject setObject:[NSString stringWithFormat:@"%d",[mealObject itemId]] forKey:@"menuItemsItemId"];
+    mealObject.comment=@"good";
+    mealObject.nameAr=@"";
+    mealObject.descriptionAr=@"";
+    [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject itemId]] forKey:@"menuItemsItemId"];
     [mealJSONObject setObject:[mealObject nameEn] forKey:@"menuItemsNameEn"];
-    [mealJSONObject setObject:[NSString stringWithFormat:@"%",[mealObject price] ] forKey:@"menuItemsPrice"];
+    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject price] ]forKey:@"menuItemsPrice"];
+    [mealJSONObject setObject:[mealObject descriptionEn] forKey:@"menuItemsDescriptionEn"];
+ //   [mealJSONObject setObject:[mealObject imageURL] forKey:@"menuItemsImageUrl"];
+    [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject quantity]] forKey:@"quantity"];
+    [mealJSONObject setObject:[mealObject comment] forKey:@"comment"];
+    [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject rating]]forKey:@"rating"];
+    [mealJSONObject setObject:[mealObject descriptionAr] forKey:@"menuItemsDescriptionAr"];
+    [mealJSONObject setObject:[mealObject nameAr] forKey:@"menuItemsNameAr"];
+    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject totalItemPrice]] forKey:@"totalPrice"];
+    
     return mealJSONObject;
+
 }
 @end

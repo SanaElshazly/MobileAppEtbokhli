@@ -62,15 +62,15 @@
 
 +(void)connectPOST:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager *)networkManager setParameters:(NSDictionary *)methodParameters
 {
-    
+    parameters=[[NSDictionary alloc] init];
     myServiceName = serviceName;
     networkDelegate = networkManager;
-    
     parameters = methodParameters;
-    NSLog(@"%@",parameters);
+    NSLog(@"paraaameteers%@",parameters);
     
     requestURL = [NSURL URLWithString:url];
     manager=[AFHTTPRequestOperationManager manager] ;
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager POST:requestURL.absoluteString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [networkDelegate handle : responseObject : myServiceName];
