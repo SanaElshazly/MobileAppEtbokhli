@@ -110,10 +110,9 @@
     if (allBasketMeals==nil) {
         allBasketMeals=[[NSMutableDictionary alloc] init];
     }
-//    if (allMeals==nil) {
-//        allMeals=[[NSMutableArray alloc] init];
-//    }
- 
+
+    NSLog(@"%@",allBasketMeals);
+    NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
     if (![allBasketMeals valueForKey:cookName]) {
         NSMutableArray * newCookMeals=[[NSMutableArray alloc] init];
         [newCookMeals addObject:newMeal];

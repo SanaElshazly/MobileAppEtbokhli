@@ -57,10 +57,12 @@
 		B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D41CF1E80200BE850C /* Order.m */; };
 		B4CCD7DE1CF1E80200BE850C /* OrderDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D61CF1E80200BE850C /* OrderDetails.m */; };
 		B4CCD7DF1CF1E80200BE850C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7D81CF1E80200BE850C /* User.m */; };
-		B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7E11CF1E8A100BE850C /* SlideMenuTableViewController.m */; };
 		B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CCD7ED1CF1EA6800BE850C /* main.m */; };
 		B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */; };
 		B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */; };
+		CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */; };
+		CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73F1D030E15009A0894 /* ProfileViewController.m */; };
+		CF21A7431D03503A009A0894 /* signUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A7421D03503A009A0894 /* signUpTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,13 +165,17 @@
 		B4CCD7D61CF1E80200BE850C /* OrderDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetails.m; path = Model/pojo/OrderDetails.m; sourceTree = "<group>"; };
 		B4CCD7D71CF1E80200BE850C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/pojo/User.h; sourceTree = "<group>"; };
 		B4CCD7D81CF1E80200BE850C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/pojo/User.m; sourceTree = "<group>"; };
-		B4CCD7E01CF1E8A100BE850C /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuTableViewController.h; path = Views/SlideMenu/SlideMenuTableViewController.h; sourceTree = "<group>"; };
-		B4CCD7E11CF1E8A100BE850C /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideMenuTableViewController.m; path = Views/SlideMenu/SlideMenuTableViewController.m; sourceTree = "<group>"; };
 		B4CCD7ED1CF1EA6800BE850C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4E75BFA1CFA012F00D29090 /* etbokhliLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = etbokhliLogo.png; path = Images.xcassets/AppIcon.appiconset/etbokhliLogo.png; sourceTree = "<group>"; };
 		B4F7FF2B1CF3644000C24E45 /* LocationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationPageViewController.h; path = Views/ViewControllers/LocationPageViewController.h; sourceTree = "<group>"; };
 		B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationPageViewController.m; path = Views/ViewControllers/LocationPageViewController.m; sourceTree = "<group>"; };
 		BAD74B90438197E986C104A8 /* Pods-Etbo5lyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF21A73B1D030683009A0894 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuTableViewController.h; path = Views/ViewControllers/SlideMenuTableViewController.h; sourceTree = "<group>"; };
+		CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideMenuTableViewController.m; path = Views/ViewControllers/SlideMenuTableViewController.m; sourceTree = "<group>"; };
+		CF21A73E1D030E15009A0894 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Views/ViewControllers/ProfileViewController.h; sourceTree = "<group>"; };
+		CF21A73F1D030E15009A0894 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Views/ViewControllers/ProfileViewController.m; sourceTree = "<group>"; };
+		CF21A7411D03503A009A0894 /* signUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = signUpTableViewController.h; path = Views/ViewControllers/signUpTableViewController.h; sourceTree = "<group>"; };
+		CF21A7421D03503A009A0894 /* signUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpTableViewController.m; path = Views/ViewControllers/signUpTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,18 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				B43D5F101CF1FCC7008F3F63 /* ViewControllers */,
-				4A0A08AC1CF103E5000609E3 /* SlideMenu */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		4A0A08AC1CF103E5000609E3 /* SlideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				B4CCD7E01CF1E8A100BE850C /* SlideMenuTableViewController.h */,
-				B4CCD7E11CF1E8A100BE850C /* SlideMenuTableViewController.m */,
-			);
-			name = SlideMenu;
 			sourceTree = "<group>";
 		};
 		4AC6196B1CEF233F002D66EB = {
@@ -351,6 +347,12 @@
 				B4690C161CFF4F940002B315 /* MealDetailedViewController.m */,
 				B4C8B8F01D005DBE00960A09 /* BasketTableViewController.h */,
 				B4C8B8F11D005DBE00960A09 /* BasketTableViewController.m */,
+				CF21A73B1D030683009A0894 /* SlideMenuTableViewController.h */,
+				CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */,
+				CF21A73E1D030E15009A0894 /* ProfileViewController.h */,
+				CF21A73F1D030E15009A0894 /* ProfileViewController.m */,
+				CF21A7411D03503A009A0894 /* signUpTableViewController.h */,
+				CF21A7421D03503A009A0894 /* signUpTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -675,7 +677,9 @@
 				B4CCD7DB1CF1E80200BE850C /* Cook.m in Sources */,
 				B4C886981CFDBB25001DFEA6 /* CateringDAO.m in Sources */,
 				4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */,
+				CF21A7431D03503A009A0894 /* signUpTableViewController.m in Sources */,
 				B4C8866D1CFDB792001DFEA6 /* CookServices.m in Sources */,
+				CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */,
 				B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */,
 				B4C8866E1CFDB792001DFEA6 /* locationServices.m in Sources */,
 				B4C8869C1CFDBB25001DFEA6 /* UserDAO.m in Sources */,
@@ -685,10 +689,10 @@
 				B4C8866F1CFDB792001DFEA6 /* MealsServices.m in Sources */,
 				B4C886761CFDB79E001DFEA6 /* Etbo5lyNetworkManager.m in Sources */,
 				B43D5F141CF20C48008F3F63 /* HomePageTableViewController.m in Sources */,
-				B4CCD7E21CF1E8A100BE850C /* SlideMenuTableViewController.m in Sources */,
 				B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */,
 				B4C886971CFDBB25001DFEA6 /* CategoryDAO.m in Sources */,
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
+				CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */,
 				B4C8869A1CFDBB25001DFEA6 /* MenuItemDAO.m in Sources */,
 				B4C886641CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,

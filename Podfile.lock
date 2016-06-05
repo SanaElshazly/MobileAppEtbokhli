@@ -23,15 +23,18 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - UIFloatLabelTextField (1.2.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - SDWebImage (~> 3.7)
+  - UIFloatLabelTextField
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  UIFloatLabelTextField: b01b1bcea4b4fd617e80744f3cfd06e1d1b7e75e
 
-PODFILE CHECKSUM: 1061d42463c275b28d81c4bdbd7c9b57a7792012
+PODFILE CHECKSUM: a23a7860361f000a794cc7556ffd6a4492223b4b
 
 COCOAPODS: 1.0.0
