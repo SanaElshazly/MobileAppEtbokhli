@@ -16,5 +16,6 @@ static int numberOfCooksInBasket;
 +(void) addMealToBasket : (MenuItems *) newMeal;
 +(void) addCookToBasket : (int) CookID;
 +(void ) addCookMealstoBasket : (NSString*) cookName setCookMealsOrder : (MenuItems *) newMeal;
+@property NSDictionary *orderJSONParameters;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewData;
 @end
