@@ -17,13 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.fullnameTxtField.floatLabelActiveColor = [UIColor orangeColor];
-    self.emailTxtField.floatLabelActiveColor = [UIColor orangeColor];
-    self.phoneTxtField.floatLabelActiveColor = [UIColor orangeColor];
-    self.regionTxtField.floatLabelActiveColor = [UIColor orangeColor];
-    self.cityTxtField.floatLabelActiveColor = [UIColor orangeColor];
-    self.passwordTxtField.floatLabelActiveColor = [UIColor orangeColor];
-
     
     [self addImageViewBorderStyle:self.signupImg];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
@@ -123,7 +116,7 @@
     imgView.layer.masksToBounds = YES;
 }
 
--(void) addTextFieldBorderStyle:(UITextField*) txtField{
+-(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField{//:(UITextField*) txtField{
     
     CALayer *bottomBorder = [CALayer layer];
     CGFloat borderWidth = 1;
@@ -132,6 +125,7 @@
     
     bottomBorder.frame = CGRectMake(0.0f, txtField.frame.size.height - borderWidth, txtField.frame.size.width,txtField.frame.size.height);
     bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    txtField.floatLabelActiveColor = [UIColor orangeColor];
     [txtField.layer addSublayer:bottomBorder];
     
 }
