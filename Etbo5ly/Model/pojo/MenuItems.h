@@ -18,4 +18,5 @@
 @property NSString *cookName;
 -(id) initWithInfo;
 -(id) initWithInfo : (int) itemId setNameEn : (NSString*) nameEn setPrice : (float) price setDescriptionEn : (NSString*) descriptionEn setItemRate : (int) itemRate setImageURL : (NSString*) imageURL;
+-(NSMutableDictionary *) convertObjectToJSON : (MenuItems *) mealObject;
 @end

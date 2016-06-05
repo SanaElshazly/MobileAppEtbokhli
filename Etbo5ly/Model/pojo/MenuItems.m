@@ -26,4 +26,12 @@
     }
     return self;
 }
+-(NSMutableDictionary *)convertObjectToJSON:(MenuItems *)mealObject
+{
+    NSMutableDictionary *mealJSONObject=[[NSMutableDictionary alloc] init];
+    [mealJSONObject setObject:[NSString stringWithFormat:@"%d",[mealObject itemId]] forKey:@"menuItemsItemId"];
+    [mealJSONObject setObject:[mealObject nameEn] forKey:@"menuItemsNameEn"];
+    [mealJSONObject setObject:[NSString stringWithFormat:@"%",[mealObject price] ] forKey:@"menuItemsPrice"];
+    return mealJSONObject;
+}
 @end

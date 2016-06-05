@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *urlPath;
-static  NSString *IP_ADDRESS = @"http://192.168.1.9:8084/Etbo5ly-Web/rest/";
+static  NSString *IP_ADDRESS = @"http://10.142.1.108:8084/Etbo5ly-Web/rest/";
 
 @interface URLS : NSObject
 

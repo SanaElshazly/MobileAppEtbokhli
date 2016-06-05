@@ -87,7 +87,7 @@
     CGRect screenRectangle=[[UIScreen mainScreen] applicationFrame];
     UIView *footerView=[[UIView alloc]init];
     UIButton *checkOutbutton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [checkOutbutton setTitle:@"Add to other" forState:UIControlStateNormal];
+    [checkOutbutton setTitle:@"Check Out" forState:UIControlStateNormal];
     [checkOutbutton setBackgroundColor:[UIColor orangeColor]];
     checkOutbutton.tag=section;
     [checkOutbutton addTarget:self action:@selector(checkOut:) forControlEvents:UIControlEventTouchUpInside];
@@ -130,25 +130,25 @@
 }
 -(void) checkOut : (UIButton*) sender
 {
-//    "userByCustomerId": 1,
-//    "customerName": "AlJazayeerly",
-//    "userByCookId": 2,
-//    "cookName": "Menna",
-//    "location": "ITI",
-//    "duration": 45,
-//    "customerRating": null,
-//    "orderComment": null,
-//    "cookRating": null,
-//    "cookComment": null,
-//    "type": "1",
-//    "longitude": 31.021249,
-//    "latitude": 30.071572,
-//    "addressDetails": "Information Technology Institute",
-//    "regionId": 3
+    NSData *json;
+    NSError *error = nil;
+    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
+    NSLog(@"hnaaaa%@",cookOrder);
     _orderJSONParameters=@{@"userByCustomerId":@"1",@"customerName":@"AlJazayeerly",@"userByCookId":@"Menna",@"location":@"ITI",@"duration":@"45",@"customerRating":@"",@"orderComment":@"",@"type":@"",@"longitude":@"",@"latitude":@"",@"addressDetails":@""};
-    NSArray *ab=@[@{@"no":@"b"}];
- //   [_orderJSONParameters setObject:@"2" forKeyedSubscript:@"userByCustomerId"];
-    NSLog(@"%@",ab);
+    if ([NSJSONSerialization isValidJSONObject:_orderJSONParameters])
+    {
+        // Serialize the dictionary
+        json = [NSJSONSerialization dataWithJSONObject:_orderJSONParameters options:NSJSONWritingPrettyPrinted error:&error];
+        
+        // If no errors, let's view the JSON
+        if (json != nil && error == nil)
+        {
+            NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"JSON: %@", jsonString);
+        }
+    }
+    NSLog(@"%@",_orderJSONParameters);
     NSLog(@"buttonn%d",sender.tag);
     NSLog(@"%@",[allMeals objectAtIndex:sender.tag]);
     
