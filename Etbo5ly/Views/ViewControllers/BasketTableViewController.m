@@ -91,9 +91,7 @@
     if (allBasketMeals==nil) {
         allBasketMeals=[[NSMutableDictionary alloc] init];
     }
-    if () {
-        <#statements#>
-    }
+
     NSLog(@"%@",allBasketMeals);
     NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
     if (![allBasketMeals valueForKey:cookName]) {
