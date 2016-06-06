@@ -477,7 +477,7 @@
                                             <segue destination="Dhm-X4-xFR" kind="push" id="h4V-de-FVQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QAZ-CL-WnY" style="IBUITableViewCellStyleDefault" id="O5t-N2-Lm3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QAZ-CL-WnY" imageView="zwe-Ze-pVa" style="IBUITableViewCellStyleDefault" id="O5t-N2-Lm3">
                                         <rect key="frame" x="0.0" y="428" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O5t-N2-Lm3" id="Np4-nz-ZJ2">
@@ -485,12 +485,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QAZ-CL-WnY">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <rect key="frame" x="61" y="0.0" width="224" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.45701121789999999" green="0.20362477139999999" blue="0.081476707859999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="loginIcon-30.png" id="zwe-Ze-pVa">
+                                                    <rect key="frame" x="15" y="5" width="31" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1015,6 +1019,7 @@
         <image name="iconsArtboard_nearbyTabBarIcon.png" width="31" height="31"/>
         <image name="iconsArtboard_notificationTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_slideMenuNavBarIcon.png" width="22" height="18"/>
+        <image name="loginIcon-30.png" width="31" height="33"/>
         <image name="ordersEtbo5ly.png" width="31" height="31"/>
         <image name="orngDetectLoc-25.png" width="31" height="31"/>
         <image name="profileEtbo5ly.png" width="31" height="31"/>

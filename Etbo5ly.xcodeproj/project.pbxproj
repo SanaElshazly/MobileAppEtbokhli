@@ -63,6 +63,7 @@
 		CF18866C1D05FC6000C97C50 /* loginBackground-27.png in Resources */ = {isa = PBXBuildFile; fileRef = CF18866B1D05FC5F00C97C50 /* loginBackground-27.png */; };
 		CF1886731D05FE2F00C97C50 /* etbo5lyBackground-28.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */; };
 		CF1886741D05FE2F00C97C50 /* etbo5lyFooter-29.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */; };
+		CF1886761D06094100C97C50 /* loginIcon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886751D06094100C97C50 /* loginIcon-30.png */; };
 		CF1919C61D04A94F00E28995 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919C51D04A94D00E28995 /* LoginViewController.m */; };
 		CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */; };
 		CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73F1D030E15009A0894 /* ProfileViewController.m */; };
@@ -177,6 +178,7 @@
 		CF18866B1D05FC5F00C97C50 /* loginBackground-27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginBackground-27.png"; sourceTree = "<group>"; };
 		CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "etbo5lyBackground-28.png"; sourceTree = "<group>"; };
 		CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "etbo5lyFooter-29.png"; sourceTree = "<group>"; };
+		CF1886751D06094100C97C50 /* loginIcon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginIcon-30.png"; sourceTree = "<group>"; };
 		CF1919C41D04A94D00E28995 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
 		CF1919C51D04A94D00E28995 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
 		CF21A73B1D030683009A0894 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuTableViewController.h; path = Views/ViewControllers/SlideMenuTableViewController.h; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		B4C886A01CFDC6FD001DFEA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CF1886751D06094100C97C50 /* loginIcon-30.png */,
 				CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */,
 				CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */,
 				CF18866B1D05FC5F00C97C50 /* loginBackground-27.png */,
@@ -568,6 +571,7 @@
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				B4690C101CFF4C160002B315 /* iconsArtboard_slideMenuNavBarIcon.png in Resources */,
 				B4690C0C1CFF4C160002B315 /* iconsArtboard_homeTabBarIcon.png in Resources */,
+				CF1886761D06094100C97C50 /* loginIcon-30.png in Resources */,
 				B4690C0A1CFF4C160002B315 /* detectlocation_detectLocationIcon.png in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				CF18866C1D05FC6000C97C50 /* loginBackground-27.png in Resources */,
