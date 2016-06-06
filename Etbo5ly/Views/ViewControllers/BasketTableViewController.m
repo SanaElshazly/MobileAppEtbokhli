@@ -40,6 +40,7 @@
     if (_orderJSONParameters==nil) {
         _orderJSONParameters=[[NSMutableDictionary alloc] init];
     }
+    [[self tabBarItem] setBadgeValue:@"42"];
      [_tableViewData reloadData];
 }
 
@@ -83,17 +84,22 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    orderDetails=[[Order alloc] initWithInfo];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
     UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, tableView.frame.size.width, 18)];
-    UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(50, 5, tableView.frame.size.width, 18)];
+    UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 5, tableView.frame.size.width, 18)];
     [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:12]];
+    for (MenuItems *menuItemInOrder in [allMeals objectAtIndex:section]) {
+        orderDetails.orderTotalPrice=[menuItemInOrder price]+[orderDetails orderTotalPrice];
+        NSLog(@"%f",[orderDetails orderTotalPrice]);
+    }
     NSString *sectionTotalPrice =[NSString stringWithFormat:@"%f",[orderDetails orderTotalPrice] ];
     NSString * sectionTitle=[(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
     [sectionTitleLabel setText:sectionTitle];
     [totalPricePerCook setText:sectionTotalPrice];
     [view addSubview:sectionTitleLabel];
     [view addSubview:totalPricePerCook];
-    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background color...
+    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]];
     return view;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
@@ -146,10 +152,9 @@
     NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
     NSString *allOrderDetails;
     NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
-    orderDetails=[[Order alloc] initWithInfo];
+
     for (MenuItems *ittem in cookOrder) {
-        orderDetails.orderTotalPrice=[ittem price]+[orderDetails orderTotalPrice];
-        NSLog(@"%f",[orderDetails orderTotalPrice]);
+
         [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
     }_orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@2,@"cookName":@"menna",@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
     NSLog(@"%@",_orderJSONParameters);
