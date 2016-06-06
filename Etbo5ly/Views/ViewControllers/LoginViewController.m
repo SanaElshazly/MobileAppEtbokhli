@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginBackground-27.png"]]];
     [self addTextFieldBorderStyle:self.loginEmailTxtField];
     [self addTextFieldBorderStyle:self.loginPasswordTxtField];
 }
