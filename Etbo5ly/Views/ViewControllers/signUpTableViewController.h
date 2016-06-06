@@ -23,7 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *passwordTxtField;
 - (IBAction)signUpBtn:(id)sender;
--(void) addTextFieldBorderStyle: (UITextField*) txtField;
+//-(void) addTextFieldBorderStyle: (UITextField*) txtField;
+-(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField;
 -(void) addImageViewBorderStyle: (UIImageView *) imgView;
 
 @end
