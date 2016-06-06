@@ -494,7 +494,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zck-pw-2fZ" kind="push" identifier="signinSegue" id="lMl-1P-lS5"/>
+                                            <segue destination="fqG-YX-aqJ" kind="push" id="ODT-wv-fPH"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -513,6 +513,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MES-TM-6sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="717" y="636"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="A3a-Yz-mhS">
+            <objects>
+                <viewController id="fqG-YX-aqJ" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="500-lk-0RJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7V8-xI-RQs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ebi-KZ-AP6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBackgroundiconsArtboard-26.png" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-s8-7o1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yU-mR-PrR" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="20" y="179" width="280" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAs-ft-Fur">
+                                <rect key="frame" x="72" y="296" width="177" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.489135457" blue="0.028962172769999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtn:" destination="fqG-YX-aqJ" eventType="touchUpInside" id="tPJ-Bb-bcM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aV-zu-Hve">
+                                <rect key="frame" x="68" y="346" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.45701121789999999" green="0.20362477139999999" blue="0.081476707859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipc-eb-Qn0">
+                                <rect key="frame" x="72" y="369" width="177" height="30"/>
+                                <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountBtn:" destination="fqG-YX-aqJ" eventType="touchUpInside" id="aPF-rt-WOA"/>
+                                    <segue destination="zck-pw-2fZ" kind="push" id="VxG-f7-E78"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-VW-ZWo" customClass="UIFloatLabelTextField">
+                                <rect key="frame" x="20" y="237" width="280" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="nGi-lt-rMw"/>
+                    <connections>
+                        <outlet property="loginEmailTxtField" destination="1yU-mR-PrR" id="Rin-mq-bwa"/>
+                        <outlet property="loginPasswordTxtField" destination="RAb-VW-ZWo" id="WaV-0F-PiF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U77-BT-cxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="1433"/>
         </scene>
         <!--Create Account-->
         <scene sceneID="7yD-5c-jQW">
@@ -675,7 +740,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZK-ra-1KS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="1373"/>
+            <point key="canvasLocation" x="730" y="1733"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0DX-gv-bnI">
@@ -694,7 +759,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCv-KW-Zkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="1547"/>
+            <point key="canvasLocation" x="1097" y="1540"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZU1-1N-pje">
@@ -713,7 +778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQg-iJ-wSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="1547"/>
+            <point key="canvasLocation" x="1353" y="1476"/>
         </scene>
         <!--Profile-->
         <scene sceneID="pnc-It-Gb7">
@@ -945,6 +1010,7 @@
         <image name="iconsArtboard_nearbyTabBarIcon.png" width="31" height="31"/>
         <image name="iconsArtboard_notificationTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_slideMenuNavBarIcon.png" width="22" height="18"/>
+        <image name="loginBackgroundiconsArtboard-26.png" width="1242" height="2208"/>
         <image name="ordersEtbo5ly.png" width="31" height="31"/>
         <image name="orngDetectLoc-25.png" width="31" height="31"/>
         <image name="profileEtbo5ly.png" width="31" height="31"/>
