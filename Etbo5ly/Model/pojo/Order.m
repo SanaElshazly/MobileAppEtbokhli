@@ -9,5 +9,14 @@
 #import "Order.h"
 
 @implementation Order
+-(id)initWithInfo
+{
+    self=[super init];
+    return self;
+}
 
+//+(NSMutableDictionary *)convertOrderToJSON:(Order *)orderObject
+//{
+//    NSMutableDictionary *orderJSONObject=[[NSMutableDictionary alloc] init];
+//}
 @end

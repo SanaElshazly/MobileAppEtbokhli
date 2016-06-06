@@ -16,6 +16,14 @@
 @property int itemRate;
 @property NSString * imageURL;
 @property NSString *cookName;
+@property int quantity;
+@property float totalPrice;
+@property NSString *comment;
+@property int rating;
+@property NSString * nameAr;
+@property NSString * descriptionAr;
+@property float totalItemPrice;
 -(id) initWithInfo;
 -(id) initWithInfo : (int) itemId setNameEn : (NSString*) nameEn setPrice : (float) price setDescriptionEn : (NSString*) descriptionEn setItemRate : (int) itemRate setImageURL : (NSString*) imageURL;
++(NSMutableDictionary *) convertObjectToJSON : (MenuItems *) mealObject;
 @end
