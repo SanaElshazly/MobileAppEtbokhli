@@ -31,7 +31,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-   
+    self.tabBarItem.badgeValue=nil;
     NSLog(@"%@",[allBasketMeals allValues]);
     networkDelegate=self;
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
@@ -117,13 +117,9 @@
     [footerView addSubview:checkOutbutton];
     return footerView;
 }
-+(void)addCookToBasket:(int)CookID
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    for (NSNumber *num in allCookIDInBasket) {
-        if ([allCookIDInBasket containsObject:num]) {
-            numberOfCooksInBasket++;
-        }
-    }
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 +(void)addCookMealstoBasket:(NSString *)cookName setCookMealsOrder:(MenuItems *)newMeal
 {
@@ -152,6 +148,8 @@
     NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
     NSString *allOrderDetails;
     NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
+    mealsInOrder=[[MenuItems alloc] init];
+    mealsInOrder=[allMeals objectAtIndex:sender.tag];
     orderDetails.cookName=[[allMeals objectAtIndex:sender.tag] cookName];
     orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
     for (MenuItems *ittem in cookOrder) {
@@ -187,10 +185,12 @@
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     NSLog(@"SUCESSSS");
-  //  [_orderJSONParameters delete:];
+    [allBasketMeals removeObjectForKey:[orderDetails cookName]];
 }
 -(void)handleWithFailure:(NSError *)error
 {
     NSLog(@"ERRRROOR");
+}
+- (IBAction)editBasket:(id)sender {
 }
 @end

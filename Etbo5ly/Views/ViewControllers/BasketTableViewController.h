@@ -18,6 +18,7 @@ static int numberOfCooksInBasket;
 {
     UserServices *userRequestedServices;
     Order * orderDetails;
+    MenuItems *mealsInOrder;
 }
 +(void) addMealToBasket : (MenuItems *) newMeal;
 +(void) addCookToBasket : (int) CookID;
@@ -25,4 +26,5 @@ static int numberOfCooksInBasket;
 -(NSString *) convertParametersToJSON : (NSDictionary *) cookOrder;
 @property NSDictionary *orderJSONParameters;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewData;
+- (IBAction)editBasket:(id)sender;
 @end

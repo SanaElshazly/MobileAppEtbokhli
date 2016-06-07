@@ -991,7 +991,13 @@
                             <outlet property="delegate" destination="fPt-5I-cvf" id="Wlc-tz-d3N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="5jT-G9-k13"/>
+                    <navigationItem key="navigationItem" id="5jT-G9-k13">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZTn-AD-pz9">
+                            <connections>
+                                <action selector="editBasket:" destination="fPt-5I-cvf" id="SDV-sF-zEA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableViewData" destination="zyh-qf-kBg" id="Lkg-cZ-19V"/>
                     </connections>
