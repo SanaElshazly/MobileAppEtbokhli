@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "UIFloatLabelTextField.h"
-
+#import "UserDAO.h"
+#import "User.h"
 @interface signUpTableViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;

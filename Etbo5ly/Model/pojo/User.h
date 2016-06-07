@@ -16,6 +16,8 @@
 @property NSDate * registerationDate;
 @property NSString * phone;
 @property NSString * address;
+@property NSString * tybe;
+
 @property double longitude;
 @property double latitude;
 @property NSString * imageURL;

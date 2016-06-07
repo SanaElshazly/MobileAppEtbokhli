@@ -63,6 +63,7 @@
         [newCook setValue:[[cooksArray objectAtIndex:i] valueForKey:@"id"] forKey:@"id"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"address"] forKey:@"address"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"email"] forKey:@"email"];
+        [newCook setValue:@"cook" forKey:@"type"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"latitude"] forKey:@"latitude"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"longitude"] forKey:@"longitude"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"name"] forKey:@"name"];

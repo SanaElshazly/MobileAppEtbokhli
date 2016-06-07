@@ -23,6 +23,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"%@",allCities);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,21 +146,34 @@
 }
 -(void) checkOut : (UIButton*) sender
 {
-    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
-    NSString *allOrderDetails;
-    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
-    mealsInOrder=[[MenuItems alloc] init];
-    mealsInOrder=[allMeals objectAtIndex:sender.tag];
-    orderDetails.cookName=[[allMeals objectAtIndex:sender.tag] cookName];
-    orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
-    for (MenuItems *ittem in cookOrder) {
-
-        [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
-    }_orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@(orderDetails.cookID),@"cookName":orderDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
-    NSLog(@"%@",_orderJSONParameters);
-    allOrderDetails=[self convertParametersToJSON:_orderJSONParameters];
-    NSLog(@"%@",allOrderDetails);
-    [userRequestedServices createOrder:_orderJSONParameters];
+    UserDAO *requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
+    registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
+    //NSLog(@"%@",registeredUser.email);
+    if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
+        NSLog(@"Error");
+        UIStoryboard *storyboard=self.navigationController.storyboard;
+        LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+    else
+    {
+        NSLog(@"trje");
+    }
+//    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
+//    NSString *allOrderDetails;
+//    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
+//    mealsInOrder=[[MenuItems alloc] init];
+//    mealsInOrder=[allMeals objectAtIndex:sender.tag];
+//    orderDetails.cookName=[[allMeals objectAtIndex:sender.tag] cookName];
+//    orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
+//    for (MenuItems *ittem in cookOrder) {
+//
+//        [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
+//    }_orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@(orderDetails.cookID),@"cookName":orderDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
+//    NSLog(@"%@",_orderJSONParameters);
+//    allOrderDetails=[self convertParametersToJSON:_orderJSONParameters];
+//    NSLog(@"%@",allOrderDetails);
+//    [userRequestedServices createOrder:_orderJSONParameters];
 
 }
 -(NSString *)convertParametersToJSON:(NSDictionary *)cookOrder

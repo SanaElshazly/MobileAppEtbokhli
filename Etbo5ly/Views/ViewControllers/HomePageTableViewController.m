@@ -19,12 +19,13 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     searchResults=[[NSArray alloc] init];
     refreshControl=[[UIRefreshControl alloc] init];
     refreshControl.backgroundColor=[UIColor orangeColor];
     refreshControl.tintColor=[UIColor whiteColor];
     [refreshControl addTarget:self action:@selector(changeValueOfSegmentedController:) forControlEvents:UIControlEventValueChanged];
-    
+   
 }
 
 -(void)didReceiveMemoryWarning {
@@ -46,6 +47,16 @@
         [cookRequestedDBFunctions insertCooks:_cooks];
         _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
         NSLog(@"pppooo %@",_cooks);
+    }
+    else if  ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
+        allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
+        allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
+        allCities=[[NSMutableArray alloc] initWithArray:allCountries];
+        //      allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
+        NSLog(@"countries %@",allCountries);
+        NSLog(@"ciyies %@",allCities);
+        //  NSLog(@"region %@",allRegions);
+        
     }
     [self refreshDataInTableView];
    
@@ -215,6 +226,7 @@
         default:
             break;
     }
+    
 }
 -(void)checkConnectivity
 {

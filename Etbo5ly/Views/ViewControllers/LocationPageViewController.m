@@ -29,26 +29,29 @@
     [self addTextFieldBorderStyle:self.regionTxtField];
     [self addTextFieldBorderStyle:self.cityTxtField];
 
-    networkDelegate=self;
+    [self getAllRegionsAndCities];
     pickerCount=0;
     _regionTxtField.delegate=self;
     _regionTxtField.placeholder=@"Region";
     
     _cityTxtField.delegate=self;
     _cityTxtField.placeholder=@"City";
-    
+    cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
+    self.navigationItem.backBarButtonItem = [self creatBackBotton];
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
     locationManager = [[CLLocationManager alloc]init];
-    locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
-    cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
-    self.navigationItem.backBarButtonItem = [self creatBackBotton];
-   
-    [locationRequestedServices getAllRegions];
+    
+
     
 }
-
+-(void) getAllRegionsAndCities
+{
+    networkDelegate=self;
+    locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
+    [locationRequestedServices getAllRegions];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

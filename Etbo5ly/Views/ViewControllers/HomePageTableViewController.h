@@ -17,9 +17,15 @@
 #import "AFNetworking.h"
 #import "MenuItemDAO.h"
 #import "MealDetailedViewController.h"
+#import "locationServices.h"
+static NSMutableArray * allRegions;
+static NSMutableArray *allCities;
+static NSArray *allCountries;
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 {
    // NSArray *cooks;
+
+    locationServices * locationRequestedServices;
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;
     CookDAO *cookRequestedDBFunctions;

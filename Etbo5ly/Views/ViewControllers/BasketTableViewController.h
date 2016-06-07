@@ -11,14 +11,20 @@
 #import "UserServices.h"
 #import "Order.h"
 #import "UIImageView+WebCache.h" 
+#import "User.h"
+#import "UserDAO.h"
+#import "LoginViewController.h"
+#import "HomePageTableViewController.h"
 static NSMutableArray *allCookIDInBasket;
 static NSMutableDictionary * allBasketMeals;;
 static int numberOfCooksInBasket;
+static User * registeredUser;
 @interface BasketTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
     UserServices *userRequestedServices;
     Order * orderDetails;
     MenuItems *mealsInOrder;
+    
 }
 +(void) addMealToBasket : (MenuItems *) newMeal;
 +(void) addCookToBasket : (int) CookID;

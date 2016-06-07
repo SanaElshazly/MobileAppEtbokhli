@@ -13,11 +13,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import "HomePageTableViewController.h"
 #import "CooksBasedOnLocationTableViewController.h"
+static NSMutableArray * allRegions;
+static NSMutableArray *allCities;
+static NSArray *allCountries;
 @interface LocationPageViewController : UIViewController <UIPageViewControllerDataSource , UIPageViewControllerDelegate,CLLocationManagerDelegate,Etbo5lyNetworkDelegate>
 {
-    NSMutableArray * allRegions;
-    NSMutableArray *allCities;
-    NSArray *allCountries;
+
     locationServices * locationRequestedServices;
     CookServices * cooksRequestedServices;
     double userLatitude;
@@ -30,6 +31,7 @@
 @property BOOL didGetLocation;
 - (IBAction)detectUserLocation:(id)sender;
 - (IBAction)getAllCooksByRegion:(id)sender;
+-(void) getAllRegionsAndCities;
 @property (strong, nonatomic) IBOutlet UITextField *regionTxtField;
 @property (strong, nonatomic) IBOutlet UITextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UILabel *pickerViewHeaderLabel;

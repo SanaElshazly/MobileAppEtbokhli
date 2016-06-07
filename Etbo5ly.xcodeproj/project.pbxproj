@@ -10,6 +10,7 @@
 		36F4C2FC335B09C480062475 /* Pods_Etbo5lyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607724E839EE3DA940A01975 /* Pods_Etbo5lyTests.framework */; };
 		4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A08A91CF10162000609E3 /* SWRevealViewController.m */; };
 		4A2229081CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */; };
+		4A6B3EF91D0762AA00B16852 /* orderAddressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3EF81D0762AA00B16852 /* orderAddressTableViewController.m */; };
 		4AB9079C1CEFBEA20035CDA3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB9079B1CEFBEA20035CDA3 /* CoreData.framework */; };
 		4AC6197D1CEF2340002D66EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197C1CEF2340002D66EB /* AppDelegate.m */; };
 		4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */; };
@@ -85,6 +86,8 @@
 		4A0A08A91CF10162000609E3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CooksBasedOnLocationTableViewController.h; path = Views/ViewControllers/CooksBasedOnLocationTableViewController.h; sourceTree = "<group>"; };
 		4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CooksBasedOnLocationTableViewController.m; path = Views/ViewControllers/CooksBasedOnLocationTableViewController.m; sourceTree = "<group>"; };
+		4A6B3EF71D0762AA00B16852 /* orderAddressTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orderAddressTableViewController.h; path = Views/ViewControllers/orderAddressTableViewController.h; sourceTree = "<group>"; };
+		4A6B3EF81D0762AA00B16852 /* orderAddressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = orderAddressTableViewController.m; path = Views/ViewControllers/orderAddressTableViewController.m; sourceTree = "<group>"; };
 		4A9779591CF745D00050CBB1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4A97795B1CF745DA0050CBB1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A97795D1CF746DA0050CBB1 /* libsystem_coreservices.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsystem_coreservices.dylib; path = usr/lib/system/libsystem_coreservices.dylib; sourceTree = SDKROOT; };
@@ -267,8 +270,8 @@
 				4AC6197B1CEF2340002D66EB /* AppDelegate.h */,
 				4AC6197C1CEF2340002D66EB /* AppDelegate.m */,
 				4AC619871CEF2340002D66EB /* Images.xcassets */,
-				B4C13CF21CFC432F00B512B2 /* Main.storyboard */,
 				4AC619891CEF2340002D66EB /* LaunchScreen.xib */,
+				B4C13CF21CFC432F00B512B2 /* Main.storyboard */,
 				4AC6197E1CEF2340002D66EB /* Etbo5ly.xcdatamodeld */,
 				4AC619781CEF2340002D66EB /* Info.plist */,
 				4AC619771CEF2340002D66EB /* Supporting Files */,
@@ -366,6 +369,8 @@
 				CF21A7421D03503A009A0894 /* signUpTableViewController.m */,
 				CF1919C41D04A94D00E28995 /* LoginViewController.h */,
 				CF1919C51D04A94D00E28995 /* LoginViewController.m */,
+				4A6B3EF71D0762AA00B16852 /* orderAddressTableViewController.h */,
+				4A6B3EF81D0762AA00B16852 /* orderAddressTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -724,6 +729,7 @@
 				B4C886991CFDBB25001DFEA6 /* CookDAO.m in Sources */,
 				B4C8869F1CFDBBF5001DFEA6 /* OrderDetailsDAO.m in Sources */,
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,
+				4A6B3EF91D0762AA00B16852 /* orderAddressTableViewController.m in Sources */,
 				B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */,
 				4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */,
 				B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */,
