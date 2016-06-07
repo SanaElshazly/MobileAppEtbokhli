@@ -495,7 +495,7 @@
                                             <segue destination="Dhm-X4-xFR" kind="push" id="h4V-de-FVQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QAZ-CL-WnY" style="IBUITableViewCellStyleDefault" id="O5t-N2-Lm3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QAZ-CL-WnY" imageView="zwe-Ze-pVa" style="IBUITableViewCellStyleDefault" id="O5t-N2-Lm3">
                                         <rect key="frame" x="0.0" y="428" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O5t-N2-Lm3" id="Np4-nz-ZJ2">
@@ -503,12 +503,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QAZ-CL-WnY">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <rect key="frame" x="61" y="0.0" width="224" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.45701121789999999" green="0.20362477139999999" blue="0.081476707859999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="loginIcon-30.png" id="zwe-Ze-pVa">
+                                                    <rect key="frame" x="15" y="5" width="31" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -544,9 +548,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginBackgroundiconsArtboard-26.png" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-s8-7o1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yU-mR-PrR" customClass="UIFloatLabelTextField">
                                 <rect key="frame" x="20" y="179" width="280" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -584,6 +585,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="etbo5lyBackground-28.png" translatesAutoresizingMaskIntoConstraints="NO" id="neo-hp-OhG">
+                                <rect key="frame" x="78" y="80" width="164" height="91"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="etbo5lyFooter-29.png" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-wT-dYr">
+                                <rect key="frame" x="0.0" y="444" width="320" height="80"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1029,12 +1036,14 @@
     </scenes>
     <resources>
         <image name="aboutEtbo5ly.png" width="31" height="31"/>
+        <image name="etbo5lyBackground-28.png" width="311" height="170"/>
+        <image name="etbo5lyFooter-29.png" width="640" height="157"/>
         <image name="iconsArtboard_basketTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_homeTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_nearbyTabBarIcon.png" width="31" height="31"/>
         <image name="iconsArtboard_notificationTabBarIcon.png" width="30" height="30"/>
         <image name="iconsArtboard_slideMenuNavBarIcon.png" width="22" height="18"/>
-        <image name="loginBackgroundiconsArtboard-26.png" width="1242" height="2208"/>
+        <image name="loginIcon-30.png" width="31" height="33"/>
         <image name="ordersEtbo5ly.png" width="31" height="31"/>
         <image name="orngDetectLoc-25.png" width="31" height="31"/>
         <image name="profileEtbo5ly.png" width="31" height="31"/>
