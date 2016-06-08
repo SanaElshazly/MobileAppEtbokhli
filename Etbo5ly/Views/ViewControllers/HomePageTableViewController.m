@@ -18,6 +18,8 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    _dataTableView.estimatedRowHeight=400;
+    _dataTableView.rowHeight=UITableViewAutomaticDimension;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     searchResults=[[NSArray alloc] init];
@@ -25,7 +27,7 @@
     refreshControl.backgroundColor=[UIColor orangeColor];
     refreshControl.tintColor=[UIColor whiteColor];
     [refreshControl addTarget:self action:@selector(changeValueOfSegmentedController:) forControlEvents:UIControlEventValueChanged];
-   
+    
 }
 
 -(void)didReceiveMemoryWarning {
@@ -39,7 +41,7 @@
         _meals = [[NSMutableArray alloc] initWithArray:dataRetreived];
         [mealsRequestedDBFunctions insertMenuItems:_meals];
         _meals=[mealsRequestedDBFunctions fetchAndGetAllMenuItems];
-         NSLog(@"meals data %@", _meals );
+        NSLog(@"meals data %@", _meals );
     }
     else if ([serviceName isEqualToString:@"allCooks"])
     {
@@ -59,7 +61,7 @@
         
     }
     [self refreshDataInTableView];
-   
+    
 }
 
 -(void)handleWithFailure:(NSError *)error{
@@ -83,8 +85,8 @@
             }
             else
             {
-            arrayLength = [_cooks count];
-            NSLog(@"arrayLength of cooks %d", arrayLength);
+                arrayLength = [_cooks count];
+                NSLog(@"arrayLength of cooks %d", arrayLength);
             }
             break;
             
@@ -95,8 +97,8 @@
             }
             else
             {
-            arrayLength = [_meals count];
-            NSLog(@"arrayLength of meals %d", arrayLength);
+                arrayLength = [_meals count];
+                NSLog(@"arrayLength of meals %d", arrayLength);
             }
             break;
             
@@ -106,37 +108,54 @@
     return arrayLength;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 100;
+    
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"cellForRowAtIndexPath function");
     
     static NSString *cellID = @"CellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    UITableViewCell *cell = [_dataTableView dequeueReusableCellWithIdentifier:cellID ];
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    UIImageView *listItemImage=(UIImageView *)[cell viewWithTag:1];
-    UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
-    UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
-//            if (tableView == self.searchDisplayController.searchResultsTableView) {
-//                _cooks = searchResults ;
-//            }
-            listItemHeader.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
-            listItemSubHeader.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] address] ;
+            if (tableView == self.searchDisplayController.searchResultsTableView) {
+                cell.textLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] name] ;
+                cell.detailTextLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] address];
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ searchResults objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            }
+            else
+            {
+                cell.textLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
+                cell.detailTextLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] address];
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            }
             NSLog(@"urlll%@",[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]);
-            [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+            
             break;
             
         case 1:
-            listItemHeader.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn];
-            listItemSubHeader.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
-            NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
-            [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
-            
+            if (tableView == self.searchDisplayController.searchResultsTableView) {
+                cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
+            }
+            else
+            {
+                cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
+            }
             break;
         default:
             break;
@@ -153,14 +172,24 @@
     MealDetailedViewController *mealDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedMealViewController"];
     [mealDetailedViewController setDetailedMeal:(MenuItems *)[_meals objectAtIndex:indexPath.row]];
     [self.navigationController pushViewController:mealDetailedViewController animated:YES];
-
+    
     
 }
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    searchResults = [_cooks filteredArrayUsingPredicate:resultPredicate];
-    _cooks=searchResults;
+    NSPredicate *resultPredicate;
+    switch (self.menuOptions.selectedSegmentIndex) {
+        case 0:
+            resultPredicate= [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+            searchResults = [_cooks filteredArrayUsingPredicate:resultPredicate];
+            break;
+        case 1:
+            resultPredicate= [NSPredicate predicateWithFormat:@"nameEn contains[c] %@", searchText];
+            searchResults = [_meals filteredArrayUsingPredicate:resultPredicate];
+    }
+    
+    //    _cooks=searchResults;
+    
     
 }
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -200,13 +229,13 @@
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
         refreshControl.attributedTitle = attributedTitle;
         
-      //  [refreshControl endRefreshing];
+        //  [refreshControl endRefreshing];
     }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             if (_isUserReachable) {
-                    [cooksRequestedMeals getCooksListDataService];
-                }
+                [cooksRequestedMeals getCooksListDataService];
+            }
             else
             {
                 _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];

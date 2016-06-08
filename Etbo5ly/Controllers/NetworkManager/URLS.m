@@ -64,5 +64,9 @@
     urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"createOrder" ];
     return urlPath;
 }
-
++(NSString *)signUp
+{
+    urlPath = [NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"customer/signUp" ];
+    return urlPath;
+}
 @end

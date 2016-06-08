@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *urlPath;
-static  NSString *IP_ADDRESS = @"http://192.168.1.6:8084/Etbo5ly-Web/rest/";
+static  NSString *IP_ADDRESS = @"http://10.118.49.77:8084/Etbo5ly-Web/rest/";
 
 @interface URLS : NSObject
 
@@ -22,5 +22,5 @@ static  NSString *IP_ADDRESS = @"http://192.168.1.6:8084/Etbo5ly-Web/rest/";
 +(NSString *)locationBasedCooks : (double) longitude : (double) latitude;
 +(NSString *)countriesWithRegions;
 +(NSString *) createOrder ;
-
++(NSString *) signUp;
 @end
