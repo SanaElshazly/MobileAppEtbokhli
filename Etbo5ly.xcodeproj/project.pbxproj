@@ -318,7 +318,6 @@
 		B43B3C981CF0A8E20086761F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B43B3C991CF0A8EA0086761F /* pojo */,
 				B4C886781CFDB7CA001DFEA6 /* dao */,
 				B4C886A01CFDC6FD001DFEA6 /* Images */,
 			);
@@ -403,6 +402,7 @@
 		B4C886781CFDB7CA001DFEA6 /* dao */ = {
 			isa = PBXGroup;
 			children = (
+				B43B3C991CF0A8EA0086761F /* pojo */,
 				B4C8868B1CFDBB25001DFEA6 /* CategoryDAO.h */,
 				B4C8868C1CFDBB25001DFEA6 /* CategoryDAO.m */,
 				B4C8868D1CFDBB25001DFEA6 /* CateringDAO.h */,
