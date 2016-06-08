@@ -1,25 +1,22 @@
 //
-//  orderAddressTableViewController.m
+//  orderAddressDetailsTableViewController.m
 //  Etbo5ly
 //
-//  Created by ITI on 6/7/16.
-//  Copyright (c) 2016 JETS. All rights reserved.
+//  Created by MDW Event on 6/8/16.
+//  Copyright © 2016 JETS. All rights reserved.
 //
 
-#import "orderAddressTableViewController.h"
+#import "orderAddressDetailsTableViewController.h"
 
-@interface orderAddressTableViewController ()
+@interface orderAddressDetailsTableViewController ()
 
 @end
 
-@implementation orderAddressTableViewController
+@implementation orderAddressDetailsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (allCities==nil) {
-        LocationPageViewController *locationView=[[LocationPageViewController alloc] init];
-        [locationView getAllRegionsAndCities ];
-    }
+    [self addTextFieldBorderStyle:self.txt1];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -35,61 +32,26 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+#warning Incomplete implementation, return the number of rows
     return 0;
 }
--(void) showCityPickerCell
-{
-    self.dataPickerViewIsShowingCities=YES;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    self.citiesPickerView.hidden=NO;
-    self.citiesPickerView.alpha=0.0f;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=1.0f;
-    }];
-}
--(void) hideDataPickerCell
-{
-    self.dataPickerViewIsShowingCities=NO;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=0.0f;
-    }
-                     completion:^(BOOL fininshed){
-                         self.citiesPickerView.hidden=YES;
-    }];
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section==0 && indexPath.row==0 && self.dataPickerViewIsShowingCities==NO)
-    {
-        [self hideDataPickerCell];
-        return 0.0f;
-    }
-    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-}
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section==0 && indexPath.row==0) {
-        if(self.dataPickerViewIsShowingCities)
-        {
-            [self hideDataPickerCell];
-        }
-        else
-        {
-            [self showCityPickerCell];
-        }
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
+-(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField{//:(UITextField*) txtField{
+    
+    CALayer *bottomBorder = [CALayer layer];
+    CGFloat borderWidth = 1;
+    bottomBorder.borderWidth = borderWidth;
+    bottomBorder.borderColor = [[UIColor orangeColor]CGColor];
+    
+    bottomBorder.frame = CGRectMake(0.0f, txtField.frame.size.height - borderWidth, txtField.frame.size.width,txtField.frame.size.height);
+    bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    txtField.floatLabelActiveColor = [UIColor orangeColor];
+    [txtField.layer addSublayer:bottomBorder];
+    
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

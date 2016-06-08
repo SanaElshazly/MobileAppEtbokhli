@@ -10,12 +10,9 @@
 #import "UIFloatLabelTextField.h"
 #import "UserDAO.h"
 #import "User.h"
-@interface signUpTableViewController : UITableViewController
+@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
-
-@property (strong, nonatomic) IBOutlet UIImageView *signupImg;
-
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *fullnameTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *emailTxtField;
@@ -23,7 +20,11 @@
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *regionTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *passwordTxtField;
+@property (strong, nonatomic) IBOutlet UITableViewCell *cityCell;
 - (IBAction)signUpBtn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIPickerView *citiesPickerView;
+
+@property BOOL dataPickerViewIsShowingCities;
 //-(void) addTextFieldBorderStyle: (UITextField*) txtField;
 -(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField;
 -(void) addImageViewBorderStyle: (UIImageView *) imgView;

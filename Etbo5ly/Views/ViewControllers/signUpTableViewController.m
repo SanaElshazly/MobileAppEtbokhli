@@ -13,12 +13,13 @@
 @end
 
 @implementation signUpTableViewController
-
+{
+    NSArray *values;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    [self addImageViewBorderStyle:self.signupImg];
+    _cityTxtField.delegate=self;
+    values=[[NSArray alloc] initWithObjects:@"noha",@"mai", nil];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
@@ -37,72 +38,92 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+-(void) showCityPickerCell
+{
+    self.dataPickerViewIsShowingCities=YES;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    self.citiesPickerView.hidden=NO;
+    self.citiesPickerView.alpha=0.0f;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.citiesPickerView.alpha=1.0f;
+    }];
 }
-*/
+-(void) hideDataPickerCell
+{
+    self.dataPickerViewIsShowingCities=NO;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.citiesPickerView.alpha=0.0f;
+    }
+                     completion:^(BOOL fininshed){
+                         self.citiesPickerView.hidden=YES;
+    }];
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section==0 && indexPath.row==4 && self.dataPickerViewIsShowingCities==NO)
+    {
+        [self hideDataPickerCell];
+        return 0.0f;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"nohnohergter");
+    UITableViewCell *cellClicked=[self.tableView cellForRowAtIndexPath:indexPath];
+    if (cellClicked==_cityCell) {
+        NSLog(@"nohnoh");
+    }
+    if (indexPath.section==0 && indexPath.row==3) {
+        if(self.dataPickerViewIsShowingCities)
+        {
+            [self hideDataPickerCell];
+        }
+        else
+        {
+            [self showCityPickerCell];
+        }
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component
+{
+    int arrCount=0;
+    if (component==0) {
+            arrCount=values.count;
+        
+    }
+    
+    return arrCount;
+}
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *data=[values objectAtIndex:row];
+    return data;
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField.tag == 1) {
+        NSLog(@"hwll");
+        if(self.dataPickerViewIsShowingCities)
+        {
+            [self hideDataPickerCell];
+        }
+        else
+        {
+            [self showCityPickerCell];
+        }
+        return NO;
+    }
     return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)signUpBtn:(id)sender {
     User *newUser=[[User alloc] initWithInfo];
