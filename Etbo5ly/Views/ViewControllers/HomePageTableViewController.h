@@ -18,13 +18,13 @@
 #import "MenuItemDAO.h"
 #import "MealDetailedViewController.h"
 #import "locationServices.h"
-static NSMutableArray * allRegions;
-static NSMutableArray *allCities;
-static NSArray *allCountries;
+
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 {
    // NSArray *cooks;
-
+     NSMutableArray * allRegions;
+     NSMutableArray *allCities;
+     NSArray *allCountries;
     locationServices * locationRequestedServices;
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;

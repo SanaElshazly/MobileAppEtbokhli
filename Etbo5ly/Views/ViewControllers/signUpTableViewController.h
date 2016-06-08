@@ -11,7 +11,9 @@
 #import "UserDAO.h"
 #import "User.h"
 @interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource>
-
+{
+    NSDictionary *userDetails;
+}
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *fullnameTxtField;
@@ -22,10 +24,7 @@
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *passwordTxtField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *cityCell;
 - (IBAction)signUpBtn:(id)sender;
-@property (strong, nonatomic) IBOutlet UIPickerView *citiesPickerView;
-
 @property BOOL dataPickerViewIsShowingCities;
-//-(void) addTextFieldBorderStyle: (UITextField*) txtField;
 -(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField;
 -(void) addImageViewBorderStyle: (UIImageView *) imgView;
 

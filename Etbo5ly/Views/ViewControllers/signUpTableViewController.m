@@ -18,8 +18,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cityTxtField.delegate=self;
-    values=[[NSArray alloc] initWithObjects:@"noha",@"mai", nil];
+    userDetails=[[NSDictionary alloc] init];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
@@ -38,99 +37,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) showCityPickerCell
-{
-    self.dataPickerViewIsShowingCities=YES;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    self.citiesPickerView.hidden=NO;
-    self.citiesPickerView.alpha=0.0f;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=1.0f;
-    }];
-}
--(void) hideDataPickerCell
-{
-    self.dataPickerViewIsShowingCities=NO;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=0.0f;
-    }
-                     completion:^(BOOL fininshed){
-                         self.citiesPickerView.hidden=YES;
-    }];
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section==0 && indexPath.row==4 && self.dataPickerViewIsShowingCities==NO)
-    {
-        [self hideDataPickerCell];
-        return 0.0f;
-    }
-    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"nohnohergter");
-    UITableViewCell *cellClicked=[self.tableView cellForRowAtIndexPath:indexPath];
-    if (cellClicked==_cityCell) {
-        NSLog(@"nohnoh");
-    }
-    if (indexPath.section==0 && indexPath.row==3) {
-        if(self.dataPickerViewIsShowingCities)
-        {
-            [self hideDataPickerCell];
-        }
-        else
-        {
-            [self showCityPickerCell];
-        }
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
-}
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component
-{
-    int arrCount=0;
-    if (component==0) {
-            arrCount=values.count;
-        
-    }
-    
-    return arrCount;
-}
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSString *data=[values objectAtIndex:row];
-    return data;
-}
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField.tag == 1) {
-        NSLog(@"hwll");
-        if(self.dataPickerViewIsShowingCities)
-        {
-            [self hideDataPickerCell];
-        }
-        else
-        {
-            [self showCityPickerCell];
-        }
-        return NO;
-    }
-    return YES;
-}
 
 - (IBAction)signUpBtn:(id)sender {
     User *newUser=[[User alloc] initWithInfo];
+
     newUser.email=_emailTxtField.text;
     newUser.name=_fullnameTxtField.text;
     newUser.password=_passwordTxtField.text;
+    newUser.phone=_phoneTxtField.text;
+    newUser.address=[NSString stringWithFormat:@"%@%@", _cityTxtField.text,_regionTxtField.text];
     newUser.tybe=@"user";
+    [userDetails setValue:newUser.email forKey:@"email"];
+    [userDetails setValue:newUser.name forKey:@"name"];
+    [userDetails setValue:newUser.password forKey:@"password"];
+    [userDetails setValue:newUser.phone forKey:@"phone"];
+    [userDetails setValue:newUser.address forKey:@"address"];
+    [userDetails setValue: forKey:@"regionId"];
     UserDAO *userDBFunctions=[[UserDAO alloc] initWithManagedObject];
     [userDBFunctions insertUser:newUser];
     
