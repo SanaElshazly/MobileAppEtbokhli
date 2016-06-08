@@ -10,9 +10,14 @@
 #import "UIFloatLabelTextField.h"
 #import "UserDAO.h"
 #import "User.h"
-@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource>
+#import "UserServices.h"
+#import "Etbo5lyNetworkDelegate.h"
+@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate>
 {
-    NSDictionary *userDetails;
+    NSMutableDictionary *userDetails;
+    UserServices *userRequestedServices;
+    UserDAO *userDBFunctions;
+    User *newUser;
 }
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
 

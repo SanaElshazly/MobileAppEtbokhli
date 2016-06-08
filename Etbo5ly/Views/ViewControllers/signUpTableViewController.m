@@ -18,7 +18,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    userDetails=[[NSDictionary alloc] init];
+    userDetails=[[NSMutableDictionary alloc] init];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
@@ -37,25 +37,44 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+}
 
-
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
+{
+    if ([serviceName isEqualToString:@"signup"]) {
+        NSString * result=dataRetreived;
+        if ([result isEqualToString:@"true"]) {
+             userDBFunctions=[[UserDAO alloc] initWithManagedObject];
+            [userDBFunctions insertUser:newUser];
+        }
+    }
+}
+-(void)handleWithFailure:(NSError *)error
+{
+    NSLog(@"%@",error.userInfo);
+}
 - (IBAction)signUpBtn:(id)sender {
-    User *newUser=[[User alloc] initWithInfo];
-
+    
+    networkDelegate=self;
+    newUser=[[User alloc] initWithInfo];
+    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     newUser.email=_emailTxtField.text;
     newUser.name=_fullnameTxtField.text;
     newUser.password=_passwordTxtField.text;
     newUser.phone=_phoneTxtField.text;
+    newUser.regionID=3;
     newUser.address=[NSString stringWithFormat:@"%@%@", _cityTxtField.text,_regionTxtField.text];
     newUser.tybe=@"user";
-    [userDetails setValue:newUser.email forKey:@"email"];
-    [userDetails setValue:newUser.name forKey:@"name"];
-    [userDetails setValue:newUser.password forKey:@"password"];
-    [userDetails setValue:newUser.phone forKey:@"phone"];
-    [userDetails setValue:newUser.address forKey:@"address"];
-    [userDetails setValue: forKey:@"regionId"];
-    UserDAO *userDBFunctions=[[UserDAO alloc] initWithManagedObject];
-    [userDBFunctions insertUser:newUser];
+    [userDetails setObject:newUser.email forKey:@"email"];
+    [userDetails setObject:newUser.name forKey:@"name"];
+    [userDetails setObject:newUser.password forKey:@"password"];
+    [userDetails setObject:newUser.phone forKey:@"phone"];
+    [userDetails setObject:newUser.address forKey:@"address"];
+    [userDetails setObject:[NSNumber numberWithInt:newUser.regionID] forKey:@"regionId"];
+    [userRequestedServices signUP:userDetails];
+
     
 }
 

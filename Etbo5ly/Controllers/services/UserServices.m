@@ -20,8 +20,13 @@
     serviceName=@"createOrder";
     serviceURL = [NSString stringWithFormat:@"%@",[URLS createOrder]];
     NSLog(@"%@",serviceURL);
-    
- //   [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
     [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:jsonParameters];
+}
+-(void)signUP:(NSDictionary *)userJSON
+{
+    serviceName=@"signup";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS signUp]];
+    NSLog(@"%@",serviceURL);
+    [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:userJSON];
 }
 @end

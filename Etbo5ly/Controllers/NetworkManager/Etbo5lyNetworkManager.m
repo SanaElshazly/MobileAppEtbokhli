@@ -67,10 +67,16 @@
     networkDelegate = networkManager;
     parameters = methodParameters;
     NSLog(@"paraaameteers%@",parameters);
-    
+    AFJSONResponseSerializer *jsonResponseSerilazer=[AFJSONResponseSerializer serializer];
+    NSMutableSet *JSONAcceptableContentType=[NSMutableSet setWithSet:jsonResponseSerilazer.acceptableContentTypes];
+    [JSONAcceptableContentType addObject:@"text/plain"];
+    [JSONAcceptableContentType addObject:@"text/html"];
+    jsonResponseSerilazer.acceptableContentTypes=JSONAcceptableContentType;
+    manager.responseSerializer=jsonResponseSerilazer;
     requestURL = [NSURL URLWithString:url];
     manager=[AFHTTPRequestOperationManager manager] ;
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+  //  manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html",@"text/plain",nil];
+   manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager POST:requestURL.absoluteString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         [networkDelegate handle : responseObject : myServiceName];

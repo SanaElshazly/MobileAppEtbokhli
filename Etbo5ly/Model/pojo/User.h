@@ -17,7 +17,7 @@
 @property NSString * phone;
 @property NSString * address;
 @property NSString * tybe;
-
+@property int regionID;
 @property double longitude;
 @property double latitude;
 @property NSString * imageURL;
