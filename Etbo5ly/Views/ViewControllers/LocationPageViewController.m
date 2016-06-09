@@ -36,7 +36,7 @@
     
     _cityTxtField.delegate=self;
     _cityTxtField.placeholder=@"City";
-    cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
+
     self.navigationItem.backBarButtonItem = [self creatBackBotton];
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
@@ -49,6 +49,8 @@
 -(void) getAllRegionsAndCities
 {
     networkDelegate=self;
+    cooksRequestedServices=[[CookServices alloc] initWithNetworkDelegate:networkDelegate];
+    
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     [locationRequestedServices getAllRegions];
 }

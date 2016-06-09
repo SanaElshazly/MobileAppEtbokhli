@@ -18,8 +18,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cityTxtField.delegate=self;
-    values=[[NSArray alloc] initWithObjects:@"noha",@"mai", nil];
+    userDetails=[[NSMutableDictionary alloc] init];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
@@ -38,101 +37,44 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void) showCityPickerCell
+-(void)viewDidAppear:(BOOL)animated
 {
-    self.dataPickerViewIsShowingCities=YES;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    self.citiesPickerView.hidden=NO;
-    self.citiesPickerView.alpha=0.0f;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=1.0f;
-    }];
-}
--(void) hideDataPickerCell
-{
-    self.dataPickerViewIsShowingCities=NO;
-    [self.tableView beginUpdates];
-    [self.tableView endUpdates];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.citiesPickerView.alpha=0.0f;
-    }
-                     completion:^(BOOL fininshed){
-                         self.citiesPickerView.hidden=YES;
-    }];
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section==0 && indexPath.row==4 && self.dataPickerViewIsShowingCities==NO)
-    {
-        [self hideDataPickerCell];
-        return 0.0f;
-    }
-    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"nohnohergter");
-    UITableViewCell *cellClicked=[self.tableView cellForRowAtIndexPath:indexPath];
-    if (cellClicked==_cityCell) {
-        NSLog(@"nohnoh");
-    }
-    if (indexPath.section==0 && indexPath.row==3) {
-        if(self.dataPickerViewIsShowingCities)
-        {
-            [self hideDataPickerCell];
-        }
-        else
-        {
-            [self showCityPickerCell];
-        }
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
-    return 1;
-}
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component
-{
-    int arrCount=0;
-    if (component==0) {
-            arrCount=values.count;
-        
-    }
-    
-    return arrCount;
-}
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    NSString *data=[values objectAtIndex:row];
-    return data;
-}
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField.tag == 1) {
-        NSLog(@"hwll");
-        if(self.dataPickerViewIsShowingCities)
-        {
-            [self hideDataPickerCell];
+    if ([serviceName isEqualToString:@"signup"]) {
+        NSString * result=dataRetreived;
+        if ([result isEqualToString:@"true"]) {
+             userDBFunctions=[[UserDAO alloc] initWithManagedObject];
+            [userDBFunctions insertUser:newUser];
         }
-        else
-        {
-            [self showCityPickerCell];
-        }
-        return NO;
     }
-    return YES;
 }
-
+-(void)handleWithFailure:(NSError *)error
+{
+    NSLog(@"%@",error.userInfo);
+}
 - (IBAction)signUpBtn:(id)sender {
-    User *newUser=[[User alloc] initWithInfo];
+    
+    networkDelegate=self;
+    newUser=[[User alloc] initWithInfo];
+    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     newUser.email=_emailTxtField.text;
     newUser.name=_fullnameTxtField.text;
     newUser.password=_passwordTxtField.text;
+    newUser.phone=_phoneTxtField.text;
+    newUser.regionID=3;
+    newUser.address=[NSString stringWithFormat:@"%@%@", _cityTxtField.text,_regionTxtField.text];
     newUser.tybe=@"user";
-    UserDAO *userDBFunctions=[[UserDAO alloc] initWithManagedObject];
-    [userDBFunctions insertUser:newUser];
+    [userDetails setObject:newUser.email forKey:@"email"];
+    [userDetails setObject:newUser.name forKey:@"name"];
+    [userDetails setObject:newUser.password forKey:@"password"];
+    [userDetails setObject:newUser.phone forKey:@"phone"];
+    [userDetails setObject:newUser.address forKey:@"address"];
+    [userDetails setObject:[NSNumber numberWithInt:newUser.regionID] forKey:@"regionId"];
+    [userRequestedServices signUP:userDetails];
+
     
 }
 

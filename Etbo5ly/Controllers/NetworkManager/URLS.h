@@ -22,5 +22,5 @@ static  NSString *IP_ADDRESS = @"http://192.168.1.106:8084/Etbo5ly-Web/rest/";
 +(NSString *)locationBasedCooks : (double) longitude : (double) latitude;
 +(NSString *)countriesWithRegions;
 +(NSString *) createOrder ;
-
++(NSString *) signUp;
 @end

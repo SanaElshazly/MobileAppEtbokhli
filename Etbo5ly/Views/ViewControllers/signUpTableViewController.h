@@ -10,8 +10,15 @@
 #import "UIFloatLabelTextField.h"
 #import "UserDAO.h"
 #import "User.h"
-@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource>
-
+#import "UserServices.h"
+#import "Etbo5lyNetworkDelegate.h"
+@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate>
+{
+    NSMutableDictionary *userDetails;
+    UserServices *userRequestedServices;
+    UserDAO *userDBFunctions;
+    User *newUser;
+}
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *fullnameTxtField;
@@ -22,10 +29,7 @@
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *passwordTxtField;
 @property (strong, nonatomic) IBOutlet UITableViewCell *cityCell;
 - (IBAction)signUpBtn:(id)sender;
-@property (strong, nonatomic) IBOutlet UIPickerView *citiesPickerView;
-
 @property BOOL dataPickerViewIsShowingCities;
-//-(void) addTextFieldBorderStyle: (UITextField*) txtField;
 -(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField;
 -(void) addImageViewBorderStyle: (UIImageView *) imgView;
 
