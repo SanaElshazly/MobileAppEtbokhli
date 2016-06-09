@@ -10,10 +10,13 @@
 #import <CoreData/CoreData.h>
 #import "Cook.h"
 #import "Etbo5lyDatabaseManager.h"
+#import "MenuItemDAO.h"
 @interface CookDAO : NSObject
 {
     NSManagedObjectContext *managedObjectContext;
     NSFetchRequest *fetchRequest;
+    MenuItemDAO *menuItemsRef;
+    
 }
 @property NSMutableArray * cooksManagedObject;
 @property NSMutableArray * selectedCooks;

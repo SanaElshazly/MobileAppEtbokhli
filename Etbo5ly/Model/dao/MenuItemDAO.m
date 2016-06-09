@@ -65,6 +65,8 @@
         [newMenuItem setValue:[NSString stringWithFormat:@"%@%@",[[menuItemsArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[menuItemsArray objectAtIndex:i] objectForKey:@"imageUrl"]] forKey:@"image_URL"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"descriptionEn"] forKey:@"description_en"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"cookName"] forKey:@"cookName"];
+        
+//        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"categories"] forKey:@"categories"];
       //  [newMenuItem setValue:"cook_id" forKey:];
     }
     //    if (![managedObjectContext inser:&error]) {
