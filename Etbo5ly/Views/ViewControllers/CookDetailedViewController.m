@@ -20,13 +20,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_cookProfileImg.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [_cookProfileImg.layer setBorderWidth: 2.0];
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     NSLog(@"geeeh");
+    
+    cookIDforCategory = [_detailedCook userId] ;
+
     networkDelegate=self;
     cooksRequestedCategories=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
+    [cooksRequestedCategories getCookCategories:cookIDforCategory];
     
     
     
@@ -54,8 +60,32 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
+{
+    if ([serviceName isEqualToString:@"cookCategories"]) {
+        _cookCategories = [[NSMutableArray alloc] initWithArray:dataRetreived];
+        NSLog(@"cooks categories ARE  %@", _cookCategories );
+    }
+    
+    [self.cookMenuTableView reloadData];
+    
+}
+
+-(void)handleWithFailure:(NSError *)error{
+    NSLog(@"ERRORRRRR");
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSInteger categoriesLength = [_cookCategories count];
+    
+    return categoriesLength;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -67,24 +97,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     
-    return cell;
-}
-
-
-
--(void)handle:(id)dataRetreived :(NSString *)serviceName
-{
-    if ([serviceName isEqualToString:@"cookCategories"]) {
-        _cookCategories = [[NSMutableArray alloc] initWithArray:dataRetreived];
-        NSLog(@"cooks categories ARE  %@", _cookCategories );
-    }
-
-    [self.cookMenuTableView reloadData];
+    NSLog(@" Category is: %@",[[self.cookCategories objectAtIndex:indexPath.row] objectForKey:@"nameEn"]);
+    cell.textLabel.textColor = [UIColor brownColor];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
+    cell.textLabel.text=[[self.cookCategories objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
     
-}
-
--(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
+    return cell;
 }
 
 
