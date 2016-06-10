@@ -52,6 +52,14 @@
     return urlPath;
 }
 
++(NSString *) cooksCategories:(int)cookID
+{
+    //Etbo5ly-Web/rest/cookCategories?cookId=2
+    
+    urlPath = [NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"cookCategories?cookId=", cookID ];
+    return urlPath;
+}
+
 +(NSString *)countriesWithRegions{
     
     //Etbo5ly-Web/rest/region/countries

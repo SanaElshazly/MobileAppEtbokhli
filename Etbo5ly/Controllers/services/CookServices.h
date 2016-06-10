@@ -19,5 +19,8 @@
 -(void) getCooksListDataService;
 -(void) getCooksBasedOnLocation : (double) latitude setLongitude : (double) longitude;
 -(void) getCooksByRegion : (int) regionID;
+
+-(void) getCookCategories : (int) cookID;
+
 -(id) initWithNetworkDelegate : (Etbo5lyNetworkManager*) networkManagerObj;
 @end

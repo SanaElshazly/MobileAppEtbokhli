@@ -92,7 +92,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 22)];
     UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, tableView.frame.size.width, 20)];
     UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, tableView.frame.size.width, 20)];
-    [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:12]];
+    [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:16]];
     for (MenuItems *menuItemInOrder in [allMeals objectAtIndex:section]) {
         orderDetails.orderTotalPrice=[menuItemInOrder price]+[orderDetails orderTotalPrice];
         NSLog(@"%f",[orderDetails orderTotalPrice]);
