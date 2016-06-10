@@ -23,7 +23,10 @@
     [super viewDidLoad];
     _cityTxtField.delegate=self;
     _regionTxtField.delegate=self;
-    [self getAllRegionsAndCities];
+    networkDelegate=self;
+    locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
+    [locationRequestedService getAllRegions];
+     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
 //    [self addTextFieldBorderStyle:self.cityTxtField];
 //    [self addTextFieldBorderStyle:self.regionTxtField];
 //    [self addTextFieldBorderStyle:self.streetTxtField];
@@ -31,8 +34,6 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,13 +43,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
 }
--(void) getAllRegionsAndCities
-{
-    networkDelegate=self;
 
-    locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
-    [locationRequestedService getAllRegions];
-}
 #pragma mark - Table view data source
 
 
@@ -223,12 +218,17 @@
         //  NSLog(@"region %@",allRegions);
         
     }
-//    _orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@(orderDetails.cookID),@"cookName":orderDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":_orderDetails};
+    else if([serviceName isEqualToString:@"createOrder"])
+    {
+        [allBasketMeals removeObjectForKey:_orderCookDetails.cookName];
+        [self.tabBarController setSelectedIndex:2];
+    }
     
    
     NSLog(@"%@",registeredUser.email);
 }
 - (IBAction)placeOrderBtn:(id)sender {
+    
        NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
         requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
         registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
@@ -237,7 +237,11 @@
         [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
         
     }
-    _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@1,@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
+    _orderCookDetails.orderID=arc4random_uniform(100);
+    _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@1,@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"type":@"normal",@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@(regionID),@"totalPrice":@(_orderCookDetails.orderTotalPrice),@"orderDetails":cookOrderArray};
      NSLog(@"%@",_orderJSONParameters);
+     [userRequestedServices createOrder:_orderJSONParameters];
+    
+    
 }
 @end

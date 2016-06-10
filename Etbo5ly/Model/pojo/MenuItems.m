@@ -38,11 +38,11 @@
     [mealJSONObject setObject:[mealObject descriptionEn] forKey:@"menuItemsDescriptionEn"];
  //   [mealJSONObject setObject:[mealObject imageURL] forKey:@"menuItemsImageUrl"];
     [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject quantity]] forKey:@"quantity"];
-    [mealJSONObject setObject:[mealObject comment] forKey:@"comment"];
-    [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject rating]]forKey:@"rating"];
+  //  [mealJSONObject setObject:[mealObject comment] forKey:@"comment"];
+   // [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject rating]]forKey:@"rating"];
     [mealJSONObject setObject:[mealObject descriptionAr] forKey:@"menuItemsDescriptionAr"];
     [mealJSONObject setObject:[mealObject nameAr] forKey:@"menuItemsNameAr"];
-    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject totalItemPrice]] forKey:@"totalPrice"];
+    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject price]] forKey:@"price"];
     
     return mealJSONObject;
 

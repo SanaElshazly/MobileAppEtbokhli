@@ -162,7 +162,7 @@
  //   orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
 
     
-   // [userRequestedServices createOrder:_orderJSONParameters];
+   
     registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
     //NSLog(@"%@",registeredUser.email);
     if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
@@ -176,12 +176,16 @@
     }
     else
     {
-        NSLog(@"trje");
+        UIStoryboard *storyboard=self.navigationController.storyboard;
+        orderAddressDetailsTableViewController * orderAddress=[storyboard instantiateViewControllerWithIdentifier:@"orderAddress"];
+        [orderAddress setOrderDetails:cookOrder];
+        [orderAddress setOrderCookDetails:orderDetails];
+        [self.navigationController pushViewController:orderAddress animated:YES];
+
     }
     mealsInOrder=[[MenuItems alloc] init];
     mealsInOrder=[allMeals objectAtIndex:sender.tag];
     
-   
 
 }
 +(User*)getUserInfo

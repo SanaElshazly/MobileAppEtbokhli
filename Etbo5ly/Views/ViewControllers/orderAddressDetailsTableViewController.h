@@ -14,8 +14,10 @@
 #import "User.h"
 #import "UserDAO.h"
 #import "Order.h"
+#import "UserServices.h"
 @interface orderAddressDetailsTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate,Etbo5lyNetworkDelegate>
 {
+    UserServices *userRequestedServices;
     locationServices * locationRequestedService;
     NSMutableArray * allRegions;
     NSMutableArray *allCities;
