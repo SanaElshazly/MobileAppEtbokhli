@@ -19,4 +19,5 @@
 -(void) createOrder : (NSDictionary *) jsonParameters;
 -(id) initWithNetworkDelegate : (Etbo5lyNetworkManager*) networkManagerObj;
 -(void) signUP:(NSDictionary *) userJSON;
+-(void) login :(NSDictionary *) userLognInJSON;
 @end

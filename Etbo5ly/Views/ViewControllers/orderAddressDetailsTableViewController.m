@@ -220,8 +220,12 @@
     }
     else if([serviceName isEqualToString:@"createOrder"])
     {
-        [allBasketMeals removeObjectForKey:_orderCookDetails.cookName];
-        [self.tabBarController setSelectedIndex:2];
+          NSLog(@"%@",[BasketTableViewController getall]);
+        NSLog(@"%@",[allBasketMeals objectForKey:_orderCookDetails.cookName]);
+        [[BasketTableViewController getall] removeObjectForKey:_orderCookDetails.cookName];
+        NSLog(@"%@",[BasketTableViewController getall]);
+        //[self.tabBarController setSelectedIndex:2];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
    
@@ -232,11 +236,12 @@
        NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
         requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
         registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
-    NSLog(@"%@",_orderCookDetails);
+  //  NSLog(@"%@",_orderCookDetails);
     for (MenuItems *ittem in _orderDetails) {
         [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
         
     }
+    
     _orderCookDetails.orderID=arc4random_uniform(100);
     _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@1,@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"type":@"normal",@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@(regionID),@"totalPrice":@(_orderCookDetails.orderTotalPrice),@"orderDetails":cookOrderArray};
      NSLog(@"%@",_orderJSONParameters);

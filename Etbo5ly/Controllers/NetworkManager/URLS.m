@@ -11,7 +11,9 @@
 @implementation URLS
 
 +(NSString *)login{
-    return @"url";
+    urlPath=[NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"user/login" ];
+
+    return urlPath;
 }
 
 +(NSString *)registeration{

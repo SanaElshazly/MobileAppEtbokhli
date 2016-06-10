@@ -42,7 +42,7 @@
    // [mealJSONObject setObject:[NSNumber numberWithInt:[mealObject rating]]forKey:@"rating"];
     [mealJSONObject setObject:[mealObject descriptionAr] forKey:@"menuItemsDescriptionAr"];
     [mealJSONObject setObject:[mealObject nameAr] forKey:@"menuItemsNameAr"];
-    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject price]] forKey:@"price"];
+    [mealJSONObject setObject:[NSNumber numberWithFloat:[mealObject price]*[mealObject quantity]] forKey:@"price"];
     
     return mealJSONObject;
 

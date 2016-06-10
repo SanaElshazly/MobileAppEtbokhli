@@ -120,9 +120,28 @@
     [footerView addSubview:checkOutbutton];
     return footerView;
 }
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    if (editingStyle==UITableViewCellEditingStyleDelete) {
+        NSLog(@" deleted meal %@ ",[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] nameEn]);
+        
+        NSMutableArray *deletedItem= [allBasketMeals objectForKey:[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName]];
+        if (deletedItem.count>1) {
+            NSString *deletedName=[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName];
+            [allBasketMeals removeObjectForKey:deletedName];
+        }
+        else
+        {
+            [[allBasketMeals objectForKey:[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName]] removeObjectAtIndex:indexPath.row];
+        }
+        NSLog(@"%@",allBasketMeals);
+        [self.tableView reloadData];
+        
+    }
 }
 +(void)addCookMealstoBasket:(NSString *)cookName setCookMealsOrder:(MenuItems *)newMeal
 {
@@ -150,6 +169,10 @@
 {
     isBasketController=YES;
     return isBasketController;
+}
++(NSMutableDictionary*) getall
+{
+    return allBasketMeals;
 }
 -(void) checkOut : (UIButton*) sender
 {

@@ -29,4 +29,11 @@
     NSLog(@"%@",serviceURL);
     [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:userJSON];
 }
+-(void)login:(NSDictionary *)userLognInJSON
+{
+    serviceName=@"login";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS login]];
+    NSLog(@"%@",serviceURL);
+    [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:userLognInJSON];
+}
 @end

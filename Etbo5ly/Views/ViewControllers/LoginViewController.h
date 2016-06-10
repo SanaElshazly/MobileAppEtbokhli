@@ -10,8 +10,13 @@
 #import "UIFloatLabelTextField.h"
 #import "signUpTableViewController.h"
 #import "Order.h"
-@interface LoginViewController : UIViewController
-
+@interface LoginViewController : UIViewController <Etbo5lyNetworkDelegate>
+{
+    UserServices *userRequestedServices;
+    NSMutableDictionary *userJSON;
+    User * loggedInUser;
+    UserDAO *userDBfunctions;
+}
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *loginEmailTxtField;
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *loginPasswordTxtField;

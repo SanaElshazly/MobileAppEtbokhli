@@ -38,6 +38,12 @@
 */
 
 - (IBAction)createAccountBtn:(id)sender {
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    userJSON=[[NSMutableDictionary alloc] init];
+    
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -48,8 +54,36 @@
     }
 }
 - (IBAction)loginBtn:(id)sender {
+    networkDelegate=self;
+    [userJSON setObject:_loginEmailTxtField.text forKey:@"email"];
+    [userJSON setObject:_loginPasswordTxtField.text forKey:@"password"];
+    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
+    [userRequestedServices login:userJSON];
 }
+//aljazayeerly@gmail.com
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
+{
+    if ([serviceName isEqualToString:@"login"]) {
+        loggedInUser=[[User alloc] init];
+        userDBfunctions=[[UserDAO alloc] initWithManagedObject];
+        loggedInUser.userId=[[dataRetreived valueForKey:@"id"] integerValue];
+        loggedInUser.name=[dataRetreived valueForKey:@"name"];
+        loggedInUser.email=[dataRetreived valueForKey:@"email"];
+        loggedInUser.password=[dataRetreived valueForKey:@"password"];
+        loggedInUser.phone=[dataRetreived valueForKey:@"phone"];
+        loggedInUser.tybe=@"user";
+        loggedInUser.regionID=3;
+        [userDBfunctions insertUser:loggedInUser];
+        if ([BasketTableViewController changeValue]==YES) {
+            UIStoryboard *storyboard=self.navigationController.storyboard;
+            orderAddressDetailsTableViewController * orderAddress=[storyboard instantiateViewControllerWithIdentifier:@"orderAddress"];
+            [orderAddress setOrderDetails:_orderToCheckedOut];
+            [orderAddress setOrderCookDetails:_orderCookDetails];
+            [self.navigationController pushViewController:orderAddress animated:YES];
+        }
 
+    }
+}
 
 -(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField{//:(UITextField*) txtField{
     

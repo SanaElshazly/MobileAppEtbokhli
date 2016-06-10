@@ -28,6 +28,7 @@ static BOOL isBasketController;
     MenuItems *mealsInOrder;
     
 }
++(NSMutableDictionary*) getall;
 +(User*)getUserInfo;
 +(BOOL) changeValue;
 +(void) addMealToBasket : (MenuItems *) newMeal;
