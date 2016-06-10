@@ -36,7 +36,7 @@
     NSLog(@"%@",[allBasketMeals allValues]);
     networkDelegate=self;
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
-    allMeals=[allBasketMeals allValues];
+    
     allCookIDInBasket=[allBasketMeals allKeys];
      NSLog(@"meaaals%@",allMeals);
     if (_orderJSONParameters==nil) {
@@ -50,6 +50,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    allMeals=[allBasketMeals allValues];
   //  NSLog(@"basket %d",allBasketMeals.count);
     return allMeals.count;
 }
@@ -132,13 +133,19 @@
         NSMutableArray *deletedItem= [allBasketMeals objectForKey:[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName]];
         if (deletedItem.count>1) {
             NSString *deletedName=[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName];
-            [allBasketMeals removeObjectForKey:deletedName];
+            [[allBasketMeals objectForKey:deletedName] removeObjectAtIndex:indexPath.row];
+            NSLog(@"%@",allBasketMeals);
+            
         }
         else
         {
-            [[allBasketMeals objectForKey:[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName]] removeObjectAtIndex:indexPath.row];
+            NSString *deletedName=[(MenuItems*)[[allMeals objectAtIndex:indexPath.section]objectAtIndex:indexPath.row] cookName];
+            [allBasketMeals removeObjectForKey:deletedName];
+            [allBasketMeals removeObjectForKey:deletedName];
+            NSLog(@"%@",allBasketMeals);
+            
         }
-        NSLog(@"%@",allBasketMeals);
+        
         [self.tableView reloadData];
         
     }
