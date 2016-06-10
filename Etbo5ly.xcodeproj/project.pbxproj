@@ -67,6 +67,7 @@
 		CF1886741D05FE2F00C97C50 /* etbo5lyFooter-29.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */; };
 		CF1886761D06094100C97C50 /* loginIcon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886751D06094100C97C50 /* loginIcon-30.png */; };
 		CF1919C61D04A94F00E28995 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919C51D04A94D00E28995 /* LoginViewController.m */; };
+		CF2158831D0B14E7008E1B01 /* CookDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */; };
 		CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */; };
 		CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73F1D030E15009A0894 /* ProfileViewController.m */; };
 		CF21A7431D03503A009A0894 /* signUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A7421D03503A009A0894 /* signUpTableViewController.m */; };
@@ -186,6 +187,8 @@
 		CF1886751D06094100C97C50 /* loginIcon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginIcon-30.png"; sourceTree = "<group>"; };
 		CF1919C41D04A94D00E28995 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
 		CF1919C51D04A94D00E28995 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
+		CF2158811D0B14E6008E1B01 /* CookDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CookDetailedViewController.h; path = Views/ViewControllers/CookDetailedViewController.h; sourceTree = "<group>"; };
+		CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CookDetailedViewController.m; path = Views/ViewControllers/CookDetailedViewController.m; sourceTree = "<group>"; };
 		CF21A73B1D030683009A0894 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideMenuTableViewController.h; path = Views/ViewControllers/SlideMenuTableViewController.h; sourceTree = "<group>"; };
 		CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideMenuTableViewController.m; path = Views/ViewControllers/SlideMenuTableViewController.m; sourceTree = "<group>"; };
 		CF21A73E1D030E15009A0894 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Views/ViewControllers/ProfileViewController.h; sourceTree = "<group>"; };
@@ -356,9 +359,9 @@
 				B4F7FF2C1CF3644000C24E45 /* LocationPageViewController.m */,
 				B43D5F0D1CF1FCC0008F3F63 /* TabBarViewController.h */,
 				B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */,
-				4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */,
 				B43D5F121CF20C48008F3F63 /* HomePageTableViewController.h */,
 				B43D5F131CF20C48008F3F63 /* HomePageTableViewController.m */,
+				4A2229061CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.h */,
 				4A2229071CF87C68002CC2E4 /* CooksBasedOnLocationTableViewController.m */,
 				B4690C151CFF4F940002B315 /* MealDetailedViewController.h */,
 				B4690C161CFF4F940002B315 /* MealDetailedViewController.m */,
@@ -374,6 +377,8 @@
 				CF1919C51D04A94D00E28995 /* LoginViewController.m */,
 				B4FC1D6A1D08448900B2A2C0 /* orderAddressDetailsTableViewController.h */,
 				B4FC1D6B1D08448900B2A2C0 /* orderAddressDetailsTableViewController.m */,
+				CF2158811D0B14E6008E1B01 /* CookDetailedViewController.h */,
+				CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -716,6 +721,7 @@
 				B4C8869C1CFDBB25001DFEA6 /* UserDAO.m in Sources */,
 				B4C886771CFDB79E001DFEA6 /* URLS.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
+				CF2158831D0B14E7008E1B01 /* CookDetailedViewController.m in Sources */,
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
 				B4C8866F1CFDB792001DFEA6 /* MealsServices.m in Sources */,
 				B4C886761CFDB79E001DFEA6 /* Etbo5lyNetworkManager.m in Sources */,

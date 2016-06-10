@@ -66,6 +66,8 @@
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"descriptionEn"] forKey:@"description_en"];
         //[newMenuItem setValue:[] forKey:@"cook_id"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"cookName"] forKey:@"cookName"];
+        
+//        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"categories"] forKey:@"categories"];
       //  [newMenuItem setValue:"cook_id" forKey:];
     }
     //    if (![managedObjectContext inser:&error]) {

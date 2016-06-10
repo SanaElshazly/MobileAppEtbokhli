@@ -17,6 +17,7 @@
 #import "AFNetworking.h"
 #import "MenuItemDAO.h"
 #import "MealDetailedViewController.h"
+#import "CookDetailedViewController.h"
 #import "locationServices.h"
 
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>

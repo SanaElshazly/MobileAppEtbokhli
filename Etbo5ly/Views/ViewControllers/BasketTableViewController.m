@@ -56,7 +56,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"mealls %d",[[allMeals objectAtIndex:section] count]);
+    NSLog(@"mealls %lu",(unsigned long)[[allMeals objectAtIndex:section] count]);
     return [[allMeals objectAtIndex:section] count];
     
 }
@@ -86,26 +86,45 @@
 {
    return [(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 41;
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     orderDetails=[[Order alloc] initWithInfo];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
-    UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, tableView.frame.size.width, 18)];
-    UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 5, tableView.frame.size.width, 18)];
-    [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:12]];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 22)];
+    UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, tableView.frame.size.width, 20)];
+    UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, tableView.frame.size.width, 20)];
+    [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:16]];
     for (MenuItems *menuItemInOrder in [allMeals objectAtIndex:section]) {
         orderDetails.orderTotalPrice=[menuItemInOrder price]+[orderDetails orderTotalPrice];
         NSLog(@"%f",[orderDetails orderTotalPrice]);
     }
     NSString *sectionTotalPrice =[NSString stringWithFormat:@"%f",[orderDetails orderTotalPrice] ];
     NSString * sectionTitle=[(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
+    
+    
+    sectionTitleLabel.font = [UIFont boldSystemFontOfSize:18.0];
+    sectionTitleLabel.textColor = [UIColor orangeColor];
+    //[sectionTitleLabel sizeToFit];
+//    [sectionTitleLabel setContentMode:UIViewContentModeCenter];
+    
     [sectionTitleLabel setText:sectionTitle];
     [totalPricePerCook setText:sectionTotalPrice];
     [view addSubview:sectionTitleLabel];
     [view addSubview:totalPricePerCook];
-    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]];
+    view.layer.borderColor = [UIColor brownColor].CGColor;
+    view.layer.borderWidth = 1.0;
+
+    [view setBackgroundColor:[UIColor whiteColor]];//colorWithRed:1.00 green:0.90 blue:0.76 alpha:1.0]];
     return view;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 41;
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     CGRect screenRectangle=[[UIScreen mainScreen] applicationFrame];
@@ -116,8 +135,10 @@
     checkOutbutton.tag=section;
     [checkOutbutton addTarget:self action:@selector(checkOut:) forControlEvents:UIControlEventTouchUpInside];
     
+    checkOutbutton.layer.cornerRadius = 10;
+    
     [checkOutbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];//set the color this is may be different for iOS 7
-    checkOutbutton.frame=CGRectMake(0, 0, screenRectangle.size.width, 30); //set some large width to ur titl
+    checkOutbutton.frame=CGRectMake(95, 0, 191, 30); //set some large width to ur titl
     [footerView addSubview:checkOutbutton];
     return footerView;
 }

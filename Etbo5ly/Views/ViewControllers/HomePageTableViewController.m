@@ -21,8 +21,10 @@
     _dataTableView.estimatedRowHeight=400;
     _dataTableView.rowHeight=UITableViewAutomaticDimension;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    //hwa leh hatten l satr bta3 l location da
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     searchResults=[[NSArray alloc] init];
+    //hwa eh l refreshControl da
     refreshControl=[[UIRefreshControl alloc] init];
     refreshControl.backgroundColor=[UIColor orangeColor];
     refreshControl.tintColor=[UIColor whiteColor];
@@ -50,6 +52,7 @@
         _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
         NSLog(@"pppooo %@",_cooks);
     }
+    //hwa leh hatten all regions hena
     else if  ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
         allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
         allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
@@ -167,14 +170,38 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%@",[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn]);
-    UIStoryboard *storyboard=self.navigationController.storyboard;
-    MealDetailedViewController *mealDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedMealViewController"];
-    [mealDetailedViewController setDetailedMeal:(MenuItems *)[_meals objectAtIndex:indexPath.row]];
-    [self.navigationController pushViewController:mealDetailedViewController animated:YES];
     
+    UIStoryboard *storyboard;
+    
+    
+    switch (self.menuOptions.selectedSegmentIndex) {
+        case 0:
+        {
+            NSLog(@"%@",[(Cook *)[_cooks objectAtIndex:indexPath.row] name]);
+            storyboard=self.navigationController.storyboard;
+            CookDetailedViewController *cookDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedCookViewController"];
+            [cookDetailedViewController setDetailedCook:(Cook*)[_cooks objectAtIndex:indexPath.row]];
+            [self.navigationController pushViewController:cookDetailedViewController animated:YES];
+            
+            break;
+        }
+        case 1:
+        {
+            NSLog(@"%@",[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn]);
+            storyboard=self.navigationController.storyboard;
+            MealDetailedViewController *mealDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedMealViewController"];
+            [mealDetailedViewController setDetailedMeal:(MenuItems *)[_meals objectAtIndex:indexPath.row]];
+            [self.navigationController pushViewController:mealDetailedViewController animated:YES];
+            
+            break;
+        }
+        default:
+            break;
+    }
+
     
 }
+
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate;
@@ -192,6 +219,7 @@
     
     
 }
+
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self filterContentForSearchText:searchString
