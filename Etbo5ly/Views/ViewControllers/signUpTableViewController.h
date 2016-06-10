@@ -12,15 +12,20 @@
 #import "User.h"
 #import "UserServices.h"
 #import "Etbo5lyNetworkDelegate.h"
+#import "orderAddressDetailsTableViewController.h"
+#import "BasketTableViewController.h"
+#import "Order.h"
 @interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate>
 {
     NSMutableDictionary *userDetails;
     UserServices *userRequestedServices;
     UserDAO *userDBFunctions;
     User *newUser;
+    
 }
+@property Order * orderCookDetails;
+@property NSArray *orderToCheckedOut;
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
-
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *fullnameTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *emailTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *phoneTxtField;

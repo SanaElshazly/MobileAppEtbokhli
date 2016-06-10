@@ -19,6 +19,7 @@ static NSMutableArray *allCookIDInBasket;
 static NSMutableDictionary * allBasketMeals;;
 static int numberOfCooksInBasket;
 static User * registeredUser;
+static BOOL isBasketController;
 @interface BasketTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
     UserServices *userRequestedServices;
@@ -26,6 +27,8 @@ static User * registeredUser;
     MenuItems *mealsInOrder;
     
 }
++(User*)getUserInfo;
++(BOOL) changeValue;
 +(void) addMealToBasket : (MenuItems *) newMeal;
 +(void) addCookToBasket : (int) CookID;
 +(void ) addCookMealstoBasket : (NSString*) cookName setCookMealsOrder : (MenuItems *) newMeal;

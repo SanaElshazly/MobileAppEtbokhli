@@ -15,6 +15,7 @@
 @implementation BasketTableViewController
 {
    NSArray *allMeals;
+    NSArray *allCooksNames;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,10 +37,12 @@
     networkDelegate=self;
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     allMeals=[allBasketMeals allValues];
+    allCookIDInBasket=[allBasketMeals allKeys];
      NSLog(@"meaaals%@",allMeals);
     if (_orderJSONParameters==nil) {
         _orderJSONParameters=[[NSMutableDictionary alloc] init];
     }
+    isBasketController=NO;
     [[self tabBarItem] setBadgeValue:@"42"];
      [_tableViewData reloadData];
 }
@@ -127,7 +130,7 @@
         allBasketMeals=[[NSMutableDictionary alloc] init];
     }
 
-    NSLog(@"%@",allBasketMeals);
+    NSLog(@"meaaals%@",allBasketMeals);
     NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
     if (![allBasketMeals valueForKey:cookName]) {
         NSMutableArray * newCookMeals=[[NSMutableArray alloc] init];
@@ -143,37 +146,47 @@
     NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
 
 }
++(BOOL)changeValue
+{
+    isBasketController=YES;
+    return isBasketController;
+}
 -(void) checkOut : (UIButton*) sender
 {
     UserDAO *requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
+    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
+    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
+    NSLog(@"yarab b2a%@",[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName]);
+    orderDetails.cookName=[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName];
+    NSLog(@"%@",orderDetails);
+ //   orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
+
+    
+   // [userRequestedServices createOrder:_orderJSONParameters];
     registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
     //NSLog(@"%@",registeredUser.email);
     if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
         NSLog(@"Error");
+        NSLog(@"%hhd",[BasketTableViewController changeValue]);
         UIStoryboard *storyboard=self.navigationController.storyboard;
         LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        [loginViewController setOrderToCheckedOut:cookOrder];
+        [loginViewController setOrderCookDetails:orderDetails];
         [self.navigationController pushViewController:loginViewController animated:YES];
     }
     else
     {
         NSLog(@"trje");
     }
-//    NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
-//    NSString *allOrderDetails;
-//    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
-//    mealsInOrder=[[MenuItems alloc] init];
-//    mealsInOrder=[allMeals objectAtIndex:sender.tag];
-//    orderDetails.cookName=[[allMeals objectAtIndex:sender.tag] cookName];
-//    orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
-//    for (MenuItems *ittem in cookOrder) {
-//
-//        [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
-//    }_orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@(orderDetails.cookID),@"cookName":orderDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
-//    NSLog(@"%@",_orderJSONParameters);
-//    allOrderDetails=[self convertParametersToJSON:_orderJSONParameters];
-//    NSLog(@"%@",allOrderDetails);
-//    [userRequestedServices createOrder:_orderJSONParameters];
+    mealsInOrder=[[MenuItems alloc] init];
+    mealsInOrder=[allMeals objectAtIndex:sender.tag];
+    
+   
 
+}
++(User*)getUserInfo
+{
+    return registeredUser;
 }
 -(NSString *)convertParametersToJSON:(NSDictionary *)cookOrder
 {
@@ -198,7 +211,7 @@
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     NSLog(@"SUCESSSS");
-    [allBasketMeals removeObjectForKey:[orderDetails cookName]];
+   // [allBasketMeals removeObjectForKey:[orderDetails cookName]];
 }
 -(void)handleWithFailure:(NSError *)error
 {

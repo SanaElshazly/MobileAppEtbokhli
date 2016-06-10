@@ -10,13 +10,22 @@
 #import "UIFloatLabelTextField.h"
 #import "locationServices.h"
 #import "Etbo5lyNetworkDelegate.h"
+#import "BasketTableViewController.h"
+#import "User.h"
+#import "UserDAO.h"
+#import "Order.h"
 @interface orderAddressDetailsTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate,Etbo5lyNetworkDelegate>
 {
     locationServices * locationRequestedService;
     NSMutableArray * allRegions;
     NSMutableArray *allCities;
     NSArray *allCountries;
+    UserDAO *requestedUserDBFunvtions;
+    User * registeredUser;
 }
+@property Order * orderCookDetails;
+@property NSArray *orderDetails;
+@property NSDictionary * orderJSONParameters;;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *cityTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *regionTxtField;
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *streetTxtField;

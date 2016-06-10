@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "UIFloatLabelTextField.h"
-
+#import "signUpTableViewController.h"
+#import "Order.h"
 @interface LoginViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *loginEmailTxtField;
 
 @property (strong, nonatomic) IBOutlet UIFloatLabelTextField *loginPasswordTxtField;
-
-
+@property Order * orderCookDetails;
+@property NSArray *orderToCheckedOut;
 
 - (IBAction)createAccountBtn:(id)sender;
 

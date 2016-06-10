@@ -39,7 +39,14 @@
 
 - (IBAction)createAccountBtn:(id)sender {
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"createAccount"]) {
+        signUpTableViewController *signupController=(signUpTableViewController*)[segue destinationViewController];
+        [signupController setOrderToCheckedOut:_orderToCheckedOut];
+        [signupController setOrderCookDetails:_orderCookDetails];
+    }
+}
 - (IBAction)loginBtn:(id)sender {
 }
 

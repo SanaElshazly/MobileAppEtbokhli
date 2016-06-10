@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Etbo5lyDatabaseManager.h"
 #import "User.h"
+
 @interface UserDAO : NSObject
 {
 

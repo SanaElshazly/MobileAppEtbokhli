@@ -44,11 +44,18 @@
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     if ([serviceName isEqualToString:@"signup"]) {
-        NSString * result=dataRetreived;
-        if ([result isEqualToString:@"true"]) {
+        NSLog(@"%@",[dataRetreived valueForKey:@"id"]);
+        newUser.userId=[[dataRetreived valueForKey:@"id"] integerValue];
              userDBFunctions=[[UserDAO alloc] initWithManagedObject];
             [userDBFunctions insertUser:newUser];
+        if ([BasketTableViewController changeValue]==YES) {
+            UIStoryboard *storyboard=self.navigationController.storyboard;
+            orderAddressDetailsTableViewController * orderAddress=[storyboard instantiateViewControllerWithIdentifier:@"orderAddress"];
+            [orderAddress setOrderDetails:_orderToCheckedOut];
+            [orderAddress setOrderCookDetails:_orderCookDetails];
+            [self.navigationController pushViewController:orderAddress animated:YES];
         }
+        
     }
 }
 -(void)handleWithFailure:(NSError *)error
@@ -60,6 +67,7 @@
     networkDelegate=self;
     newUser=[[User alloc] initWithInfo];
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
+    NSLog(@"%d",newUser.userId);
     newUser.email=_emailTxtField.text;
     newUser.name=_fullnameTxtField.text;
     newUser.password=_passwordTxtField.text;
@@ -67,6 +75,7 @@
     newUser.regionID=3;
     newUser.address=[NSString stringWithFormat:@"%@%@", _cityTxtField.text,_regionTxtField.text];
     newUser.tybe=@"user";
+     
     [userDetails setObject:newUser.email forKey:@"email"];
     [userDetails setObject:newUser.name forKey:@"name"];
     [userDetails setObject:newUser.password forKey:@"password"];

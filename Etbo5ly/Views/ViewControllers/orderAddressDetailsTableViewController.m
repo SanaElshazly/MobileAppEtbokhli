@@ -223,7 +223,21 @@
         //  NSLog(@"region %@",allRegions);
         
     }
+//    _orderJSONParameters=@{@"userByCustomerId":@1,@"customerName":@"AlJazayeerly",@"userByCookId":@(orderDetails.cookID),@"cookName":orderDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":_orderDetails};
+    
+   
+    NSLog(@"%@",registeredUser.email);
 }
 - (IBAction)placeOrderBtn:(id)sender {
+       NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
+        requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
+        registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
+    NSLog(@"%@",_orderCookDetails);
+    for (MenuItems *ittem in _orderDetails) {
+        [cookOrderArray addObject:[MenuItems convertObjectToJSON:ittem]];
+        
+    }
+    _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@1,@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"customerRating":@1,@"orderComment":@"",@"cookRating":@1,@"cookComment":@"good",@"type":@1,@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@3,@"totalPrice":@900,@"orderDetails":cookOrderArray};
+     NSLog(@"%@",_orderJSONParameters);
 }
 @end

@@ -61,22 +61,23 @@
 
 -(void)insertUser:(User *)userData
 {
+    
     NSManagedObject *newUser=[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
-    [newUser setValue: [userData valueForKey:@"id"] forKey:@"id"];
+    [newUser setValue: [userData valueForKey:@"userId"] forKey:@"id"];
     [newUser setValue:[userData valueForKey:@"address"] forKey:@"address"];
     [newUser setValue:[userData valueForKey:@"email"] forKey:@"email"];
     [newUser setValue:@"user" forKey:@"type"];
-    [newUser setValue:[userData valueForKey:@"latitude"] forKey:@"latitude"];
-    [newUser setValue:[userData valueForKey:@"longitude"] forKey:@"longitude"];
+  //  [newUser setValue:[userData valueForKey:@"latitude"] forKey:@"latitude"];
+ //   [newUser setValue:[userData valueForKey:@"longitude"] forKey:@"longitude"];
     [newUser setValue:[userData valueForKey:@"name"] forKey:@"name"];
     [newUser setValue:[userData valueForKey:@"password"] forKey:@"password"];
     [newUser setValue:[userData valueForKey:@"phone"] forKey:@"phone"];
-    NSLog(@"hh %lld",[[userData valueForKey:@"registerationDate"] longLongValue]);
+   // NSLog(@"hh %lld",[[userData valueForKey:@"registerationDate"] longLongValue]);
     
-    NSLog(@"%@",[NSDate dateWithTimeIntervalSince1970:([[userData valueForKey:@"registerationDate"] longLongValue]/1000.0)]);
+   // NSLog(@"%@",[NSDate dateWithTimeIntervalSince1970:([[userData valueForKey:@"registerationDate"] longLongValue]/1000.0)]);
     
-    [newUser setValue:[NSDate dateWithTimeIntervalSince1970:([[ userData valueForKey:@"registerationDate"] longLongValue]/1000)] forKey:@"registeration_date"];
+   // [newUser setValue:[NSDate dateWithTimeIntervalSince1970:([[ userData valueForKey:@"registerationDate"] longLongValue]/1000)] forKey:@"registeration_date"];
    
-    [newUser setValue:[NSString stringWithFormat:@"%@%@",[userData valueForKey:@"resourcesURL"],[userData valueForKey:@"imageURL"]] forKey:@"imageURL"];
+  //  [newUser setValue:[NSString stringWithFormat:@"%@%@",[userData valueForKey:@"resourcesURL"],[userData valueForKey:@"imageURL"]] forKey:@"imageURL"];
 }
 @end

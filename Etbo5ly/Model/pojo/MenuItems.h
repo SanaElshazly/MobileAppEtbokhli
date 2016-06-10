@@ -16,6 +16,7 @@
 @property int itemRate;
 @property NSString * imageURL;
 @property NSString *cookName;
+@property int cookID;
 @property int quantity;
 @property float totalPrice;
 @property NSString *comment;
