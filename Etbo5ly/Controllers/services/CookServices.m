@@ -46,4 +46,15 @@
     [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
 }
 
+
+-(void) getCookCategoryMeals:(int)cookID :(int)categoryID
+{
+    serviceName=@"cookCategoryMeals";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS cooksCategoryMeals:cookID :categoryID]];
+    
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegateObj];
+}
+
+
+
 @end

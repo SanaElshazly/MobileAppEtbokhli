@@ -21,6 +21,8 @@
 -(void) getCooksByRegion : (int) regionID;
 
 -(void) getCookCategories : (int) cookID;
+-(void) getCookCategoryMeals:(int) cookID : (int) categoryID;
+
 
 -(id) initWithNetworkDelegate : (Etbo5lyNetworkManager*) networkManagerObj;
 @end

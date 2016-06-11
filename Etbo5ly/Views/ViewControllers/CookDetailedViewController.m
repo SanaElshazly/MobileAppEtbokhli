@@ -106,6 +106,25 @@
 }
 
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSLog(@"%@",[[_cookCategories objectAtIndex:indexPath.row] objectForKey:@"nameEn" ]);
+    NSLog(@"%@",[[_cookCategories objectAtIndex:indexPath.row] objectForKey:@"categoryId" ]);
+
+    int catID =[[[_cookCategories objectAtIndex:indexPath.row] objectForKey:@"categoryId" ] integerValue];
+    
+    UIStoryboard *storyboard=self.navigationController.storyboard;
+    CategoryItemsTableViewController *categoryItemsTableViewController=[storyboard instantiateViewControllerWithIdentifier:@"categoryItemsTableViewController"];
+    [categoryItemsTableViewController setCategoryID:catID];
+    [categoryItemsTableViewController setCookID:cookIDforCategory];
+    
+    [self.navigationController pushViewController:categoryItemsTableViewController animated:YES];
+    
+}
+
+
+
 -(NSString*) prepareDate :(NSString*) workingHrs{
     NSString *dateStr=workingHrs;
     

@@ -67,6 +67,7 @@
 		CF1886731D05FE2F00C97C50 /* etbo5lyBackground-28.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */; };
 		CF1886741D05FE2F00C97C50 /* etbo5lyFooter-29.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */; };
 		CF1886761D06094100C97C50 /* loginIcon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1886751D06094100C97C50 /* loginIcon-30.png */; };
+		CF1902FB1D0C1C1400894225 /* CategoryItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1902FA1D0C1C1400894225 /* CategoryItemsTableViewController.m */; };
 		CF1919C61D04A94F00E28995 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919C51D04A94D00E28995 /* LoginViewController.m */; };
 		CF2158831D0B14E7008E1B01 /* CookDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */; };
 		CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */; };
@@ -188,6 +189,8 @@
 		CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "etbo5lyBackground-28.png"; sourceTree = "<group>"; };
 		CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "etbo5lyFooter-29.png"; sourceTree = "<group>"; };
 		CF1886751D06094100C97C50 /* loginIcon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginIcon-30.png"; sourceTree = "<group>"; };
+		CF1902F91D0C1C1400894225 /* CategoryItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryItemsTableViewController.h; path = Views/ViewControllers/CategoryItemsTableViewController.h; sourceTree = "<group>"; };
+		CF1902FA1D0C1C1400894225 /* CategoryItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryItemsTableViewController.m; path = Views/ViewControllers/CategoryItemsTableViewController.m; sourceTree = "<group>"; };
 		CF1919C41D04A94D00E28995 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Views/ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
 		CF1919C51D04A94D00E28995 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Views/ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
 		CF2158811D0B14E6008E1B01 /* CookDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CookDetailedViewController.h; path = Views/ViewControllers/CookDetailedViewController.h; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */,
 				4ACA91D51D0B7533002822AA /* ordersRatingTableViewController.h */,
 				4ACA91D61D0B7533002822AA /* ordersRatingTableViewController.m */,
+				CF1902F91D0C1C1400894225 /* CategoryItemsTableViewController.h */,
+				CF1902FA1D0C1C1400894225 /* CategoryItemsTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -748,6 +753,7 @@
 				B4CCD7DD1CF1E80200BE850C /* Order.m in Sources */,
 				B4CCD7D91CF1E80200BE850C /* CategoryDTO.m in Sources */,
 				4A0A08AA1CF10162000609E3 /* SWRevealViewController.m in Sources */,
+				CF1902FB1D0C1C1400894225 /* CategoryItemsTableViewController.m in Sources */,
 				B4CCD7EE1CF1EA6800BE850C /* main.m in Sources */,
 				B4CCD7DE1CF1E80200BE850C /* OrderDetails.m in Sources */,
 			);
