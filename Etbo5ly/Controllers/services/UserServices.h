@@ -20,4 +20,6 @@
 -(id) initWithNetworkDelegate : (Etbo5lyNetworkManager*) networkManagerObj;
 -(void) signUP:(NSDictionary *) userJSON;
 -(void) login :(NSDictionary *) userLognInJSON;
+-(void) getAllNonRatedOrders : (int) userId;
+-(void) rateOrder : (NSDictionary *) orderRateJSON;
 @end

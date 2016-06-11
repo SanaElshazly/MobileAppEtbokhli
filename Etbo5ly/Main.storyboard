@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CJa-Uq-1dJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CJa-Uq-1dJ">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -456,35 +455,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jxp-mB-C1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-326" y="-196"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="7iV-7f-57I">
-            <objects>
-                <tableViewController id="6lU-aC-EUB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BlI-E9-B1Z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bAq-G3-KzC">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bAq-G3-KzC" id="eud-SM-U8u">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="6lU-aC-EUB" id="cbv-Jp-EIn"/>
-                            <outlet property="delegate" destination="6lU-aC-EUB" id="qux-as-gMr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="nkq-rY-Kzf"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tnO-Dn-g85" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="703" y="656"/>
         </scene>
         <!--Home-->
         <scene sceneID="sU8-n1-jXA">
@@ -1000,7 +970,7 @@
             </objects>
             <point key="canvasLocation" x="3054" y="-297"/>
         </scene>
-        <!--Orders Rating Table View Controller-->
+        <!--Item-->
         <scene sceneID="0Un-vC-ico">
             <objects>
                 <tableViewController id="rnI-Ex-LXb" customClass="ordersRatingTableViewController" sceneMemberID="viewController">
@@ -1052,10 +1022,12 @@
                             <outlet property="delegate" destination="rnI-Ex-LXb" id="J9D-rl-VnJ"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="17b-je-4Uh"/>
+                    <navigationItem key="navigationItem" id="63U-XP-FpG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zP-XA-jGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="1354"/>
+            <point key="canvasLocation" x="571" y="608"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="ZeS-FO-Qwf">
@@ -1376,7 +1348,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6lU-aC-EUB" kind="relationship" relationship="rootViewController" id="sDt-GX-r7E"/>
+                        <segue destination="rnI-Ex-LXb" kind="relationship" relationship="rootViewController" id="yac-XP-gLR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YID-ps-rm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1398,5 +1370,10 @@
         <image name="profileEtbo5ly.png" width="31" height="31"/>
         <image name="shareEtbo5ly-23.png" width="31" height="31"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
     <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -22,7 +22,6 @@
     _dataTableView.rowHeight=UITableViewAutomaticDimension;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     //hwa leh hatten l satr bta3 l location da
-    locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     searchResults=[[NSArray alloc] init];
     networkDelegate=self;
     mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
@@ -56,16 +55,6 @@
         NSLog(@"pppooo %@",_cooks);
     }
     //hwa leh hatten all regions hena
-    else if  ([serviceName isEqualToString:@"allRegionsWithCountries"]) {
-        allCountries=[[NSMutableArray alloc] initWithArray:dataRetreived ];
-        allCountries=[[allCountries objectAtIndex:0] objectForKey:@"cities"];
-        allCities=[[NSMutableArray alloc] initWithArray:allCountries];
-        //      allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
-        NSLog(@"countries %@",allCountries);
-        NSLog(@"ciyies %@",allCities);
-        //  NSLog(@"region %@",allRegions);
-        
-    }
     [self refreshDataInTableView];
     
 }
