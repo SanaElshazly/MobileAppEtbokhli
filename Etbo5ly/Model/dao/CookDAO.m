@@ -49,7 +49,6 @@
         fetchedCook.endWorkingHours=[managedObjectCook valueForKey:@"end_working_hours"];
         fetchedCook.startWorkingHours=[managedObjectCook valueForKey:@"start_working_hours"];
         fetchedCook.registerationDate=[managedObjectCook valueForKey:@"registeration_date"];
-        fetchedCook.menu_items= [managedObjectCook valueForKey:@"menu_items"];
 
 
         [_selectedCooks addObject:fetchedCook];

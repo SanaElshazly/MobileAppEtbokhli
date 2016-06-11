@@ -9,6 +9,7 @@ target 'Etbo5ly' do
 pod 'AFNetworking', '~> 2.5.4'
 pod 'SDWebImage', '~>3.7'
 pod 'UIFloatLabelTextField'
+pod 'HCSStarRatingView' , '~>1.4.5'
   target 'Etbo5lyTests' do
     inherit! :search_paths
     # Pods for testing

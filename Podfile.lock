@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HCSStarRatingView (1.4.5)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -27,14 +28,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - HCSStarRatingView (~> 1.4.5)
   - SDWebImage (~> 3.7)
   - UIFloatLabelTextField
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIFloatLabelTextField: b01b1bcea4b4fd617e80744f3cfd06e1d1b7e75e
 
-PODFILE CHECKSUM: a23a7860361f000a794cc7556ffd6a4492223b4b
+PODFILE CHECKSUM: cc87bd785c478b968e476b56e1bf1a0b5f69c9c7
 
 COCOAPODS: 1.0.0

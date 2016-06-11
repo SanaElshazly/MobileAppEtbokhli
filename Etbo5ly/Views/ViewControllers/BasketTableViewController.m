@@ -72,6 +72,8 @@
     UIImageView *listItemImage=(UIImageView *)[cell viewWithTag:1];
     UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
     UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
+    UILabel *quantityLabel=(UILabel*)[cell viewWithTag:4];
+    quantityLabel.text=[NSString stringWithFormat:@"%d",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] quantity]];
    listItemHeader.text=[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] nameEn];
    listItemSubHeader.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
     

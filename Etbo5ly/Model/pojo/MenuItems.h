@@ -31,8 +31,6 @@
 @property NSString * descriptionAr;
 @property float totalItemPrice;
 @property Cook *cook;
-@property NSSet <CategoryDTO*> *categories;
-@property NSSet<OrderDetails*> *menuItems_OrderDetails;
 -(id) initWithInfo;
 -(id) initWithInfo : (int) itemId setNameEn : (NSString*) nameEn setPrice : (float) price setDescriptionEn : (NSString*) descriptionEn setItemRate : (int) itemRate setImageURL : (NSString*) imageURL;
 +(NSMutableDictionary *) convertObjectToJSON : (MenuItems *) mealObject;

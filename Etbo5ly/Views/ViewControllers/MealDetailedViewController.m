@@ -58,6 +58,7 @@
 }
 
 - (IBAction)addMealToItem:(id)sender {
+    _detailedMeal.quantity=quantity;
     [BasketTableViewController addCookMealstoBasket:[_detailedMeal cookName] setCookMealsOrder:_detailedMeal];
     [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:@""];
     [self .navigationController popToRootViewControllerAnimated:YES];

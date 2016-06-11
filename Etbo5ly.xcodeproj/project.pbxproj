@@ -16,6 +16,7 @@
 		4AC619881CEF2340002D66EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619871CEF2340002D66EB /* Images.xcassets */; };
 		4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AC619891CEF2340002D66EB /* LaunchScreen.xib */; };
 		4AC619971CEF2341002D66EB /* Etbo5lyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC619961CEF2341002D66EB /* Etbo5lyTests.m */; };
+		4ACA91D71D0B7533002822AA /* ordersRatingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA91D61D0B7533002822AA /* ordersRatingTableViewController.m */; };
 		A96F803FDAEE201983DEC5D2 /* Pods_Etbo5ly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF45FC831563EF8B3B7AE814 /* Pods_Etbo5ly.framework */; };
 		B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B43B3C931CF09FCB0086761F /* ERD.jpeg */; };
 		B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43D5F0E1CF1FCC0008F3F63 /* TabBarViewController.m */; };
@@ -102,6 +103,8 @@
 		4AC619901CEF2340002D66EB /* Etbo5lyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Etbo5lyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC619951CEF2341002D66EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AC619961CEF2341002D66EB /* Etbo5lyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Etbo5lyTests.m; sourceTree = "<group>"; };
+		4ACA91D51D0B7533002822AA /* ordersRatingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ordersRatingTableViewController.h; path = Views/ViewControllers/ordersRatingTableViewController.h; sourceTree = "<group>"; };
+		4ACA91D61D0B7533002822AA /* ordersRatingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ordersRatingTableViewController.m; path = Views/ViewControllers/ordersRatingTableViewController.m; sourceTree = "<group>"; };
 		607724E839EE3DA940A01975 /* Pods_Etbo5lyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Etbo5lyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7394E99A5DB78DA413697830 /* Pods-Etbo5lyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5lyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5lyTests/Pods-Etbo5lyTests.release.xcconfig"; sourceTree = "<group>"; };
 		8F9F26513C72EC12BA77CAAB /* Pods-Etbo5ly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Etbo5ly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Etbo5ly/Pods-Etbo5ly.release.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				B4FC1D6B1D08448900B2A2C0 /* orderAddressDetailsTableViewController.m */,
 				CF2158811D0B14E6008E1B01 /* CookDetailedViewController.h */,
 				CF2158821D0B14E6008E1B01 /* CookDetailedViewController.m */,
+				4ACA91D51D0B7533002822AA /* ordersRatingTableViewController.h */,
+				4ACA91D61D0B7533002822AA /* ordersRatingTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 				B4C886771CFDB79E001DFEA6 /* URLS.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,
 				CF2158831D0B14E7008E1B01 /* CookDetailedViewController.m in Sources */,
+				4ACA91D71D0B7533002822AA /* ordersRatingTableViewController.m in Sources */,
 				B4CCD7DF1CF1E80200BE850C /* User.m in Sources */,
 				B4C8866F1CFDB792001DFEA6 /* MealsServices.m in Sources */,
 				B4C886761CFDB79E001DFEA6 /* Etbo5lyNetworkManager.m in Sources */,
