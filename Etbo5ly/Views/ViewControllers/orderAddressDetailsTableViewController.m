@@ -21,6 +21,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title=@"hnaaaaa";
     _cityTxtField.delegate=self;
     _regionTxtField.delegate=self;
     networkDelegate=self;

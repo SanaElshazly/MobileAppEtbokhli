@@ -24,11 +24,14 @@
     //hwa leh hatten l satr bta3 l location da
     locationRequestedServices=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     searchResults=[[NSArray alloc] init];
+    networkDelegate=self;
+    mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
+    
+    cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
+    cookRequestedDBFunctions=[[CookDAO alloc] initWithManagedObject];
+    mealsRequestedDBFunctions=[[MenuItemDAO alloc] initWithManagedObject];
+    
     //hwa eh l refreshControl da
-    refreshControl=[[UIRefreshControl alloc] init];
-    refreshControl.backgroundColor=[UIColor orangeColor];
-    refreshControl.tintColor=[UIColor whiteColor];
-    [refreshControl addTarget:self action:@selector(changeValueOfSegmentedController:) forControlEvents:UIControlEventValueChanged];
     
 }
 
@@ -236,38 +239,22 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"geeeh");
-    networkDelegate=self;
-    mealsRequestedService = [[MealsServices alloc] initWithNetWorkDelegate:networkDelegate];
-    
-    cooksRequestedMeals=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
-    cookRequestedDBFunctions=[[CookDAO alloc] initWithManagedObject];
-    mealsRequestedDBFunctions=[[MenuItemDAO alloc] initWithManagedObject];
+  
     [self checkConnectivity];
     
 }
 -(IBAction)changeValueOfSegmentedController:(id)sender {
     NSLog(@"3mlt aho");
-    if (refreshControl) {
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"MMM d, h:mm a"];
-        NSString *title = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
-        NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor]
-                                                                    forKey:NSForegroundColorAttributeName];
-        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
-        refreshControl.attributedTitle = attributedTitle;
-        
-        //  [refreshControl endRefreshing];
-    }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             if (_isUserReachable) {
                 [cooksRequestedMeals getCooksListDataService];
+                [self refreshDataInTableView];
             }
             else
             {
                 _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
-                [self refreshDataInTableView];
+              //  [self refreshDataInTableView];
             }
             break;
         case 1 :
@@ -277,7 +264,7 @@
             else
             {
                 _meals=[mealsRequestedDBFunctions fetchAndGetAllMenuItems];
-                [self refreshDataInTableView];
+              //  [self refreshDataInTableView];
             }
             break;
         default:

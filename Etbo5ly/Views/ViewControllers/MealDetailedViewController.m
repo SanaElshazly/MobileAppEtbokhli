@@ -18,7 +18,7 @@
     [super viewDidLoad];
     quantity=1;
 
-    self.navigationController.navigationItem.title=@"hna";
+    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"hanoon"];
     NSLog(@"hna");
 }
 -(void)viewDidAppear:(BOOL)animated
