@@ -43,11 +43,8 @@
     formattedDate =[NSString stringWithFormat:@"%@",[_detailedCook startWorkingHours]];
     formattedDate =[self prepareDate:formattedDate];
     NSLog(@"%@", formattedDate);
-    
-    _cookWorkingHrsLbl.text=[NSString stringWithFormat:@"%@ - %@",[_detailedCook startWorkingHours] ,
-                             [_detailedCook endWorkingHours] ];
-    
-    
+    NSLog(@"%@",[NSString stringWithFormat:@"%@ ",[_detailedCook startWorkingHours]]);
+    _cookWorkingHrsLbl.text=[NSString stringWithFormat:@"%@ - %@",[_detailedCook startWorkingHours] ,[_detailedCook endWorkingHours] ];
 //     NSLog(@"%@",[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i ] objectForKey:@"registerationDate"] longLongValue]/1000.0)]);
     
 //    _detailedMealPrice.text=[NSString stringWithFormat:@"%f",[_detailedMeal price] ];

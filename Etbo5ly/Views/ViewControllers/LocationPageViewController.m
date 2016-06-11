@@ -38,6 +38,7 @@
     _cityTxtField.placeholder=@"City";
 
     self.navigationItem.backBarButtonItem = [self creatBackBotton];
+    
     _pickerViewHeaderLabel.hidden=YES;
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
@@ -133,6 +134,8 @@
         CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableView=[CooksBasedOnLocationTableViewController new];
         [cooksBasedOnLocationTableView setCooksOnLocation:cooksBasedLocation];
         
+        
+        
         [self.navigationController pushViewController:cooksBasedOnLocationTableView animated:YES];
 
     }
@@ -141,7 +144,7 @@
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
         CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableView=[CooksBasedOnLocationTableViewController new];
         [cooksBasedOnLocationTableView setCooksOnLocation:cooksBasedLocation];
-        
+        [cooksBasedOnLocationTableView setOrderAddress:[NSString stringWithFormat:@"%@ , %@ ",selectedCityName,selectedRegionName]];
         [self.navigationController pushViewController:cooksBasedOnLocationTableView animated:YES];
     }
 

@@ -40,7 +40,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 -(void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     NSLog(@"hello");
@@ -106,9 +106,14 @@
 
 - (IBAction)changeRatingValue:(id)sender {
     HCSStarRatingView *noha=(HCSStarRatingView *)sender;
-    CGPoint bu=[sender convertPoint:CGPointZero toView:self.tableView];
-    NSIndexPath *b=[self.tableView indexPathForRowAtPoint:bu];
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+    if (indexPath != nil)
+    {
+       NSLog(@"b%d",indexPath.row);
+    }
     
-    NSLog(@"%f%d",noha.value,b.section);
+    
+   // NSLog(@"%f%d",noha.value,b.section);
 }
 @end

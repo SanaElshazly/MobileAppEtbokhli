@@ -11,5 +11,6 @@
 #import "Cook.h"
 @interface CooksBasedOnLocationTableViewController : UITableViewController
 -(id) initWithCooksArray : (NSMutableArray *) cooksBasdedOnLocation;
-@property (strong,nonatomic) NSMutableArray * cooksOnLocation;
+@property (strong,nonatomic) NSArray * cooksOnLocation;
+@property (strong,nonatomic) NSString *orderAddress;
 @end

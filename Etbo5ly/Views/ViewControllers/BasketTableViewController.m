@@ -32,18 +32,17 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.tabBarItem.badgeValue=nil;
+    [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
     NSLog(@"%@",[allBasketMeals allValues]);
     networkDelegate=self;
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     
-    allCookIDInBasket=[allBasketMeals allKeys];
      NSLog(@"meaaals%@",allMeals);
     if (_orderJSONParameters==nil) {
         _orderJSONParameters=[[NSMutableDictionary alloc] init];
     }
     isBasketController=NO;
-    [[self tabBarItem] setBadgeValue:@"42"];
+    
      [_tableViewData reloadData];
 }
 
@@ -75,7 +74,7 @@
     UILabel *quantityLabel=(UILabel*)[cell viewWithTag:4];
     quantityLabel.text=[NSString stringWithFormat:@"%d",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] quantity]];
    listItemHeader.text=[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] nameEn];
-   listItemSubHeader.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
+   listItemSubHeader.text=[NSString stringWithFormat:@"%2f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
     
     [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     
@@ -129,7 +128,6 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    CGRect screenRectangle=[[UIScreen mainScreen] applicationFrame];
     UIView *footerView=[[UIView alloc]init];
     UIButton *checkOutbutton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     [checkOutbutton setTitle:@"Check Out" forState:UIControlStateNormal];
@@ -178,18 +176,27 @@
     if (allBasketMeals==nil) {
         allBasketMeals=[[NSMutableDictionary alloc] init];
     }
-
-    NSLog(@"meaaals%@",allBasketMeals);
+    
+    
     NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
     if (![allBasketMeals valueForKey:cookName]) {
         NSMutableArray * newCookMeals=[[NSMutableArray alloc] init];
         [newCookMeals addObject:newMeal];
         [allBasketMeals setObject:newCookMeals forKey:cookName];
-//        [allMeals addObject:newCookMeals];
     }
     else
     {
-        [[allBasketMeals valueForKey:cookName] addObject:newMeal];
+        for (MenuItems *menuItemObj in [allBasketMeals objectForKey:cookName]) {
+            if (menuItemObj.itemId==newMeal.itemId) {
+                menuItemObj.quantity=menuItemObj.quantity+1;
+                NSLog(@"meaaals%@",allBasketMeals);
+            }
+            else
+            {
+                [[allBasketMeals valueForKey:cookName] addObject:newMeal];
+            }
+        }
+        
     }
     NSLog(@"%@",allBasketMeals);
     NSLog(@"%@",[allBasketMeals valueForKey:cookName]);
@@ -208,7 +215,6 @@
 {
     UserDAO *requestedUserDBFunvtions=[[UserDAO alloc] initWithManagedObject];
     NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
-    NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];
     NSLog(@"yarab b2a%@",[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName]);
     orderDetails.cookName=[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName];
     NSLog(@"%@",orderDetails);
