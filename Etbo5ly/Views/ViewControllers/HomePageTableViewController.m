@@ -89,7 +89,7 @@
             else
             {
                 arrayLength = [_cooks count];
-                NSLog(@"arrayLength of cooks %d", arrayLength);
+                NSLog(@"arrayLength of cooks %ld", (long)arrayLength);
             }
             break;
             
@@ -101,7 +101,7 @@
             else
             {
                 arrayLength = [_meals count];
-                NSLog(@"arrayLength of meals %d", arrayLength);
+                NSLog(@"arrayLength of meals %ld", (long)arrayLength);
             }
             break;
             
