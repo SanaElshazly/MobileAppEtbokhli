@@ -63,14 +63,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    NSInteger categoryItemsLength = [_cookCategoryItems count];
-    
+    NSInteger categoryItemsLength = [_cookCategoryItems count];    
     return categoryItemsLength;
 }
 
@@ -92,13 +89,42 @@
     // Configure the cell...
 
     cell.textLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
-    cell.detailTextLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"];
+    
+    cell.detailTextLabel.text=[NSString stringWithFormat: @"%@ L.E",[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"]];
+    
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@%@",[[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+
 
     
     return cell;
 }
 
+
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *storyboard =self.navigationController.storyboard;
+    MealDetailedViewController *mealDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedMealViewController"];
+    MenuItems *selectedItem = [[MenuItems alloc] initWithInfo ];
+    selectedItem.itemId = [[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"itemId"] integerValue ];
+    selectedItem.itemRate = [[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"itemRate"] integerValue ];
+    selectedItem.nameEn =[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"nameEn"];
+    selectedItem.descriptionEn =[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"descriptionEn"];
+    selectedItem.price = [[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"price"] integerValue ];
+    
+    selectedItem.cookID =  [[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"cookId"] integerValue ];
+    selectedItem.cookName =[[_cookCategoryItems objectAtIndex:indexPath.row] valueForKey:@"cookName"];
+    
+    selectedItem.imageURL = [NSString stringWithFormat: @"%@%@",[[ _cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ _cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]];
+
+
+    NSLog(@"%d", selectedItem.itemId);
+    
+    [mealDetailedViewController setDetailedMeal:(MenuItems *) selectedItem ];
+    [self.navigationController pushViewController:mealDetailedViewController animated:YES];
+    
+}
 
 
 /*

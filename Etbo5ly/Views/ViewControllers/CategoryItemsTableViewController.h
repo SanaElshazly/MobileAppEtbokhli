@@ -11,6 +11,7 @@
 #import "CookServices.h"
 #import "CategoryDTO.h"
 #import "CategoryItemsTableViewController.h"
+#import "MealDetailedViewController.h"
 #import "UIImageView+WebCache.h"
 
 @interface CategoryItemsTableViewController : UITableViewController
@@ -19,10 +20,8 @@
 
 }
 
-
 @property int cookID;
 @property int categoryID;
-//@property (strong,nonatomic) CategoryDTO *categoryItems;
 @property (strong,nonatomic) NSMutableArray * cookCategoryItems;
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryItemsTable;
