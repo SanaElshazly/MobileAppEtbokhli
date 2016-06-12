@@ -16,8 +16,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    userRequestedDBFunctions=[[UserDAO alloc] initWithManagedObject];
+    _userProfile= [userRequestedDBFunctions selectRegisteredUser];
+    
+    //NSLog(@"%@",registeredUser.email);
+    if (_userProfile.email==(id) [NSNull null]||_userProfile.email.length==0) {
+        NSLog(@"Error");
+        UIStoryboard *storyboard=self.navigationController.storyboard;
+        LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
+    else
+    {
+        [self addTextFieldBorderStyle: _profileFullNameTxtField];
+        [self addTextFieldBorderStyle: _profileEmailTxtField];
+        [self addTextFieldBorderStyle: _profilePhoneTxtField];
+        [self addTextFieldBorderStyle: _profileAddressTxtField];
+        
+        _profileFullNameTxtField.text = _userProfile.name;
+        _profileFullNameTxtField.userInteractionEnabled = NO;
+
+        _profileEmailTxtField.text = _userProfile.email;
+        _profileEmailTxtField.userInteractionEnabled = NO;
+        
+        _profilePhoneTxtField.text = _userProfile.phone;
+        _profilePhoneTxtField.userInteractionEnabled = NO;
+        
+        _profileAddressTxtField.text = _userProfile.address;
+        _profileAddressTxtField.userInteractionEnabled = NO;
+        
+    }
+
     // Do any additional setup after loading the view.
+    
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -25,25 +59,21 @@
 }
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
+-(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField{//:(UITextField*) txtField{
+    
+    CALayer *bottomBorder = [CALayer layer];
+    CGFloat borderWidth = 1;
+    bottomBorder.borderWidth = borderWidth;
+    bottomBorder.borderColor = [[UIColor orangeColor]CGColor];
+    
+    bottomBorder.frame = CGRectMake(0.0f, txtField.frame.size.height - borderWidth, txtField.frame.size.width,txtField.frame.size.height);
+    bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    txtField.floatLabelPassiveColor = [UIColor orangeColor];
+    [txtField.layer addSublayer:bottomBorder];
+    
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 3;
-}
 
-
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- 
 
 /*
 #pragma mark - Navigation

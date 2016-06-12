@@ -15,7 +15,6 @@
 @class OrderDetails;
 @interface MenuItems : NSObject
 @property int itemId;
-@property int cookId;
 @property NSString * nameEn;
 @property float price;
 @property NSString * descriptionEn;

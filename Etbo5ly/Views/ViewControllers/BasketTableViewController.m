@@ -242,9 +242,8 @@
     }
     mealsInOrder=[[MenuItems alloc] init];
     mealsInOrder=[allMeals objectAtIndex:sender.tag];
-    
-
 }
+
 +(User*)getUserInfo
 {
     return registeredUser;
