@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HCSStarRatingView.h"
-@interface ordersRatingTableViewController : UITableViewController
+#import "UserServices.h"
+#import "Etbo5lyNetworkDelegate.h"
+@interface ordersRatingTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
+{
+    UserServices *userRequestedServices;
+}
+@property NSMutableArray *allNonRatedOrder;
+
 - (IBAction)changeRatingValue:(id)sender;
 
 @end

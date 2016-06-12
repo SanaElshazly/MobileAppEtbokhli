@@ -7,7 +7,7 @@
 //
 
 #import "ordersRatingTableViewController.h"
-
+#import "BasketTableViewController.h"
 @interface ordersRatingTableViewController ()
 
 @end
@@ -16,31 +16,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    networkDelegate=self;
+    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
+
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self getAllNotRatedOrders:1];
+}
+-(void) getAllNotRatedOrders : (int) userID
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager] ;
+    NSDictionary *parameters=[[NSDictionary alloc] init];
+    parameters = @{@"format": @"json"};
+    [manager GET:[URLS getNonRatingOrder:userID] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        _allNonRatedOrder=[[NSMutableArray alloc] initWithArray:responseObject];
+        
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"Error: %@", error);
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+        //handle with failure
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
+    NSLog(@"%d",_allNonRatedOrder.count);
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 2;
+    
+    return _allNonRatedOrder.count;
 }
 -(void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     NSLog(@"hello");
@@ -50,7 +70,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:1];
     ratingStars.value=0;
-    // Configure the cell...
     
     return cell;
 }
@@ -103,16 +122,24 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)handle:(id)dataRetreived :(NSString *)serviceName
+{
+    NSLog(@"helloooo");
+}
 - (IBAction)changeRatingValue:(id)sender {
-    HCSStarRatingView *noha=(HCSStarRatingView *)sender;
+    HCSStarRatingView *orderRating=(HCSStarRatingView *)sender;
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
     if (indexPath != nil)
     {
+        //orderRating.value;
        NSLog(@"b%d",indexPath.row);
     }
-    
+    [[_allNonRatedOrder objectAtIndex:indexPath.row] setValue: [NSNumber numberWithInt:orderRating.value] forKey:@"customerRating"];
+    [userRequestedServices rateOrder:[_allNonRatedOrder objectAtIndex:indexPath.row]];
+    [_allNonRatedOrder removeObjectAtIndex:indexPath.row];
+    //[self.tableView reloadData];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
     
    // NSLog(@"%f%d",noha.value,b.section);
 }

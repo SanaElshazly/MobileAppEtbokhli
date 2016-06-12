@@ -23,10 +23,6 @@
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 {
    // NSArray *cooks;
-     NSMutableArray * allRegions;
-     NSMutableArray *allCities;
-     NSArray *allCountries;
-    locationServices * locationRequestedServices;
     MealsServices *mealsRequestedService;
     CookServices *cooksRequestedMeals;
     CookDAO *cookRequestedDBFunctions;

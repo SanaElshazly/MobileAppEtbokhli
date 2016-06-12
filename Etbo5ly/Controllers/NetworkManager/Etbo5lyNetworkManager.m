@@ -20,7 +20,6 @@
     
     
     requestURL = [NSURL URLWithString:url];
- //   NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
     manager = [AFHTTPRequestOperationManager manager] ;
 
     NSLog(@"%@%@",serviceName,url);
@@ -35,31 +34,8 @@
                 [networkDelegate handleWithFailure : error];
         NSLog(@"Error: %@", error);
     }];
-    //
-    //    [manager GET:requestURL.absoluteString parameters:parameters progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-    //        NSLog(@"JSON: %@", responseObject);
-    //
-    //        //_myData = [NSMutableData new]
-    //        [networkDelegate handle : responseObject : myServiceName];
-    //
-    //        NSLog(@"*******************************");
-    //
-    //        //handle callback
-    //        //self.movies=[[NSMutableArray alloc]initWithArray:responseObject];
-    //
-    //
-    //        NSLog(@"NSMutableArray JSON");
-    //
-    //
-    //    } failure:^(NSURLSessionTask *operation, NSError *error) {
-    //        //NSLog(@"Error: %@", error);
-    //        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-    //        //handle with failure
-    //        [networkDelegate handleWithFailure : error];
-    //    }];
+
 }
-
-
 +(void)connectPOST:(NSString *)url :(NSString *)serviceName :(Etbo5lyNetworkManager *)networkManager setParameters:(NSDictionary *)methodParameters
 {
     parameters=[[NSDictionary alloc] init];

@@ -36,4 +36,18 @@
     NSLog(@"%@",serviceURL);
     [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:userLognInJSON];
 }
+-(void)getAllNonRatedOrders:(int)userId
+{
+    serviceName=@"nonRatedOrders";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS getNonRatingOrder:userId]];
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
+
+}
+-(void)rateOrder:(NSDictionary *)orderRateJSON
+{
+    serviceName=@"rateOrder";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS signUp]];
+    NSLog(@"%@",serviceURL);
+    [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:orderRateJSON];
+}
 @end
