@@ -72,10 +72,9 @@
     UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
     UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
     UILabel *quantityLabel=(UILabel*)[cell viewWithTag:4];
-    quantityLabel.text=[NSString stringWithFormat:@"%d",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] quantity]];
+    quantityLabel.text=[NSString stringWithFormat:@"%d * ",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] quantity]];
    listItemHeader.text=[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] nameEn];
-   listItemSubHeader.text=[NSString stringWithFormat:@"%2f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
-    
+    listItemSubHeader.text=[NSString stringWithFormat:@"%2f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
     [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     
     
@@ -98,8 +97,9 @@
     UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, tableView.frame.size.width, 20)];
     UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, tableView.frame.size.width, 20)];
     [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:16]];
+    
     for (MenuItems *menuItemInOrder in [allMeals objectAtIndex:section]) {
-        orderDetails.orderTotalPrice=[menuItemInOrder price]+[orderDetails orderTotalPrice];
+        orderDetails.orderTotalPrice=([menuItemInOrder price]*[menuItemInOrder quantity])+[orderDetails orderTotalPrice];
         NSLog(@"%f",[orderDetails orderTotalPrice]);
     }
     NSString *sectionTotalPrice =[NSString stringWithFormat:@"%f",[orderDetails orderTotalPrice] ];
@@ -108,8 +108,6 @@
     
     sectionTitleLabel.font = [UIFont boldSystemFontOfSize:18.0];
     sectionTitleLabel.textColor = [UIColor orangeColor];
-    //[sectionTitleLabel sizeToFit];
-//    [sectionTitleLabel setContentMode:UIViewContentModeCenter];
     
     [sectionTitleLabel setText:sectionTitle];
     [totalPricePerCook setText:sectionTotalPrice];
@@ -204,7 +202,6 @@
 }
 +(BOOL)changeValue
 {
-    isBasketController=YES;
     return isBasketController;
 }
 +(NSMutableDictionary*) getall
@@ -217,6 +214,7 @@
     NSArray *cookOrder=[allMeals objectAtIndex:sender.tag];
     NSLog(@"yarab b2a%@",[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName]);
     orderDetails.cookName=[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookName];
+    orderDetails.cookID=[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookID];
     NSLog(@"%@",orderDetails);
  //   orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
 
@@ -226,7 +224,7 @@
     //NSLog(@"%@",registeredUser.email);
     if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
         NSLog(@"Error");
-        NSLog(@"%hhd",[BasketTableViewController changeValue]);
+        isBasketController=YES;
         UIStoryboard *storyboard=self.navigationController.storyboard;
         LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
         [loginViewController setOrderToCheckedOut:cookOrder];

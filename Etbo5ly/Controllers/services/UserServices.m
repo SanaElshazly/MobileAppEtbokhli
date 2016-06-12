@@ -43,10 +43,16 @@
     [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
 
 }
+-(void)getAllOrders:(int)userId
+{
+    serviceName=@"allOrders";
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS getAllOrderHistory:userId]];
+    [Etbo5lyNetworkManager connectGET:serviceURL setServiceName:serviceName setServiceNetworkManager:networkDelegate];
+}
 -(void)rateOrder:(NSDictionary *)orderRateJSON
 {
     serviceName=@"rateOrder";
-    serviceURL = [NSString stringWithFormat:@"%@",[URLS signUp]];
+    serviceURL = [NSString stringWithFormat:@"%@",[URLS rateOrder]];
     NSLog(@"%@",serviceURL);
     [Etbo5lyNetworkManager connectPOST:serviceURL :serviceName :networkDelegateObj setParameters:orderRateJSON];
 }

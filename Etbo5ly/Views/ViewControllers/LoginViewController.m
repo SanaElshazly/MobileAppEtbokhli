@@ -81,6 +81,12 @@
             [orderAddress setOrderCookDetails:_orderCookDetails];
             [self.navigationController pushViewController:orderAddress animated:YES];
         }
+        else
+        {
+            UIStoryboard *storyboard=self.navigationController.storyboard;
+            HomePageTableViewController * homePageController=[storyboard instantiateViewControllerWithIdentifier:@"homePage"];
+            [self.navigationController pushViewController:homePageController animated:YES];
+        }
 
     }
 }
