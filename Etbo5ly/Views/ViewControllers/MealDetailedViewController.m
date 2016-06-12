@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     quantity=1;
-
-    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:_detailedMeal.nameEn];
+    self.title=_detailedMeal.nameEn ;
+  //  [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:_detailedMeal.nameEn];
     NSLog(@"hna");
 }
 -(void)viewDidAppear:(BOOL)animated

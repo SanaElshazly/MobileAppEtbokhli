@@ -15,6 +15,7 @@
 #import "UIImageView+WebCache.h" 
 @interface ordersRatingTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
+    UserDAO *userDBFunctions;
     UserServices *userRequestedServices;
     CookDAO *cookDBFunctions;
     Cook *orderCook;

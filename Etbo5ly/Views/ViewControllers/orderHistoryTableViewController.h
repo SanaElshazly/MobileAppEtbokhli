@@ -12,9 +12,11 @@
 #import "Etbo5lyNetworkDelegate.h"
 #import "CookDAO.h"
 #import "UIImageView+WebCache.h"
+#import "BasketTableViewController.h"
 @interface orderHistoryTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
-    UserServices *userRequestedServices;
+    User *registeredUser;
+    UserDAO *userDBFunctions;
     CookDAO *cookDBFunctions;
     Cook *orderCook;
 

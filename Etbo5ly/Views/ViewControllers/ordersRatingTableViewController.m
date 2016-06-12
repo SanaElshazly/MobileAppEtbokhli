@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     networkDelegate=self;
+    userDBFunctions=[[UserDAO alloc] initWithManagedObject];
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     cookDBFunctions=[[CookDAO alloc] initWithManagedObject];
 
@@ -29,7 +30,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    int userID=[BasketTableViewController getUserInfo].userId;
+    int userID=[userDBFunctions selectRegisteredUser].userId;
     [self getAllNotRatedOrders:userID];
 }
 -(void) getAllNotRatedOrders : (int) userID

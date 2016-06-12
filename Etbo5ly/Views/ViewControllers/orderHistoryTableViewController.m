@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _allUserOrders=[[NSMutableArray alloc]init];
+    userDBFunctions=[[UserDAO alloc] initWithManagedObject];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,7 +26,8 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self getAllOrders:2];
+    registeredUser=[userDBFunctions selectRegisteredUser];
+    [self getAllOrders:registeredUser.userId];
 }
 #pragma mark - Table view data source
 
@@ -34,8 +36,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return _allUserOrders.count;
+   return _allUserOrders.count;
 }
 //-(void)handle:(id)dataRetreived :(NSString *)serviceName
 //{

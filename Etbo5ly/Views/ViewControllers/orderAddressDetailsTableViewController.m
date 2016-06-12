@@ -43,6 +43,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    _totalOrderPrice.text=[NSString stringWithFormat:@"%f",_orderCookDetails.orderTotalPrice];
 }
 
 #pragma mark - Table view data source

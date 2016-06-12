@@ -646,6 +646,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="NTH-di-aGW"/>
                     <connections>
+                        <outlet property="signInCell" destination="O5t-N2-Lm3" id="vZj-DD-j6w"/>
                         <outlet property="slideMenuTableView" destination="css-bo-kka" id="N19-jT-cnY"/>
                     </connections>
                 </tableViewController>
@@ -1180,7 +1181,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-I5-ddo">
-                                                    <rect key="frame" x="264" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="177" y="11" width="129" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1323,6 +1324,7 @@
                         <outlet property="pickerViewRegions" destination="OPH-ff-beq" id="I2e-cJ-UbL"/>
                         <outlet property="regionTxtField" destination="GeX-Fo-ALl" id="saV-d6-jcv"/>
                         <outlet property="streetTxtField" destination="DKU-af-DZE" id="8bJ-sv-9CJ"/>
+                        <outlet property="totalOrderPrice" destination="xfn-I5-ddo" id="hXO-7H-IA6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oe6-Am-mOV" userLabel="First Responder" sceneMemberID="firstResponder"/>

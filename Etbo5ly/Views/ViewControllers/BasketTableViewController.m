@@ -220,7 +220,7 @@
 
     
    
-    registeredUser=[requestedUserDBFunvtions selectRegisteredUser];
+    
     //NSLog(@"%@",registeredUser.email);
     if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
         NSLog(@"Error");

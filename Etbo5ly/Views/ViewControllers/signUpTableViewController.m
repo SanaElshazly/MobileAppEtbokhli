@@ -49,6 +49,8 @@
              userDBFunctions=[[UserDAO alloc] initWithManagedObject];
             [userDBFunctions insertUser:newUser];
         if ([BasketTableViewController changeValue]==YES) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@,",newUser.name] message:@"You have successfully registered" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
             UIStoryboard *storyboard=self.navigationController.storyboard;
             orderAddressDetailsTableViewController * orderAddress=[storyboard instantiateViewControllerWithIdentifier:@"orderAddress"];
             [orderAddress setOrderDetails:_orderToCheckedOut];
@@ -57,6 +59,8 @@
         }
         else
         {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@,",newUser.name] message:@"You have successfully registered" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [alert show];
             [self.tabBarController setSelectedIndex:0];
         }
         

@@ -83,9 +83,8 @@
         }
         else
         {
-            UIStoryboard *storyboard=self.navigationController.storyboard;
-            HomePageTableViewController * homePageController=[storyboard instantiateViewControllerWithIdentifier:@"homePage"];
-            [self.navigationController pushViewController:homePageController animated:YES];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.tabBarController setSelectedIndex:0];
         }
 
     }
