@@ -88,14 +88,13 @@
 //    cell.textLabel.textColor = [UIColor brownColor];
 //    cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
     
+    
+    // Configure the cell...
+
     cell.textLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
     cell.detailTextLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@%@",[[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
 
-
-//    NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
-    
-    // Configure the cell...
     
     return cell;
 }
