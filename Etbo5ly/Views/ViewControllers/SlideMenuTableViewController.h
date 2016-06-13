@@ -10,6 +10,10 @@
 #import "ProfileViewController.h"
 
 @interface SlideMenuTableViewController : UITableViewController
+{
+    UserDAO *userRequestedFunctions;
+}
 @property (strong, nonatomic) IBOutlet UITableView *slideMenuTableView;
+@property (strong, nonatomic) IBOutlet UITableViewCell *signInCell;
 
 @end

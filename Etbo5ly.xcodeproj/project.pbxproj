@@ -34,6 +34,7 @@
 		B4690C131CFF4C160002B315 /* profileEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C071CFF4C160002B315 /* profileEtbo5ly.png */; };
 		B4690C141CFF4C160002B315 /* shareEtbo5ly-23.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */; };
 		B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4690C161CFF4F940002B315 /* MealDetailedViewController.m */; };
+		B475CBF71D0D90040099A06B /* orderHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */; };
 		B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A124DF1CF60E0500779BAF /* CoreLocation.framework */; };
 		B4C13CF31CFC432F00B512B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C13CF21CFC432F00B512B2 /* Main.storyboard */; };
 		B4C886641CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C886631CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m */; };
@@ -130,6 +131,8 @@
 		B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shareEtbo5ly-23.png"; path = "Images/shareEtbo5ly-23.png"; sourceTree = "<group>"; };
 		B4690C151CFF4F940002B315 /* MealDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealDetailedViewController.h; path = Views/ViewControllers/MealDetailedViewController.h; sourceTree = "<group>"; };
 		B4690C161CFF4F940002B315 /* MealDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealDetailedViewController.m; path = Views/ViewControllers/MealDetailedViewController.m; sourceTree = "<group>"; };
+		B475CBF51D0D90040099A06B /* orderHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orderHistoryTableViewController.h; path = Views/ViewControllers/orderHistoryTableViewController.h; sourceTree = "<group>"; };
+		B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = orderHistoryTableViewController.m; path = Views/ViewControllers/orderHistoryTableViewController.m; sourceTree = "<group>"; };
 		B4A124DF1CF60E0500779BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B4C13CF21CFC432F00B512B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B4C886621CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyDatabaseManager.h; path = Controllers/DatabaseManager/Etbo5lyDatabaseManager.h; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				4ACA91D61D0B7533002822AA /* ordersRatingTableViewController.m */,
 				CF1902F91D0C1C1400894225 /* CategoryItemsTableViewController.h */,
 				CF1902FA1D0C1C1400894225 /* CategoryItemsTableViewController.m */,
+				B475CBF51D0D90040099A06B /* orderHistoryTableViewController.h */,
+				B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */,
 				B4CCD7DA1CF1E80200BE850C /* Catering.m in Sources */,
 				B4C8866E1CFDB792001DFEA6 /* locationServices.m in Sources */,
+				B475CBF71D0D90040099A06B /* orderHistoryTableViewController.m in Sources */,
 				B4C8869C1CFDBB25001DFEA6 /* UserDAO.m in Sources */,
 				B4C886771CFDB79E001DFEA6 /* URLS.m in Sources */,
 				4AC619801CEF2340002D66EB /* Etbo5ly.xcdatamodeld in Sources */,

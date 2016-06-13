@@ -47,6 +47,7 @@
         fetchedMenuItem.imageURL = [managedObjectMenuItem valueForKey:@"image_URL"];
         fetchedMenuItem.descriptionEn = [managedObjectMenuItem valueForKey:@"description_en"];
         fetchedMenuItem.cookName= [managedObjectMenuItem valueForKey:@"cookName"];
+        fetchedMenuItem.cookID=[[managedObjectMenuItem valueForKey:@"cook_id"] integerValue];
         [_selectedMenuItems addObject:fetchedMenuItem];
     }
     return _selectedMenuItems;
@@ -64,10 +65,9 @@
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"itemRate"] forKey:@"item_rate"];
         [newMenuItem setValue:[NSString stringWithFormat:@"%@%@",[[menuItemsArray objectAtIndex:i] objectForKey:@"resourcesURL"],[[menuItemsArray objectAtIndex:i] objectForKey:@"imageUrl"]] forKey:@"image_URL"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"descriptionEn"] forKey:@"description_en"];
-        //[newMenuItem setValue:[] forKey:@"cook_id"];
+        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"cookId"]  forKey:@"cook_id"];
         [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"cookName"] forKey:@"cookName"];
         
-//        [newMenuItem setValue:[[menuItemsArray objectAtIndex:i] objectForKey:@"categories"] forKey:@"categories"];
       //  [newMenuItem setValue:"cook_id" forKey:];
     }
     //    if (![managedObjectContext inser:&error]) {

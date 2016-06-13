@@ -21,5 +21,6 @@
 -(void) signUP:(NSDictionary *) userJSON;
 -(void) login :(NSDictionary *) userLognInJSON;
 -(void) getAllNonRatedOrders : (int) userId;
+-(void) getAllOrders : (int) userId;
 -(void) rateOrder : (NSDictionary *) orderRateJSON;
 @end

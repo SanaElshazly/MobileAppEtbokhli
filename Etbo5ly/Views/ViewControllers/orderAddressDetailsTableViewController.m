@@ -43,6 +43,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    _totalOrderPrice.text=[NSString stringWithFormat:@"%f",_orderCookDetails.orderTotalPrice];
 }
 
 #pragma mark - Table view data source
@@ -244,7 +245,7 @@
     }
     
     _orderCookDetails.orderID=arc4random_uniform(100);
-    _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@1,@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"type":@"normal",@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@(regionID),@"totalPrice":@(_orderCookDetails.orderTotalPrice),@"orderDetails":cookOrderArray};
+    _orderJSONParameters=@{@"userByCustomerId":@(registeredUser.userId),@"customerName":registeredUser.name,@"userByCookId":@(_orderCookDetails.cookID),@"cookName":_orderCookDetails.cookName,@"location":@"ITI",@"duration":@45,@"type":@"normal",@"longitude":@31.07,@"latitude":@30.5,@"addressDetails":@"",@"regionId":@(regionID),@"totalPrice":@(_orderCookDetails.orderTotalPrice),@"orderDetails":cookOrderArray};
      NSLog(@"%@",_orderJSONParameters);
      [userRequestedServices createOrder:_orderJSONParameters];
     

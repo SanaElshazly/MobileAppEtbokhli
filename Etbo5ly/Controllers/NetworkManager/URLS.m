@@ -74,6 +74,11 @@
     urlPath=[NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"nonRatedOrders?customerId=",userID];
     return urlPath;
 }
++(NSString *)getAllOrderHistory:(int)userId
+{
+    urlPath=[NSString stringWithFormat:@"%@%@%d", IP_ADDRESS , @"orders?customerId=",userId];
+    return urlPath;
+}
 +(NSString *)countriesWithRegions{
     
     //Etbo5ly-Web/rest/region/countries
@@ -97,4 +102,5 @@
     urlPath=[NSString stringWithFormat:@"%@%@", IP_ADDRESS , @"orderRate" ];
     return urlPath;
 }
+
 @end

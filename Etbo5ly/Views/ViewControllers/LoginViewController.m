@@ -81,6 +81,11 @@
             [orderAddress setOrderCookDetails:_orderCookDetails];
             [self.navigationController pushViewController:orderAddress animated:YES];
         }
+        else
+        {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.tabBarController setSelectedIndex:0];
+        }
 
     }
 }

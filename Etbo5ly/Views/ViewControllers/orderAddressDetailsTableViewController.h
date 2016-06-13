@@ -39,5 +39,6 @@
 @property BOOL dataPickerViewIsShowingRegions;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewCities;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewRegions;
+@property (strong, nonatomic) IBOutlet UILabel *totalOrderPrice;
 
 @end

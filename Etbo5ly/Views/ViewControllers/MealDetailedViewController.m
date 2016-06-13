@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     quantity=1;
-
-    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:@"hanoon"];
+    self.title=_detailedMeal.nameEn ;
+  //  [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:_detailedMeal.nameEn];
     NSLog(@"hna");
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -59,6 +59,7 @@
 
 - (IBAction)addMealToItem:(id)sender {
     _detailedMeal.quantity=quantity;
+    NSLog(@"%d",_detailedMeal.quantity);
     [BasketTableViewController addCookMealstoBasket:[_detailedMeal cookName] setCookMealsOrder:_detailedMeal];
     [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:@""];
     [self .navigationController popToRootViewControllerAnimated:YES];
