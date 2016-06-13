@@ -10,7 +10,8 @@
 #import "MenuItems.h"
 #import "UIImageView+WebCache.h" 
 #import "BasketTableViewController.h"
-@interface MealDetailedViewController : UIViewController
+#import "HCSStarRatingView.h"
+@interface MealDetailedViewController : UITableViewController
 {
     int quantity;
 }
@@ -24,5 +25,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *MealQuantity;
 @property (strong, nonatomic) IBOutlet UILabel *totalItemPrice;
 - (IBAction)addMealToItem:(id)sender;
+@property (strong, nonatomic) IBOutlet HCSStarRatingView *menu_item_rating;
 
 @end

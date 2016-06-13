@@ -32,5 +32,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    BOOL signOutResult;
+    if ([segue.identifier isEqualToString:@"signUp"]) {
+        if ([_signInCell.textLabel.text isEqualToString:@"Logout"]) {
+            signOutResult=[userRequestedFunctions deleteUser];
+        }
+        if (signOutResult==YES) {
+            _signInCell.textLabel.text=@"Sign In";
+        }
+    }
+}
 @end

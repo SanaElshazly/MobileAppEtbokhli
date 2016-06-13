@@ -227,6 +227,9 @@
         [[BasketTableViewController getall] removeObjectForKey:_orderCookDetails.cookName];
         NSLog(@"%@",[BasketTableViewController getall]);
         //[self.tabBarController setSelectedIndex:2];
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindow];
+        
+        [alert showSuccess:@"Hello World" subTitle:@"This is a more descriptive text." closeButtonTitle:@"Done" duration:0.0f];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
