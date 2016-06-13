@@ -19,19 +19,17 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    userDBFunctions=[[UserDAO alloc] initWithManagedObject];
     [[[[[self tabBarController] tabBar] items] objectAtIndex:3] setBadgeValue:nil];
     NSLog(@"%@",[allBasketMeals allValues]);
     networkDelegate=self;
@@ -217,11 +215,8 @@
     orderDetails.cookID=[(MenuItems*)[[allMeals objectAtIndex:sender.tag] objectAtIndex:0]cookID];
     NSLog(@"%@",orderDetails);
  //   orderDetails.cookID=[[allMeals objectAtIndex:sender.tag] cookID];
-
-    
-   
-    
     //NSLog(@"%@",registeredUser.email);
+    registeredUser=[userDBFunctions selectRegisteredUser];
     if (registeredUser.email==(id) [NSNull null]||registeredUser.email.length==0) {
         NSLog(@"Error");
         isBasketController=YES;

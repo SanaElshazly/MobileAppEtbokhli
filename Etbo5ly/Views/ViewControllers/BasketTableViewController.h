@@ -26,7 +26,7 @@ static BOOL isBasketController;
     UserServices *userRequestedServices;
     Order * orderDetails;
     MenuItems *mealsInOrder;
-    
+    UserDAO *userDBFunctions;
 }
 +(NSMutableDictionary*) getall;
 +(User*)getUserInfo;

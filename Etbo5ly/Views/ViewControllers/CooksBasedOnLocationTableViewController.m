@@ -18,7 +18,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
+  //  [self.navigationController setNavigationBarHidden:YES];
     self.title=_orderAddress;
     
 }
@@ -99,34 +99,30 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    NSLog(@"beginn");
-    //[self.navigationController setNavigationBarHidden:NO];
-    NSLog(@"bginn scrolling %f",scrollView.contentOffset.y);
+   
     
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-     NSLog(@"enddd scrolling %f",scrollView.contentOffset.y);
-  //  [self.navigationController setNavigationBarHidden:YES];
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    calculateScrollPosition=YES;
+   // calculateScrollPosition=YES;
 }
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSLog(@"scrollingggg");
-    if (calculateScrollPosition==YES) {
-        NSLog(@"ha %f",scrollView.contentOffset.y);
-        if (scrollView.contentOffset.y<0) {
-            [self.navigationController setNavigationBarHidden:NO];
-        }
-        else
-        {
-            [self.navigationController setNavigationBarHidden:YES];
-        }
-    }
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    NSLog(@"scrollingggg");
+//    if (calculateScrollPosition==YES) {
+//        NSLog(@"ha %f",scrollView.contentOffset.y);
+//        if (scrollView.contentOffset.y<0) {
+//            [self.navigationController setNavigationBarHidden:NO];
+//        }
+//        else
+//        {
+//            [self.navigationController setNavigationBarHidden:YES];
+//        }
+//    }
+//}
 
 //-(BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 //{

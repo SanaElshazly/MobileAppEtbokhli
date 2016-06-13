@@ -14,7 +14,9 @@
 @end
 
 @implementation HomePageTableViewController
-
+{
+    MBProgressHUD *homeProgress;
+}
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +48,8 @@
         [mealsRequestedDBFunctions insertMenuItems:_meals];
         _meals=[mealsRequestedDBFunctions fetchAndGetAllMenuItems];
         NSLog(@"meals data %@", _meals );
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [homeProgress hide:YES];
     }
     else if ([serviceName isEqualToString:@"allCooks"])
     {
@@ -53,6 +57,8 @@
         [cookRequestedDBFunctions insertCooks:_cooks];
         _cooks=[cookRequestedDBFunctions fetchAndGetAllCooks];
         NSLog(@"pppooo %@",_cooks);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [homeProgress hide:YES];
     }
     //hwa leh hatten all regions hena
     [self refreshDataInTableView];
@@ -228,8 +234,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"geeeh");
-  
     [self checkConnectivity];
+    
     
 }
 -(IBAction)changeValueOfSegmentedController:(id)sender {
@@ -237,6 +243,7 @@
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
             if (_isUserReachable) {
+                [self viewActivityProgress];
                 [cooksRequestedMeals getCooksListDataService];
                 [self refreshDataInTableView];
             }
@@ -248,6 +255,7 @@
             break;
         case 1 :
             if (_isUserReachable) {
+                [self viewActivityProgress];
                 [mealsRequestedService getMealsListDataService];
             }
             else
@@ -260,6 +268,13 @@
             break;
     }
     
+}
+-(void) viewActivityProgress
+{
+    homeProgress=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    homeProgress.labelColor=[UIColor orangeColor];
+    homeProgress.tintColor=[UIColor grayColor];
+    homeProgress.labelText=@"Loading";
 }
 -(void)checkConnectivity
 {

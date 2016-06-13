@@ -38,6 +38,8 @@
     if ([segue.identifier isEqualToString:@"signUp"]) {
         if ([_signInCell.textLabel.text isEqualToString:@"Logout"]) {
             signOutResult=[userRequestedFunctions deleteUser];
+            SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+            [alert showWaiting:self title:@"Waiting..." subTitle:@"Logging Out" closeButtonTitle:nil duration:5.0f];
         }
         if (signOutResult==YES) {
             _signInCell.textLabel.text=@"Sign In";

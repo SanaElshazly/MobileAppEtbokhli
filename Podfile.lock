@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - HCSStarRatingView (1.4.5)
+  - MBProgressHUD (0.9.2)
   - SCLAlertView-Objective-C (1.0.3)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - HCSStarRatingView (~> 1.4.5)
+  - MBProgressHUD (~> 0.9.2)
   - SCLAlertView-Objective-C
   - SDWebImage (~> 3.7)
   - UIFloatLabelTextField
@@ -37,10 +39,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   HCSStarRatingView: bff3f89314d3b5013ce826ea11897d3129ff6b8c
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   SCLAlertView-Objective-C: e83376218b431109dc5403adc63f8e9787db7b74
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UIFloatLabelTextField: b01b1bcea4b4fd617e80744f3cfd06e1d1b7e75e
 
-PODFILE CHECKSUM: 3d5f9208f0370dbd89d54dc6cdef0e3ff4daef6b
+PODFILE CHECKSUM: e5d773affb59b44a2a1739cc6666c75522ab6779
 
 COCOAPODS: 1.0.0

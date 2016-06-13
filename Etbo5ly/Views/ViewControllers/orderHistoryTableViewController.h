@@ -13,12 +13,15 @@
 #import "CookDAO.h"
 #import "UIImageView+WebCache.h"
 #import "BasketTableViewController.h"
+#import "MBProgressHUD.h"
+#import "orderDetailsTableViewController.h"
 @interface orderHistoryTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
 {
     User *registeredUser;
     UserDAO *userDBFunctions;
     CookDAO *cookDBFunctions;
     Cook *orderCook;
+    MBProgressHUD *orderHistoryProgress;
 
 }
 @property NSMutableArray * allUserOrders;
