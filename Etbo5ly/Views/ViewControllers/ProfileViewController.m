@@ -14,6 +14,26 @@
 
 @implementation ProfileViewController
 
+
+-(void) viewDidLayoutSubviews {
+    [self addTextFieldBorderStyle: _profileFullNameTxtField];
+    [self addTextFieldBorderStyle: _profileEmailTxtField];
+    [self addTextFieldBorderStyle: _profilePhoneTxtField];
+    [self addTextFieldBorderStyle: _profileAddressTxtField];
+    
+    _profileFullNameTxtField.text = _userProfile.name;
+    _profileFullNameTxtField.userInteractionEnabled = NO;
+    
+    _profileEmailTxtField.text = _userProfile.email;
+    _profileEmailTxtField.userInteractionEnabled = NO;
+    
+    _profilePhoneTxtField.text = _userProfile.phone;
+    _profilePhoneTxtField.userInteractionEnabled = NO;
+    
+    _profileAddressTxtField.text = _userProfile.address;
+    _profileAddressTxtField.userInteractionEnabled = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     userRequestedDBFunctions=[[UserDAO alloc] initWithManagedObject];
@@ -28,22 +48,7 @@
     }
     else
     {
-        [self addTextFieldBorderStyle: _profileFullNameTxtField];
-        [self addTextFieldBorderStyle: _profileEmailTxtField];
-        [self addTextFieldBorderStyle: _profilePhoneTxtField];
-        [self addTextFieldBorderStyle: _profileAddressTxtField];
-        
-        _profileFullNameTxtField.text = _userProfile.name;
-        _profileFullNameTxtField.userInteractionEnabled = NO;
-
-        _profileEmailTxtField.text = _userProfile.email;
-        _profileEmailTxtField.userInteractionEnabled = NO;
-        
-        _profilePhoneTxtField.text = _userProfile.phone;
-        _profilePhoneTxtField.userInteractionEnabled = NO;
-        
-        _profileAddressTxtField.text = _userProfile.address;
-        _profileAddressTxtField.userInteractionEnabled = NO;
+        [self viewDidLayoutSubviews];
         
     }
 

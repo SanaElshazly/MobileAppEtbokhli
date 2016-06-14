@@ -16,17 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-}
--(void)viewDidAppear:(BOOL)animated
-{
     userRequestedFunctions=[[UserDAO alloc] initWithManagedObject];
     NSString *email=[userRequestedFunctions selectRegisteredUser].email;
     if (email!=nil) {
         _signInCell.textLabel.text=@"Logout";
     }
 
+    
+    
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

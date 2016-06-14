@@ -23,11 +23,17 @@
     int pickerCount;
 }
 
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self addTextFieldBorderStyle:self.regionTxtField];
+    [self addTextFieldBorderStyle:self.cityTxtField];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self addTextFieldBorderStyle:self.regionTxtField];
-    [self addTextFieldBorderStyle:self.cityTxtField];
+
 
     [self getAllRegionsAndCities];
     pickerCount=0;
@@ -265,6 +271,8 @@
     bottomBorder.frame = CGRectMake(0.0f, txtField.frame.size.height - borderWidth, txtField.frame.size.width,txtField.frame.size.height);
     bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
     [txtField.layer addSublayer:bottomBorder];
+    txtField.layer.masksToBounds = YES;
+
 }
 
 @end

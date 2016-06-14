@@ -76,6 +76,8 @@
 		CF21A73D1D030683009A0894 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73C1D030683009A0894 /* SlideMenuTableViewController.m */; };
 		CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A73F1D030E15009A0894 /* ProfileViewController.m */; };
 		CF21A7431D03503A009A0894 /* signUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A7421D03503A009A0894 /* signUpTableViewController.m */; };
+		CF33341D1D100D6F00F161B3 /* etbokhly_OrderRating.png in Resources */ = {isa = PBXBuildFile; fileRef = CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */; };
+		CF33341F1D102C0A00F161B3 /* alert_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = CF33341E1D102C0A00F161B3 /* alert_checkmark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +211,8 @@
 		CF21A73F1D030E15009A0894 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Views/ViewControllers/ProfileViewController.m; sourceTree = "<group>"; };
 		CF21A7411D03503A009A0894 /* signUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = signUpTableViewController.h; path = Views/ViewControllers/signUpTableViewController.h; sourceTree = "<group>"; };
 		CF21A7421D03503A009A0894 /* signUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpTableViewController.m; path = Views/ViewControllers/signUpTableViewController.m; sourceTree = "<group>"; };
+		CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etbokhly_OrderRating.png; sourceTree = "<group>"; };
+		CF33341E1D102C0A00F161B3 /* alert_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_checkmark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +458,8 @@
 		B4C886A01CFDC6FD001DFEA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CF33341E1D102C0A00F161B3 /* alert_checkmark.png */,
+				CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */,
 				B4BA6E7E1D0EBC2900B71790 /* order.png */,
 				CF1886751D06094100C97C50 /* loginIcon-30.png */,
 				CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */,
@@ -611,6 +617,7 @@
 				B4690C0A1CFF4C160002B315 /* detectlocation_detectLocationIcon.png in Resources */,
 				4AC619881CEF2340002D66EB /* Images.xcassets in Resources */,
 				CF18866C1D05FC6000C97C50 /* loginBackground-27.png in Resources */,
+				CF33341D1D100D6F00F161B3 /* etbokhly_OrderRating.png in Resources */,
 				B4690C131CFF4C160002B315 /* profileEtbo5ly.png in Resources */,
 				B4690C0F1CFF4C160002B315 /* iconsArtboard_ordersTabBarIcon.png in Resources */,
 				B4690C091CFF4C160002B315 /* aboutEtbo5ly.png in Resources */,
@@ -621,6 +628,7 @@
 				B4690C141CFF4C160002B315 /* shareEtbo5ly-23.png in Resources */,
 				CF1886741D05FE2F00C97C50 /* etbo5lyFooter-29.png in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
+				CF33341F1D102C0A00F161B3 /* alert_checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
