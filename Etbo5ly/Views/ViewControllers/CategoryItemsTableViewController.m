@@ -30,9 +30,7 @@
     networkDelegate=self;
     cooksRequestedCategories=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
     [cooksRequestedCategories getCookCategoryMeals:_cookID : _categoryID];
-
-    //int i = [_cookObj userId];
-    //NSString *s =[_categoryItems nameEn];
+    self.title=_categoryName;
     
 }
 

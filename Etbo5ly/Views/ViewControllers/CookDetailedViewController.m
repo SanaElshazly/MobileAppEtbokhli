@@ -34,7 +34,7 @@
     cooksRequestedCategories=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
     [cooksRequestedCategories getCookCategories:cookIDforCategory];
     
-    
+    self.title=[NSString stringWithFormat:@"%@ 's profile",_detailedCook.name];
     
     _cookNameLbl.text=[_detailedCook name];
     [_cookProfileImg sd_setImageWithURL:[NSURL URLWithString:[_detailedCook imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
@@ -118,6 +118,7 @@
     
     UIStoryboard *storyboard=self.navigationController.storyboard;
     CategoryItemsTableViewController *categoryItemsTableViewController=[storyboard instantiateViewControllerWithIdentifier:@"categoryItemsTableViewController"];
+    [categoryItemsTableViewController setCategoryName:[[self.cookCategories objectAtIndex:indexPath.row] objectForKey:@"nameEn"]];
     [categoryItemsTableViewController setCategoryID:catID];
     [categoryItemsTableViewController setCookID:cookIDforCategory];
     
