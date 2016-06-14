@@ -36,6 +36,8 @@
 		B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4690C161CFF4F940002B315 /* MealDetailedViewController.m */; };
 		B475CBF71D0D90040099A06B /* orderHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */; };
 		B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A124DF1CF60E0500779BAF /* CoreLocation.framework */; };
+		B4A3E23C1D0F342F0088A304 /* orderDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3E23B1D0F342F0088A304 /* orderDetailsTableViewController.m */; };
+		B4BA6E7F1D0EBC2900B71790 /* order.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BA6E7E1D0EBC2900B71790 /* order.png */; };
 		B4C13CF31CFC432F00B512B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C13CF21CFC432F00B512B2 /* Main.storyboard */; };
 		B4C886641CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C886631CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m */; };
 		B4C8866D1CFDB792001DFEA6 /* CookServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C886661CFDB792001DFEA6 /* CookServices.m */; };
@@ -134,6 +136,9 @@
 		B475CBF51D0D90040099A06B /* orderHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orderHistoryTableViewController.h; path = Views/ViewControllers/orderHistoryTableViewController.h; sourceTree = "<group>"; };
 		B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = orderHistoryTableViewController.m; path = Views/ViewControllers/orderHistoryTableViewController.m; sourceTree = "<group>"; };
 		B4A124DF1CF60E0500779BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B4A3E23A1D0F342F0088A304 /* orderDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orderDetailsTableViewController.h; path = Views/ViewControllers/orderDetailsTableViewController.h; sourceTree = "<group>"; };
+		B4A3E23B1D0F342F0088A304 /* orderDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = orderDetailsTableViewController.m; path = Views/ViewControllers/orderDetailsTableViewController.m; sourceTree = "<group>"; };
+		B4BA6E7E1D0EBC2900B71790 /* order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order.png; sourceTree = "<group>"; };
 		B4C13CF21CFC432F00B512B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B4C886621CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Etbo5lyDatabaseManager.h; path = Controllers/DatabaseManager/Etbo5lyDatabaseManager.h; sourceTree = "<group>"; };
 		B4C886631CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Etbo5lyDatabaseManager.m; path = Controllers/DatabaseManager/Etbo5lyDatabaseManager.m; sourceTree = "<group>"; };
@@ -394,6 +399,8 @@
 				CF1902FA1D0C1C1400894225 /* CategoryItemsTableViewController.m */,
 				B475CBF51D0D90040099A06B /* orderHistoryTableViewController.h */,
 				B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */,
+				B4A3E23A1D0F342F0088A304 /* orderDetailsTableViewController.h */,
+				B4A3E23B1D0F342F0088A304 /* orderDetailsTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +454,7 @@
 		B4C886A01CFDC6FD001DFEA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B4BA6E7E1D0EBC2900B71790 /* order.png */,
 				CF1886751D06094100C97C50 /* loginIcon-30.png */,
 				CF1886711D05FE2F00C97C50 /* etbo5lyBackground-28.png */,
 				CF1886721D05FE2F00C97C50 /* etbo5lyFooter-29.png */,
@@ -609,6 +617,7 @@
 				B4690C0D1CFF4C160002B315 /* iconsArtboard_nearbyTabBarIcon.png in Resources */,
 				B4FC1D6E1D084CD700B2A2C0 /* ios.png in Resources */,
 				B4690C0B1CFF4C160002B315 /* iconsArtboard_basketTabBarIcon.png in Resources */,
+				B4BA6E7F1D0EBC2900B71790 /* order.png in Resources */,
 				B4690C141CFF4C160002B315 /* shareEtbo5ly-23.png in Resources */,
 				CF1886741D05FE2F00C97C50 /* etbo5lyFooter-29.png in Resources */,
 				B43B3C941CF09FCB0086761F /* ERD.jpeg in Resources */,
@@ -753,6 +762,7 @@
 				B4C886701CFDB792001DFEA6 /* UserServices.m in Sources */,
 				B4C8B8F21D005DBE00960A09 /* BasketTableViewController.m in Sources */,
 				B43D5F0F1CF1FCC0008F3F63 /* TabBarViewController.m in Sources */,
+				B4A3E23C1D0F342F0088A304 /* orderDetailsTableViewController.m in Sources */,
 				B4C886991CFDBB25001DFEA6 /* CookDAO.m in Sources */,
 				B4C8869F1CFDBBF5001DFEA6 /* OrderDetailsDAO.m in Sources */,
 				B4FC1D6C1D08448900B2A2C0 /* orderAddressDetailsTableViewController.m in Sources */,

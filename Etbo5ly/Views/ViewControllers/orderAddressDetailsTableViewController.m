@@ -21,7 +21,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title=@"hnaaaaa";
+    self.navigationItem.title=@"Order Address";
     _cityTxtField.delegate=self;
     _regionTxtField.delegate=self;
     networkDelegate=self;
@@ -227,6 +227,9 @@
         [[BasketTableViewController getall] removeObjectForKey:_orderCookDetails.cookName];
         NSLog(@"%@",[BasketTableViewController getall]);
         //[self.tabBarController setSelectedIndex:2];
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+        [alert showCustom:self image:[UIImage imageNamed:@"git"] color:[UIColor orangeColor] title:@"Done" subTitle:@"Your order has been succssfully placed" closeButtonTitle:@"OK" duration:0.0f];
+
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     

@@ -15,7 +15,26 @@
     managedObjectContext=[Etbo5lyDatabaseManager getManagedObjectContext];
     return  self;
 }
-
+-(BOOL)deleteUser
+{
+    NSError* error=nil;
+    fetchRequest= [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"type == %@",@"user"]];
+    NSArray* deleteArray = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (deleteArray != nil)
+    {
+        for (NSManagedObject* object in deleteArray)
+        {
+            [managedObjectContext deleteObject:object];
+        }
+        [managedObjectContext save:&error];
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
 //-(User *)fetchAndGetUser
 //{
 //    [self getUserManagedObject];
@@ -80,4 +99,5 @@
    
   //  [newUser setValue:[NSString stringWithFormat:@"%@%@",[userData valueForKey:@"resourcesURL"],[userData valueForKey:@"imageURL"]] forKey:@"imageURL"];
 }
+
 @end

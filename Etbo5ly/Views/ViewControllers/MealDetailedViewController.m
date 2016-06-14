@@ -26,9 +26,11 @@
     _detailedMealName.text=[_detailedMeal nameEn];
     [_detailedMealImage sd_setImageWithURL:[NSURL URLWithString:[_detailedMeal imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     [_detailedMealDescription setText:[_detailedMeal descriptionEn]];
-    _detailedMealPrice.text=[NSString stringWithFormat:@"%f",[_detailedMeal price] ];
+    _detailedMealPrice.text=[NSString stringWithFormat:@"EGP %d",(int)[_detailedMeal price] ];
     _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
-    _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+    _totalItemPrice.text=[NSString stringWithFormat:@"EGP %d",(int)(_detailedMeal.price * quantity)];
+    _menu_item_rating.value=[_detailedMeal itemRate];
+    _menu_item_rating.userInteractionEnabled=NO;
     NSLog(@"%@",[_detailedMeal nameEn]);
 }
 - (void)didReceiveMemoryWarning {
@@ -40,20 +42,20 @@
 - (IBAction)addMealQuantity:(id)sender {
     quantity++;
     _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
-    _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+    _totalItemPrice.text=[NSString stringWithFormat:@"EGP %d",(int)([_detailedMeal price] * quantity)];
 }
 
 - (IBAction)subtractMealQuantity:(id)sender {
     if (quantity<=1) {
         quantity=1;
         _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
-        _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+        _totalItemPrice.text=[NSString stringWithFormat:@"EGP %d",(int)([_detailedMeal price] * quantity)];
     }
     else
     {
         quantity--;
         _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
-        _totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+        _totalItemPrice.text=[NSString stringWithFormat:@"EGP %d",(int)([_detailedMeal price ]* quantity)];
     }
 }
 

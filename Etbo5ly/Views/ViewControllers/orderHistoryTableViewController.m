@@ -26,8 +26,12 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    _allUserOrders=[[NSMutableArray alloc] init];
     registeredUser=[userDBFunctions selectRegisteredUser];
-    [self getAllOrders:registeredUser.userId];
+    if (registeredUser.userId!=0) {
+        [self getAllOrders:registeredUser.userId];
+    }
+    
 }
 #pragma mark - Table view data source
 
@@ -36,23 +40,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   return _allUserOrders.count;
+    if (_allUserOrders.count==0) {
+        return 1;
+    }
+    else
+    {
+        return _allUserOrders.count;
+    }
 }
-//-(void)handle:(id)dataRetreived :(NSString *)serviceName
-//{
-//    if ([serviceName isEqualToString:@"allOrders"]) {
-//        _allUserOrders=[[NSMutableArray alloc] initWithArray:dataRetreived];
-//    }
-//}
 -(void) getAllOrders : (int) userID
 {
+    [self viewActivityProgress];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager] ;
     NSDictionary *parameters=[[NSDictionary alloc] init];
     parameters = @{@"format": @"json"};
     [manager GET:[URLS getAllOrderHistory:userID] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         _allUserOrders=[[NSMutableArray alloc] initWithArray:responseObject];
-        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [orderHistoryProgress hide:YES];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //NSLog(@"Error: %@", error);
@@ -66,73 +72,52 @@
 {
     NSLog(@"errroooorrrr");
 }
-
+-(void) viewActivityProgress
+{
+    orderHistoryProgress=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    orderHistoryProgress.labelColor=[UIColor orangeColor];
+    orderHistoryProgress.tintColor=[UIColor grayColor];
+    orderHistoryProgress.labelText=@"Loading";
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
-    HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:2];
-    [ratingStars setUserInteractionEnabled:NO];
-    NSLog(@"%@",[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"]);
-    ratingStars.value=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"] integerValue];
+    UITableViewCell *cell ;
     
-    int cookID=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"userByCookId"] integerValue];
-    NSString * imageCook=[cookDBFunctions selectCookBasedOnID:cookID].imageURL;
-    UIImageView * cookImage=(UIImageView*)[cell viewWithTag:1];
-    UILabel * cookNameLabel=(UILabel*)[cell viewWithTag:3];
-    UILabel * orderPrice=(UILabel*)[cell viewWithTag:4];
-    UILabel * orderDate=(UILabel*)[cell viewWithTag:5];
-  
-    cookNameLabel.text=[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"cookName"];
-    NSString *orderPriceString=[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"totalPrice"];
-    NSDate * dateOrder=[NSDate dateWithTimeIntervalSince1970:([[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"orderTime"] doubleValue]/1000.0)];
-    orderPrice.text=[NSString stringWithFormat:@"EGP %@",orderPriceString];
-    orderDate.text=[NSString stringWithFormat:@"%@",dateOrder];
-    [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    if (_allUserOrders.count==0) {
+        cell=[tableView dequeueReusableCellWithIdentifier:@"noResults" forIndexPath:indexPath];
+    }
+    else
+    {
+        cell=[tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+        HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:2];
+        [ratingStars setUserInteractionEnabled:NO];
+        NSLog(@"%@",[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"]);
+        ratingStars.value=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"] integerValue];
+        
+        int cookID=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"userByCookId"] integerValue];
+        
+        NSString * imageCook=[cookDBFunctions selectCookBasedOnID:cookID].imageURL;
+        UIImageView * cookImage=(UIImageView*)[cell viewWithTag:1];
+        UILabel * cookNameLabel=(UILabel*)[cell viewWithTag:3];
+        UILabel * orderPrice=(UILabel*)[cell viewWithTag:4];
+        UILabel * orderDate=(UILabel*)[cell viewWithTag:5];
+        cookNameLabel.text=[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"cookName"];
+        NSString *orderPriceString=[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"totalPrice"];
+        NSDate * dateOrder=[NSDate dateWithTimeIntervalSince1970:([[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"orderTime"] doubleValue]/1000.0)];
+        orderPrice.text=[NSString stringWithFormat:@"EGP %@",orderPriceString];
+        orderDate.text=[NSString stringWithFormat:@"%@",dateOrder];
+        [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    }
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UIStoryboard * storyboard=self.navigationController.storyboard;
+    orderDetailsTableViewController *orderDetailsView=[storyboard instantiateViewControllerWithIdentifier:@"orderHistoryDetails"];
+    NSLog(@"%@",[_allUserOrders objectAtIndex:indexPath.row]);
+    [orderDetailsView setOrderHistoryDetails:[_allUserOrders objectAtIndex:indexPath.row]];
+    [self.navigationController pushViewController:orderDetailsView animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

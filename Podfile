@@ -10,6 +10,9 @@ pod 'AFNetworking', '~> 2.5.4'
 pod 'SDWebImage', '~>3.7'
 pod 'UIFloatLabelTextField'
 pod 'HCSStarRatingView' , '~>1.4.5'
+pod 'MBProgressHUD', '~> 0.9.2'
+pod 'SCLAlertView-Objective-C'
+pod 'AJWValidator'
   target 'Etbo5lyTests' do
     inherit! :search_paths
     # Pods for testing

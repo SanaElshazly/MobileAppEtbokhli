@@ -22,7 +22,7 @@
 -(id) initWithManagedObject;
 -(void) getUserManagedObject ;
 -(User *)fetchAndGetUser;
--(void) deleteUser;
+-(BOOL) deleteUser ;
 -(void) insertUser:(User *)userData;
 -(User *) selectCookBasedOnID : (int) CookID;
 -(User *)selectRegisteredUser;

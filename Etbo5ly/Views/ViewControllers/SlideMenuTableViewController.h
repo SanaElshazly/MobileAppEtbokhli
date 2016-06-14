@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ProfileViewController.h"
-
+#import "SCLAlertView.h"
 @interface SlideMenuTableViewController : UITableViewController
 {
     UserDAO *userRequestedFunctions;
