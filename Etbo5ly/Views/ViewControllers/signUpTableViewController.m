@@ -18,6 +18,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _phoneTxtField.delegate=self;
+    _emailTxtField.delegate=self;
     userDetails=[[NSMutableDictionary alloc] init];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
@@ -40,7 +42,26 @@
 -(void)viewDidAppear:(BOOL)animated
 {
 }
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range {
+    if ([_emailTxtField.text isEqualToString:@""]) {
+        return NO;
+    }
+    else{
+    return YES;
+    }
+}
+-(BOOL) valideUserInput
+{
+    if ([_emailTxtField.text isEqualToString:@""]) {
+        _emailTxtField.placeholder=@"enter valid mail";
+        [_emailTxtField setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     if ([serviceName isEqualToString:@"signup"]) {
@@ -72,7 +93,7 @@
     NSLog(@"%@",error.userInfo);
 }
 - (IBAction)signUpBtn:(id)sender {
-    
+    [self valideUserInput];
     networkDelegate=self;
     newUser=[[User alloc] initWithInfo];
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
@@ -117,5 +138,8 @@
     txtField.floatLabelActiveColor = [UIColor orangeColor];
     [txtField.layer addSublayer:bottomBorder];
     
+}
+-(void) changeTextFieldBorderColor : (UIFloatLabelTextField *)txtField
+{
 }
 @end
