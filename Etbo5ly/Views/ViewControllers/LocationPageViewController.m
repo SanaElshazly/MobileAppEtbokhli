@@ -24,6 +24,7 @@
 }
 
 -(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     [self addTextFieldBorderStyle:self.regionTxtField];
     [self addTextFieldBorderStyle:self.cityTxtField];

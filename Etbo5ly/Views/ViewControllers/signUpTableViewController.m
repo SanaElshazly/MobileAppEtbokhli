@@ -16,17 +16,33 @@
 {
     NSArray *values;
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
     _phoneTxtField.delegate=self;
     _emailTxtField.delegate=self;
-    userDetails=[[NSMutableDictionary alloc] init];
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
     [self addTextFieldBorderStyle:self.regionTxtField];
     [self addTextFieldBorderStyle:self.cityTxtField];
     [self addTextFieldBorderStyle:self.passwordTxtField];
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+//    _phoneTxtField.delegate=self;
+//    _emailTxtField.delegate=self;
+    userDetails=[[NSMutableDictionary alloc] init];
+//    [self addTextFieldBorderStyle:self.fullnameTxtField];
+//    [self addTextFieldBorderStyle:self.emailTxtField];
+//    [self addTextFieldBorderStyle:self.phoneTxtField];
+//    [self addTextFieldBorderStyle:self.regionTxtField];
+//    [self addTextFieldBorderStyle:self.cityTxtField];
+//    [self addTextFieldBorderStyle:self.passwordTxtField];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -41,7 +57,10 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
+    
+    [self viewDidLayoutSubviews];
 }
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range {
     if ([_emailTxtField.text isEqualToString:@""]) {
         return NO;
@@ -137,6 +156,8 @@
     bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
     txtField.floatLabelActiveColor = [UIColor orangeColor];
     [txtField.layer addSublayer:bottomBorder];
+    txtField.layer.masksToBounds = YES;
+
     
 }
 -(void) changeTextFieldBorderColor : (UIFloatLabelTextField *)txtField
