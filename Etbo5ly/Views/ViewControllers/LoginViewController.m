@@ -14,12 +14,20 @@
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginBackground-27.png"]]];
+
+-(void)viewDidLayoutSubviews
+{
+    NSLog(@"viewDidLayoutSubviews");
     [self addTextFieldBorderStyle:self.loginEmailTxtField];
     [self addTextFieldBorderStyle:self.loginPasswordTxtField];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"viewDidLoad");
+    // Do any additional setup after loading the view.
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginBackground-27.png"]]];
+
 }
 
 - (void)didReceiveMemoryWarning {

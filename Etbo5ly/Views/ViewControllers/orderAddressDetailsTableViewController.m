@@ -28,10 +28,10 @@
     locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     [locationRequestedService getAllRegions];
      userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
-//    [self addTextFieldBorderStyle:self.cityTxtField];
-//    [self addTextFieldBorderStyle:self.regionTxtField];
-//    [self addTextFieldBorderStyle:self.streetTxtField];
-//    [self addTextFieldBorderStyle:self.buildingNumberTxtField];
+    [self addTextFieldBorderStyle:self.cityTxtField];
+    [self addTextFieldBorderStyle:self.regionTxtField];
+    [self addTextFieldBorderStyle:self.streetTxtField];
+    [self addTextFieldBorderStyle:self.buildingNumberTxtField];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
