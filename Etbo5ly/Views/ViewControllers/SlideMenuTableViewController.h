@@ -12,6 +12,7 @@
 @interface SlideMenuTableViewController : UITableViewController
 {
     UserDAO *userRequestedFunctions;
+    User *registeredUser;
 }
 @property (strong, nonatomic) IBOutlet UITableView *slideMenuTableView;
 @property (strong, nonatomic) IBOutlet UITableViewCell *signInCell;

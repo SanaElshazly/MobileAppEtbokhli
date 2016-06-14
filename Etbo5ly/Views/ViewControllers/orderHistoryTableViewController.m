@@ -13,7 +13,9 @@
 @end
 
 @implementation orderHistoryTableViewController
-
+{
+    UIAlertView *alert;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _allUserOrders=[[NSMutableArray alloc]init];
@@ -31,7 +33,25 @@
     if (registeredUser.userId!=0) {
         [self getAllOrders:registeredUser.userId];
     }
+    else
+    {
+         alert=[[UIAlertView alloc] initWithTitle:@"Login" message:@" to view your oeders" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil];
+        [alert show];
+    }
     
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0) {
+        [self.tabBarController setSelectedIndex:0];
+    }
+    else
+    {
+        UIStoryboard *storyboard=self.navigationController.storyboard;
+        LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
 }
 #pragma mark - Table view data source
 

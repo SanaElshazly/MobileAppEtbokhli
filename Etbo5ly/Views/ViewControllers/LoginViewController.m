@@ -84,7 +84,7 @@
         else
         {
             [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.tabBarController setSelectedIndex:0];
+            //[self.tabBarController setSelectedIndex:0];
         }
 
     }

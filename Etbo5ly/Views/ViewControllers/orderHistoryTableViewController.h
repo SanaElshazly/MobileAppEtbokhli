@@ -15,7 +15,7 @@
 #import "BasketTableViewController.h"
 #import "MBProgressHUD.h"
 #import "orderDetailsTableViewController.h"
-@interface orderHistoryTableViewController : UITableViewController <Etbo5lyNetworkDelegate>
+@interface orderHistoryTableViewController : UITableViewController <Etbo5lyNetworkDelegate , UIAlertViewDelegate>
 {
     User *registeredUser;
     UserDAO *userDBFunctions;
