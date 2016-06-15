@@ -17,6 +17,7 @@
     </entity>
     <entity name="Cook" representedClassName="" parentEntity="User" syncable="YES">
         <attribute name="end_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="start_working_hours" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="menu_items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Menu_items" inverseName="cook" inverseEntity="Menu_items" syncable="YES"/>
     </entity>
@@ -71,7 +72,7 @@
     <elements>
         <element name="Category" positionX="-333" positionY="189" width="128" height="103"/>
         <element name="Catering" positionX="34" positionY="279" width="128" height="148"/>
-        <element name="Cook" positionX="-288" positionY="-495" width="128" height="88"/>
+        <element name="Cook" positionX="-288" positionY="-495" width="128" height="105"/>
         <element name="Menu_items" positionX="88" positionY="-225" width="128" height="208"/>
         <element name="Order" positionX="-128" positionY="-37" width="128" height="208"/>
         <element name="Order_Details" positionX="70" positionY="81" width="128" height="133"/>

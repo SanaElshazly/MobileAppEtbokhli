@@ -49,7 +49,7 @@
         fetchedCook.endWorkingHours=[managedObjectCook valueForKey:@"end_working_hours"];
         fetchedCook.startWorkingHours=[managedObjectCook valueForKey:@"start_working_hours"];
         fetchedCook.registerationDate=[managedObjectCook valueForKey:@"registeration_date"];
-
+        fetchedCook.cookRate = [[managedObjectCook valueForKey:@"rate"] integerValue];
 
         [_selectedCooks addObject:fetchedCook];
     }
@@ -65,6 +65,7 @@
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"address"] forKey:@"address"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"email"] forKey:@"email"];
         [newCook setValue:@"cook" forKey:@"type"];
+        [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"cookRate"] forKey:@"rate"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"latitude"] forKey:@"latitude"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"longitude"] forKey:@"longitude"];
         [newCook setValue:[[cooksArray objectAtIndex:i] objectForKey:@"name"] forKey:@"name"];

@@ -8,7 +8,23 @@
 
 #import "HomePageTableViewController.h"
 
-
+@interface SizableImageCell : UITableViewCell {}
+@end
+@implementation SizableImageCell
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    float desiredWidth = 80;
+    float w=self.imageView.frame.size.width;
+    if (w>desiredWidth) {
+        float widthSub = w - desiredWidth;
+        self.imageView.frame = CGRectMake(self.imageView.frame.origin.x,self.imageView.frame.origin.y,desiredWidth,self.imageView.frame.size.height);
+        self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x-widthSub,self.textLabel.frame.origin.y,self.textLabel.frame.size.width+widthSub,self.textLabel.frame.size.height);
+        self.detailTextLabel.frame = CGRectMake(self.detailTextLabel.frame.origin.x-widthSub,self.detailTextLabel.frame.origin.y,self.detailTextLabel.frame.size.width+widthSub,self.detailTextLabel.frame.size.height);
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+}
+@end
 @interface HomePageTableViewController ()
 
 @end
@@ -21,8 +37,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _dataTableView.estimatedRowHeight=400;
-    _dataTableView.rowHeight=UITableViewAutomaticDimension;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     //hwa leh hatten l satr bta3 l location da
     searchResults=[[NSArray alloc] init];
@@ -111,11 +125,11 @@
     return arrayLength;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 100;
-    
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return 100;
+//    
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -126,7 +140,7 @@
     UITableViewCell *cell = [_dataTableView dequeueReusableCellWithIdentifier:cellID ];
     if(!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[SizableImageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:

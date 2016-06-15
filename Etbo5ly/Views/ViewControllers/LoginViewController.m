@@ -64,20 +64,24 @@
     }
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    textField.text=@"";
+
+    if (textField.tag==1) {
+        textField.placeholder=@"Email";
+    }
+    
     textField.textColor=[UIColor blackColor];
     return YES;
 }
 - (IBAction)loginBtn:(id)sender {
     networkDelegate=self;
-        if ([_loginEmailTxtField.text isEqualToString:@""]&&[self NSStringIsValidEmail:_loginEmailTxtField.text]) {
+        if (![_loginEmailTxtField.text isEqualToString:@""]&&[self NSStringIsValidEmail:_loginEmailTxtField.text]) {
             [userJSON setObject:_loginEmailTxtField.text forKey:@"email"];
             [userJSON setObject:_loginPasswordTxtField.text forKey:@"password"];
             userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
             [userRequestedServices login:userJSON];
         }
         else {
-            _loginEmailTxtField.text=@"Please enter a valid email";
+            _loginEmailTxtField.placeholder=@"Please enter a valid email";
             _loginEmailTxtField.textColor=[UIColor redColor];
         }
     
@@ -142,9 +146,10 @@
         UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Incorrect email or password" message:@" Please Check youe email , password and try again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
-    else
+    else if (error.code==-2102 || error.code==-1004)
     {
-        NSLog(@"hobi");
+        UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Connection error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
     
 }

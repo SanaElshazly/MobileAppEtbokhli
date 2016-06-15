@@ -16,7 +16,6 @@
 #import "BasketTableViewController.h"
 #import "HomePageTableViewController.h"
 #import "Order.h"
-#import "AJWValidator.h"
 @interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate,UITextFieldDelegate>
 {
     NSMutableDictionary *userDetails;

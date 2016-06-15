@@ -27,5 +27,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *totalItemPrice;
 - (IBAction)addMealToItem:(id)sender;
 @property (strong, nonatomic) IBOutlet HCSStarRatingView *menu_item_rating;
+@property (strong, nonatomic) IBOutlet UITableViewCell *descriptionCell;
 
 @end

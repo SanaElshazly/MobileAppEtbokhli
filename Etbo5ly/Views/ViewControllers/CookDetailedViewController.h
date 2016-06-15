@@ -11,7 +11,7 @@
 #import "CookServices.h"
 #import "CategoryItemsTableViewController.h"
 #import "UIImageView+WebCache.h"
-
+#import "HCSStarRatingView.h"
 @interface CookDetailedViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate>
 {
     int cookIDforCategory;
@@ -25,6 +25,7 @@
 //    NSMutableArray * cookCategories;
     CookServices *cooksRequestedCategories;
 }
+@property (strong, nonatomic) IBOutlet HCSStarRatingView *cookRatingView;
 @property (strong,nonatomic) Cook *detailedCook;
 @property (strong,nonatomic) NSMutableArray * cookCategories;
 @property (strong,nonatomic) NSMutableArray * cookCategoriesID;

@@ -39,7 +39,7 @@
     
     startWorkingHoursDate=[_detailedCook startWorkingHours];
     endWorkingHoursDate=[_detailedCook endWorkingHours];
-
+    _cookRatingView.value=[_detailedCook cookRate];
     NSDate *startDateFormatted =[NSDateFormatter localizedStringFromDate:startWorkingHoursDate dateStyle:NSDateFormatterNoStyle timeStyle:NSTimeIntervalSince1970];
     
     
