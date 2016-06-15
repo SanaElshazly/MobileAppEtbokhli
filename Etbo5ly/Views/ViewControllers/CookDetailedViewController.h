@@ -17,6 +17,11 @@
     int cookIDforCategory;
     int categoryIDforItems;
     
+    NSDate *startWorkingHoursDate;
+    NSDate *startDateFormatted;
+    NSDate *endWorkingHoursDate;
+    NSDate *endDateFormatted;
+    
 //    NSMutableArray * cookCategories;
     CookServices *cooksRequestedCategories;
 }
@@ -28,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *cookNameLbl;
 @property (strong, nonatomic) IBOutlet UILabel *cookAddressLbl;
 @property (strong, nonatomic) IBOutlet UILabel *cookWorkingHrsLbl;
+@property (strong, nonatomic) IBOutlet UILabel *cookEndWorkingHrsLbl;
 @property (strong, nonatomic) IBOutlet UITableView *cookMenuTableView;
 
 @end
