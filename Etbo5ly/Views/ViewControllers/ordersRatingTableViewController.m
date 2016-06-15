@@ -63,13 +63,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_allNonRatedOrder.count==0) {
-        return 1;
-    }
-    else
-    {
+//    if (_allNonRatedOrder.count==0) {
+//        return 1;
+//    }
+//    else
+//    {
         return _allNonRatedOrder.count;
-    }
+  //  }
 }
 -(void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     NSLog(@"hello");
@@ -78,12 +78,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell ;
     
-    if (_allNonRatedOrder.count==0) {
-        cell= [tableView dequeueReusableCellWithIdentifier:@"noOrders" forIndexPath:indexPath];
-        return cell;
-    }
-    else
-    {
+//    if (_allNonRatedOrder.count==0) {
+//        cell= [tableView dequeueReusableCellWithIdentifier:@"noOrders" forIndexPath:indexPath];
+//        return cell;
+//    }
+//    else
+//    {
         cell= [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
         HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:2];
         int cookID=[[[_allNonRatedOrder objectAtIndex:indexPath.row] objectForKey:@"cookName"] integerValue];
@@ -100,7 +100,7 @@
         orderDate.text=[NSString stringWithFormat:@"%@",dateOrder];
         [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
         return cell;
-    }
+    //}
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
