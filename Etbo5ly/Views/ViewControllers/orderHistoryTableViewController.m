@@ -112,8 +112,7 @@
         cell=[tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
         HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:2];
         [ratingStars setUserInteractionEnabled:NO];
-        NSLog(@"%@",[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"]);
-        ratingStars.value=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"customerRating"] integerValue];
+        ratingStars.value=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"cookRating"] integerValue];
         
         int cookID=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"userByCookId"] integerValue];
         

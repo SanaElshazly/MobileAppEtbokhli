@@ -170,7 +170,7 @@
         case 1:
             if (tableView == self.searchDisplayController.searchResultsTableView) {
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
-                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"EGP %d",(int)[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
                 cell.imageView.frame = CGRectMake(0, 0, 300, 300);
                 cell.imageView.bounds = CGRectMake(0, 0, 300, 300);
@@ -181,7 +181,7 @@
             else
             {
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
-                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"EGP %d",(int)[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
                 cell.imageView.frame = CGRectMake(0, 0, 300, 300);
                 cell.imageView.bounds = CGRectMake(0, 0, 300, 300);

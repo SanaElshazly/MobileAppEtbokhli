@@ -144,6 +144,7 @@
     {
         cooksBasedLocation=[[NSArray alloc] initWithArray:dataRetreived];
         CooksBasedOnLocationTableViewController *cooksBasedOnLocationTableView=[CooksBasedOnLocationTableViewController new];
+        [cooksBasedOnLocationTableView setOrderAddress:@"NearBy"];
         [cooksBasedOnLocationTableView setCooksOnLocation:cooksBasedLocation];
         
         
