@@ -18,6 +18,7 @@
     MBProgressHUD *homeProgress;
 }
 
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     _dataTableView.estimatedRowHeight=400;
@@ -133,12 +134,20 @@
                 cell.textLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] name] ;
                 cell.detailTextLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] address];
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ searchResults objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+                cell.imageView.frame = CGRectMake(0, 0, 300, 300);
+                cell.imageView.bounds = CGRectMake(0, 0, 300, 300);
+                cell.imageView.autoresizesSubviews= NO;
+                cell.imageView.autoresizingMask = NO;
             }
             else
             {
                 cell.textLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] name] ;
                 cell.detailTextLabel.text=[(Cook *)[_cooks objectAtIndex:indexPath.row] address];
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+                cell.imageView.frame = CGRectMake(0, 0, 300, 300);
+                cell.imageView.bounds = CGRectMake(0, 0, 300, 300);
+                cell.imageView.autoresizesSubviews= NO;
+                cell.imageView.autoresizingMask = NO;
             }
             NSLog(@"urlll%@",[NSString stringWithFormat: @"%@",[(Cook*)[ _cooks objectAtIndex:indexPath.row] imageURL]]);
             
@@ -149,6 +158,10 @@
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
                 cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                cell.imageView.frame = CGRectMake(0, 0, 300, 300);
+                cell.imageView.bounds = CGRectMake(0, 0, 300, 300);
+                cell.imageView.autoresizesSubviews= NO;
+                cell.imageView.autoresizingMask = NO;
                 NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
             }
             else
@@ -156,6 +169,10 @@
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
                 cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                cell.imageView.frame = CGRectMake(0, 0, 300, 300);
+                cell.imageView.bounds = CGRectMake(0, 0, 300, 300);
+                cell.imageView.autoresizesSubviews= NO;
+                cell.imageView.autoresizingMask = NO;
                 NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
             }
             break;
