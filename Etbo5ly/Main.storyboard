@@ -550,6 +550,7 @@
                         <outlet property="detailedMealImage" destination="u4U-MT-Pzd" id="Z94-O4-U7f"/>
                         <outlet property="detailedMealName" destination="jHG-kJ-Dre" id="jfr-hn-DVU"/>
                         <outlet property="detailedMealPrice" destination="Cwj-Mr-u1v" id="at1-oV-qDA"/>
+                        <outlet property="mealDetailsTableView" destination="Unq-dL-Kaq" id="CaD-zn-wtl"/>
                         <outlet property="menu_item_rating" destination="z03-aC-YxL" id="Cjz-Bt-ZhU"/>
                         <outlet property="totalItemPrice" destination="ogg-H1-ssB" id="28s-1f-zci"/>
                     </connections>
@@ -2035,6 +2036,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Basket" id="5jT-G9-k13"/>
                     <connections>
+                        <outlet property="mealDetailsTableView" destination="zyh-qf-kBg" id="eur-RS-Uvo"/>
                         <outlet property="tableViewData" destination="zyh-qf-kBg" id="Lkg-cZ-19V"/>
                     </connections>
                 </tableViewController>
