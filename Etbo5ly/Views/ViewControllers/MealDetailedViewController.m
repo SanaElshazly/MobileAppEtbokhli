@@ -25,7 +25,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     _detailedMealName.text=[_detailedMeal nameEn];
-    [_detailedMealImage sd_setImageWithURL:[NSURL URLWithString:[_detailedMeal imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    [_detailedMealImage sd_setImageWithURL:[NSURL URLWithString:[_detailedMeal imageURL]] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
     [_detailedMealDescription setText:[_detailedMeal descriptionEn]];
     _detailedMealDescription.numberOfLines = 0; //will wrap text in new line
     [ _detailedMealDescription sizeToFit];

@@ -33,7 +33,7 @@
     
     
     _cookNameLbl.text=[_detailedCook name];
-    [_cookProfileImg sd_setImageWithURL:[NSURL URLWithString:[_detailedCook imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    [_cookProfileImg sd_setImageWithURL:[NSURL URLWithString:[_detailedCook imageURL]] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
     _cookAddressLbl.text=[_detailedCook address];
 
     

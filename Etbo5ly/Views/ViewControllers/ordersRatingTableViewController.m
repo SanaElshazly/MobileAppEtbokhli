@@ -43,7 +43,7 @@
     NSDictionary *parameters=[[NSDictionary alloc] init];
     parameters = @{@"format": @"json"};
     [manager GET:[URLS getNonRatingOrder:userID] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"JSON: %@", [URLS getNonRatingOrder:userID] );
         _allNonRatedOrder=[[NSMutableArray alloc] initWithArray:responseObject];
         
         [self.tableView reloadData];
@@ -64,27 +64,23 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if (_allNonRatedOrder.count==0) {
-//        return 1;
-//    }
-//    else
-//    {
+    if (_allNonRatedOrder.count==0) {
+        return 1;
+    }
+    else
+    {
         return _allNonRatedOrder.count;
-  //  }
+    }
 }
--(void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    NSLog(@"hello");
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell ;
     
-//    if (_allNonRatedOrder.count==0) {
-//        cell= [tableView dequeueReusableCellWithIdentifier:@"noOrders" forIndexPath:indexPath];
-//        return cell;
-//    }
-//    else
-//    {
+    if (_allNonRatedOrder.count==0) {
+        cell= [tableView dequeueReusableCellWithIdentifier:@"noOrders" forIndexPath:indexPath];
+        return cell;
+    }
+    else
+    {
         cell= [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
         HCSStarRatingView *ratingStars=(HCSStarRatingView *)[cell viewWithTag:2];
         int cookID=[[[_allNonRatedOrder objectAtIndex:indexPath.row] objectForKey:@"cookName"] integerValue];
@@ -99,59 +95,12 @@
         NSDate * dateOrder=[NSDate dateWithTimeIntervalSince1970:([[[_allNonRatedOrder objectAtIndex:indexPath.row] objectForKey:@"orderTime"] doubleValue]/1000.0)];
         orderPrice.text=[NSString stringWithFormat:@"EGP %@",orderPriceString];
         orderDate.text=[NSString stringWithFormat:@"%@",dateOrder];
-        [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+        [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
         return cell;
-    //}
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"gelo");
+    }
 }
 
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
 {
     NSLog(@"helloooo");
@@ -172,7 +121,8 @@
     NSLog(@"%@",orderToBeRate);
     [userRequestedServices rateOrder:orderToBeRate];
     [_allNonRatedOrder removeObjectAtIndex:indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
+    [self.tableView reloadData];
+    //[self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
     
     // NSLog(@"%f%d",noha.value,b.section);
 }

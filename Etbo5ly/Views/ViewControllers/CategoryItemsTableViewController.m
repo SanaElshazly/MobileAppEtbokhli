@@ -90,7 +90,7 @@
     
     cell.detailTextLabel.text=[NSString stringWithFormat: @"%@ EGP",[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"]];
     
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@%@",[[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@%@",[[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]]] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
 
 
     

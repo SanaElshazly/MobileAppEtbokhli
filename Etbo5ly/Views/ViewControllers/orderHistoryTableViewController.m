@@ -127,7 +127,7 @@
         NSDate * dateOrder=[NSDate dateWithTimeIntervalSince1970:([[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"orderTime"] doubleValue]/1000.0)];
         orderPrice.text=[NSString stringWithFormat:@"EGP %@",orderPriceString];
         orderDate.text=[NSString stringWithFormat:@"%@",dateOrder];
-        [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+        [cookImage sd_setImageWithURL:[NSURL URLWithString:imageCook] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
     }
     return cell;
 }

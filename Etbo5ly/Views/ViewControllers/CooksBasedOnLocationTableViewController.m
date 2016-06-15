@@ -65,7 +65,7 @@
     }
     
     cell.textLabel.text=[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"name"];
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"icon_etbokhlyPlaceholder.png"]];
     cell.detailTextLabel.text=[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"address"];
     return cell;
 }
