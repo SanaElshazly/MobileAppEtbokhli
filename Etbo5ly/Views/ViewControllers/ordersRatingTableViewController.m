@@ -164,7 +164,7 @@
         //orderRating.value;
         NSLog(@"b%d",indexPath.row);
     }
-    NSLog(@"%@",[[_allNonRatedOrder objectAtIndex:indexPath.row] valueForKey:@"customerRating"]);
+    NSLog(@"%@",[[_allNonRatedOrder objectAtIndex:indexPath.row] valueForKey:@"cookRating"]);
     
     NSMutableDictionary *orderToBeRate=[[_allNonRatedOrder objectAtIndex:indexPath.row] mutableCopy];
     [orderToBeRate setObject:[NSNumber numberWithFloat:orderRating.value] forKey:@"customerRating"];
