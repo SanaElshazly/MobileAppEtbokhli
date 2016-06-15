@@ -113,6 +113,7 @@
     
     UIStoryboard *storyboard=self.navigationController.storyboard;
     CategoryItemsTableViewController *categoryItemsTableViewController=[storyboard instantiateViewControllerWithIdentifier:@"categoryItemsTableViewController"];
+    [categoryItemsTableViewController setCategoryName:[[self.cookCategories objectAtIndex:indexPath.row] objectForKey:@"nameEn"]];
     [categoryItemsTableViewController setCategoryID:catID];
     [categoryItemsTableViewController setCookID:cookIDforCategory];
     

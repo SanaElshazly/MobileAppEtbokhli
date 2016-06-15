@@ -30,9 +30,7 @@
     networkDelegate=self;
     cooksRequestedCategories=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
     [cooksRequestedCategories getCookCategoryMeals:_cookID : _categoryID];
-
-    //int i = [_cookObj userId];
-    //NSString *s =[_categoryItems nameEn];
+    self.title=_categoryName;
     
 }
 
@@ -87,7 +85,7 @@
     
     
     // Configure the cell...
-
+    
     cell.textLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
     
     cell.detailTextLabel.text=[NSString stringWithFormat: @"%@ EGP",[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"]];
@@ -100,7 +98,11 @@
 }
 
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
+    
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -18,12 +18,15 @@
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+   
     [self addTextFieldBorderStyle:self.loginEmailTxtField];
     [self addTextFieldBorderStyle:self.loginPasswordTxtField];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _loginPasswordTxtField.delegate=self;
+    _loginEmailTxtField.delegate=self;
     // Do any additional setup after loading the view.
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"loginBackground-27.png"]]];
 
@@ -60,12 +63,33 @@
         [signupController setOrderCookDetails:_orderCookDetails];
     }
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    textField.text=@"";
+    textField.textColor=[UIColor blackColor];
+    return YES;
+}
 - (IBAction)loginBtn:(id)sender {
     networkDelegate=self;
-    [userJSON setObject:_loginEmailTxtField.text forKey:@"email"];
-    [userJSON setObject:_loginPasswordTxtField.text forKey:@"password"];
-    userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
-    [userRequestedServices login:userJSON];
+        if ([_loginEmailTxtField.text isEqualToString:@""]&&[self NSStringIsValidEmail:_loginEmailTxtField.text]) {
+            [userJSON setObject:_loginEmailTxtField.text forKey:@"email"];
+            [userJSON setObject:_loginPasswordTxtField.text forKey:@"password"];
+            userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
+            [userRequestedServices login:userJSON];
+        }
+        else {
+            _loginEmailTxtField.text=@"Please enter a valid email";
+            _loginEmailTxtField.textColor=[UIColor redColor];
+        }
+    
+}
+-(BOOL) NSStringIsValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = NO;
+    NSString *stricterFilterString = @"^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$";
+    NSString *laxString = @"^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
 }
 //aljazayeerly@gmail.com
 -(void)handle:(id)dataRetreived :(NSString *)serviceName
@@ -91,10 +115,38 @@
         else
         {
             [self.navigationController popToRootViewControllerAnimated:YES];
-            [self.tabBarController setSelectedIndex:0];
+            
+            //[self.tabBarController setSelectedIndex:0];
         }
 
     }
+}
+-(BOOL) validateUserInput
+{
+    if ([_loginEmailTxtField.text isEqualToString:@""] ) {
+        _loginEmailTxtField.text=@"Please enter a valid email";
+        _loginEmailTxtField.textColor=[UIColor redColor];
+    }
+    return NO;
+}
+-(BOOL) textFieldShouldReturn : (UITextField*) textField
+{
+    [_loginEmailTxtField resignFirstResponder];
+    [_loginPasswordTxtField resignFirstResponder];
+    return YES;
+}
+-(void)handleWithFailure:(NSError *)error
+{
+    NSLog(@"errooor yallahwii %d%@",error.code,error.userInfo);
+    if (error.code==-1011) {
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Incorrect email or password" message:@" Please Check youe email , password and try again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        NSLog(@"hobi");
+    }
+    
 }
 
 -(void) addTextFieldBorderStyle: (UIFloatLabelTextField*) txtField{//:(UITextField*) txtField{

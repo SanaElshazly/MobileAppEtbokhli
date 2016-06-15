@@ -66,7 +66,8 @@
 }
 
 -(void)handleWithFailure:(NSError *)error{
-    NSLog(@"ERRORRRRR");
+    NSLog(@"ERRORRRRR %d",error.code);
+    
 }
 
 

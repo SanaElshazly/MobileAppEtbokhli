@@ -10,7 +10,8 @@
 #import "UIFloatLabelTextField.h"
 #import "signUpTableViewController.h"
 #import "Order.h"
-@interface LoginViewController : UIViewController <Etbo5lyNetworkDelegate>
+@interface LoginViewController : UIViewController <Etbo5lyNetworkDelegate,UITextFieldDelegate
+>
 {
     UserServices *userRequestedServices;
     NSMutableDictionary *userJSON;

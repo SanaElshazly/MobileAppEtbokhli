@@ -13,11 +13,14 @@
 @end
 
 @implementation orderHistoryTableViewController
-
+{
+    UIAlertView *alert;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _allUserOrders=[[NSMutableArray alloc]init];
     userDBFunctions=[[UserDAO alloc] initWithManagedObject];
+    cookDBFunctions=[[CookDAO alloc] initWithManagedObject];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +34,25 @@
     if (registeredUser.userId!=0) {
         [self getAllOrders:registeredUser.userId];
     }
+    else
+    {
+         alert=[[UIAlertView alloc] initWithTitle:@"Login" message:@" to view your oeders" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Login", nil];
+        [alert show];
+    }
     
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex==0) {
+        [self.tabBarController setSelectedIndex:0];
+    }
+    else
+    {
+        UIStoryboard *storyboard=self.navigationController.storyboard;
+        LoginViewController *loginViewController=[storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        
+        [self.navigationController pushViewController:loginViewController animated:YES];
+    }
 }
 #pragma mark - Table view data source
 
@@ -97,6 +118,7 @@
         int cookID=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"userByCookId"] integerValue];
         
         NSString * imageCook=[cookDBFunctions selectCookBasedOnID:cookID].imageURL;
+        NSLog(@"%@",imageCook);
         UIImageView * cookImage=(UIImageView*)[cell viewWithTag:1];
         UILabel * cookNameLabel=(UILabel*)[cell viewWithTag:3];
         UILabel * orderPrice=(UILabel*)[cell viewWithTag:4];

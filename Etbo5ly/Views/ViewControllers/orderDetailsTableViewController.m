@@ -43,20 +43,35 @@
     {
         NSLog(@"%@",[_orderHistoryDetails valueForKey:@"orderDetails"]);
         NSLog(@"%d",[[_orderHistoryDetails valueForKey:@"orderDetails"] count]);
+        
         return [[_orderHistoryDetails valueForKey:@"orderDetails"] count];
     }
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell ;
     
-    // Configure the cell...
+    if (indexPath.section==0) {
+        cell=[tableView dequeueReusableCellWithIdentifier:@"staticCellOrder" forIndexPath:indexPath];
+    }
+    else
+    {
+        int quantity=[[[[_orderHistoryDetails valueForKey:@"orderDetails"] objectAtIndex:indexPath.row] valueForKey:@"quantity"] integerValue];
+        cell=[tableView dequeueReusableCellWithIdentifier:@"orderCell" forIndexPath:indexPath];
+        cell.textLabel.text=[NSString stringWithFormat:@"%d x %@",quantity,[[[_orderHistoryDetails valueForKey:@"orderDetails"] objectAtIndex:indexPath.row] valueForKey:@"menuItemsNameEn"]];
+        cell.detailTextLabel.text=[NSString stringWithFormat:@"EGP %d",[[[[_orderHistoryDetails valueForKey:@"orderDetails"] objectAtIndex:indexPath.row] valueForKey:@"menuItemsPrice"] integerValue]];
+    }
     
     return cell;
 }
-*/
-
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionHeader=@"";
+    if (section!=0) {
+        sectionHeader=[NSString stringWithFormat:@"Total : %d EGP",[[_orderHistoryDetails valueForKey:@"totalPrice"] integerValue]];
+    }
+    return sectionHeader;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -22,6 +22,7 @@
 
 @property int cookID;
 @property int categoryID;
+@property NSString *categoryName;
 @property (strong,nonatomic) NSMutableArray * cookCategoryItems;
 
 @property (strong, nonatomic) IBOutlet UITableView *categoryItemsTable;
