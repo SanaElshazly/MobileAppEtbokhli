@@ -229,6 +229,7 @@
                         <outlet property="cookMenuTableView" destination="9O5-mj-1fv" id="HMf-Ov-ps0"/>
                         <outlet property="cookNameLbl" destination="Axb-2U-4Za" id="fRp-kl-q8g"/>
                         <outlet property="cookProfileImg" destination="hwq-Ua-SLl" id="IU7-YI-YfL"/>
+                        <outlet property="cookRatingView" destination="tps-5Q-0pD" id="sFy-uD-4gw"/>
                         <outlet property="cookWorkingHrsLbl" destination="HzM-T8-TJf" id="McK-ob-hPk"/>
                     </connections>
                 </viewController>
@@ -288,7 +289,7 @@
         <scene sceneID="LIC-zo-mfQ">
             <objects>
                 <tableViewController storyboardIdentifier="detailedMealViewController" id="CCr-hL-iph" customClass="MealDetailedViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Unq-dL-Kaq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Unq-dL-Kaq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -546,6 +547,7 @@
                     </tableView>
                     <connections>
                         <outlet property="MealQuantity" destination="lcL-Es-o6V" id="r8U-qJ-2F0"/>
+                        <outlet property="descriptionCell" destination="RsC-42-g31" id="D5i-Cc-8Ju"/>
                         <outlet property="detailedMealDescription" destination="FMp-Dl-8Rr" id="KgT-ui-oSx"/>
                         <outlet property="detailedMealImage" destination="u4U-MT-Pzd" id="Z94-O4-U7f"/>
                         <outlet property="detailedMealName" destination="jHG-kJ-Dre" id="jfr-hn-DVU"/>
@@ -2076,7 +2078,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Basket" id="5jT-G9-k13"/>
                     <connections>
-                        <outlet property="mealDetailsTableView" destination="zyh-qf-kBg" id="eur-RS-Uvo"/>
                         <outlet property="tableViewData" destination="zyh-qf-kBg" id="Lkg-cZ-19V"/>
                     </connections>
                 </tableViewController>

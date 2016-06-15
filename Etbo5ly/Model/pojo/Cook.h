@@ -13,7 +13,7 @@
 @interface Cook : User
 @property NSDate *startWorkingHours;
 @property NSDate * endWorkingHours;
-
+@property int cookRate;
 -(id)initWithInfo;
 -(id)initWithInfo:(int)userId setUserName:(NSString *)name setEmail:(NSString *)email setPassword:(NSString *)password setRegisterationDate:(NSDate *)registerationDate setPhone:(NSString *)phone setAddress:(NSString *)address setLongitude:(double)longitude setLatitude:(double)latitude setStartWorkingHours:(NSDate*)startWorkingHours setEndWorkingHours : (NSDate*)endWorkingHours;
 @end
