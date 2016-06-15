@@ -56,6 +56,10 @@
        // _profileCell.hidden=YES;
         return 0.0;
     }
+    else if (cell==_orderRatingCell&& profileCellHidden)
+    {
+        return 0.0;
+    }
     else
     {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];

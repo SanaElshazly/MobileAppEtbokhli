@@ -19,4 +19,5 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *profileCell;
 @property (strong, nonatomic) IBOutlet UITableView *moreTableView;
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *orderRatingCell;
 @end

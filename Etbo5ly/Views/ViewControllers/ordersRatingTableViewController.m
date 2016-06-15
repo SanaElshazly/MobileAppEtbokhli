@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     networkDelegate=self;
+    
     userDBFunctions=[[UserDAO alloc] initWithManagedObject];
     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     cookDBFunctions=[[CookDAO alloc] initWithManagedObject];
@@ -167,7 +168,7 @@
     NSLog(@"%@",[[_allNonRatedOrder objectAtIndex:indexPath.row] valueForKey:@"cookRating"]);
     
     NSMutableDictionary *orderToBeRate=[[_allNonRatedOrder objectAtIndex:indexPath.row] mutableCopy];
-    [orderToBeRate setObject:[NSNumber numberWithFloat:orderRating.value] forKey:@"customerRating"];
+    [orderToBeRate setObject:[NSNumber numberWithFloat:orderRating.value] forKey:@"cookRating"];
     NSLog(@"%@",orderToBeRate);
     [userRequestedServices rateOrder:orderToBeRate];
     [_allNonRatedOrder removeObjectAtIndex:indexPath.row];
