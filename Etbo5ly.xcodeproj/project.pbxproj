@@ -35,6 +35,7 @@
 		B4690C131CFF4C160002B315 /* profileEtbo5ly.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C071CFF4C160002B315 /* profileEtbo5ly.png */; };
 		B4690C141CFF4C160002B315 /* shareEtbo5ly-23.png in Resources */ = {isa = PBXBuildFile; fileRef = B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */; };
 		B4690C171CFF4F940002B315 /* MealDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4690C161CFF4F940002B315 /* MealDetailedViewController.m */; };
+		B471AC981D1183A900582D73 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B471AC971D1183A900582D73 /* HomeTableViewCell.m */; };
 		B475CBF71D0D90040099A06B /* orderHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */; };
 		B4A124E01CF60E0500779BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A124DF1CF60E0500779BAF /* CoreLocation.framework */; };
 		B4A3E23C1D0F342F0088A304 /* orderDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A3E23B1D0F342F0088A304 /* orderDetailsTableViewController.m */; };
@@ -138,6 +139,8 @@
 		B4690C081CFF4C160002B315 /* shareEtbo5ly-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shareEtbo5ly-23.png"; path = "Images/shareEtbo5ly-23.png"; sourceTree = "<group>"; };
 		B4690C151CFF4F940002B315 /* MealDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealDetailedViewController.h; path = Views/ViewControllers/MealDetailedViewController.h; sourceTree = "<group>"; };
 		B4690C161CFF4F940002B315 /* MealDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealDetailedViewController.m; path = Views/ViewControllers/MealDetailedViewController.m; sourceTree = "<group>"; };
+		B471AC961D1183A900582D73 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewCell.h; path = Views/ViewControllers/HomeTableViewCell.h; sourceTree = "<group>"; };
+		B471AC971D1183A900582D73 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewCell.m; path = Views/ViewControllers/HomeTableViewCell.m; sourceTree = "<group>"; };
 		B475CBF51D0D90040099A06B /* orderHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = orderHistoryTableViewController.h; path = Views/ViewControllers/orderHistoryTableViewController.h; sourceTree = "<group>"; };
 		B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = orderHistoryTableViewController.m; path = Views/ViewControllers/orderHistoryTableViewController.m; sourceTree = "<group>"; };
 		B4A124DF1CF60E0500779BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -417,6 +420,8 @@
 				B475CBF61D0D90040099A06B /* orderHistoryTableViewController.m */,
 				B4A3E23A1D0F342F0088A304 /* orderDetailsTableViewController.h */,
 				B4A3E23B1D0F342F0088A304 /* orderDetailsTableViewController.m */,
+				B471AC961D1183A900582D73 /* HomeTableViewCell.h */,
+				B471AC971D1183A900582D73 /* HomeTableViewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -778,6 +783,7 @@
 				B4F7FF2D1CF3644000C24E45 /* LocationPageViewController.m in Sources */,
 				CF21A7401D030E15009A0894 /* ProfileViewController.m in Sources */,
 				B4C8869A1CFDBB25001DFEA6 /* MenuItemDAO.m in Sources */,
+				B471AC981D1183A900582D73 /* HomeTableViewCell.m in Sources */,
 				B4C886641CFDB76E001DFEA6 /* Etbo5lyDatabaseManager.m in Sources */,
 				B4CCD7DC1CF1E80200BE850C /* MenuItems.m in Sources */,
 				B4C886701CFDB792001DFEA6 /* UserServices.m in Sources */,

@@ -8,7 +8,23 @@
 
 #import "HomePageTableViewController.h"
 
-
+@interface SizableImageCell : UITableViewCell {}
+@end
+@implementation SizableImageCell
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    float desiredWidth = 80;
+    float w=self.imageView.frame.size.width;
+    if (w>desiredWidth) {
+        float widthSub = w - desiredWidth;
+        self.imageView.frame = CGRectMake(self.imageView.frame.origin.x,self.imageView.frame.origin.y,desiredWidth,self.imageView.frame.size.height);
+        self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x-widthSub,self.textLabel.frame.origin.y,self.textLabel.frame.size.width+widthSub,self.textLabel.frame.size.height);
+        self.detailTextLabel.frame = CGRectMake(self.detailTextLabel.frame.origin.x-widthSub,self.detailTextLabel.frame.origin.y,self.detailTextLabel.frame.size.width+widthSub,self.detailTextLabel.frame.size.height);
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+}
+@end
 @interface HomePageTableViewController ()
 
 @end
@@ -20,8 +36,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    _dataTableView.estimatedRowHeight=400;
-    _dataTableView.rowHeight=UITableViewAutomaticDimension;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     //hwa leh hatten l satr bta3 l location da
     searchResults=[[NSArray alloc] init];
@@ -110,11 +124,11 @@
     return arrayLength;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 100;
-    
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return 100;
+//    
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -125,7 +139,7 @@
     UITableViewCell *cell = [_dataTableView dequeueReusableCellWithIdentifier:cellID ];
     if(!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[SizableImageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     switch (self.menuOptions.selectedSegmentIndex) {
         case 0:
@@ -133,6 +147,7 @@
                 cell.textLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] name] ;
                 cell.detailTextLabel.text=[(Cook *)[searchResults objectAtIndex:indexPath.row] address];
                 [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(Cook*)[ searchResults objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+                cell.imageView.frame = CGRectMake(0,0,32,32);
             }
             else
             {
@@ -147,15 +162,15 @@
         case 1:
             if (tableView == self.searchDisplayController.searchResultsTableView) {
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
-                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
-                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"EGP %d",(int)[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
                 NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
             }
             else
             {
                 cell.textLabel.text=[(MenuItems *)[_meals objectAtIndex:indexPath.row] nameEn] ;
-                cell.detailTextLabel.text=[NSString stringWithFormat:@"%f",[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
-                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"ios.png"]];
+                cell.detailTextLabel.text=[NSString stringWithFormat:@"EGP %d",(int)[(MenuItems *)[_meals objectAtIndex:indexPath.row] price]] ;
+                [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
                 NSLog(@"%@",[NSString stringWithFormat: @"%@",[(MenuItems*)[ _meals objectAtIndex:indexPath.row] imageURL]]);
             }
             break;

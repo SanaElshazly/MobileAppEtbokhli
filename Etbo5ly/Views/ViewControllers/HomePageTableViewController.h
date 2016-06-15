@@ -20,6 +20,7 @@
 #import "CookDetailedViewController.h"
 #import "locationServices.h"
 #import "MBProgressHUD.h"
+#import "HomeTableViewCell.h"
 @interface HomePageTableViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 {
    // NSArray *cooks;

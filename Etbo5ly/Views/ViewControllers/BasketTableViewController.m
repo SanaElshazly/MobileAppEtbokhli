@@ -49,11 +49,21 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     allMeals=[allBasketMeals allValues];
   //  NSLog(@"basket %d",allBasketMeals.count);
-    return allMeals.count;
+    if (allMeals.count==0) {
+        return 1;
+    }
+    else
+    {
+        return allMeals.count;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"mealls %lu",(unsigned long)[[allMeals objectAtIndex:section] count]);
+   // NSLog(@"mealls %lu",(unsigned long)[[allMeals objectAtIndex:section] count]);
+    if (allMeals.count==0) {
+        return 1;
+    }
+    else
     return [[allMeals objectAtIndex:section] count];
     
 }
@@ -61,28 +71,49 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"CellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    NSLog(@"%@",allMeals);
+    if (allMeals.count==0) {
+        cellID=@"emptyBasket";
+        
+    }
+    else
+    {
+        cellID=@"CellIdentifier";
+    }
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:cellID];
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
+    if (allMeals.count==0) {
+        return cell;
+    }
+    else
+    {
     UIImageView *listItemImage=(UIImageView *)[cell viewWithTag:1];
     UILabel *listItemHeader=(UILabel *)[cell viewWithTag:2];
     UILabel *listItemSubHeader=(UILabel *)[cell viewWithTag:3];
     UILabel *quantityLabel=(UILabel*)[cell viewWithTag:4];
     quantityLabel.text=[NSString stringWithFormat:@"%d * ",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] quantity]];
    listItemHeader.text=[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] nameEn];
-    listItemSubHeader.text=[NSString stringWithFormat:@"%2f",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
+    listItemSubHeader.text=[NSString stringWithFormat:@"EGP %d",(int)[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] price]];
     [listItemImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat: @"%@",[(MenuItems *)[[allMeals objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] imageURL]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+         return cell;
+    }
     
-    
-    return cell;
+   
     
    
 }
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-   return [(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
+    if (allMeals.count==0) {
+        return nil;
+    }
+    else
+    {
+        return [(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 41;
@@ -90,8 +121,13 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    orderDetails=[[Order alloc] initWithInfo];
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 22)];
+    if (allMeals.count==0) {
+        view=nil;
+    }
+    else
+    {
+    orderDetails=[[Order alloc] initWithInfo];
     UILabel *totalPricePerCook = [[UILabel alloc] initWithFrame:CGRectMake(200, 10, tableView.frame.size.width, 20)];
     UILabel *sectionTitleLabel=[[UILabel alloc] initWithFrame:CGRectMake(5, 10, tableView.frame.size.width, 20)];
     [totalPricePerCook setFont:[UIFont boldSystemFontOfSize:16]];
@@ -100,7 +136,7 @@
         orderDetails.orderTotalPrice=([menuItemInOrder price]*[menuItemInOrder quantity])+[orderDetails orderTotalPrice];
         NSLog(@"%f",[orderDetails orderTotalPrice]);
     }
-    NSString *sectionTotalPrice =[NSString stringWithFormat:@"%f",[orderDetails orderTotalPrice] ];
+    NSString *sectionTotalPrice =[NSString stringWithFormat:@"Total : %d EGP",(int)[orderDetails orderTotalPrice] ];
     NSString * sectionTitle=[(MenuItems*)[[allMeals objectAtIndex:section] objectAtIndex:0]cookName];
     
     
@@ -115,6 +151,7 @@
     view.layer.borderWidth = 1.0;
 
     [view setBackgroundColor:[UIColor whiteColor]];//colorWithRed:1.00 green:0.90 blue:0.76 alpha:1.0]];
+    }
     return view;
 }
 
@@ -125,6 +162,11 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *footerView=[[UIView alloc]init];
+    if (allMeals.count==0) {
+        footerView=nil;
+    }
+    else
+    {
     UIButton *checkOutbutton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
     [checkOutbutton setTitle:@"Check Out" forState:UIControlStateNormal];
     [checkOutbutton setBackgroundColor:[UIColor orangeColor]];
@@ -136,6 +178,7 @@
     [checkOutbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];//set the color this is may be different for iOS 7
     checkOutbutton.frame=CGRectMake(95, 0, 191, 30); //set some large width to ur titl
     [footerView addSubview:checkOutbutton];
+    }
     return footerView;
 }
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

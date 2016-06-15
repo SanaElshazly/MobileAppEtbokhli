@@ -164,14 +164,15 @@
 -(void)handleWithFailure:(NSError *)error
 {
     //-1011
-    if (error.code==-1011) {
+    if (error.code==-1011 ) {
         NSLog(@"no cooks");
         SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
         [alert showInfo:@"No cooks" subTitle:@"Please choose another location or detect your location" closeButtonTitle:@"ok" duration:0.0f];
         
         
     }
-    else if (error.code==-1004)
+    
+    else if (error.code==-1004 || error.code==-2102)
     {
     _cityTxtField.userInteractionEnabled=NO;
     _regionTxtField.userInteractionEnabled=NO;
