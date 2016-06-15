@@ -32,9 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-
     [self getAllRegionsAndCities];
     pickerCount=0;
     _regionTxtField.delegate=self;
@@ -49,9 +46,16 @@
     _pickerViewHeaderBtn.hidden=YES;
     _pickerViewData.hidden=YES;
     locationManager = [[CLLocationManager alloc]init];
-    
+    _regionTxtField.userInteractionEnabled=NO;
+    _cityTxtField.userInteractionEnabled=NO;
 
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (!allCities) {
+        [self getAllRegionsAndCities];
+    }
 }
 -(void) getAllRegionsAndCities
 {
@@ -131,6 +135,8 @@
   //      allRegions=[[allCountries objectAtIndex:0] objectForKey:@"regions"];
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);
+        _regionTxtField.userInteractionEnabled=YES;
+        _cityTxtField.userInteractionEnabled=YES;
       //  NSLog(@"region %@",allRegions);
         
     }
@@ -157,7 +163,21 @@
 }
 -(void)handleWithFailure:(NSError *)error
 {
-    
+    //-1011
+    if (error.code==-1011) {
+        NSLog(@"no cooks");
+        SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+        [alert showInfo:@"No cooks" subTitle:@"Please choose another location or detect your location" closeButtonTitle:@"ok" duration:0.0f];
+        
+        
+    }
+    else if (error.code==-1004)
+    {
+    _cityTxtField.userInteractionEnabled=NO;
+    _regionTxtField.userInteractionEnabled=NO;
+   UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Connection error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    }
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

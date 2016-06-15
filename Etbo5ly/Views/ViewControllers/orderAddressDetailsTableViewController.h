@@ -16,7 +16,7 @@
 #import "Order.h"
 #import "UserServices.h"
 #import "SCLAlertView.h"
-@interface orderAddressDetailsTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate,Etbo5lyNetworkDelegate>
+@interface orderAddressDetailsTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,Etbo5lyNetworkDelegate>
 {
     UserServices *userRequestedServices;
     locationServices * locationRequestedService;
@@ -41,5 +41,6 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewCities;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerViewRegions;
 @property (strong, nonatomic) IBOutlet UILabel *totalOrderPrice;
+@property (strong, nonatomic) IBOutlet UIButton *placeOrderBtnOutlet;
 
 @end

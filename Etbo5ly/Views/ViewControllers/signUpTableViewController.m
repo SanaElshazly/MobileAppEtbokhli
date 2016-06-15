@@ -23,6 +23,10 @@
     [super viewDidLayoutSubviews];
     _phoneTxtField.delegate=self;
     _emailTxtField.delegate=self;
+    _passwordTxtField.delegate=self;
+    _fullnameTxtField.delegate=self;
+    _cityTxtField.delegate=self;
+    _regionTxtField.delegate=self;
     [self addTextFieldBorderStyle:self.fullnameTxtField];
     [self addTextFieldBorderStyle:self.emailTxtField];
     [self addTextFieldBorderStyle:self.phoneTxtField];
@@ -31,7 +35,11 @@
     [self addTextFieldBorderStyle:self.passwordTxtField];
 }
 
-
+-(BOOL) textFieldShouldReturn : (UITextField*) textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    _phoneTxtField.delegate=self;
@@ -162,5 +170,8 @@
 }
 -(void) changeTextFieldBorderColor : (UIFloatLabelTextField *)txtField
 {
+}
+- (IBAction)cancelSignUp:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

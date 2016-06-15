@@ -16,5 +16,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *slideMenuTableView;
 @property (strong, nonatomic) IBOutlet UITableViewCell *signInCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *profileCell;
+@property (strong, nonatomic) IBOutlet UITableView *moreTableView;
 
 @end

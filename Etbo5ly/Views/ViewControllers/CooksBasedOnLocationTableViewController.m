@@ -61,18 +61,24 @@
     if(!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
+    
     cell.textLabel.text=[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"name"];
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"],[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageURL"]]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
+    cell.detailTextLabel.text=[[_cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"address"];
     return cell;
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
+    
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UIStoryboard *storyboard = self.navigationController.storyboard;
-    CookDetailedViewController *cookDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedCookViewController"];
+    
     
     Cook *selectedCook = [[Cook alloc] initWithInfo ];
     
@@ -83,14 +89,16 @@
     selectedCook.phone = [[_cooksOnLocation objectAtIndex:indexPath.row] valueForKey:@"phone"];
     selectedCook.regionID = [[_cooksOnLocation objectAtIndex:indexPath.row] valueForKey:@"regionId"];
     selectedCook.registerationDate =[NSDate dateWithTimeIntervalSince1970:([[[_cooksOnLocation objectAtIndex:indexPath.row ] valueForKey:@"registerationDate"] longLongValue]/1000.0)];
-    selectedCook.imageURL = [NSString stringWithFormat: @"%@%@",[[ _cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ _cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageUrl"]];
+    selectedCook.imageURL = [NSString stringWithFormat: @"%@%@",[[ _cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"resourcesURL"], [[ _cooksOnLocation objectAtIndex:indexPath.row] objectForKey:@"imageURL"]];
+    NSLog(@"coookkk %@",selectedCook.imageURL);
     selectedCook.longitude = [[[_cooksOnLocation objectAtIndex:indexPath.row] valueForKey:@"longitude"] integerValue];
     selectedCook.latitude = [[[_cooksOnLocation objectAtIndex:indexPath.row] valueForKey:@"latitude"] integerValue];
     selectedCook.startWorkingHours=[NSDate dateWithTimeIntervalSince1970:([[[_cooksOnLocation objectAtIndex:indexPath.row ] valueForKey:@"startWorkingHours"] longLongValue]/1000.0)];
     selectedCook.endWorkingHours =[NSDate dateWithTimeIntervalSince1970:([[[_cooksOnLocation objectAtIndex:indexPath.row ] valueForKey:@"endWorkingHours"] longLongValue]/1000.0)];
     selectedCook.password =[[_cooksOnLocation objectAtIndex:indexPath.row] valueForKey:@"password"];
-    
-    [cookDetailedViewController setDetailedCook:(Cook*) selectedCook];
+    UIStoryboard *storyboard = self.navigationController.storyboard;
+    CookDetailedViewController *cookDetailedViewController=[storyboard instantiateViewControllerWithIdentifier:@"detailedCookViewController"];
+    [cookDetailedViewController setDetailedCook:selectedCook];
     [self.navigationController pushViewController:cookDetailedViewController animated:YES];
     
 }

@@ -20,6 +20,7 @@
     [super viewDidLoad];
     _allUserOrders=[[NSMutableArray alloc]init];
     userDBFunctions=[[UserDAO alloc] initWithManagedObject];
+    cookDBFunctions=[[CookDAO alloc] initWithManagedObject];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,6 +118,7 @@
         int cookID=[[[_allUserOrders objectAtIndex:indexPath.row] objectForKey:@"userByCookId"] integerValue];
         
         NSString * imageCook=[cookDBFunctions selectCookBasedOnID:cookID].imageURL;
+        NSLog(@"%@",imageCook);
         UIImageView * cookImage=(UIImageView*)[cell viewWithTag:1];
         UILabel * cookNameLabel=(UILabel*)[cell viewWithTag:3];
         UILabel * orderPrice=(UILabel*)[cell viewWithTag:4];

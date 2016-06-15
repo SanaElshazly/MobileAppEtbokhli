@@ -85,7 +85,7 @@
     
     
     // Configure the cell...
-
+    
     cell.textLabel.text=[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"nameEn"];
     
     cell.detailTextLabel.text=[NSString stringWithFormat: @"%@ EGP",[[self.cookCategoryItems objectAtIndex:indexPath.row] objectForKey:@"price"]];
@@ -98,7 +98,11 @@
 }
 
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 60;
+    
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

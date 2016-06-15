@@ -24,6 +24,8 @@
     self.navigationItem.title=@"Order Address";
     _cityTxtField.delegate=self;
     _regionTxtField.delegate=self;
+    _streetTxtField.delegate=self;
+    _buildingNumberTxtField.delegate=self;
     networkDelegate=self;
     locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
     [locationRequestedService getAllRegions];
@@ -32,18 +34,24 @@
     [self addTextFieldBorderStyle:self.regionTxtField];
     [self addTextFieldBorderStyle:self.streetTxtField];
     [self addTextFieldBorderStyle:self.buildingNumberTxtField];
+    _cityTxtField.userInteractionEnabled=NO;
+    _regionTxtField.userInteractionEnabled=NO;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
 }
-
+-(BOOL) textFieldShouldReturn : (UITextField*) textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    _totalOrderPrice.text=[NSString stringWithFormat:@"%f",_orderCookDetails.orderTotalPrice];
+    _totalOrderPrice.text=[NSString stringWithFormat:@"EGP %d",(int)_orderCookDetails.orderTotalPrice];
 }
 
 #pragma mark - Table view data source
@@ -131,6 +139,7 @@
         else
         {
             [self showCityPickerCell];
+            _regionTxtField.userInteractionEnabled=YES;
             [_pickerViewCities reloadAllComponents];
         }
         return NO;
@@ -218,6 +227,7 @@
         NSLog(@"countries %@",allCountries);
         NSLog(@"ciyies %@",allCities);
         //  NSLog(@"region %@",allRegions);
+        _cityTxtField.userInteractionEnabled=YES;
         
     }
     else if([serviceName isEqualToString:@"createOrder"])
@@ -228,7 +238,7 @@
         NSLog(@"%@",[BasketTableViewController getall]);
         //[self.tabBarController setSelectedIndex:2];
         SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
-        [alert showCustom:self image:[UIImage imageNamed:@"git"] color:[UIColor orangeColor] title:@"Done" subTitle:@"Your order has been succssfully placed" closeButtonTitle:@"OK" duration:0.0f];
+        [alert showCustom:self image:[UIImage imageNamed:@"alert_checkmark.png"] color:[UIColor orangeColor] title:@"Done" subTitle:@"Your order has been succssfully placed" closeButtonTitle:@"OK" duration:0.0f];
 
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
@@ -236,6 +246,15 @@
    
     NSLog(@"%@",registeredUser.email);
 }
+-(void)handleWithFailure:(NSError *)error
+{
+    NSLog(@" coodddee %d ",error.code);
+    if (error.code==1) {
+        UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"Error" message:@"Connection error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
 - (IBAction)placeOrderBtn:(id)sender {
     
        NSMutableArray *cookOrderArray=[[NSMutableArray alloc] init];

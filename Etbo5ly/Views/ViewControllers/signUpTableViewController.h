@@ -17,7 +17,7 @@
 #import "HomePageTableViewController.h"
 #import "Order.h"
 #import "AJWValidator.h"
-@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate>
+@interface signUpTableViewController : UITableViewController <UIPickerViewDelegate,UIPickerViewDataSource,Etbo5lyNetworkDelegate,UITextFieldDelegate>
 {
     NSMutableDictionary *userDetails;
     UserServices *userRequestedServices;
@@ -25,6 +25,7 @@
     User *newUser;
     
 }
+- (IBAction)cancelSignUp:(id)sender;
 @property Order * orderCookDetails;
 @property NSArray *orderToCheckedOut;
 @property (strong, nonatomic) IBOutlet UITableView *signupTableView;
