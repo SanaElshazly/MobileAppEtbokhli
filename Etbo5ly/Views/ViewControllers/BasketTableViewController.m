@@ -171,12 +171,17 @@
     [checkOutbutton setTitle:@"Check Out" forState:UIControlStateNormal];
     [checkOutbutton setBackgroundColor:[UIColor orangeColor]];
     checkOutbutton.tag=section;
+    
     [checkOutbutton addTarget:self action:@selector(checkOut:) forControlEvents:UIControlEventTouchUpInside];
     
     checkOutbutton.layer.cornerRadius = 10;
     
-    [checkOutbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];//set the color this is may be different for iOS 7
-    checkOutbutton.frame=CGRectMake(95, 0, 191, 30); //set some large width to ur titl
+    [checkOutbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];//set the color this is may be different for iOS 7
+    checkOutbutton.frame=CGRectMake(tableView.frame.size.width/3 , 0, tableView.frame.size.width/3, 30); //set some large width to ur titl
+
+
+//    [footerView addConstraint:[NSLayoutConstraint constraintWithItem:checkOutbutton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:footerView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    
     [footerView addSubview:checkOutbutton];
     }
     return footerView;

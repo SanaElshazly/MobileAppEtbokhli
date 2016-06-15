@@ -13,9 +13,6 @@
 @end
 
 @implementation CookDetailedViewController
-{
-    NSString *formattedDate;
-}
 
 
 - (void)viewDidLoad {
@@ -34,27 +31,25 @@
     cooksRequestedCategories=[[CookServices alloc]initWithNetworkDelegate:networkDelegate];
     [cooksRequestedCategories getCookCategories:cookIDforCategory];
     
-    self.title=[NSString stringWithFormat:@"%@ 's profile",_detailedCook.name];
     
     _cookNameLbl.text=[_detailedCook name];
     [_cookProfileImg sd_setImageWithURL:[NSURL URLWithString:[_detailedCook imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     _cookAddressLbl.text=[_detailedCook address];
-    
-    formattedDate =[NSString stringWithFormat:@"%@",[_detailedCook startWorkingHours]];
-    formattedDate =[self prepareDate:formattedDate];
-    NSLog(@"%@", formattedDate);
 
-    NSLog(@"++++++ %f",[[_detailedCook startWorkingHours] timeIntervalSince1970]);
+    
+    startWorkingHoursDate=[_detailedCook startWorkingHours];
+    endWorkingHoursDate=[_detailedCook endWorkingHours];
+
+    NSDate *startDateFormatted =[NSDateFormatter localizedStringFromDate:startWorkingHoursDate dateStyle:NSDateFormatterNoStyle timeStyle:NSTimeIntervalSince1970];
     
     
-    _cookWorkingHrsLbl.text=[NSString stringWithFormat:@"%@ - %@",[_detailedCook startWorkingHours] ,[_detailedCook endWorkingHours] ];
+    NSDate *endDateFormatted =[NSDateFormatter localizedStringFromDate:endWorkingHoursDate dateStyle:NSDateFormatterNoStyle timeStyle:NSTimeIntervalSince1970];
+        
     
+    _cookWorkingHrsLbl.text=[NSString stringWithFormat:@"From: %@",startDateFormatted ] ;
+     _cookEndWorkingHrsLbl.text=[NSString stringWithFormat:@"To: %@",endDateFormatted ] ;
     
-//     NSLog(@"%@",[NSDate dateWithTimeIntervalSince1970:([[[cooksArray objectAtIndex:i ] objectForKey:@"registerationDate"] longLongValue]/1000.0)]);
-    
-//    _detailedMealPrice.text=[NSString stringWithFormat:@"%f",[_detailedMeal price] ];
-    //_MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
-    //_totalItemPrice.text=[NSString stringWithFormat:@"%f",([_detailedMealPrice.text floatValue] * quantity)];
+
 }
 
 - (void)didReceiveMemoryWarning {

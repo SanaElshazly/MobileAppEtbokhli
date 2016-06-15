@@ -80,6 +80,9 @@
 		CF21A7431D03503A009A0894 /* signUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21A7421D03503A009A0894 /* signUpTableViewController.m */; };
 		CF33341D1D100D6F00F161B3 /* etbokhly_OrderRating.png in Resources */ = {isa = PBXBuildFile; fileRef = CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */; };
 		CF33341F1D102C0A00F161B3 /* alert_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = CF33341E1D102C0A00F161B3 /* alert_checkmark.png */; };
+		CF3334261D10402C00F161B3 /* btn_minusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3334241D10402C00F161B3 /* btn_minusIcon.png */; };
+		CF3334271D10402C00F161B3 /* btn_plusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3334251D10402C00F161B3 /* btn_plusIcon.png */; };
+		CF3444B41D115F3E0055FF18 /* alert_warningIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3444B31D115F3E0055FF18 /* alert_warningIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,9 @@
 		CF21A7421D03503A009A0894 /* signUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = signUpTableViewController.m; path = Views/ViewControllers/signUpTableViewController.m; sourceTree = "<group>"; };
 		CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etbokhly_OrderRating.png; sourceTree = "<group>"; };
 		CF33341E1D102C0A00F161B3 /* alert_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_checkmark.png; sourceTree = "<group>"; };
+		CF3334241D10402C00F161B3 /* btn_minusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_minusIcon.png; sourceTree = "<group>"; };
+		CF3334251D10402C00F161B3 /* btn_plusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_plusIcon.png; sourceTree = "<group>"; };
+		CF3444B31D115F3E0055FF18 /* alert_warningIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert_warningIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +482,9 @@
 		B4C886A01CFDC6FD001DFEA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CF3444B31D115F3E0055FF18 /* alert_warningIcon.png */,
+				CF3334241D10402C00F161B3 /* btn_minusIcon.png */,
+				CF3334251D10402C00F161B3 /* btn_plusIcon.png */,
 				CF33341E1D102C0A00F161B3 /* alert_checkmark.png */,
 				CF33341C1D100D6F00F161B3 /* etbokhly_OrderRating.png */,
 				B4BA6E7E1D0EBC2900B71790 /* order.png */,
@@ -624,9 +633,11 @@
 			files = (
 				CF1886731D05FE2F00C97C50 /* etbo5lyBackground-28.png in Resources */,
 				B4690C121CFF4C160002B315 /* orngDetectLoc-25.png in Resources */,
+				CF3444B41D115F3E0055FF18 /* alert_warningIcon.png in Resources */,
 				B4690C0E1CFF4C160002B315 /* iconsArtboard_notificationTabBarIcon.png in Resources */,
 				B4E75BFB1CFA012F00D29090 /* etbokhliLogo.png in Resources */,
 				B4C13CF31CFC432F00B512B2 /* Main.storyboard in Resources */,
+				CF3334271D10402C00F161B3 /* btn_plusIcon.png in Resources */,
 				B4690C111CFF4C160002B315 /* ordersEtbo5ly.png in Resources */,
 				4AC6198B1CEF2340002D66EB /* LaunchScreen.xib in Resources */,
 				B4690C101CFF4C160002B315 /* iconsArtboard_slideMenuNavBarIcon.png in Resources */,
@@ -640,6 +651,7 @@
 				B4690C0F1CFF4C160002B315 /* iconsArtboard_ordersTabBarIcon.png in Resources */,
 				B4690C091CFF4C160002B315 /* aboutEtbo5ly.png in Resources */,
 				B4690C0D1CFF4C160002B315 /* iconsArtboard_nearbyTabBarIcon.png in Resources */,
+				CF3334261D10402C00F161B3 /* btn_minusIcon.png in Resources */,
 				B4FC1D6E1D084CD700B2A2C0 /* ios.png in Resources */,
 				B4690C0B1CFF4C160002B315 /* iconsArtboard_basketTabBarIcon.png in Resources */,
 				B4BA6E7F1D0EBC2900B71790 /* order.png in Resources */,

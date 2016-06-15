@@ -15,6 +15,7 @@
 {
     int quantity;
 }
+@property (strong, nonatomic) IBOutlet UITableView *mealDetailsTableView;
 @property (strong,nonatomic) MenuItems *detailedMeal;
 @property (strong, nonatomic) IBOutlet UIImageView *detailedMealImage;
 @property (strong, nonatomic) IBOutlet UILabel *detailedMealName;

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     quantity=1;
     self.title=_detailedMeal.nameEn ;
+    self.mealDetailsTableView.rowHeight = UITableViewAutomaticDimension;
   //  [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:_detailedMeal.nameEn];
     NSLog(@"hna");
 }
@@ -26,16 +27,24 @@
     _detailedMealName.text=[_detailedMeal nameEn];
     [_detailedMealImage sd_setImageWithURL:[NSURL URLWithString:[_detailedMeal imageURL]] placeholderImage:[UIImage imageNamed:@"etbokhliLogo.png"]];
     [_detailedMealDescription setText:[_detailedMeal descriptionEn]];
+    _detailedMealDescription.numberOfLines = 0; //will wrap text in new line
+    [ _detailedMealDescription sizeToFit];
     _detailedMealPrice.text=[NSString stringWithFormat:@"EGP %d",(int)[_detailedMeal price] ];
     _MealQuantity.text=[NSString stringWithFormat:@"%d",quantity];
     _totalItemPrice.text=[NSString stringWithFormat:@"EGP %d",(int)(_detailedMeal.price * quantity)];
     _menu_item_rating.value=[_detailedMeal itemRate];
     _menu_item_rating.userInteractionEnabled=NO;
     NSLog(@"%@",[_detailedMeal nameEn]);
+    [self.mealDetailsTableView reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
 }
 
 

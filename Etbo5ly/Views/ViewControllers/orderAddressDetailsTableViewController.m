@@ -19,23 +19,31 @@
     int regionID;
     int cityID;
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.navigationItem.title=@"Order Address";
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
     _cityTxtField.delegate=self;
     _regionTxtField.delegate=self;
-    _streetTxtField.delegate=self;
-    _buildingNumberTxtField.delegate=self;
-    networkDelegate=self;
-    locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
-    [locationRequestedService getAllRegions];
-     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
     [self addTextFieldBorderStyle:self.cityTxtField];
     [self addTextFieldBorderStyle:self.regionTxtField];
     [self addTextFieldBorderStyle:self.streetTxtField];
     [self addTextFieldBorderStyle:self.buildingNumberTxtField];
-    _cityTxtField.userInteractionEnabled=NO;
-    _regionTxtField.userInteractionEnabled=NO;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title=@"Order Address";
+//    _cityTxtField.delegate=self;
+//    _regionTxtField.delegate=self;
+    networkDelegate=self;
+    locationRequestedService=[[locationServices alloc] initWithNetworkDelegate:networkDelegate];
+    [locationRequestedService getAllRegions];
+     userRequestedServices=[[UserServices alloc] initWithNetworkDelegate:networkDelegate];
+//    [self addTextFieldBorderStyle:self.cityTxtField];
+//    [self addTextFieldBorderStyle:self.regionTxtField];
+//    [self addTextFieldBorderStyle:self.streetTxtField];
+//    [self addTextFieldBorderStyle:self.buildingNumberTxtField];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -68,6 +76,8 @@
     bottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
     txtField.floatLabelActiveColor = [UIColor orangeColor];
     [txtField.layer addSublayer:bottomBorder];
+    txtField.layer.masksToBounds = YES;
+
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
